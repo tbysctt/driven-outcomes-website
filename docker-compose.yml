@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: driven_outcomes_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-wordpress}
+      MYSQL_USER: ${MYSQL_USER:-wordpress}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-wordpress}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - wordpress_network
+    command: '--default-authentication-plugin=mysql_native_password'
+
+  wordpress:
+    depends_on:
+      - db
+    image: wordpress:latest
+    container_name: driven_outcomes_wp
+    restart: unless-stopped
+    ports:
+      - "8080:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: ${MYSQL_USER:-wordpress}
+      WORDPRESS_DB_PASSWORD: ${MYSQL_PASSWORD:-wordpress}
+      WORDPRESS_DB_NAME: ${MYSQL_DATABASE:-wordpress}
+      WORDPRESS_DEBUG: ${WORDPRESS_DEBUG:-false}
+    volumes:
+      - wordpress_data:/var/www/html
+      - ./wp-content/themes/driven-outcomes:/var/www/html/wp-content/themes/driven-outcomes
+      - ./wp-content/plugins:/var/www/html/wp-content/plugins
+    networks:
+      - wordpress_network
+
+volumes:
+  db_data:
+  wordpress_data:
+
+networks:
+  wordpress_network:
+    driver: bridge

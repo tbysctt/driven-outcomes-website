@@ -19,6 +19,7 @@
 
 # Configuration
 wp-config.php
+.env
 
 # Example themes
 /wp-content/themes/twenty*/
