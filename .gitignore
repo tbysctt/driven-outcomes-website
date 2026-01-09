@@ -21,6 +21,9 @@
 wp-config.php
 .env
 
+# Backup files
+backup-*.sql
+
 # Example themes
 /wp-content/themes/twenty*/
 
