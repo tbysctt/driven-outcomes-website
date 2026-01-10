@@ -2,12 +2,12 @@ version: '3.8'
 
 services:
   db:
-    image: mysql:8.0
+    image: mariadb:12.1-ubi
     environment:
-      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
-      MYSQL_DATABASE: wordpress
-      MYSQL_USER: wordpress
-      MYSQL_PASSWORD_FILE: /run/secrets/mysql_password
+      MARIADB_ROOT_PASSWORD_FILE: /run/secrets/mysql_root_password
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wordpress
+      MARIADB_PASSWORD_FILE: /run/secrets/mysql_password
     volumes:
       - db_data:/var/lib/mysql
     networks:
@@ -27,7 +27,7 @@ services:
         max_attempts: 3
 
   wordpress:
-    image: wordpress:latest
+    image: wordpress:6.9.0-php8.5-apache
     depends_on:
       - db
     ports:

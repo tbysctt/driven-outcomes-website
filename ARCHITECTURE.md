@@ -43,7 +43,7 @@
 │                       │ Database Connection (port 3306)         │
 │                       ▼                                          │
 │  ┌─────────────────────────────────────────────────────────┐   │
-│  │              MYSQL CONTAINER                             │   │
+│  │              MARIADB CONTAINER                             │   │
 │  │  - MySQL 8.0                                             │   │
 │  │  - Database: wordpress                                   │   │
 │  │  - Persistent Volume: db_data                            │   │

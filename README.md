@@ -41,10 +41,10 @@ cp .env.example .env
 Edit `.env` and set secure passwords:
 
 ```env
-MYSQL_ROOT_PASSWORD=your_secure_root_password
-MYSQL_DATABASE=wordpress
-MYSQL_USER=wordpress
-MYSQL_PASSWORD=your_secure_password
+MARIADB_ROOT_PASSWORD=your_secure_root_password
+MARIADB_DATABASE=wordpress
+MARIADB_USER=wordpress
+MARIADB_PASSWORD=your_secure_password
 WORDPRESS_DEBUG=false
 ```
 
