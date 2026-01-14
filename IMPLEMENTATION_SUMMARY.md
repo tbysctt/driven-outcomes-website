@@ -8,14 +8,14 @@ This document provides a summary of the implementation for the Driven Outcomes W
 
 ### 1. Docker Infrastructure
 ✅ **Local Development (Docker Compose)**
-- MySQL 8.0 database container
+- MariaDB database container
 - WordPress latest container
 - Persistent volumes for data
 - Port 8080 for local access
 - Environment variable configuration
 
 ✅ **Production Deployment (Docker Swarm)**
-- MySQL 8.0 with Docker secrets
+- MariaDB with Docker secrets
 - WordPress with automatic restart policies
 - Overlay networking for swarm
 - Production-ready configuration
@@ -243,7 +243,7 @@ All automated checks passed:
 ## Technical Stack
 
 - **Platform**: WordPress (latest)
-- **Database**: MySQL 8.0
+- **Database**: MariaDB
 - **Container Runtime**: Docker
 - **Orchestration**: Docker Compose (dev) / Docker Swarm (prod)
 - **Web Server**: Apache (included in WordPress container)

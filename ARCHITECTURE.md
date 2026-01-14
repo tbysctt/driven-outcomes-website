@@ -44,7 +44,7 @@
 │                       ▼                                          │
 │  ┌─────────────────────────────────────────────────────────┐   │
 │  │              MARIADB CONTAINER                             │   │
-│  │  - MySQL 8.0                                             │   │
+│  │  - MariaDB                                             │   │
 │  │  - Database: wordpress                                   │   │
 │  │  - Persistent Volume: db_data                            │   │
 │  └─────────────────────────────────────────────────────────┘   │
@@ -52,7 +52,7 @@
 │  ┌─────────────────────────────────────────────────────────┐   │
 │  │              PERSISTENT VOLUMES                          │   │
 │  │  - wordpress_data (WordPress files)                      │   │
-│  │  - db_data (MySQL database)                              │   │
+│  │  - db_data (MariaDB database)                              │   │
 │  └─────────────────────────────────────────────────────────┘   │
 │                                                                  │
 │  ┌─────────────────────────────────────────────────────────┐   │
@@ -88,7 +88,7 @@
         └────────────────┼─────────────────┘
                          ▼
               ┌──────────────────────┐
-              │   MySQL Database     │
+              │   MariaDB Database     │
               │   (Stored Content)   │
               └──────────────────────┘
                          │
@@ -111,7 +111,7 @@
 ```
 Developer Machine
 ├── Docker Compose
-│   ├── MySQL Container
+│   ├── MariaDB Container
 │   └── WordPress Container
 ├── Code Editor (VSCode, etc.)
 └── Browser (localhost:8080)
@@ -121,7 +121,7 @@ Developer Machine
 ```
 VPS Server
 ├── Docker Swarm (Orchestration)
-│   ├── MySQL Service
+│   ├── MariaDB Service
 │   │   └── Docker Secrets (passwords)
 │   └── WordPress Service
 ├── Reverse Proxy (Optional)
@@ -193,7 +193,7 @@ Docker Swarm
 ┌─────────────────────────────────────┐
 │          BACKUP TARGETS             │
 ├─────────────────────────────────────┤
-│ 1. Database (MySQL dump)            │
+│ 1. Database (MariaDB dump)            │
 │    - All content                    │
 │    - User accounts                  │
 │    - Settings                       │
@@ -222,7 +222,7 @@ docker cp driven_outcomes_wp:/var/www/html/wp-content ./backup/
 
 ### Current Setup (Single Server)
 ```
-1 MySQL Container + 1 WordPress Container = Suitable for small to medium traffic
+1 MariaDB Container + 1 WordPress Container = Suitable for small to medium traffic
 ```
 
 ### Future Scaling (if needed)
@@ -252,7 +252,7 @@ docker cp driven_outcomes_wp:/var/www/html/wp-content ./backup/
 │                                     │
 │ Backend:                            │
 │ - PHP (WordPress)                   │
-│ - MySQL 8.0                         │
+│ - MariaDB                         │
 │                                     │
 │ Infrastructure:                     │
 │ - Docker                            │

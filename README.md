@@ -55,7 +55,7 @@ docker-compose up -d
 ```
 
 This will start:
-- MySQL database on port 3306
+- MariaDB database on port 3306
 - WordPress on port 8080
 
 ### 4. Access WordPress
@@ -164,10 +164,10 @@ Learn more at [tailpress.io](https://tailpress.io)
 Create secrets for sensitive data:
 
 ```bash
-# Create MySQL root password secret
+# Create MariaDB root password secret
 echo "your_secure_root_password" | docker secret create mysql_root_password -
 
-# Create MySQL password secret
+# Create MariaDB password secret
 echo "your_secure_password" | docker secret create mysql_password -
 ```
 
@@ -278,7 +278,7 @@ docker cp driven_outcomes_wp:/var/www/html/wp-content ./wp-content-backup
 If WordPress cannot connect to the database:
 1. Ensure the database service is running: `docker-compose ps`
 2. Check environment variables in `.env` file
-3. Wait 30 seconds for MySQL to fully start, then restart WordPress:
+3. Wait 30 seconds for MariaDB to fully start, then restart WordPress:
    ```bash
    docker-compose restart wordpress
    ```
