@@ -1,0 +1,31 @@
+{
+    "$schema": "https://getcomposer.org/schema.json",
+    "name": "tailpress/tailpress",
+    "description": "The Tailwind CSS powered WordPress boilerplate theme.",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jeffrey van Rossum",
+            "email": "jeffrey@vanrossum.dev"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "TailPress\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.0.2",
+        "tailpress/framework": "^5.0",
+        "automattic/jetpack-autoloader": "^2.10"
+    },
+    "require-dev": {
+        "tailpress/cli": "^5.0"
+    },
+    "config": {
+        "allow-plugins": {
+            "automattic/jetpack-autoloader": true
+        }
+    }
+}

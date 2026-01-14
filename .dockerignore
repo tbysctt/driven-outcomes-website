@@ -1,0 +1,9 @@
+.git
+.gitignore
+*.md
+.env
+.env.example
+*.log
+README.md
+DEPLOYMENT.md
+QUICKSTART.md
