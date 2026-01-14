@@ -1,33 +1,43 @@
 <?php
-/**
- * Theme Functions for Driven Outcomes
- * 
- * This file contains the theme setup, custom post types, and other functionality
- */
 
-// Theme Setup
-function driven_outcomes_setup() {
-    // Add theme support
-    add_theme_support('title-tag');
-    add_theme_support('post-thumbnails');
-    add_theme_support('custom-logo');
-    add_theme_support('html5', array(
-        'search-form',
-        'comment-form',
-        'comment-list',
-        'gallery',
-        'caption',
-    ));
-
-    // Register navigation menus
-    register_nav_menus(array(
-        'primary' => __('Primary Menu', 'driven-outcomes'),
-    ));
+if (is_file(__DIR__.'/vendor/autoload_packages.php')) {
+    require_once __DIR__.'/vendor/autoload_packages.php';
 }
-add_action('after_setup_theme', 'driven_outcomes_setup');
+
+function tailpress(): TailPress\Framework\Theme
+{
+    return TailPress\Framework\Theme::instance()
+        ->assets(fn($manager) => $manager
+            ->withCompiler(new TailPress\Framework\Assets\ViteCompiler, fn($compiler) => $compiler
+                ->registerAsset('resources/css/app.css')
+                ->registerAsset('resources/js/app.js')
+                ->editorStyleFile('resources/css/editor-style.css')
+            )
+            ->enqueueAssets()
+        )
+        ->features(fn($manager) => $manager->add(TailPress\Framework\Features\MenuOptions::class))
+        ->menus(fn($manager) => $manager->add('primary', __( 'Primary Menu', 'tailpress')))
+        ->themeSupport(fn($manager) => $manager->add([
+            'title-tag',
+            'custom-logo',
+            'post-thumbnails',
+            'align-wide',
+            'wp-block-styles',
+            'responsive-embeds',
+            'html5' => [
+                'search-form',
+                'comment-form',
+                'comment-list',
+                'gallery',
+                'caption',
+            ]
+        ]));
+}
+
+tailpress();
 
 // Register Custom Post Type: Workshops
-function register_workshops_post_type() {
+function driven_outcomes_register_workshops() {
     $labels = array(
         'name'                  => _x('Workshops', 'Post Type General Name', 'driven-outcomes'),
         'singular_name'         => _x('Workshop', 'Post Type Singular Name', 'driven-outcomes'),
@@ -67,15 +77,15 @@ function register_workshops_post_type() {
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
         'capability_type'       => 'post',
-        'show_in_rest'          => true, // Enable Gutenberg editor
+        'show_in_rest'          => true,
     );
     
     register_post_type('workshop', $args);
 }
-add_action('init', 'register_workshops_post_type', 0);
+add_action('init', 'driven_outcomes_register_workshops', 0);
 
 // Register Custom Post Type: Promotions
-function register_promotions_post_type() {
+function driven_outcomes_register_promotions() {
     $labels = array(
         'name'                  => _x('Promotions', 'Post Type General Name', 'driven-outcomes'),
         'singular_name'         => _x('Promotion', 'Post Type Singular Name', 'driven-outcomes'),
@@ -115,27 +125,9 @@ function register_promotions_post_type() {
         'exclude_from_search'   => false,
         'publicly_queryable'    => true,
         'capability_type'       => 'post',
-        'show_in_rest'          => true, // Enable Gutenberg editor
+        'show_in_rest'          => true,
     );
     
     register_post_type('promotion', $args);
 }
-add_action('init', 'register_promotions_post_type', 0);
-
-// Enqueue Styles and Scripts
-function driven_outcomes_scripts() {
-    wp_enqueue_style('driven-outcomes-style', get_stylesheet_uri(), array(), '1.0.0');
-}
-add_action('wp_enqueue_scripts', 'driven_outcomes_scripts');
-
-// Custom excerpt length
-function driven_outcomes_excerpt_length($length) {
-    return 30;
-}
-add_filter('excerpt_length', 'driven_outcomes_excerpt_length', 999);
-
-// Custom excerpt more
-function driven_outcomes_excerpt_more($more) {
-    return '...';
-}
-add_filter('excerpt_more', 'driven_outcomes_excerpt_more');
+add_action('init', 'driven_outcomes_register_promotions', 0);

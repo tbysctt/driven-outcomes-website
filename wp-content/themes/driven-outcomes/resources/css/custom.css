@@ -1,0 +1,83 @@
+.entry-content,
+.block-editor-block-list__layout {
+  color: var(--color-zinc-950);
+  font-size: var(--text-lg);
+  line-height: var(--text-lg--line-height);
+
+  :where(
+      .entry-content > *:not(li),
+      .block-editor-block-list__layout > *:not(li)
+    ) {
+    margin-top: --spacing(6);
+    margin-bottom: --spacing(6);
+  }
+
+  :where(h2) {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--text-2xl);
+    line-height: var(--text-2xl--line-height);
+    margin-top: --spacing(12);
+  }
+
+  :where(h3) {
+    font-weight: var(--font-weight-semibold);
+    font-size: var(--text-xl);
+    line-height: var(--text-xl--line-height);
+    margin-top: --spacing(8);
+  }
+
+  :where(h2 + h3) {
+    margin-top: 0;
+  }
+
+  :where(ul, ol) {
+    padding-left: 1.5rem;
+  }
+
+  :where(ul) {
+    list-style-type: disc;
+  }
+
+  :where(ol) {
+    list-style-type: decimal;
+  }
+
+  :where(a) {
+    color: var(--color-primary);
+  }
+
+  :where(li) {
+    padding-left: --spacing(3);
+  }
+
+  :where(li)::marker {
+    color: var(--color-zinc-500);
+  }
+
+  :where(li > *),
+  :where(li li) {
+    margin-top: --spacing(4);
+  }
+
+  :where(ol > li)::marker {
+    font-size: var(--text-base);
+    font-weight: var(--font-weight-semibold);
+  }
+
+  :where(strong) {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  :where(figure) {
+    margin-top: --spacing(12);
+    margin-bottom: --spacing(12);
+  }
+
+  :where(li > :first-child) {
+    margin-top: 0 !important;
+  }
+
+  :where(li > :last-child) {
+    margin-bottom: 0 !important;
+  }
+}

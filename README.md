@@ -2,12 +2,15 @@
 
 A WordPress website with Docker support for local development and VPS deployment using Docker Swarm. This website includes static information pages and dynamic content management for workshops and promotions.
 
+Built on [TailPress](https://tailpress.io) - a modern WordPress theme boilerplate using Tailwind CSS.
+
 ## Features
 
 - **Static Pages**: Create and manage informational pages about your business
 - **Workshops**: Custom post type for managing workshop listings
 - **Promotions**: Custom post type for managing special offers and promotions
-- **Responsive Design**: Mobile-friendly layout
+- **Tailwind CSS**: Modern, utility-first CSS framework for responsive design
+- **TailPress Theme**: Built on TailPress boilerplate for fast development
 - **Docker Support**: Easy deployment with Docker Compose (local) and Docker Swarm (production)
 - **Admin Dashboard**: Full WordPress admin interface for content management
 
@@ -16,6 +19,7 @@ A WordPress website with Docker support for local development and VPS deployment
 - Docker (v20.10 or higher)
 - Docker Compose (v2.0 or higher)
 - For production: Docker Swarm initialized on your VPS
+- Node.js and npm (for theme development/customization)
 
 ## Local Development Setup
 
@@ -103,6 +107,49 @@ Follow the WordPress installation wizard to set up your site:
 3. Add a featured image (optional)
 4. Click **Publish**
 5. Promotions will appear on the promotions archive page
+
+## Theme Customization
+
+The Driven Outcomes theme is built on TailPress and uses Tailwind CSS for styling.
+
+### Building Theme Assets (For Development)
+
+If you need to customize the theme's CSS or JavaScript:
+
+1. Navigate to the theme directory:
+   ```bash
+   cd wp-content/themes/driven-outcomes
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start development server with hot reload:
+   ```bash
+   npm run dev
+   ```
+
+4. Build for production:
+   ```bash
+   npm run build
+   ```
+
+### Customizing Styles
+
+- Edit `resources/css/app.css` for custom styles
+- Modify `tailwind.config.js` to customize Tailwind settings
+- Use Tailwind utility classes in templates
+
+### About TailPress
+
+TailPress is a minimal boilerplate WordPress theme that uses:
+- **Tailwind CSS** - Utility-first CSS framework
+- **Vite** - Fast build tool and dev server
+- **Modern WordPress** - Block editor support, theme.json, and more
+
+Learn more at [tailpress.io](https://tailpress.io)
 
 ## Production Deployment (Docker Swarm)
 
