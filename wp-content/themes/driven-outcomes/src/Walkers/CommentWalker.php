@@ -27,7 +27,7 @@ class CommentWalker extends \Walker_Comment
                                 if ( 0 !== $args['avatar_size'] ) {
                                     echo get_avatar( $comment, 32, '', '', [
                                         'class' => 'h-12 w-12 object-cover grayscale hover:grayscale-0 transition',
-                                        'style' => 'style="color: transparent;"'
+                                        'style' => 'color: transparent;'
                                     ]);
                                 }
                             ?>

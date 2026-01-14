@@ -14,7 +14,7 @@
                         <?php
                             echo get_avatar(get_the_author_meta( 'ID' ), 32, '', esc_attr(sprintf(__('Avatar for %s', 'tailpress'), get_the_author())), [
                                 'class' => 'h-12 w-12 object-cover grayscale',
-                                'style' => 'style="color: transparent;"'
+                                'style' => 'color: transparent;'
                             ]);
                         ?>
                     </div>

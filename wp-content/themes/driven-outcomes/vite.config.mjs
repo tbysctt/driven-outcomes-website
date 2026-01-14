@@ -9,7 +9,7 @@ export default defineConfig(({ command }) => {
         server: {
             port: 3000,
             cors: true,
-            origin: 'http://localhost:8080',
+            host: 'localhost',
         },
         build: {
             manifest: true,
