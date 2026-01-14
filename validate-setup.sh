@@ -50,8 +50,9 @@ check "functions.php exists" "test -f wp-content/themes/driven-outcomes/function
 check "index.php exists" "test -f wp-content/themes/driven-outcomes/index.php" || true
 check "header.php exists" "test -f wp-content/themes/driven-outcomes/header.php" || true
 check "footer.php exists" "test -f wp-content/themes/driven-outcomes/footer.php" || true
-check "page.php exists" "test -f wp-content/themes/driven-outcomes/page.php" || true
 check "single.php exists" "test -f wp-content/themes/driven-outcomes/single.php" || true
+check "package.json exists" "test -f wp-content/themes/driven-outcomes/package.json" || true
+check "vite.config.mjs exists" "test -f wp-content/themes/driven-outcomes/vite.config.mjs" || true
 echo ""
 
 # Check custom post type templates

@@ -20,13 +20,18 @@
 │  │  │  - WordPress Admin Dashboard                       │  │   │
 │  │  └───────────────────────────────────────────────────┘  │   │
 │  │  ┌───────────────────────────────────────────────────┐  │   │
-│  │  │  Custom Theme: "Driven Outcomes"                   │  │   │
+│  │  │  Custom Theme: "Driven Outcomes" (TailPress)   │  │   │
+│  │  │  ┌──────────────────────────────────────────────┐ │  │   │
+│  │  │  │  TailPress Framework:                        │ │  │   │
+│  │  │  │  - Tailwind CSS (utility-first styling)     │ │  │   │
+│  │  │  │  - Vite (fast build tool)                   │ │  │   │
+│  │  │  │  - Block editor support                     │ │  │   │
+│  │  │  └──────────────────────────────────────────────┘ │  │   │
 │  │  │  ┌──────────────────────────────────────────────┐ │  │   │
 │  │  │  │  Templates:                                   │ │  │   │
-│  │  │  │  - Static Pages (page.php)                    │ │  │   │
+│  │  │  │  - Static Pages (default TailPress)          │ │  │   │
 │  │  │  │  - Workshops (archive/single-workshop.php)    │ │  │   │
 │  │  │  │  - Promotions (archive/single-promotion.php)  │ │  │   │
-│  │  │  │  - Full-width template                        │ │  │   │
 │  │  │  └──────────────────────────────────────────────┘ │  │   │
 │  │  │  ┌──────────────────────────────────────────────┐ │  │   │
 │  │  │  │  Custom Post Types (functions.php):          │ │  │   │
@@ -237,8 +242,13 @@ docker cp driven_outcomes_wp:/var/www/html/wp-content ./backup/
 ├─────────────────────────────────────┤
 │ Frontend:                           │
 │ - HTML5                             │
-│ - CSS3                              │
-│ - JavaScript (WordPress core)       │
+│ - Tailwind CSS v3+                  │
+│ - JavaScript (WordPress + Vite)     │
+│                                     │
+│ Theme Framework:                    │
+│ - TailPress (WordPress boilerplate) │
+│ - Vite (build tool & dev server)    │
+│ - Tailwind CSS (styling)            │
 │                                     │
 │ Backend:                            │
 │ - PHP (WordPress)                   │

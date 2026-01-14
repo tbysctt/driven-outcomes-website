@@ -2,6 +2,8 @@
 
 ## Get Your WordPress Site Running in 5 Minutes
 
+This WordPress site is built on **TailPress** - a modern theme using Tailwind CSS.
+
 ### Step 1: Install Docker
 
 If you don't have Docker installed:

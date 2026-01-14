@@ -1,6 +1,6 @@
 # Getting Started Checklist
 
-This checklist will guide you through setting up and using your new WordPress website.
+This checklist will guide you through setting up and using your new WordPress website built with **TailPress** and Tailwind CSS.
 
 ## ☐ Initial Setup (One-Time)
 
@@ -15,7 +15,7 @@ This checklist will guide you through setting up and using your new WordPress we
 - [ ] Clone or download this repository to your computer
 - [ ] Open a terminal/command prompt in the project folder
 - [ ] Run the validation: `./validate-setup.sh` (or `bash validate-setup.sh` on Windows)
-- [ ] Verify all 34 checks pass
+- [ ] Verify all 36 checks pass
 - [ ] Copy `.env.example` to `.env`: `cp .env.example .env`
 - [ ] (Optional) Edit `.env` to change default passwords
 
