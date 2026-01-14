@@ -20,8 +20,7 @@ cd driven-outcomes-website
 # Create environment file
 cp .env.example .env
 
-# Edit .env and change the passwords (optional for local dev)
-nano .env  # or use any text editor
+vim .env
 ```
 
 ### Step 3: Start WordPress
