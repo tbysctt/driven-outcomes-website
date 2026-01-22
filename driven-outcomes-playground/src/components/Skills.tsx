@@ -8,8 +8,9 @@ export function Skills() {
           </h2>
           <div className="mt-4 h-1 w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
           <p className="mt-6 text-lg text-slate-grey-400 max-w-2xl mx-auto">
-            Our incursions are designed to achieve critical real-world learning
-            outcomes aligned with the Victorian Curriculum.
+            Our incursions are designed to achieve critical real world learning
+            outcomes for young people as per the Victoria Curriculum. These
+            include:
           </p>
         </div>
 
