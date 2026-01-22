@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 
 type Testimonial = {
   program?: string;
@@ -106,21 +106,61 @@ Thank you for this wonderful opportunity.`,
 ];
 
 function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
+  const [isExpanded, setIsExpanded] = useState(false);
+  const [showReadMore, setShowReadMore] = useState(false);
+  const textRef = useRef<HTMLParagraphElement>(null);
+
+  useEffect(() => {
+    // Check if text overflows the max height
+    if (textRef.current) {
+      const maxHeight = 144; // 9rem = 144px
+      const isOverflowing = textRef.current.scrollHeight > maxHeight;
+      setShowReadMore(isOverflowing);
+    }
+  }, [testimonial.testimonial]);
+
   return (
     <div className="bg-white rounded-lg p-8 shadow-lg border border-slate-grey-100 h-full flex flex-col">
-      <div className="flex-1">
+      <div className="flex-1 flex flex-col">
         <svg
-          className="w-10 h-10 text-pearl-aqua-300 mb-4"
+          className="w-10 h-10 text-pearl-aqua-300 mb-4 flex-shrink-0"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
           <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983z" />
         </svg>
-        <p className="text-slate-grey-700 text-lg leading-relaxed italic">
-          "{testimonial.testimonial}"
-        </p>
+        <div className="flex-1 flex flex-col min-h-0 relative">
+          <p
+            ref={textRef}
+            className="text-slate-grey-700 text-lg leading-relaxed italic"
+            style={{
+              maxHeight: isExpanded ? "none" : "9rem",
+              overflow: isExpanded ? "visible" : "hidden",
+              transition: "max-height 0.3s ease-in-out",
+            }}
+          >
+            "{testimonial.testimonial}"
+          </p>
+          {!isExpanded && showReadMore && (
+            <div
+              className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-white to-transparent pointer-events-none"
+              aria-hidden="true"
+            />
+          )}
+          {showReadMore && (
+            <button
+              onClick={() => setIsExpanded(!isExpanded)}
+              className={`mt-3 text-sm font-medium text-pearl-aqua-600 hover:text-pearl-aqua-700 transition-colors self-start ${
+                !isExpanded ? "relative z-10" : ""
+              }`}
+              aria-expanded={isExpanded}
+            >
+              {isExpanded ? "Read less" : "Read more"}
+            </button>
+          )}
+        </div>
       </div>
-      <div className="mt-6 pt-6 border-t border-slate-grey-100">
+      <div className="mt-6 pt-6 border-t border-slate-grey-100 flex-shrink-0">
         <p className="font-semibold text-slate-grey-900">{testimonial.title}</p>
         {testimonial.program && (
           <p className="text-sm text-pearl-aqua-600 font-medium">
@@ -136,17 +176,18 @@ export function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
 
-  // Number of testimonials to show at once
+  // Always show 2 testimonials at a time
   const itemsPerView = 2;
-  const totalSlides = Math.ceil(testimonials.length / itemsPerView);
+  // Calculate total slides: we can scroll until the last 2 items are visible
+  const totalSlides = Math.max(1, testimonials.length - itemsPerView + 1);
 
   const nextSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev + 1) % totalSlides);
+    setCurrentIndex((prev) => Math.min(prev + 1, totalSlides - 1));
   }, [totalSlides]);
 
   const prevSlide = useCallback(() => {
-    setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
-  }, [totalSlides]);
+    setCurrentIndex((prev) => Math.max(prev - 1, 0));
+  }, []);
 
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
@@ -156,19 +197,24 @@ export function Testimonials() {
   // Auto-play carousel
   useEffect(() => {
     if (!isAutoPlaying) return;
+    if (currentIndex >= totalSlides - 1) return; // Stop at the last slide
 
     const interval = setInterval(() => {
-      nextSlide();
+      setCurrentIndex((prev) => {
+        if (prev >= totalSlides - 1) {
+          setIsAutoPlaying(false);
+          return prev;
+        }
+        return prev + 1;
+      });
     }, 5000);
 
     return () => clearInterval(interval);
-  }, [isAutoPlaying, nextSlide]);
+  }, [isAutoPlaying, currentIndex, totalSlides]);
 
-  // Get current testimonials to display
-  const getCurrentTestimonials = () => {
-    const startIndex = currentIndex * itemsPerView;
-    return testimonials.slice(startIndex, startIndex + itemsPerView);
-  };
+  // Calculate transform values
+  const translatePercentage = currentIndex * (100 / itemsPerView);
+  const translateGap = currentIndex * 0.75;
 
   return (
     <section className="py-20 bg-slate-grey-50">
@@ -234,16 +280,23 @@ export function Testimonials() {
             </svg>
           </button>
 
-          {/* Testimonials Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-4">
-            {getCurrentTestimonials().map((testimonial, index) => (
-              <div
-                key={currentIndex * itemsPerView + index}
-                className="transition-opacity duration-500"
-              >
-                <TestimonialCard testimonial={testimonial} />
-              </div>
-            ))}
+          {/* Testimonials Carousel */}
+          <div className="overflow-hidden px-4">
+            <div
+              className="flex gap-6 transition-transform duration-700 ease-in-out"
+              style={{
+                transform: `translateX(calc(-${translatePercentage}% - ${translateGap}rem))`,
+              }}
+            >
+              {testimonials.map((testimonial, index) => (
+                <div
+                  key={index}
+                  className="flex-shrink-0 w-full md:w-[calc(50%-0.75rem)]"
+                >
+                  <TestimonialCard testimonial={testimonial} />
+                </div>
+              ))}
+            </div>
           </div>
 
           {/* Pagination Dots */}

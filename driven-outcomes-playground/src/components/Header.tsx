@@ -52,7 +52,13 @@ export function Header() {
               isMenuOpen ? "flex" : "hidden"
             } md:flex flex-col md:flex-row md:bg-transparent gap-6 items-center border border-white/20 md:border-none rounded-xl p-4 md:p-0 mt-4 md:mt-0`}
           >
-            <nav></nav>
+            <nav>
+              <a>Primary</a>
+              <a>Secondary</a>
+              <a>Holiday programs</a>
+              <a>Partnerships</a>
+              <a>ELC (Coming soon)</a>
+            </nav>
 
             <a
               href="#contact"

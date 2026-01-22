@@ -297,7 +297,7 @@ export function Footer() {
         <div className="container mx-auto py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm text-slate-grey-500">
-              &copy; 2025 Driven Outcomes Pty Ltd. All rights reserved.
+              &copy; 2025 Driven Outcomes Pty Ltd
             </div>
             <div className="flex gap-6 text-sm">
               <a
