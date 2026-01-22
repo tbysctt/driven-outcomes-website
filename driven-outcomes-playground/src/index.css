@@ -183,3 +183,21 @@
     display: none;
   }
 }
+
+/* Partners logo scroll animation */
+@keyframes partners-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-200px * 5 - 3rem * 5));
+  }
+}
+
+.partners-scroll {
+  animation: partners-scroll 30s linear infinite;
+}
+
+.partners-scroll:hover {
+  animation-play-state: paused;
+}
