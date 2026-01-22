@@ -1,5 +1,6 @@
 import { About } from "./components/About";
 import { CursorDot } from "./components/CursorDot";
+import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
 import { OurBrands } from "./components/OurBrands";
@@ -16,6 +17,7 @@ function App() {
       <OurBrands />
       <Skills />
       <About />
+      <Footer />
     </div>
   );
 }
