@@ -95,7 +95,7 @@
                             Prep to Year 12 programs that spark creativity, confidence and real-world skills. Our interactive, curriculum-aligned incursions empower students to lead, build, solve, design, and grow.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4 justify-center mt-10">
-                            <a href="#programs" class="inline-flex justify-center rounded-full px-8 py-3 text-base font-bold uppercase tracking-wide transition bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 text-white hover:opacity-90 !no-underline">
+                            <a href="#programs" class="inline-flex justify-center rounded-none px-8 py-3 text-base font-bold uppercase tracking-wide transition text-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 text-white hover:opacity-90 !no-underline">
                                 Explore Programs
                             </a>
                             <a href="#contact" class="inline-flex justify-center rounded-full px-8 py-3 text-base font-bold uppercase tracking-wide transition bg-white/10 text-white border border-white/20 hover:bg-white/20 !no-underline">
