@@ -134,12 +134,12 @@ function SkillCard({ name, icon, colorTheme }: SkillCardProps) {
   const colors = colorClasses[colorTheme];
 
   return (
-    <div className="text-center p-6 rounded-xl bg-cool-steel-400/10 hover:bg-cool-steel-400/20 transition-colors">
+    <div className="text-center p-4 sm:p-5 md:p-6 rounded-xl bg-cool-steel-400/10 hover:bg-cool-steel-400/20 transition-colors">
       <div
-        className={`w-12 h-12 mx-auto mb-4 rounded-full ${colors.bg} flex items-center justify-center`}
+        className={`w-10 h-10 sm:w-12 sm:h-12 mx-auto mb-3 sm:mb-4 rounded-full ${colors.bg} flex items-center justify-center`}
       >
         <svg
-          className={`w-6 h-6 ${colors.text}`}
+          className={`w-5 h-5 sm:w-6 sm:h-6 ${colors.text}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -147,19 +147,19 @@ function SkillCard({ name, icon, colorTheme }: SkillCardProps) {
           {icon}
         </svg>
       </div>
-      <h4 className="font-bold uppercase text-sm">{name}</h4>
+      <h4 className="font-bold uppercase text-xs sm:text-sm leading-tight px-1">{name}</h4>
     </div>
   );
 }
 
 function SkillsHeader() {
   return (
-    <div className="text-center mb-16">
-      <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight">
+    <div className="text-center mb-10 sm:mb-12 md:mb-16">
+      <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight">
         Curriculum-Focused Learning
       </h2>
-      <div className="mt-4 h-1 w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
-      <p className="mt-6 text-lg text-slate-grey-400 max-w-2xl mx-auto">
+      <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
+      <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-grey-400 max-w-2xl mx-auto px-4 sm:px-0">
         Our incursions are designed to achieve critical real world learning
         outcomes for young people as per the Victoria Curriculum. These include:
       </p>
@@ -169,10 +169,10 @@ function SkillsHeader() {
 
 export function Skills() {
   return (
-    <section className="py-20">
-      <div className="container mx-auto">
+    <section className="py-12 sm:py-16 md:py-20">
+      <div className="container mx-auto px-4 sm:px-6">
         <SkillsHeader />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-5 md:gap-6 max-w-4xl mx-auto">
           {skills.map((skill) => (
             <SkillCard
               key={skill.name}

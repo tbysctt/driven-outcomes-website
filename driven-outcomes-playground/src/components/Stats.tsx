@@ -18,10 +18,10 @@ function StatItem({ target, suffix = "", label, colorClass, isInView }: StatItem
 
   return (
     <div>
-      <div className={`text-4xl md:text-5xl font-extrabold ${colorClass}`}>
+      <div className={`text-3xl sm:text-4xl md:text-5xl font-extrabold ${colorClass}`}>
         {displayValue}
       </div>
-      <div className="mt-2 text-sm font-semibold uppercase tracking-wide text-slate-grey-600">
+      <div className="mt-2 sm:mt-3 text-xs sm:text-sm font-semibold uppercase tracking-wide text-slate-grey-600 px-2">
         {label}
       </div>
     </div>
@@ -39,9 +39,9 @@ export function Stats() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-16 bg-slate-grey-100">
-      <div className="container mx-auto">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+    <section ref={sectionRef} className="py-12 sm:py-16 bg-slate-grey-100">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
           {stats.map((stat) => (
             <StatItem
               key={stat.label}

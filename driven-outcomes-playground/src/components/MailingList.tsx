@@ -55,7 +55,7 @@ export function MailingList() {
             <div className="mt-4 h-1 w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
             <p className="mt-6 text-base sm:text-lg text-slate-grey-600 leading-relaxed max-w-xl mx-auto">
               Join our mailing list to be the first to get updated on the latest
-              news
+              news and events!
             </p>
           </div>
 

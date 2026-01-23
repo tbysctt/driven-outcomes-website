@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { GradientBorderButton } from "./GradientBorderButton";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -44,12 +45,9 @@ export function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden lg:block">
-            <a
-              href="#contact"
-              className="inline-flex rounded-full px-6 py-2.5 text-sm font-bold uppercase tracking-wide transition-all duration-200 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 text-white hover:opacity-90 hover:shadow-lg hover:shadow-pearl-aqua-500/30 !no-underline"
-            >
+            <GradientBorderButton href="#contact" size="sm">
               Enquire now
-            </a>
+            </GradientBorderButton>
           </div>
 
           {/* Mobile Menu Button */}
@@ -111,13 +109,16 @@ export function Header() {
                 {link.label}
               </a>
             ))}
-            <a
-              href="#contact"
-              onClick={() => setIsMenuOpen(false)}
-              className="inline-flex justify-center rounded-full px-6 py-3 text-sm font-bold uppercase tracking-wide transition-all duration-200 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 text-white hover:opacity-90 mt-2 !no-underline"
-            >
-              Enquire now
-            </a>
+            <div className="mt-2">
+              <GradientBorderButton
+                href="#contact"
+                onClick={() => setIsMenuOpen(false)}
+                variant="rounded"
+                size="sm"
+              >
+                Enquire now
+              </GradientBorderButton>
+            </div>
           </nav>
         </div>
       </div>
