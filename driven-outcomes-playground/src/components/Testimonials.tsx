@@ -120,10 +120,10 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   }, [testimonial.testimonial]);
 
   return (
-    <div className="bg-white rounded-lg p-8 shadow-lg border border-slate-grey-100 h-full flex flex-col">
+    <div className="bg-white rounded-lg p-5 sm:p-6 md:p-8 shadow-lg border border-slate-grey-100 h-full flex flex-col">
       <div className="flex-1 flex flex-col">
         <svg
-          className="w-10 h-10 text-pearl-aqua-300 mb-4 flex-shrink-0"
+          className="w-8 h-8 sm:w-10 sm:h-10 text-pearl-aqua-300 mb-3 sm:mb-4 flex-shrink-0"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -132,7 +132,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         <div className="flex-1 flex flex-col min-h-0 relative">
           <p
             ref={textRef}
-            className="text-slate-grey-700 text-lg leading-relaxed italic"
+            className="text-slate-grey-700 text-base sm:text-lg leading-relaxed italic"
             style={{
               maxHeight: isExpanded ? "none" : "9rem",
               overflow: isExpanded ? "visible" : "hidden",
@@ -150,7 +150,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           {showReadMore && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className={`mt-3 text-sm font-medium text-pearl-aqua-600 hover:text-pearl-aqua-700 transition-colors self-start ${
+              className={`mt-3 text-xs sm:text-sm font-medium text-pearl-aqua-600 hover:text-pearl-aqua-700 transition-colors self-start ${
                 !isExpanded ? "relative z-10" : ""
               }`}
               aria-expanded={isExpanded}
@@ -160,10 +160,10 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           )}
         </div>
       </div>
-      <div className="mt-6 pt-6 border-t border-slate-grey-100 flex-shrink-0">
-        <p className="font-semibold text-slate-grey-900">{testimonial.title}</p>
+      <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-slate-grey-100 flex-shrink-0">
+        <p className="font-semibold text-sm sm:text-base text-slate-grey-900">{testimonial.title}</p>
         {testimonial.program && (
-          <p className="text-sm text-pearl-aqua-600 font-medium">
+          <p className="text-xs sm:text-sm text-pearl-aqua-600 font-medium mt-1">
             Program: {testimonial.program}
           </p>
         )}
@@ -175,10 +175,20 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 export function Testimonials() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [itemsPerView, setItemsPerView] = useState(1);
 
-  // Always show 2 testimonials at a time
-  const itemsPerView = 2;
-  // Calculate total slides: we can scroll until the last 2 items are visible
+  // Detect screen size for responsive items per view
+  useEffect(() => {
+    const updateItemsPerView = () => {
+      setItemsPerView(window.innerWidth >= 768 ? 2 : 1);
+    };
+    
+    updateItemsPerView();
+    window.addEventListener("resize", updateItemsPerView);
+    return () => window.removeEventListener("resize", updateItemsPerView);
+  }, []);
+
+  // Calculate total slides: we can scroll until the last items are visible
   const totalSlides = Math.max(1, testimonials.length - itemsPerView + 1);
 
   const nextSlide = useCallback(() => {
@@ -212,20 +222,24 @@ export function Testimonials() {
     return () => clearInterval(interval);
   }, [isAutoPlaying, currentIndex, totalSlides]);
 
-  // Calculate transform values
+  // Calculate transform values - responsive based on itemsPerView
+  // On mobile (itemsPerView = 1): move by 100% + gap (1rem = gap-4)
+  // On desktop (itemsPerView = 2): move by 50% + gap (0.75rem)
   const translatePercentage = currentIndex * (100 / itemsPerView);
-  const translateGap = currentIndex * 0.75;
+  const translateGap = itemsPerView === 1 
+    ? currentIndex * 1 // gap-4 = 1rem on mobile
+    : currentIndex * 0.75; // gap-6 = 0.75rem on desktop (but we use 0.75 for calc)
 
   return (
-    <section className="py-20 bg-slate-grey-50">
-      <div className="container mx-auto">
+    <section className="py-12 sm:py-16 md:py-20 bg-slate-grey-50">
+      <div className="container mx-auto px-4 sm:px-6">
         {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900">
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900">
             What are students and teachers saying?
           </h2>
-          <div className="mt-4 h-1 w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
-          <p className="mt-6 text-lg text-slate-grey-600 max-w-2xl mx-auto">
+          <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-grey-600 max-w-2xl mx-auto px-2 sm:px-0">
             Hear from students and teachers about their experiences with our
             incursions and programs.
           </p>
@@ -239,11 +253,11 @@ export function Testimonials() {
               prevSlide();
               setIsAutoPlaying(false);
             }}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 md:-translate-x-12 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-slate-grey-200 flex items-center justify-center text-slate-grey-600 hover:text-pearl-aqua-600 hover:border-pearl-aqua-300 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-12 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg border border-slate-grey-200 flex items-center justify-center text-slate-grey-600 hover:text-pearl-aqua-600 hover:border-pearl-aqua-300 transition-colors"
             aria-label="Previous testimonials"
           >
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4 sm:w-5 sm:h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -262,11 +276,11 @@ export function Testimonials() {
               nextSlide();
               setIsAutoPlaying(false);
             }}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 md:translate-x-12 z-10 w-10 h-10 rounded-full bg-white shadow-lg border border-slate-grey-200 flex items-center justify-center text-slate-grey-600 hover:text-pearl-aqua-600 hover:border-pearl-aqua-300 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-12 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg border border-slate-grey-200 flex items-center justify-center text-slate-grey-600 hover:text-pearl-aqua-600 hover:border-pearl-aqua-300 transition-colors"
             aria-label="Next testimonials"
           >
             <svg
-              className="w-5 h-5"
+              className="w-4 h-4 sm:w-5 sm:h-5"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -281,9 +295,9 @@ export function Testimonials() {
           </button>
 
           {/* Testimonials Carousel */}
-          <div className="overflow-hidden px-4">
+          <div className="overflow-hidden px-2 sm:px-4">
             <div
-              className="flex gap-6 transition-transform duration-700 ease-in-out"
+              className="flex gap-4 sm:gap-5 md:gap-6 transition-transform duration-700 ease-in-out"
               style={{
                 transform: `translateX(calc(-${translatePercentage}% - ${translateGap}rem))`,
               }}
@@ -300,15 +314,15 @@ export function Testimonials() {
           </div>
 
           {/* Pagination Dots */}
-          <div className="flex justify-center gap-2 mt-8">
+          <div className="flex justify-center gap-2 mt-6 sm:mt-8">
             {Array.from({ length: totalSlides }).map((_, index) => (
               <button
                 key={index}
                 onClick={() => goToSlide(index)}
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-pearl-aqua-500 w-8"
-                    : "bg-slate-grey-300 hover:bg-slate-grey-400"
+                    ? "bg-pearl-aqua-500 w-6 sm:w-8"
+                    : "bg-slate-grey-300 hover:bg-slate-grey-400 w-2 sm:w-3"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}
               />
