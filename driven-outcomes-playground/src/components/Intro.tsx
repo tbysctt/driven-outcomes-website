@@ -3,12 +3,12 @@ export function Intro() {
     <section id="about" className="py-16 sm:py-20 bg-slate-grey-50">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-10 sm:mb-12">
-            <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900">
-              About Us
-            </h2>
-            <div className="mt-4 h-1 w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
-          </div>
+          {/* <div className="text-center mb-10 sm:mb-12"> */}
+          {/*   <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900"> */}
+          {/*     About Us */}
+          {/*   </h2> */}
+          {/*   <div className="mt-4 h-1 w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div> */}
+          {/* </div> */}
           <div className="space-y-6 sm:space-y-7 text-slate-grey-700">
             <p className="text-base sm:text-lg leading-relaxed">
               Since 2016, we've been on a mission to transform learning in

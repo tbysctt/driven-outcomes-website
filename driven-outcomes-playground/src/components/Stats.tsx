@@ -32,10 +32,10 @@ export function Stats() {
   const [sectionRef, isInView] = useInView<HTMLElement>({ threshold: 0.3 });
 
   const stats = [
-    { target: 515, label: "Schools", colorClass: "text-pearl-aqua-600" },
-    { target: 205, suffix: "K+", label: "Students", colorClass: "text-cool-steel-600" },
-    { target: 24, suffix: "+", label: "Programs", colorClass: "text-thistle-600" },
-    { target: 30, label: "Organisations", colorClass: "text-slate-grey-800" },
+    { target: 205, suffix: "K+", label: "Students reached", colorClass: "text-cool-steel-600" },
+    { target: 515, label: "Schools we've worked with", colorClass: "text-pearl-aqua-600" },
+    { target: 30, label: "Organisations we've worked with", colorClass: "text-slate-grey-800" },
+    { target: 24, suffix: "+", label: "Programs to choose from", colorClass: "text-thistle-600" },
   ];
 
   return (

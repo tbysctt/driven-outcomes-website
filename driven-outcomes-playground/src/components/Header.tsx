@@ -116,7 +116,7 @@ export function Header() {
               onClick={() => setIsMenuOpen(false)}
               className="inline-flex justify-center rounded-full px-6 py-3 text-sm font-bold uppercase tracking-wide transition-all duration-200 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 text-white hover:opacity-90 mt-2 !no-underline"
             >
-              Book a session
+              Enquire now
             </a>
           </nav>
         </div>
