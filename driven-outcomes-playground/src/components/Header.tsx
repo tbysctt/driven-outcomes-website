@@ -7,66 +7,118 @@ export function Header() {
     setIsMenuOpen((prev) => !prev);
   };
 
+  const navLinks = [
+    { href: "#programs", label: "Primary" },
+    { href: "#programs", label: "Secondary" },
+    { href: "#programs", label: "Holiday programs" },
+    { href: "#partners", label: "Partnerships" },
+    { href: "#programs", label: "ELC (Coming soon)" },
+  ];
+
   return (
-    <header className="bg-dark text-white sticky top-0 z-50">
-      <div className="container mx-auto py-4">
-        <div className="md:flex md:justify-between md:items-center">
-          <div className="flex justify-between items-center">
-            <div>
-              <a
-                href="/"
-                className="!no-underline uppercase font-extrabold text-xl tracking-tight text-white hover:text-secondary transition-colors"
-              >
-                Driven Outcomes
-              </a>
-            </div>
-
-            <div className="md:hidden">
-              <button
-                type="button"
-                aria-label="Toggle navigation"
-                aria-expanded={isMenuOpen}
-                onClick={toggleMenu}
-                className="text-white"
-              >
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  strokeWidth="1.5"
-                  stroke="currentColor"
-                  className="size-6"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
-                  />
-                </svg>
-              </button>
-            </div>
-          </div>
-
-          <div
-            className={`${
-              isMenuOpen ? "flex" : "hidden"
-            } md:flex flex-col md:flex-row md:bg-transparent gap-6 items-center border border-white/20 md:border-none rounded-xl p-4 md:p-0 mt-4 md:mt-0`}
-          >
-            <nav>
-              <a>Primary</a>
-              <a>Secondary</a>
-              <a>Holiday programs</a>
-              <a>Partnerships</a>
-              <a>ELC (Coming soon)</a>
-            </nav>
-
+    <header className="bg-slate-grey-900/95 backdrop-blur-md text-white sticky top-0 z-50 border-b border-white/10">
+      <div className="container mx-auto px-4">
+        <div className="flex justify-between items-center py-4">
+          {/* Logo */}
+          <div>
             <a
-              href="#contact"
-              className="inline-flex rounded-full px-5 py-2 text-sm font-bold uppercase tracking-wide transition bg-gradient-to-r from-primary to-secondary text-white hover:opacity-90 !no-underline"
+              href="/"
+              className="!no-underline uppercase font-extrabold text-xl md:text-2xl tracking-tight text-white hover:text-pearl-aqua-400 transition-colors duration-200"
             >
-              Get Started
+              Driven Outcomes
             </a>
           </div>
+
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-8">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className="text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-pearl-aqua-400 transition-colors duration-200 !no-underline"
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+
+          {/* Desktop CTA Button */}
+          <div className="hidden lg:block">
+            <a
+              href="#contact"
+              className="inline-flex rounded-full px-6 py-2.5 text-sm font-bold uppercase tracking-wide transition-all duration-200 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 text-white hover:opacity-90 hover:shadow-lg hover:shadow-pearl-aqua-500/30 !no-underline"
+            >
+              Book a session
+            </a>
+          </div>
+
+          {/* Mobile Menu Button */}
+          <button
+            type="button"
+            aria-label="Toggle navigation"
+            aria-expanded={isMenuOpen}
+            onClick={toggleMenu}
+            className="lg:hidden text-white hover:text-pearl-aqua-400 transition-colors duration-200 p-2"
+          >
+            {isMenuOpen ? (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="2"
+                stroke="currentColor"
+                className="w-6 h-6"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                />
+              </svg>
+            )}
+          </button>
+        </div>
+
+        {/* Mobile Menu */}
+        <div
+          className={`${
+            isMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          } lg:hidden overflow-hidden transition-all duration-300 ease-in-out`}
+        >
+          <nav className="flex flex-col gap-4 pb-6 pt-2">
+            {navLinks.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={() => setIsMenuOpen(false)}
+                className="text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-pearl-aqua-400 transition-colors duration-200 py-2 !no-underline border-b border-white/10 last:border-0"
+              >
+                {link.label}
+              </a>
+            ))}
+            <a
+              href="#contact"
+              onClick={() => setIsMenuOpen(false)}
+              className="inline-flex justify-center rounded-full px-6 py-3 text-sm font-bold uppercase tracking-wide transition-all duration-200 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 text-white hover:opacity-90 mt-2 !no-underline"
+            >
+              Book a session
+            </a>
+          </nav>
         </div>
       </div>
     </header>
