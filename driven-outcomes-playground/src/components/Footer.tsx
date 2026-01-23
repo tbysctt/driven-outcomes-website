@@ -325,7 +325,7 @@ export function Footer() {
   return (
     <footer
       id="colophon"
-      className="bg-slate-grey-900 text-white mt-12 sm:mt-16"
+      className="bg-slate-grey-900 text-white"
       role="contentinfo"
     >
       {/* Main Footer Content */}

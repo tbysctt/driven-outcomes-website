@@ -134,7 +134,7 @@ function SkillCard({ name, icon, colorTheme }: SkillCardProps) {
   const colors = colorClasses[colorTheme];
 
   return (
-    <div className="text-center p-6 rounded-xl bg-white/5 hover:bg-white/10 transition-colors">
+    <div className="text-center p-6 rounded-xl bg-cool-steel-400/10 hover:bg-cool-steel-400/20 transition-colors">
       <div
         className={`w-12 h-12 mx-auto mb-4 rounded-full ${colors.bg} flex items-center justify-center`}
       >
@@ -169,7 +169,7 @@ function SkillsHeader() {
 
 export function Skills() {
   return (
-    <section className="py-20 bg-slate-grey-900 text-white">
+    <section className="py-20">
       <div className="container mx-auto">
         <SkillsHeader />
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">

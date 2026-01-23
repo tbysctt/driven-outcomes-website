@@ -48,7 +48,7 @@ export function Header() {
               href="#contact"
               className="inline-flex rounded-full px-6 py-2.5 text-sm font-bold uppercase tracking-wide transition-all duration-200 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 text-white hover:opacity-90 hover:shadow-lg hover:shadow-pearl-aqua-500/30 !no-underline"
             >
-              Book a session
+              Enquire now
             </a>
           </div>
 
