@@ -1,4 +1,5 @@
 import { useTypingAnimation } from "../hooks/useTypingAnimation";
+import heroVideo from "../assets/vecteezy_two-girls-run-to-play-with-extend-the-arms-and_9171699.mp4";
 
 const headingOptions: string[] = [
   "Curious Minds",
@@ -19,13 +20,22 @@ export function Hero() {
   });
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-slate-grey-900 via-slate-grey-800 to-slate-grey-950 py-20 md:py-32">
-      {/* <!-- Decorative elements --> */}
-      {/* <div className="absolute top-0 left-0 w-96 h-96 bg-pearl-aqua-500/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div> */}
-      {/* <div className="absolute bottom-0 right-0 w-96 h-96 bg-cool-steel-500/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div> */}
-      {/* <div className="absolute top-1/2 left-1/2 w-64 h-64 bg-thistle-500/10 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div> */}
+    <section className="relative overflow-hidden py-20 md:py-32">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src={heroVideo} type="video/mp4" />
+      </video>
+      
+      {/* Dark Overlay for Text Readability */}
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-grey-900/80 via-slate-grey-800/70 to-slate-grey-950/80 z-[1]"></div>
 
-      <div className="container mx-auto relative z-10">
+      <div className="container mx-auto relative z-[2]">
         <div className="max-w-4xl mx-auto text-center">
           <span className="inline-block px-4 py-1 rounded-full bg-white/10 text-pearl-aqua-300 text-sm font-semibold uppercase tracking-wider mb-6">
             Australia's Most Engaging Incursions
