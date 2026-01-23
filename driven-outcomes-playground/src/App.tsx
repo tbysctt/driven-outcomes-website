@@ -1,4 +1,4 @@
-import { About } from "./components/About";
+import { Intro } from "./components/Intro";
 import { CursorDot } from "./components/CursorDot";
 import { Footer } from "./components/Footer";
 import { Header } from "./components/Header";
@@ -16,11 +16,11 @@ function App() {
       <Header />
       <Hero />
       <Stats />
+      <Intro />
       <Skills />
-      <OurBrands />
       <Partners />
       <Testimonials />
-      <About />
+      <OurBrands />
       <Footer />
     </div>
   );
