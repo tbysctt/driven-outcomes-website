@@ -19,7 +19,7 @@ export function useTypingAnimation({
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [charIndex, setCharIndex] = useState(0);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const timeoutRef = useRef<number | null>(null);
 
   // Reset charIndex when word changes
   useEffect(() => {
@@ -31,7 +31,7 @@ export function useTypingAnimation({
     if (words.length === 0) return;
 
     const currentWord = words[currentWordIndex];
-    let timeout: number;
+    let timeout: number | undefined;
 
     if (!isDeleting) {
       // Typing phase
@@ -66,7 +66,9 @@ export function useTypingAnimation({
       }
     }
 
-    timeoutRef.current = timeout as unknown as NodeJS.Timeout;
+    if (timeout !== undefined) {
+      timeoutRef.current = timeout;
+    }
 
     return () => {
       if (timeoutRef.current) {
