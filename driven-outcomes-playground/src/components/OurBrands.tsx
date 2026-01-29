@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 export function OurBrands() {
   return (
     <section id="programs" className="py-12 sm:py-16 md:py-20">
@@ -39,8 +41,8 @@ export function OurBrands() {
                 Year 5 - 6
               </span>
             </div>
-            <a
-              href="#"
+            <Link
+              to="/miniboss"
               className="inline-flex items-center text-sm sm:text-base font-bold text-cool-steel-600 hover:text-cool-steel-800 transition-colors !no-underline"
             >
               Explore Primary Programs
@@ -57,7 +59,7 @@ export function OurBrands() {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
 
           {/* <!-- Tripod --> */}
@@ -85,8 +87,8 @@ export function OurBrands() {
                 Enterprise
               </span>
             </div>
-            <a
-              href="#"
+            <Link
+              to="/tripod"
               className="inline-flex items-center text-sm sm:text-base font-bold text-pearl-aqua-600 hover:text-pearl-aqua-800 transition-colors !no-underline"
             >
               Explore Secondary Programs
@@ -103,7 +105,7 @@ export function OurBrands() {
                   d="M9 5l7 7-7 7"
                 />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

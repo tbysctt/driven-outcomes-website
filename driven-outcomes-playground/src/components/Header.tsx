@@ -1,5 +1,18 @@
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
 import { GradientBorderButton } from "./GradientBorderButton";
+
+const navLinks = [
+  { to: "/miniboss", label: "Primary (miniBOSS)" },
+  { to: "/tripod", label: "Secondary (Tripod)" },
+  { to: "/miniboss-holiday", label: "Holiday programs" },
+  { to: "/talknow", label: "Partnerships (TalkNOW)" },
+  { to: "/#programs", label: "ELC (Coming soon)" },
+];
+
+const navLinkClass =
+  "text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-pearl-aqua-400 transition-colors duration-200 !no-underline";
+const navLinkActiveClass = "text-pearl-aqua-400";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -8,39 +21,43 @@ export function Header() {
     setIsMenuOpen((prev) => !prev);
   };
 
-  const navLinks = [
-    { href: "#programs", label: "Primary" },
-    { href: "#programs", label: "Secondary" },
-    { href: "#programs", label: "Holiday programs" },
-    { href: "#partners", label: "Partnerships" },
-    { href: "#programs", label: "ELC (Coming soon)" },
-  ];
-
   return (
     <header className="bg-slate-grey-900/95 backdrop-blur-md text-white sticky top-0 z-50 border-b border-white/10">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div>
-            <a
-              href="/"
+            <NavLink
+              to="/"
               className="!no-underline uppercase font-extrabold text-xl md:text-2xl tracking-tight text-white hover:text-pearl-aqua-400 transition-colors duration-200"
             >
               Driven Outcomes
-            </a>
+            </NavLink>
           </div>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                className="text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-pearl-aqua-400 transition-colors duration-200 !no-underline"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.to.startsWith("/#") ? (
+                <a
+                  key={link.label}
+                  href={link.to}
+                  className={navLinkClass}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={link.label}
+                  to={link.to}
+                  className={({ isActive }) =>
+                    [navLinkClass, isActive ? navLinkActiveClass : ""].join(" ")
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              )
+            )}
           </nav>
 
           {/* Desktop CTA Button */}
@@ -99,16 +116,33 @@ export function Header() {
           } lg:hidden overflow-hidden transition-all duration-300 ease-in-out`}
         >
           <nav className="flex flex-col gap-4 pb-6 pt-2">
-            {navLinks.map((link) => (
-              <a
-                key={link.label}
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-pearl-aqua-400 transition-colors duration-200 py-2 !no-underline border-b border-white/10 last:border-0"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) =>
+              link.to.startsWith("/#") ? (
+                <a
+                  key={link.label}
+                  href={link.to}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`${navLinkClass} py-2 border-b border-white/10 last:border-0`}
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <NavLink
+                  key={link.label}
+                  to={link.to}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={({ isActive }) =>
+                    [
+                      navLinkClass,
+                      "py-2 border-b border-white/10 last:border-0",
+                      isActive ? navLinkActiveClass : "",
+                    ].join(" ")
+                  }
+                >
+                  {link.label}
+                </NavLink>
+              )
+            )}
             <div className="mt-2">
               <GradientBorderButton
                 href="#contact"
