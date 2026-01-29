@@ -1,6 +1,6 @@
 .entry-content,
 .block-editor-block-list__layout {
-  color: var(--color-zinc-950);
+  color: var(--color-slate-grey-900);
   font-size: var(--text-lg);
   line-height: var(--text-lg--line-height);
 
@@ -13,17 +13,23 @@
   }
 
   :where(h2) {
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--text-2xl);
-    line-height: var(--text-2xl--line-height);
+    font-weight: 800;
+    font-size: var(--text-3xl);
+    line-height: var(--text-3xl--line-height);
     margin-top: var(--spacing-12);
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    color: var(--color-slate-grey-900);
   }
 
   :where(h3) {
-    font-weight: var(--font-weight-semibold);
-    font-size: var(--text-xl);
-    line-height: var(--text-xl--line-height);
+    font-weight: 700;
+    font-size: var(--text-2xl);
+    line-height: var(--text-2xl--line-height);
     margin-top: var(--spacing-8);
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    color: var(--color-pearl-aqua-600);
   }
 
   :where(h2 + h3) {
@@ -43,7 +49,12 @@
   }
 
   :where(a) {
-    color: var(--color-primary);
+    color: var(--color-pearl-aqua-600);
+    transition: color 0.2s ease;
+  }
+  
+  :where(a:hover) {
+    color: var(--color-cool-steel-600);
   }
 
   :where(li) {
@@ -51,7 +62,7 @@
   }
 
   :where(li)::marker {
-    color: var(--color-zinc-500);
+    color: var(--color-pearl-aqua-500);
   }
 
   :where(li > *),
@@ -79,5 +90,51 @@
 
   :where(li > :last-child) {
     margin-bottom: 0 !important;
+  }
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-pearl-aqua-500) 0%, var(--color-cool-steel-500) 50%, var(--color-thistle-500) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Gradient backgrounds */
+.gradient-primary {
+  background: linear-gradient(135deg, var(--color-pearl-aqua-500) 0%, var(--color-cool-steel-500) 100%);
+}
+
+.gradient-dark {
+  background: linear-gradient(135deg, var(--color-slate-grey-900) 0%, var(--color-slate-grey-800) 100%);
+}
+
+/* Custom cursor dot */
+#cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: var(--color-pearl-aqua-500);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.9 !important;
+  transform: translate(-50%, -50%);
+  transition: width 0.2s ease, height 0.2s ease, opacity 0.2s ease;
+}
+
+#cursor-dot.cursor-expanded {
+  width: 90px;
+  height: 90px;
+  opacity: 0.2 !important;
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  #cursor-dot {
+    display: none;
   }
 }

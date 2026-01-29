@@ -1,5 +1,5 @@
 
-@import url(https://fonts.bunny.net/css?family=raleway:400);
+@import url(https://fonts.bunny.net/css?family=inter:400,500,600,700,800,900|montserrat:700,800,900);
 @import 'tailwindcss';
 @import './theme.css';
 @import './utilities.css';
@@ -28,5 +28,16 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-zinc-200, currentColor);
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: -0.025em;
   }
 }

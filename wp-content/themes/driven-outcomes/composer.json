@@ -21,7 +21,8 @@
         "automattic/jetpack-autoloader": "^2.10"
     },
     "require-dev": {
-        "tailpress/cli": "^5.0"
+        "tailpress/cli": "^5.0",
+        "php-stubs/wordpress-stubs": "^6.9"
     },
     "config": {
         "allow-plugins": {
