@@ -39,7 +39,7 @@ export function Hero() {
 
       <div className="container mx-auto px-4 sm:px-6 relative z-[2] w-full">
         <div className="max-w-4xl mx-auto text-center">
-          <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-pearl-aqua-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
+          <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-elementary-gold-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
             Australia's Most Engaging Incursions
           </span>
           <h1 className="leading-tight text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight text-balance text-white uppercase mb-4 sm:mb-6">
@@ -47,7 +47,7 @@ export function Hero() {
             <br className="hidden sm:block" />
             <span className="block sm:inline">
               for{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-pearl-aqua-400 via-cool-steel-400 to-thistle-400">
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-elementary-gold-400 via-amber-gold-400 to-thistle-400">
                 {animatedText}
                 <span className="animate-pulse">|</span>
               </span>

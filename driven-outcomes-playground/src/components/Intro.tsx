@@ -7,18 +7,18 @@ export function Intro() {
           {/*   <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900"> */}
           {/*     About Us */}
           {/*   </h2> */}
-          {/*   <div className="mt-4 h-1 w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div> */}
+          {/*   <div className="mt-4 h-1 w-24 bg-gradient-to-r from-elementary-gold-500 to-amber-gold-500 rounded-full mx-auto"></div> */}
           {/* </div> */}
           <div className="space-y-6 sm:space-y-7 text-slate-grey-700">
             <p className="text-base sm:text-lg leading-relaxed">
               Since 2016, we've been on a mission to transform learning in
               schools across Australia. Operating under Driven Outcomes Pty Ltd,
               we have two main divisions:{" "}
-              <strong className="font-bold text-pearl-aqua-600">
+              <strong className="font-bold text-elementary-gold-600">
                 Tripod Enterprise Education
               </strong>{" "}
               for secondary students, and{" "}
-              <strong className="font-bold text-cool-steel-600">
+              <strong className="font-bold text-amber-gold-600">
                 MiniBOSS Incursions
               </strong>{" "}
               for primary students.

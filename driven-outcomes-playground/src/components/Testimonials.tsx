@@ -123,7 +123,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
     <div className="bg-white rounded-lg p-5 sm:p-6 md:p-8 shadow-lg border border-slate-grey-100 h-full flex flex-col">
       <div className="flex-1 flex flex-col">
         <svg
-          className="w-8 h-8 sm:w-10 sm:h-10 text-pearl-aqua-300 mb-3 sm:mb-4 flex-shrink-0"
+          className="w-8 h-8 sm:w-10 sm:h-10 text-elementary-gold-300 mb-3 sm:mb-4 flex-shrink-0"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -150,7 +150,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
           {showReadMore && (
             <button
               onClick={() => setIsExpanded(!isExpanded)}
-              className={`mt-3 text-xs sm:text-sm font-medium text-pearl-aqua-600 hover:text-pearl-aqua-700 transition-colors self-start ${
+              className={`mt-3 text-xs sm:text-sm font-medium text-elementary-gold-600 hover:text-elementary-gold-700 transition-colors self-start ${
                 !isExpanded ? "relative z-10" : ""
               }`}
               aria-expanded={isExpanded}
@@ -163,7 +163,7 @@ function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
       <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-slate-grey-100 flex-shrink-0">
         <p className="font-semibold text-sm sm:text-base text-slate-grey-900">{testimonial.title}</p>
         {testimonial.program && (
-          <p className="text-xs sm:text-sm text-pearl-aqua-600 font-medium mt-1">
+          <p className="text-xs sm:text-sm text-elementary-gold-600 font-medium mt-1">
             Program: {testimonial.program}
           </p>
         )}
@@ -238,7 +238,7 @@ export function Testimonials() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900">
             What are students and teachers saying?
           </h2>
-          <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
+          <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-gradient-to-r from-elementary-gold-500 to-amber-gold-500 rounded-full mx-auto"></div>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-grey-600 max-w-2xl mx-auto px-2 sm:px-0">
             Hear from students and teachers about their experiences with our
             incursions and programs.
@@ -253,7 +253,7 @@ export function Testimonials() {
               prevSlide();
               setIsAutoPlaying(false);
             }}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-12 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg border border-slate-grey-200 flex items-center justify-center text-slate-grey-600 hover:text-pearl-aqua-600 hover:border-pearl-aqua-300 transition-colors"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-4 md:-translate-x-12 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg border border-slate-grey-200 flex items-center justify-center text-slate-grey-600 hover:text-elementary-gold-600 hover:border-elementary-gold-300 transition-colors"
             aria-label="Previous testimonials"
           >
             <svg
@@ -276,7 +276,7 @@ export function Testimonials() {
               nextSlide();
               setIsAutoPlaying(false);
             }}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-12 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg border border-slate-grey-200 flex items-center justify-center text-slate-grey-600 hover:text-pearl-aqua-600 hover:border-pearl-aqua-300 transition-colors"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-4 md:translate-x-12 z-10 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white shadow-lg border border-slate-grey-200 flex items-center justify-center text-slate-grey-600 hover:text-elementary-gold-600 hover:border-elementary-gold-300 transition-colors"
             aria-label="Next testimonials"
           >
             <svg
@@ -321,7 +321,7 @@ export function Testimonials() {
                 onClick={() => goToSlide(index)}
                 className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
                   index === currentIndex
-                    ? "bg-pearl-aqua-500 w-6 sm:w-8"
+                    ? "bg-elementary-gold-500 w-6 sm:w-8"
                     : "bg-slate-grey-300 hover:bg-slate-grey-400 w-2 sm:w-3"
                 }`}
                 aria-label={`Go to slide ${index + 1}`}

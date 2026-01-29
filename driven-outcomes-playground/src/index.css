@@ -12,18 +12,18 @@
        COLOR PALETTE - Edit colors here
        =========================================== */
 
-  /* Pearl Aqua - Primary brand color */
-  --color-pearl-aqua-50: #edf8f6;
-  --color-pearl-aqua-100: #dbf0ee;
-  --color-pearl-aqua-200: #b6e2dc;
-  --color-pearl-aqua-300: #92d3cb;
-  --color-pearl-aqua-400: #6dc5b9;
-  --color-pearl-aqua-500: #49b6a8;
-  --color-pearl-aqua-600: #3a9286;
-  --color-pearl-aqua-700: #2c6d65;
-  --color-pearl-aqua-800: #1d4943;
-  --color-pearl-aqua-900: #0f2422;
-  --color-pearl-aqua-950: #0a1a17;
+  /* Elementary Gold - Primary brand color */
+  --color-elementary-gold-50: #fefce8;
+  --color-elementary-gold-100: #fef9c3;
+  --color-elementary-gold-200: #fef08a;
+  --color-elementary-gold-300: #fde047;
+  --color-elementary-gold-400: #facc15;
+  --color-elementary-gold-500: #eab308;
+  --color-elementary-gold-600: #ca8a04;
+  --color-elementary-gold-700: #a16207;
+  --color-elementary-gold-800: #854d0e;
+  --color-elementary-gold-900: #713f12;
+  --color-elementary-gold-950: #422006;
 
   /* Slate Grey - Neutral tones */
   --color-slate-grey-50: #f1f2f4;
@@ -38,18 +38,18 @@
   --color-slate-grey-900: #161a1d;
   --color-slate-grey-950: #101214;
 
-  /* Cool Steel - Secondary color */
-  --color-cool-steel-50: #eff3f6;
-  --color-cool-steel-100: #dee6ed;
-  --color-cool-steel-200: #bdcedb;
-  --color-cool-steel-300: #9cb5c9;
-  --color-cool-steel-400: #7b9db7;
-  --color-cool-steel-500: #5b84a4;
-  --color-cool-steel-600: #486a84;
-  --color-cool-steel-700: #364f63;
-  --color-cool-steel-800: #243542;
-  --color-cool-steel-900: #121a21;
-  --color-cool-steel-950: #0d1317;
+  /* Amber Gold - Secondary color */
+  --color-amber-gold-50: #fffbeb;
+  --color-amber-gold-100: #fef3c7;
+  --color-amber-gold-200: #fde68a;
+  --color-amber-gold-300: #fcd34d;
+  --color-amber-gold-400: #fbbf24;
+  --color-amber-gold-500: #f59e0b;
+  --color-amber-gold-600: #d97706;
+  --color-amber-gold-700: #b45309;
+  --color-amber-gold-800: #92400e;
+  --color-amber-gold-900: #78350f;
+  --color-amber-gold-950: #451a03;
 
   /* Lavender Grey - Accent color */
   --color-lavender-grey-50: #f0f0f5;
@@ -81,13 +81,13 @@
        SEMANTIC COLOR MAPPINGS
        Change these to swap which palette is used
        =========================================== */
-  --color-primary: var(--color-pearl-aqua-500);
-  --color-primary-light: var(--color-pearl-aqua-300);
-  --color-primary-dark: var(--color-pearl-aqua-700);
+  --color-primary: var(--color-elementary-gold-500);
+  --color-primary-light: var(--color-elementary-gold-300);
+  --color-primary-dark: var(--color-elementary-gold-700);
 
-  --color-secondary: var(--color-cool-steel-500);
-  --color-secondary-light: var(--color-cool-steel-300);
-  --color-secondary-dark: var(--color-cool-steel-700);
+  --color-secondary: var(--color-amber-gold-500);
+  --color-secondary-light: var(--color-amber-gold-300);
+  --color-secondary-dark: var(--color-amber-gold-700);
 
   --color-accent: var(--color-thistle-500);
   --color-accent-light: var(--color-thistle-300);
@@ -126,8 +126,8 @@
 .gradient-text {
   background: linear-gradient(
     135deg,
-    var(--color-pearl-aqua-500) 0%,
-    var(--color-cool-steel-500) 50%,
+    var(--color-elementary-gold-500) 0%,
+    var(--color-amber-gold-500) 50%,
     var(--color-thistle-500) 100%
   );
   -webkit-background-clip: text;
@@ -139,8 +139,8 @@
 .gradient-primary {
   background: linear-gradient(
     135deg,
-    var(--color-pearl-aqua-500) 0%,
-    var(--color-cool-steel-500) 100%
+    var(--color-elementary-gold-500) 0%,
+    var(--color-amber-gold-500) 100%
   );
 }
 
@@ -159,7 +159,7 @@
   left: 0;
   width: 30px;
   height: 30px;
-  background-color: var(--color-pearl-aqua-500);
+  background-color: var(--color-elementary-gold-500);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;

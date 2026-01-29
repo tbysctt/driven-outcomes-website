@@ -24,7 +24,7 @@ export function Header() {
           <div>
             <a
               href="/"
-              className="!no-underline uppercase font-extrabold text-xl md:text-2xl tracking-tight text-white hover:text-pearl-aqua-400 transition-colors duration-200"
+              className="!no-underline uppercase font-extrabold text-xl md:text-2xl tracking-tight text-white hover:text-elementary-gold-400 transition-colors duration-200"
             >
               Driven Outcomes
             </a>
@@ -36,7 +36,7 @@ export function Header() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-pearl-aqua-400 transition-colors duration-200 !no-underline"
+                className="text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-elementary-gold-400 transition-colors duration-200 !no-underline"
               >
                 {link.label}
               </a>
@@ -56,7 +56,7 @@ export function Header() {
             aria-label="Toggle navigation"
             aria-expanded={isMenuOpen}
             onClick={toggleMenu}
-            className="lg:hidden text-white hover:text-pearl-aqua-400 transition-colors duration-200 p-2"
+            className="lg:hidden text-white hover:text-elementary-gold-400 transition-colors duration-200 p-2"
           >
             {isMenuOpen ? (
               <svg
@@ -104,7 +104,7 @@ export function Header() {
                 key={link.label}
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-pearl-aqua-400 transition-colors duration-200 py-2 !no-underline border-b border-white/10 last:border-0"
+                className="text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-elementary-gold-400 transition-colors duration-200 py-2 !no-underline border-b border-white/10 last:border-0"
               >
                 {link.label}
               </a>

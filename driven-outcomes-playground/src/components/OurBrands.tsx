@@ -6,7 +6,7 @@ export function OurBrands() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900">
             Our Programs
           </h2>
-          <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
+          <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-gradient-to-r from-elementary-gold-500 to-amber-gold-500 rounded-full mx-auto"></div>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-grey-600 max-w-2xl mx-auto px-2 sm:px-0">
             Operating under Driven Outcomes, we deliver engaging incursions
             through two specialist divisions.
@@ -15,8 +15,8 @@ export function OurBrands() {
 
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {/* <!-- MiniBOSS --> */}
-          <div className="bg-gradient-to-br from-cool-steel-100 to-cool-steel-50 rounded-2xl p-6 sm:p-7 md:p-8 border border-cool-steel-200 hover:shadow-xl hover:shadow-cool-steel-200/50 transition-shadow">
-            <div className="inline-block px-2.5 sm:px-3 py-1 rounded-full bg-cool-steel-200 text-cool-steel-700 text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
+          <div className="bg-gradient-to-br from-amber-gold-100 to-amber-gold-50 rounded-2xl p-6 sm:p-7 md:p-8 border border-amber-gold-200 hover:shadow-xl hover:shadow-amber-gold-200/50 transition-shadow">
+            <div className="inline-block px-2.5 sm:px-3 py-1 rounded-full bg-amber-gold-200 text-amber-gold-700 text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
               Primary School
             </div>
             <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-slate-grey-900 mb-3 sm:mb-4">
@@ -41,7 +41,7 @@ export function OurBrands() {
             </div>
             <a
               href="#"
-              className="inline-flex items-center text-sm sm:text-base font-bold text-cool-steel-600 hover:text-cool-steel-800 transition-colors !no-underline"
+              className="inline-flex items-center text-sm sm:text-base font-bold text-amber-gold-600 hover:text-amber-gold-800 transition-colors !no-underline"
             >
               Explore Primary Programs
               <svg
@@ -61,8 +61,8 @@ export function OurBrands() {
           </div>
 
           {/* <!-- Tripod --> */}
-          <div className="bg-gradient-to-br from-pearl-aqua-100 to-pearl-aqua-50 rounded-2xl p-6 sm:p-7 md:p-8 border border-pearl-aqua-200 hover:shadow-xl hover:shadow-pearl-aqua-200/50 transition-shadow">
-            <div className="inline-block px-2.5 sm:px-3 py-1 rounded-full bg-pearl-aqua-200 text-pearl-aqua-700 text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
+          <div className="bg-gradient-to-br from-elementary-gold-100 to-elementary-gold-50 rounded-2xl p-6 sm:p-7 md:p-8 border border-elementary-gold-200 hover:shadow-xl hover:shadow-elementary-gold-200/50 transition-shadow">
+            <div className="inline-block px-2.5 sm:px-3 py-1 rounded-full bg-elementary-gold-200 text-elementary-gold-700 text-xs font-bold uppercase tracking-wider mb-3 sm:mb-4">
               Secondary School
             </div>
             <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-slate-grey-900 mb-3 sm:mb-4">
@@ -87,7 +87,7 @@ export function OurBrands() {
             </div>
             <a
               href="#"
-              className="inline-flex items-center text-sm sm:text-base font-bold text-pearl-aqua-600 hover:text-pearl-aqua-800 transition-colors !no-underline"
+              className="inline-flex items-center text-sm sm:text-base font-bold text-elementary-gold-600 hover:text-elementary-gold-800 transition-colors !no-underline"
             >
               Explore Secondary Programs
               <svg

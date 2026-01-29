@@ -28,7 +28,7 @@ export function GradientBorderButton({
   // Default to fully transparent with gradient on hover, unless custom backgroundColor is provided
   const hoverClasses = backgroundColor
     ? ""
-    : "hover:bg-gradient-to-r hover:from-pearl-aqua-500 hover:to-cool-steel-500";
+    : "hover:bg-gradient-to-r hover:from-elementary-gold-500 hover:to-amber-gold-500";
 
   const buttonClasses = `inline-flex justify-center items-center border-2 border-transparent ${sizeClasses[size]} font-bold uppercase tracking-wide text-white ${backgroundColor || ""} ${hoverClasses} transition-all duration-300 ${roundedClass} ${className}`;
 
@@ -40,15 +40,15 @@ export function GradientBorderButton({
       // If custom background is provided, we need to convert it to a color value
       // For now, we'll use a simplified approach - you may need to handle more cases
       if (backgroundColor.includes("white/10")) {
-        return "linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), linear-gradient(to right, var(--color-pearl-aqua-500), var(--color-cool-steel-500))";
+        return "linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1)), linear-gradient(to right, var(--color-elementary-gold-500), var(--color-amber-gold-500))";
       }
       if (backgroundColor.includes("white/20")) {
-        return "linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(to right, var(--color-pearl-aqua-500), var(--color-cool-steel-500))";
+        return "linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), linear-gradient(to right, var(--color-elementary-gold-500), var(--color-amber-gold-500))";
       }
       // Default: try to use the backgroundColor class and add gradient
-      return `linear-gradient(var(--tw-gradient-stops)), linear-gradient(to right, var(--color-pearl-aqua-500), var(--color-cool-steel-500))`;
+      return `linear-gradient(var(--tw-gradient-stops)), linear-gradient(to right, var(--color-elementary-gold-500), var(--color-amber-gold-500))`;
     }
-    return "linear-gradient(transparent, transparent), linear-gradient(to right, var(--color-pearl-aqua-500), var(--color-cool-steel-500))";
+    return "linear-gradient(transparent, transparent), linear-gradient(to right, var(--color-elementary-gold-500), var(--color-amber-gold-500))";
   };
 
   const buttonStyle = {

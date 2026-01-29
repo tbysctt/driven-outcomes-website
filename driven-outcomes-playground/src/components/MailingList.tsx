@@ -45,14 +45,14 @@ export function MailingList() {
   };
 
   return (
-    <section className="py-16 sm:py-20 bg-gradient-to-br from-pearl-aqua-50 to-cool-steel-50">
+    <section className="py-16 sm:py-20 bg-gradient-to-br from-elementary-gold-50 to-amber-gold-50">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-2xl mx-auto">
           <div className="text-center mb-8 sm:mb-10">
             <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900 mb-4">
               Stay Connected
             </h2>
-            <div className="mt-4 h-1 w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
+            <div className="mt-4 h-1 w-24 bg-gradient-to-r from-elementary-gold-500 to-amber-gold-500 rounded-full mx-auto"></div>
             <p className="mt-6 text-base sm:text-lg text-slate-grey-600 leading-relaxed max-w-xl mx-auto">
               Join our mailing list to be the first to get updated on the latest
               news and events!
@@ -72,14 +72,14 @@ export function MailingList() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-slate-grey-300 focus:outline-none focus:ring-2 focus:ring-pearl-aqua-500 focus:border-transparent transition-colors text-slate-grey-900"
+                  className="w-full px-4 py-3 rounded-lg border border-slate-grey-300 focus:outline-none focus:ring-2 focus:ring-elementary-gold-500 focus:border-transparent transition-colors text-slate-grey-900"
                   placeholder="Email address"
                 />
               </div>
             </div>
 
             {submitStatus === "success" && (
-              <div className="p-4 rounded-lg bg-pearl-aqua-100 border border-pearl-aqua-300 text-pearl-aqua-800">
+              <div className="p-4 rounded-lg bg-elementary-gold-100 border border-elementary-gold-300 text-elementary-gold-800">
                 <div className="flex items-center gap-2">
                   <svg
                     className="w-5 h-5"
@@ -127,7 +127,7 @@ export function MailingList() {
             <button
               type="submit"
               disabled={isSubmitting}
-              className="w-full inline-flex justify-center items-center rounded-full px-8 py-3 text-base font-bold uppercase tracking-wide transition-all duration-200 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 text-white hover:opacity-90 hover:shadow-lg hover:shadow-pearl-aqua-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
+              className="w-full inline-flex justify-center items-center rounded-full px-8 py-3 text-base font-bold uppercase tracking-wide transition-all duration-200 bg-gradient-to-r from-elementary-gold-500 to-amber-gold-500 text-white hover:opacity-90 hover:shadow-lg hover:shadow-elementary-gold-500/30 disabled:opacity-50 disabled:cursor-not-allowed"
             >
               {isSubmitting ? (
                 <>

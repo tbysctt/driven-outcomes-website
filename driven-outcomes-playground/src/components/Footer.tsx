@@ -152,7 +152,7 @@ function SocialLink({ name, url, icon }: SocialLinkProps) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-pearl-aqua-600 transition-colors !no-underline"
+      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-elementary-gold-600 transition-colors !no-underline"
       aria-label={name}
     >
       <svg
@@ -185,7 +185,7 @@ interface FooterLinkSectionProps {
 function FooterLinkSection({ title, links }: FooterLinkSectionProps) {
   return (
     <div>
-      <h4 className="text-sm font-bold uppercase tracking-wider text-pearl-aqua-400 mb-4 sm:mb-6">
+      <h4 className="text-sm font-bold uppercase tracking-wider text-elementary-gold-400 mb-4 sm:mb-6">
         {title}
       </h4>
       <ul className="space-y-2 sm:space-y-3">
@@ -205,7 +205,7 @@ function FooterLinkSection({ title, links }: FooterLinkSectionProps) {
 }
 
 function ContactItem({ icon, content, href }: ContactInfoItem) {
-  const iconClasses = "w-4 h-4 sm:w-5 sm:h-5 text-pearl-aqua-500 shrink-0";
+  const iconClasses = "w-4 h-4 sm:w-5 sm:h-5 text-elementary-gold-500 shrink-0";
   const contentClasses =
     "text-sm sm:text-base text-slate-grey-400 hover:text-white transition-colors !no-underline break-words";
 
@@ -247,7 +247,7 @@ function ContactItem({ icon, content, href }: ContactInfoItem) {
 function ContactInfo() {
   return (
     <div id="contact">
-      <h4 className="text-sm font-bold uppercase tracking-wider text-pearl-aqua-400 mb-4 sm:mb-6">
+      <h4 className="text-sm font-bold uppercase tracking-wider text-elementary-gold-400 mb-4 sm:mb-6">
         Contact Us
       </h4>
       <ul className="space-y-3 sm:space-y-4">
