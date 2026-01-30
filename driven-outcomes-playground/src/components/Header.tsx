@@ -3,16 +3,17 @@ import { NavLink } from "react-router-dom";
 import { GradientBorderButton } from "./GradientBorderButton";
 
 const navLinks = [
-  { to: "/miniboss", label: "Primary (miniBOSS)" },
-  { to: "/tripod", label: "Secondary (Tripod)" },
-  { to: "/miniboss-holiday", label: "Holiday programs" },
-  { to: "/talknow", label: "Partnerships (TalkNOW)" },
+  { to: "/miniboss", label: "MiniBOSS" },
+  { to: "/tripod", label: "Tripod" },
+  { to: "/miniboss-holiday", label: "Holiday Programs" },
+  { to: "/talknow", label: "TalkNOW" },
   { to: "/#programs", label: "ELC (Coming soon)" },
 ];
 
 const navLinkClass =
   "text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-pearl-aqua-400 transition-colors duration-200 !no-underline";
-const navLinkActiveClass = "text-pearl-aqua-400";
+const navLinkActiveClass =
+  "text-pearl-aqua-400 border-b-2 border-pearl-aqua-400 pb-0.5";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
