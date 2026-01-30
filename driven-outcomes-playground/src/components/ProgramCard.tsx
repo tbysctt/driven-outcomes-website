@@ -39,7 +39,7 @@ export function ProgramCard({
       >
         {badge}
       </div>
-      <h3 className="text-xl sm:text-2xl font-extrabold uppercase tracking-tight text-slate-grey-900 mb-3 sm:mb-4">
+      <h3 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-grey-900 mb-3 sm:mb-4">
         {title}
       </h3>
       <p className="text-sm sm:text-base text-slate-grey-600 mb-5 sm:mb-6 leading-relaxed">
