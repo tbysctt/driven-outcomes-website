@@ -1,12 +1,71 @@
 import { BrandPageHero } from "../components/BrandPageHero";
 import { GradientBorderButton } from "../components/GradientBorderButton";
 import mbhpLogo from "../assets/brand-logos/miniboss-holiday-programs/MBHP_PurpleTransparent.png";
-import { ProgramCard } from "../components/ProgramCard";
+import { ProgramCard, type ProgramCardProps } from "../components/ProgramCard";
 import { MailingList } from "../components/MailingList";
 import { HolidayProgramFlyers } from "../components/HolidayProgramFlyers";
 
 const PHONE_NUMBER = "03 9415 6327";
 const PHONE_HREF = "tel:+61394156327";
+
+const incursionPrograms: ProgramCardProps[] = [
+  {
+    badge: "OSHC & Vacation Care",
+    title: "Bombs Away",
+    description:
+      "Description here about the incursion program. Description here about the incursion program.",
+    tags: ["Experimentation", "Teamwork", "Cause & effect", "Problem solving"],
+    variant: "cool-steel",
+  },
+  {
+    badge: "OSHC & Vacation Care",
+    title: "Smoothie Time",
+    description:
+      "Description here about the incursion program. Description here about the incursion program.",
+    tags: ["Nutrition", "Healthy eating", "Creativity", "Hands-on learning"],
+    variant: "pearl-aqua",
+  },
+  {
+    badge: "OSHC & Vacation Care",
+    title: "Code Busters",
+    description:
+      "Description here about the incursion program. Description here about the incursion program.",
+    tags: ["Coding", "Logic", "Problem solving", "Digital skills"],
+    variant: "pearl-aqua",
+  },
+  {
+    badge: "OSHC & Vacation Care",
+    title: "Super Sleuths",
+    description:
+      "Description here about the incursion program. Description here about the incursion program.",
+    tags: ["Investigation", "Critical thinking", "Deduction", "Teamwork"],
+    variant: "cool-steel",
+  },
+  {
+    badge: "OSHC & Vacation Care",
+    title: "The Mystery Bag",
+    description:
+      "Description here about the incursion program. Description here about the incursion program.",
+    tags: ["Curiosity", "Discovery", "Problem solving", "Creativity"],
+    variant: "cool-steel",
+  },
+  {
+    badge: "OSHC & Vacation Care",
+    title: "The Chocolate Boss",
+    description:
+      "Description here about the incursion program. Description here about the incursion program.",
+    tags: ["Enterprise", "Creativity", "Teamwork", "Real-world skills"],
+    variant: "pearl-aqua",
+  },
+  {
+    badge: "OSHC & Vacation Care",
+    title: "Superhero",
+    description:
+      "Description here about the incursion program. Description here about the incursion program.",
+    tags: ["Resilience", "Confidence", "Teamwork", "Creativity"],
+    variant: "pearl-aqua",
+  },
+];
 
 export function MiniBossHolidayPage() {
   return (
@@ -83,55 +142,16 @@ export function MiniBossHolidayPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            <ProgramCard
-              badge="OSHC & Vacation Care"
-              title="Bombs Away"
-              description="Description here about the incursion program. Description here about the incursion program."
-              tags={["Experimentation", "Teamwork", "Cause & effect", "Problem solving"]}
-              variant="cool-steel"
-            />
-            <ProgramCard
-              badge="OSHC & Vacation Care"
-              title="Smoothie Time"
-              description="Description here about the incursion program. Description here about the incursion program."
-              tags={["Nutrition", "Healthy eating", "Creativity", "Hands-on learning"]}
-              variant="pearl-aqua"
-            />
-            <ProgramCard
-              badge="OSHC & Vacation Care"
-              title="Code Busters"
-              description="Description here about the incursion program. Description here about the incursion program."
-              tags={["Coding", "Logic", "Problem solving", "Digital skills"]}
-              variant="pearl-aqua"
-            />
-            <ProgramCard
-              badge="OSHC & Vacation Care"
-              title="Super Sleuths"
-              description="Description here about the incursion program. Description here about the incursion program."
-              tags={["Investigation", "Critical thinking", "Deduction", "Teamwork"]}
-              variant="cool-steel"
-            />
-            <ProgramCard
-              badge="OSHC & Vacation Care"
-              title="The Mystery Bag"
-              description="Description here about the incursion program. Description here about the incursion program."
-              tags={["Curiosity", "Discovery", "Problem solving", "Creativity"]}
-              variant="cool-steel"
-            />
-            <ProgramCard
-              badge="OSHC & Vacation Care"
-              title="The Chocolate Boss"
-              description="Description here about the incursion program. Description here about the incursion program."
-              tags={["Enterprise", "Creativity", "Teamwork", "Real-world skills"]}
-              variant="pearl-aqua"
-            />
-            <ProgramCard
-              badge="OSHC & Vacation Care"
-              title="Superhero"
-              description="Description here about the incursion program. Description here about the incursion program."
-              tags={["Resilience", "Confidence", "Teamwork", "Creativity"]}
-              variant="pearl-aqua"
-            />
+            {incursionPrograms.map((program) => (
+              <ProgramCard
+                key={program.title}
+                badge={program.badge}
+                title={program.title}
+                description={program.description}
+                tags={program.tags}
+                variant={program.variant}
+              />
+            ))}
           </div>
         </div>
       </section>

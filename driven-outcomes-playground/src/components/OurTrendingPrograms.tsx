@@ -1,4 +1,24 @@
-import { ProgramCard } from "./ProgramCard";
+import { ProgramCard, type ProgramCardProps } from "./ProgramCard";
+
+const trendingPrograms: ProgramCardProps[] = [
+  {
+    badge: "OSHC & Vacation Care",
+    title: "Bombs Away",
+    description:
+      "description here. Description here. Description here. Description here. Description here.",
+    tags: ["Critical thinking", "Creativity", "Teamwork", "Problem solving"],
+    variant: "cool-steel",
+  },
+
+  {
+    badge: "Primary School",
+    title: "Smoothie Bar",
+    description:
+      "description here. Description here. Description here. Description here. Description here.",
+    tags: ["Enterprise", "Leadership", "Real-world skills", "Collaboration"],
+    variant: "pearl-aqua",
+  },
+];
 
 export function OurTrendingPrograms() {
   return (
@@ -10,25 +30,21 @@ export function OurTrendingPrograms() {
           </h2>
           <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-grey-600 max-w-2xl mx-auto px-2 sm:px-0">
-            We deliver incursions across all age groups. Here are the programs people are loving at the moment!
+            We deliver incursions across all age groups. Here are the programs
+            people are loving at the moment!
           </p>
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-          <ProgramCard
-            badge="Primary School"
-            title="INCURSION/PROGRAM NAME"
-            description="Description here. Description here. Description here. Description here. Description here."
-            tags={["Critical thinking", "Creativity", "Teamwork", "Problem solving"]}
-            variant="cool-steel"
-          />
-          <ProgramCard
-            badge="Secondary School"
-            title="INCURSION/PROGRAM NAME"
-            tags={["Enterprise", "Leadership", "Real-world skills", "Collaboration"]}
-            description="Description here. Description here. Description here. Description here. Description here."
-            variant="pearl-aqua"
-          />
+          {trendingPrograms.map((program) => (
+            <ProgramCard
+              badge={program.badge}
+              title={program.title}
+              description={program.description}
+              tags={program.tags}
+              variant={program.variant}
+            />
+          ))}
         </div>
       </div>
     </section>
