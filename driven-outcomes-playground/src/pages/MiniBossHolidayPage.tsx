@@ -1,41 +1,11 @@
 import { BrandPageHero } from "../components/BrandPageHero";
-import { FaqSection, type FaqItem } from "../components/FaqSection";
+import { FaqSection } from "../components/FaqSection";
 import { GradientBorderButton } from "../components/GradientBorderButton";
 import mbhpLogo from "../assets/brand-logos/miniboss-holiday-programs/MBHP_PurpleTransparent.png";
 import { ProgramCard, type ProgramCardProps } from "../components/ProgramCard";
-import { MailingList } from "../components/MailingList";
-import { HolidayProgramFlyers } from "../components/HolidayProgramFlyers";
-
-const FAQ_ITEMS: FaqItem[] = [
-  {
-    question: "What are the minimum numbers for a booking?",
-    answer:
-      "Minimum numbers apply for all holiday incursions. Please give us a call on 03 9415 6327 to discuss your group size and we’ll help find an option that works.",
-  },
-  {
-    question: "Who can book MiniBOSS holiday incursions?",
-    answer:
-      "Our holiday incursions are designed for Outside School Hours Care (OSHC) and Vacation Care providers. If you run an OSHC or vacation care program, we’d love to hear from you.",
-  },
-  {
-    question: "How long do incursions run?",
-    answer:
-      "Session length depends on the program. When you call to book, we’ll outline the duration and schedule for your chosen incursion so you can plan your day.",
-  },
-  {
-    question: "What skills do the incursions focus on?",
-    answer:
-      "Our incursions are designed to be more than just fun. They help children explore critical and creative thinking, curiosity, teamwork, problem solving, communication skills and resilience, through hands-on activities.",
-  },
-  {
-    question: "How do I book or find out more?",
-    answer:
-      "Give us a call on 03 9415 6327 to discuss dates, programs and pricing. We’re happy to answer any questions and help you choose the right incursion for your group.",
-  },
-];
-
-const PHONE_NUMBER = "03 9415 6327";
-const PHONE_HREF = "tel:+61394156327";
+import { CTA } from "../components/CTA";
+import { miniBossHolidayProgramFaqs } from "../data/miniboss-holiday-faqs";
+import { Link } from "react-router-dom";
 
 const incursionPrograms: ProgramCardProps[] = [
   {
@@ -156,22 +126,11 @@ export function MiniBossHolidayPage() {
               </p>
             </div>
             <div className="mt-10 text-center">
-              <p className="text-slate-grey-600 mb-4">
-                To find out more, give us a call on{" "}
-                <a
-                  href={PHONE_HREF}
-                  className="font-bold text-pearl-aqua-600 hover:text-pearl-aqua-700 no-underline!"
-                >
-                  {PHONE_NUMBER}
-                </a>
-                .
+              <p className="text-slate-grey-600 mb-5">
+                Reach out today to find out more!
               </p>
-              <GradientBorderButton
-                href={PHONE_HREF}
-                size="md"
-                variant="rounded"
-              >
-                Call us now
+              <GradientBorderButton href="/contact" size="md" variant="rounded">
+                Enquire now
               </GradientBorderButton>
             </div>
           </div>
@@ -205,29 +164,40 @@ export function MiniBossHolidayPage() {
         </div>
       </section>
 
-      {/* CTA */}
       <section className="py-12 sm:py-16 md:py-20 bg-slate-grey-50">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-2xl mx-auto text-center">
             <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-slate-grey-900 mb-2">
-              Looking for an incursion these holidays?
+              MiniBOSS Holiday Program Resources
             </h2>
             <p className="text-slate-grey-600 mb-6 sm:mb-8">
-              We’d love to hear from you. Give us a call to discuss dates and
-              programs.
+              Decription Description
             </p>
-            <GradientBorderButton href={PHONE_HREF} size="md" variant="rounded">
-              Give us a call on {PHONE_NUMBER}
-            </GradientBorderButton>
+            FLYERS GO HERE
+            <div>
+              <Link
+                to={"/miniboss-holiday-programs/resources"}
+                className="group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-thistle-600 hover:text-thistle-800"
+              >
+                See all
+                <span
+                  aria-hidden
+                  className="transition-transform group-hover:translate-x-0.5"
+                >
+                  →
+                </span>
+              </Link>
+            </div>
           </div>
         </div>
       </section>
 
-      <FaqSection items={FAQ_ITEMS} />
+      <FaqSection items={miniBossHolidayProgramFaqs} />
 
-      <HolidayProgramFlyers />
-
-      <MailingList />
+      <CTA
+        title="Looking for an incursion or excursion these holidays?"
+        description="We’d love to hear from you. Enquire now to discuss dates and programs."
+      />
     </>
   );
 }

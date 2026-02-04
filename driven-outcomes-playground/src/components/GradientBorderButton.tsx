@@ -1,6 +1,9 @@
+import { Link } from "react-router-dom";
+
 interface GradientBorderButtonProps {
   children: React.ReactNode;
   href?: string;
+  to?: string;
   onClick?: () => void;
   variant?: "default" | "rounded";
   size?: "sm" | "md" | "lg";
@@ -11,6 +14,7 @@ interface GradientBorderButtonProps {
 export function GradientBorderButton({
   children,
   href,
+  to,
   onClick,
   variant = "default",
   size = "md",
@@ -58,17 +62,18 @@ export function GradientBorderButton({
     WebkitBackgroundClip: "padding-box, border-box",
   };
 
+  const sharedProps = {
+    onClick,
+    className: `${buttonClasses} !no-underline`,
+    style: buttonStyle,
+  };
+
   if (href) {
-    return (
-      <a
-        href={href}
-        onClick={onClick}
-        className={`${buttonClasses} !no-underline`}
-        style={buttonStyle}
-      >
-        {children}
-      </a>
-    );
+    return <a href={href} {...sharedProps}>{children}</a>;
+  }
+
+  if (to) {
+    return <Link to={to} {...sharedProps}>{children}</Link>;
   }
 
   return (

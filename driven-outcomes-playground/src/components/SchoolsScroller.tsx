@@ -1,5 +1,6 @@
 import { useRef, useEffect } from "react";
 import { schools } from "../data/schools-and-organisations";
+import { Link } from "react-router-dom";
 
 const ROWS = 5;
 const COLUMN_WIDTH = 280;
@@ -148,8 +149,8 @@ export function SchoolsScroller() {
         </div>
 
         <p className="mt-10 text-center">
-          <a
-            href={"schools-and-organisations"}
+          <Link
+            to={"schools-and-organisations"}
             className="group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-thistle-600 hover:text-thistle-800"
           >
             See all
@@ -159,7 +160,7 @@ export function SchoolsScroller() {
             >
               →
             </span>
-          </a>
+          </Link>
         </p>
       </div>
     </section>

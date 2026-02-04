@@ -18,9 +18,14 @@ export function ProgramCard(props: ProgramCardProps) {
       >
         {props.targetAudience}
       </span>
-      <h3 className="mb-3 text-xl font-bold tracking-tight text-slate-grey-900 sm:mb-4 sm:text-2xl">
-        {props.title}
-      </h3>
+      <div className="mb-3">
+        <Link
+          className="text-xl font-bold tracking-tight text-pearl-aqua-700 sm:mb-4 sm:text-2xl"
+          to={props.linkPath}
+        >
+          {props.title}
+        </Link>
+      </div>
       <p className="mb-5 text-sm leading-relaxed text-slate-grey-600 sm:mb-6 sm:text-base">
         {props.description}
       </p>

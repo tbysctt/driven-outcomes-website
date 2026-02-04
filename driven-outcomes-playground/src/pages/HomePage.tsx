@@ -5,7 +5,7 @@ import { SchoolsScroller } from "../components/SchoolsScroller";
 import { Stats } from "../components/Stats";
 import { Intro } from "../components/Intro";
 import { Testimonials } from "../components/Testimonials";
-import { MailingList } from "../components/MailingList";
+import { CTA } from "../components/CTA";
 
 export function HomePage() {
   return (
@@ -17,7 +17,7 @@ export function HomePage() {
       <OurTrendingPrograms />
       {/* <LogoScroller /> */}
       <Testimonials />
-      <MailingList />
+      <CTA />
     </>
   );
 }
