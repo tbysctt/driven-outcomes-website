@@ -10,59 +10,79 @@ const PHONE_HREF = "tel:+61394156327";
 
 const incursionPrograms: ProgramCardProps[] = [
   {
-    badge: "OSHC & Vacation Care",
+    targetAudience: "OSHC & Vacation Care",
     title: "Bombs Away",
     description:
       "Description here about the incursion program. Description here about the incursion program.",
-    tags: ["Experimentation", "Teamwork", "Cause & effect", "Problem solving"],
+    focusedSkills: [
+      "Experimentation",
+      "Teamwork",
+      "Cause & effect",
+      "Problem solving",
+    ],
     variant: "cool-steel",
   },
   {
-    badge: "OSHC & Vacation Care",
+    targetAudience: "OSHC & Vacation Care",
     title: "Smoothie Time",
     description:
       "Description here about the incursion program. Description here about the incursion program.",
-    tags: ["Nutrition", "Healthy eating", "Creativity", "Hands-on learning"],
+    focusedSkills: [
+      "Nutrition",
+      "Healthy eating",
+      "Creativity",
+      "Hands-on learning",
+    ],
     variant: "pearl-aqua",
   },
   {
-    badge: "OSHC & Vacation Care",
+    targetAudience: "OSHC & Vacation Care",
     title: "Code Busters",
     description:
       "Description here about the incursion program. Description here about the incursion program.",
-    tags: ["Coding", "Logic", "Problem solving", "Digital skills"],
+    focusedSkills: ["Coding", "Logic", "Problem solving", "Digital skills"],
     variant: "pearl-aqua",
   },
   {
-    badge: "OSHC & Vacation Care",
+    targetAudience: "OSHC & Vacation Care",
     title: "Super Sleuths",
     description:
       "Description here about the incursion program. Description here about the incursion program.",
-    tags: ["Investigation", "Critical thinking", "Deduction", "Teamwork"],
+    focusedSkills: [
+      "Investigation",
+      "Critical thinking",
+      "Deduction",
+      "Teamwork",
+    ],
     variant: "cool-steel",
   },
   {
-    badge: "OSHC & Vacation Care",
+    targetAudience: "OSHC & Vacation Care",
     title: "The Mystery Bag",
     description:
       "Description here about the incursion program. Description here about the incursion program.",
-    tags: ["Curiosity", "Discovery", "Problem solving", "Creativity"],
+    focusedSkills: ["Curiosity", "Discovery", "Problem solving", "Creativity"],
     variant: "cool-steel",
   },
   {
-    badge: "OSHC & Vacation Care",
+    targetAudience: "OSHC & Vacation Care",
     title: "The Chocolate Boss",
     description:
       "Description here about the incursion program. Description here about the incursion program.",
-    tags: ["Enterprise", "Creativity", "Teamwork", "Real-world skills"],
+    focusedSkills: [
+      "Enterprise",
+      "Creativity",
+      "Teamwork",
+      "Real-world skills",
+    ],
     variant: "pearl-aqua",
   },
   {
-    badge: "OSHC & Vacation Care",
+    targetAudience: "OSHC & Vacation Care",
     title: "Superhero",
     description:
       "Description here about the incursion program. Description here about the incursion program.",
-    tags: ["Resilience", "Confidence", "Teamwork", "Creativity"],
+    focusedSkills: ["Resilience", "Confidence", "Teamwork", "Creativity"],
     variant: "pearl-aqua",
   },
 ];
@@ -84,7 +104,7 @@ export function MiniBossHolidayPage() {
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900">
                 MiniBOSS Holiday Programs
               </h2>
-              <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto" />
+              <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-linear-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto" />
               <p className="mt-4 text-lg sm:text-xl font-semibold text-pearl-aqua-600">
                 More than just fun!
               </p>
@@ -111,7 +131,7 @@ export function MiniBossHolidayPage() {
                 To find out more, give us a call on{" "}
                 <a
                   href={PHONE_HREF}
-                  className="font-bold text-pearl-aqua-600 hover:text-pearl-aqua-700 !no-underline"
+                  className="font-bold text-pearl-aqua-600 hover:text-pearl-aqua-700 no-underline!"
                 >
                   {PHONE_NUMBER}
                 </a>
@@ -133,9 +153,9 @@ export function MiniBossHolidayPage() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="text-center mb-10 sm:mb-12 md:mb-16">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900">
-              Our 7 Holiday Incursions
+              Our Holiday Incursions and Excursions
             </h2>
-            <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
+            <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-linear-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
             <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-grey-600 max-w-2xl mx-auto px-2 sm:px-0">
               Hands-on, fun programs designed for OSHC and vacation care.
             </p>
@@ -145,10 +165,10 @@ export function MiniBossHolidayPage() {
             {incursionPrograms.map((program) => (
               <ProgramCard
                 key={program.title}
-                badge={program.badge}
+                targetAudience={program.targetAudience}
                 title={program.title}
                 description={program.description}
-                tags={program.tags}
+                focusedSkills={program.focusedSkills}
                 variant={program.variant}
               />
             ))}

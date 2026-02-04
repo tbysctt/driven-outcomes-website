@@ -2,20 +2,30 @@ import { ProgramCard, type ProgramCardProps } from "./ProgramCard";
 
 const trendingPrograms: ProgramCardProps[] = [
   {
-    badge: "OSHC & Vacation Care",
+    targetAudience: "OSHC & Vacation Care",
     title: "Bombs Away",
     description:
       "description here. Description here. Description here. Description here. Description here.",
-    tags: ["Critical thinking", "Creativity", "Teamwork", "Problem solving"],
+    focusedSkills: [
+      "Critical thinking",
+      "Creativity",
+      "Teamwork",
+      "Problem solving",
+    ],
     variant: "cool-steel",
   },
 
   {
-    badge: "Primary School",
+    targetAudience: "Primary School",
     title: "Smoothie Bar",
     description:
       "description here. Description here. Description here. Description here. Description here.",
-    tags: ["Enterprise", "Leadership", "Real-world skills", "Collaboration"],
+    focusedSkills: [
+      "Enterprise",
+      "Leadership",
+      "Real-world skills",
+      "Collaboration",
+    ],
     variant: "pearl-aqua",
   },
 ];
@@ -28,7 +38,7 @@ export function OurTrendingPrograms() {
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900">
             Here's what's trending
           </h2>
-          <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
+          <div className="mt-3 sm:mt-4 h-1 w-20 sm:w-24 bg-linear-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div>
           <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-grey-600 max-w-2xl mx-auto px-2 sm:px-0">
             We deliver incursions across all age groups. Here are the programs
             people are loving at the moment!
@@ -38,10 +48,10 @@ export function OurTrendingPrograms() {
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {trendingPrograms.map((program) => (
             <ProgramCard
-              badge={program.badge}
+              targetAudience={program.targetAudience}
               title={program.title}
               description={program.description}
-              tags={program.tags}
+              focusedSkills={program.focusedSkills}
               variant={program.variant}
             />
           ))}
