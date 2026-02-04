@@ -2,7 +2,6 @@ import { LandingHero } from "../components/LandingHero";
 import { OurTrendingPrograms } from "../components/OurTrendingPrograms";
 import { Partners } from "../components/Partners";
 import { SchoolsScroller } from "../components/SchoolsScroller";
-// import { Skills } from "../components/Skills";
 import { Stats } from "../components/Stats";
 import { Intro } from "../components/Intro";
 import { Testimonials } from "../components/Testimonials";
@@ -13,9 +12,8 @@ export function HomePage() {
     <>
       <LandingHero />
       <Stats />
-      <SchoolsScroller />
+      <SchoolsScroller seeAllHref="/schools-and-organisations" />
       <Intro />
-      {/* <Skills /> */}
       <OurTrendingPrograms />
       <Partners />
       <Testimonials />

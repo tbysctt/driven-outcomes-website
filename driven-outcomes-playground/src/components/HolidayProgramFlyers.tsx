@@ -1,6 +1,3 @@
-// import flyer1 from ""
-
-
 export function HolidayProgramFlyers() {
   return (
     <section className="py-12 sm:py-16 md:py-20">
@@ -15,8 +12,6 @@ export function HolidayProgramFlyers() {
           </p>
 
           FLYERS GO HERE
-
-          {/* <img src="" */}
         </div>
       </div>
     </section>

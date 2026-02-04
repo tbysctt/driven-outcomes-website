@@ -1,6 +1,5 @@
 import { Link } from "react-router-dom";
 import { useTypingAnimation } from "../hooks/useTypingAnimation";
-// import heroVideo from "../assets/vecteezy_two-girls-run-to-play-with-extend-the-arms-and_9171699.mp4";
 import heroVideo from "../assets/Video-Header-2.mp4";
 
 const headingOptions: string[] = [

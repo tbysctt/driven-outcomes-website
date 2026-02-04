@@ -1,8 +1,4 @@
-// import { GradientBorderButton } from "./GradientBorderButton";
 import heroVideo from "../assets/vecteezy_two-girls-run-to-play-with-extend-the-arms-and_9171699.mp4";
-
-// const PHONE_NUMBER = "03 9415 6327";
-// const PHONE_HREF = "tel:+61394156327";
 
 interface Props {
   title: string;
