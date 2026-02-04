@@ -67,7 +67,7 @@ function AlphabetNav({
 }) {
   return (
     <nav
-      className="flex flex-wrap justify-center gap-1 sm:gap-2 mb-10"
+      className="flex flex-wrap gap-1 sm:gap-2 mb-10"
       aria-label="Jump to letter"
     >
       {letters.map((letter) => (
@@ -98,7 +98,7 @@ function ListWithLetterSections({
 
   return (
     <div className="max-w-6xl mx-auto mb-14 last:mb-0">
-      <h2 className="text-xl sm:text-2xl md:text-3xl uppercase font-extrabold tracking-tight text-slate-grey-900 mb-2">
+      <h2 className="text-xl sm:text-2xl md:text-3xl uppercase font-extrabold tracking-tight text-slate-grey-900 mb-5">
         {title}
       </h2>
       <AlphabetNav letters={letters} idPrefix={idPrefix} />
