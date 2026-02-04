@@ -1,5 +1,52 @@
 const WEEKDAYS = ["M", "T", "W", "T", "F", "S", "S"];
 
+const AVAILABILITY_LEVELS = [
+  { label: "Open for Bookings", color: "bg-primary-brand-500", textColor: "text-white" },
+  { label: "Moderate Availability", color: "bg-primary-brand-300", textColor: "text-white" },
+  { label: "Limited Availability", color: "bg-secondary-brand-400", textColor: "text-white" },
+  {
+    label: "Fully Booked / Check for Cancellations",
+    color: "bg-highlight-500",
+    textColor: "text-white",
+  },
+  { label: "Unavailable - Contact Us", color: "bg-neutral-400", textColor: "text-white" },
+] as const;
+
+export type AvailabilityStatus = 0 | 1 | 2 | 3 | 4;
+
+function dateKey(year: number, month: number, day: number): string {
+  const m = String(month).padStart(2, "0");
+  const d = String(day).padStart(2, "0");
+  return `${year}-${m}-${d}`;
+}
+
+function buildAvailabilityByDate(): Record<string, AvailabilityStatus> {
+  const result: Record<string, AvailabilityStatus> = {};
+  const months = [
+    { year: 2026, month: 2, days: 28 },
+    { year: 2026, month: 3, days: 31 },
+    { year: 2026, month: 4, days: 30 },
+  ];
+  for (const { year, month, days } of months) {
+    for (let day = 1; day <= days; day++) {
+      const d = new Date(year, month - 1, day);
+      const dayOfWeek = d.getDay();
+      const isWeekday = dayOfWeek >= 1 && dayOfWeek <= 5;
+      if (isWeekday) {
+        result[dateKey(year, month, day)] = 0;
+      }
+    }
+  }
+  result["2026-02-11"] = 1;
+  result["2026-03-04"] = 1;
+  result["2026-04-08"] = 1;
+  result["2026-02-19"] = 3;
+  result["2026-03-25"] = 3;
+  return result;
+}
+
+const AVAILABILITY_BY_DATE = buildAvailabilityByDate();
+
 function getCalendarDays(year: number, month: number) {
   const first = new Date(year, month - 1, 1);
   const daysInMonth = new Date(year, month, 0).getDate();
@@ -9,7 +56,13 @@ function getCalendarDays(year: number, month: number) {
   return [...padding, ...days];
 }
 
-function MonthCalendar({ year, month }: { year: number; month: number }) {
+interface MonthCalendarProps {
+  year: number;
+  month: number;
+  availabilityByDate: Record<string, AvailabilityStatus>;
+}
+
+function MonthCalendar({ year, month, availabilityByDate }: MonthCalendarProps) {
   const days = getCalendarDays(year, month);
   const monthName = new Date(year, month - 1, 1).toLocaleString("default", {
     month: "long",
@@ -26,33 +79,30 @@ function MonthCalendar({ year, month }: { year: number; month: number }) {
             {d}
           </span>
         ))}
-        {days.map((d, i) =>
-          d === null ? (
-            <span key={i} className="py-1" />
-          ) : (
+        {days.map((d, i) => {
+          if (d === null) {
+            return <span key={i} className="py-1" />;
+          }
+          const key = dateKey(year, month, d);
+          const status = availabilityByDate[key];
+          const level = status !== undefined ? AVAILABILITY_LEVELS[status] : null;
+          const bgClass = level ? level.color : "bg-neutral-100";
+          const textClass = level ? level.textColor : "text-neutral-700";
+
+          return (
             <span
               key={i}
-              className="py-1 text-sm text-neutral-700 bg-neutral-100 rounded"
+              className={`py-1 text-sm rounded ${bgClass} ${textClass}`}
+              title={level ? level.label : undefined}
             >
               {d}
             </span>
-          ),
-        )}
+          );
+        })}
       </div>
     </div>
   );
 }
-
-const AVAILABILITY_LEVELS = [
-  { label: "Open for Bookings", color: "bg-primary-brand-500" },
-  { label: "Moderate Availability", color: "bg-primary-brand-300" },
-  { label: "Limited Availability", color: "bg-secondary-brand-400" },
-  {
-    label: "Fully Booked / Check for Cancellations",
-    color: "bg-highlight-500",
-  },
-  { label: "Unavailable - Contact Us", color: "bg-neutral-400" },
-] as const;
 
 export function BookingAvailability() {
   return (
@@ -73,13 +123,22 @@ export function BookingAvailability() {
               </span>
             ))}
           </div>
-          <h3 className="text-lg font-bold text-neutral-800 mb-4 text-center">
-            School Holidays
-          </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-            <MonthCalendar year={2026} month={2} />
-            <MonthCalendar year={2026} month={3} />
-            <MonthCalendar year={2026} month={4} />
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-14">
+            <MonthCalendar
+              year={2026}
+              month={2}
+              availabilityByDate={AVAILABILITY_BY_DATE}
+            />
+            <MonthCalendar
+              year={2026}
+              month={3}
+              availabilityByDate={AVAILABILITY_BY_DATE}
+            />
+            <MonthCalendar
+              year={2026}
+              month={4}
+              availabilityByDate={AVAILABILITY_BY_DATE}
+            />
           </div>
         </div>
       </div>

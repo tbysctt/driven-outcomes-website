@@ -36,8 +36,8 @@ export function ContactPage() {
               Contact Us
             </h1>
             <p className="text-lg sm:text-xl text-neutral-300 leading-relaxed">
-              Reach out to discover how we can help your students develop essential life
-              skills and capabilities
+              Reach out to discover how we can help your students develop
+              essential life skills and capabilities
             </p>
           </div>
         </div>
@@ -145,6 +145,31 @@ export function ContactPage() {
             <div className="bg-white border border-neutral-200/40 rounded-md p-6 sm:p-8">
               <EnquiryForm />
             </div>
+          </div>
+        </div>
+      </section>
+      <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-neutral-900 text-center mb-6">
+              Find us
+            </h2>
+            <div className="aspect-video w-full overflow-hidden rounded-2xl border border-neutral-200 shadow-sm">
+              <iframe
+                title="Driven Outcomes – 3 Abbott St, Alphington VIC 3078"
+                src="https://www.google.com/maps?q=3+Abbott+St,+Alphington+VIC+3078,+Australia&output=embed"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                className="h-full w-full"
+              />
+            </div>
+            <p className="mt-3 text-center text-sm text-neutral-600">
+              3 Abbott St, Alphington VIC 3078
+            </p>
           </div>
         </div>
       </section>
