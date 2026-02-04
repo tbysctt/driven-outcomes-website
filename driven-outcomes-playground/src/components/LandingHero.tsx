@@ -1,11 +1,8 @@
 import { Link } from "react-router-dom";
 import { useTypingAnimation } from "../hooks/useTypingAnimation";
-import heroVideo from "../assets/Video-Header-2.mp4";
 
 const headingOptions: string[] = [
   "Curious Minds",
-  // "Primary Students",
-  // "Secondary Students",
   "Future Leaders",
   "Problem Solvers",
   "Team Players"
@@ -22,19 +19,35 @@ export function LandingHero() {
 
   return (
     <section className="relative overflow-hidden py-16 sm:py-20 md:py-28 lg:py-32 min-h-125 sm:min-h-150 md:min-h-175 flex items-center">
-      {/* Background Video */}
-      <video
-        autoPlay
-        loop
-        muted
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src={heroVideo} type="video/mp4" />
-      </video>
-      
-      {/* Dark Overlay for Text Readability - Stronger on mobile */}
-      <div className="absolute inset-0 bg-linear-to-br from-neutral-900/85 via-neutral-800/75 to-neutral-950/85 sm:from-neutral-900/80 sm:via-neutral-800/70 sm:to-neutral-950/80 z-1"></div>
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          background:
+            "linear-gradient(135deg, var(--color-neutral-800) 0%, var(--color-primary-brand-800) 30%, var(--color-secondary-brand-700) 60%, var(--color-highlight-700) 85%, var(--color-neutral-800) 100%)",
+        }}
+      />
+      <div
+        className="hero-glow absolute inset-0 z-0 opacity-70"
+        style={{
+          background:
+            "radial-gradient(ellipse 90% 60% at 50% -10%, var(--color-primary-brand-400), transparent 55%)",
+        }}
+      />
+      <div
+        className="hero-glow hero-glow-delay-2 absolute inset-0 z-0 opacity-70"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 50% at 110% 40%, var(--color-secondary-brand-400), transparent 50%)",
+        }}
+      />
+      <div
+        className="hero-glow hero-glow-delay-3 absolute inset-0 z-0 opacity-70"
+        style={{
+          background:
+            "radial-gradient(ellipse 60% 45% at -10% 90%, var(--color-highlight-400), transparent 50%)",
+        }}
+      />
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_bottom,transparent_0%,var(--color-neutral-800/60)_100%)]" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-2 w-full">
         <div className="max-w-4xl mx-auto text-center">

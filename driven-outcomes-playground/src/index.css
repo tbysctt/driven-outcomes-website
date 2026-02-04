@@ -200,3 +200,28 @@
 .partners-scroll:hover {
   animation-play-state: paused;
 }
+
+@keyframes hero-glow {
+  0%,
+  100% {
+    opacity: 0.5;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.95;
+    transform: scale(1.28);
+  }
+}
+
+.hero-glow {
+  animation: hero-glow 5s ease-in-out infinite;
+  transform-origin: center center;
+}
+
+.hero-glow-delay-2 {
+  animation-delay: -1.67s;
+}
+
+.hero-glow-delay-3 {
+  animation-delay: -3.34s;
+}
