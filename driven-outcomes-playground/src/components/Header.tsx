@@ -7,6 +7,7 @@ const navLinks = [
   { to: "/tripod", label: "Tripod" },
   { to: "/miniboss-holiday", label: "Holiday Programs" },
   { to: "/talknow", label: "TalkNOW" },
+  { to: "/contact", label: "Contact" },
   { to: "/#programs", label: "ELC (Coming soon)" },
 ];
 
@@ -63,7 +64,7 @@ export function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden lg:block">
-            <GradientBorderButton href="#contact" size="sm">
+            <GradientBorderButton to="/contact" size="sm">
               Enquire now
             </GradientBorderButton>
           </div>
@@ -146,7 +147,7 @@ export function Header() {
             )}
             <div className="mt-2">
               <GradientBorderButton
-                href="#contact"
+                to="/contact"
                 onClick={() => setIsMenuOpen(false)}
                 variant="rounded"
                 size="sm"

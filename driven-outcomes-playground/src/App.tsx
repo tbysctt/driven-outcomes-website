@@ -6,6 +6,7 @@ import { MiniBossPage } from "./pages/MiniBossPage";
 import { MiniBossHolidayPage } from "./pages/MiniBossHolidayPage";
 import { SchoolsAndOrganisationsPage } from "./pages/SchoolsAndOrganisationsPage";
 import { TalkNowPage } from "./pages/TalkNowPage";
+import { ContactPage } from "./pages/ContactPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="miniboss-holiday" element={<MiniBossHolidayPage />} />
         <Route path="talknow" element={<TalkNowPage />} />
         <Route path="schools-and-organisations" element={<SchoolsAndOrganisationsPage />} />
+        <Route path="contact" element={<ContactPage />} />
       </Route>
     </Routes>
   );
