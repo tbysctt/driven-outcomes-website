@@ -100,20 +100,20 @@ export function SchoolsScroller() {
   }, []);
 
   return (
-    <section className="py-8 sm:py-8 bg-slate-grey-100">
+    <section className="py-8 sm:py-8 bg-neutral-100">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-grey-900 mb-2">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 mb-2">
             Schools We've Worked With
           </h2>
-          <p className="text-lg text-slate-grey-600">
+          <p className="text-lg text-neutral-600">
             Hundreds of schools  and organisations trust us across Australia
           </p>
         </div>
 
         <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 bg-linear-to-r from-slate-grey-100 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 bg-linear-to-l from-slate-grey-100 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 bg-linear-to-r from-neutral-100 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 bg-linear-to-l from-neutral-100 to-transparent z-10 pointer-events-none" />
 
           <div
             ref={containerRef}
@@ -136,7 +136,7 @@ export function SchoolsScroller() {
                   {column.map((name, rowIndex) => (
                     <div
                       key={`${colIndex}-${rowIndex}`}
-                      className="text-sm sm:text-base font-medium text-slate-grey-700 whitespace-nowrap truncate pointer-events-none"
+                      className="text-sm sm:text-base font-medium text-neutral-700 whitespace-nowrap truncate pointer-events-none"
                       title={name}
                     >
                       {name}
@@ -151,7 +151,7 @@ export function SchoolsScroller() {
         <p className="mt-10 text-center">
           <Link
             to={"schools-and-organisations"}
-            className="group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-thistle-600 hover:text-thistle-800"
+            className="group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-highlight-600 hover:text-highlight-800"
           >
             See all
             <span

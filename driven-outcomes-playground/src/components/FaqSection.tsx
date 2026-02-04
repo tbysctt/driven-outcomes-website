@@ -22,10 +22,10 @@ export function FaqSection({
     <section className="py-12 sm:py-16 md:py-20" id={id}>
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900 text-center mb-10 sm:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-neutral-900 text-center mb-10 sm:mb-12">
             {title}
           </h2>
-          <div className="border border-slate-grey-200 rounded-2xl overflow-hidden bg-white divide-y divide-slate-grey-200">
+          <div className="border border-neutral-200 rounded-2xl overflow-hidden bg-white divide-y divide-neutral-200">
             {items.map((item, index) => {
               const isOpen = openIndex === index;
               return (
@@ -34,13 +34,13 @@ export function FaqSection({
                     type="button"
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     aria-expanded={isOpen}
-                    className="flex w-full items-center justify-between gap-4 py-5 px-5 sm:px-6 text-left font-semibold text-slate-grey-900 hover:bg-slate-grey-50 transition-colors"
+                    className="flex w-full items-center justify-between gap-4 py-5 px-5 sm:px-6 text-left font-semibold text-neutral-900 hover:bg-neutral-50 transition-colors"
                   >
                     <span className="text-base sm:text-lg">
                       {item.question}
                     </span>
                     <svg
-                      className={`h-5 w-5 shrink-0 text-slate-grey-500 transition-transform duration-200 ${
+                      className={`h-5 w-5 shrink-0 text-neutral-500 transition-transform duration-200 ${
                         isOpen ? "rotate-180" : ""
                       }`}
                       viewBox="0 0 20 20"
@@ -60,7 +60,7 @@ export function FaqSection({
                     }`}
                   >
                     <div className="min-h-0 overflow-hidden">
-                      <div className="pb-5 px-5 sm:px-6 pt-0 text-slate-grey-600 text-sm sm:text-base leading-relaxed">
+                      <div className="pb-5 px-5 sm:px-6 pt-0 text-neutral-600 text-sm sm:text-base leading-relaxed">
                         {item.answer}
                       </div>
                     </div>

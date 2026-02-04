@@ -6,7 +6,7 @@ import { PromotionalPopupTop } from "./PromotionalPopupTop";
 
 export function Layout() {
   return (
-    <div className="flex min-h-screen flex-col text-slate-grey-900 antialiased">
+    <div className="flex min-h-screen flex-col text-neutral-900 antialiased">
       <CursorDot />
       <PromotionalPopupTop />
       <Header />

@@ -1,24 +1,24 @@
 export function Intro() {
   return (
-    <section id="about" className="py-16 sm:py-20 bg-slate-grey-50">
+    <section id="about" className="py-16 sm:py-20 bg-neutral-50">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
           {/* <div className="text-center mb-10 sm:mb-12"> */}
-          {/*   <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-slate-grey-900"> */}
+          {/*   <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-neutral-900"> */}
           {/*     About Us */}
           {/*   </h2> */}
-          {/*   <div className="mt-4 h-1 w-24 bg-gradient-to-r from-pearl-aqua-500 to-cool-steel-500 rounded-full mx-auto"></div> */}
+          {/*   <div className="mt-4 h-1 w-24 bg-gradient-to-r from-primary-brand-500 to-secondary-brand-500 rounded-full mx-auto"></div> */}
           {/* </div> */}
-          <div className="space-y-6 sm:space-y-7 text-slate-grey-700">
+          <div className="space-y-6 sm:space-y-7 text-neutral-700">
             <p className="text-base sm:text-lg leading-relaxed">
               Since 2016, we've been on a mission to transform learning in
               schools across Australia. Operating under Driven Outcomes Pty Ltd,
               we have two main divisions:{" "}
-              <strong className="font-bold text-pearl-aqua-600">
+              <strong className="font-bold text-primary-brand-600">
                 Tripod Enterprise Education
               </strong>{" "}
               for secondary students, and{" "}
-              <strong className="font-bold text-cool-steel-600">
+              <strong className="font-bold text-secondary-brand-600">
                 MiniBOSS Incursions
               </strong>{" "}
               for primary students.
@@ -26,11 +26,11 @@ export function Intro() {
             <p className="text-base sm:text-lg leading-relaxed">
               Based in Alphington, Melbourne, the company is proudly owned and
               managed by its founders and directors,{" "}
-              <strong className="font-semibold text-slate-grey-900">
+              <strong className="font-semibold text-neutral-900">
                 Betsy Tolmer
               </strong>{" "}
               and{" "}
-              <strong className="font-semibold text-slate-grey-900">
+              <strong className="font-semibold text-neutral-900">
                 Marita D'Amico
               </strong>
               .
@@ -38,9 +38,9 @@ export function Intro() {
             <p className="text-base sm:text-lg leading-relaxed">
               What began as a passion for creating engaging, hands-on
               educational experiences has grown into partnerships with over{" "}
-              <strong className="font-semibold text-slate-grey-900">500</strong>{" "}
+              <strong className="font-semibold text-neutral-900">500</strong>{" "}
               schools and organisations, impacting more than{" "}
-              <strong className="font-semibold text-slate-grey-900">
+              <strong className="font-semibold text-neutral-900">
                 200,000
               </strong>{" "}
               students.

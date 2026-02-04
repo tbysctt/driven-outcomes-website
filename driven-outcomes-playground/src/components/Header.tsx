@@ -11,9 +11,9 @@ const navLinks = [
 ];
 
 const navLinkClass =
-  "text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-pearl-aqua-400 transition-colors duration-200 !no-underline";
+  "text-sm font-semibold uppercase tracking-wide text-white/90 hover:text-primary-brand-400 transition-colors duration-200 !no-underline";
 const navLinkActiveClass =
-  "text-pearl-aqua-400 border-b-2 border-pearl-aqua-400 pb-0.5";
+  "text-primary-brand-400 border-b-2 border-primary-brand-400 pb-0.5";
 
 export function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -23,14 +23,14 @@ export function Header() {
   };
 
   return (
-    <header className="bg-slate-grey-900/95 backdrop-blur-md text-white sticky top-0 z-50 border-b border-white/10">
+    <header className="bg-neutral-900/95 backdrop-blur-md text-white sticky top-0 z-50 border-b border-white/10">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div>
             <NavLink
               to="/"
-              className="!no-underline uppercase font-extrabold text-xl md:text-2xl tracking-tight text-white hover:text-pearl-aqua-400 transition-colors duration-200"
+              className="!no-underline uppercase font-extrabold text-xl md:text-2xl tracking-tight text-white hover:text-primary-brand-400 transition-colors duration-200"
             >
               Driven Outcomes
             </NavLink>
@@ -74,7 +74,7 @@ export function Header() {
             aria-label="Toggle navigation"
             aria-expanded={isMenuOpen}
             onClick={toggleMenu}
-            className="lg:hidden text-white hover:text-pearl-aqua-400 transition-colors duration-200 p-2"
+            className="lg:hidden text-white hover:text-primary-brand-400 transition-colors duration-200 p-2"
           >
             {isMenuOpen ? (
               <svg

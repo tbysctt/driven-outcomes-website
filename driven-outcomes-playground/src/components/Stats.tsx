@@ -21,7 +21,7 @@ function StatItem({ target, suffix = "", label, colorClass, isInView }: StatItem
       <div className={`text-3xl sm:text-4xl md:text-5xl font-extrabold ${colorClass}`}>
         {displayValue}
       </div>
-      <div className="mt-2 sm:mt-3 text-xs sm:text-sm font-semibold uppercase tracking-wide text-slate-grey-600 px-2">
+      <div className="mt-2 sm:mt-3 text-xs sm:text-sm font-semibold uppercase tracking-wide text-neutral-600 px-2">
         {label}
       </div>
     </div>
@@ -32,14 +32,14 @@ export function Stats() {
   const [sectionRef, isInView] = useInView<HTMLElement>({ threshold: 0.3 });
 
   const stats = [
-    { target: 205, suffix: "K+", label: "Students reached", colorClass: "text-cool-steel-600" },
-    { target: 515, label: "Schools we've worked with", colorClass: "text-pearl-aqua-600" },
-    { target: 30, label: "Organisations we've worked with", colorClass: "text-slate-grey-800" },
-    { target: 24, suffix: "+", label: "Programs to choose from", colorClass: "text-thistle-600" },
+    { target: 205, suffix: "K+", label: "Students reached", colorClass: "text-secondary-brand-600" },
+    { target: 515, label: "Schools we've worked with", colorClass: "text-primary-brand-600" },
+    { target: 30, label: "Organisations we've worked with", colorClass: "text-neutral-800" },
+    { target: 24, suffix: "+", label: "Programs to choose from", colorClass: "text-highlight-600" },
   ];
 
   return (
-    <section ref={sectionRef} className="py-8 sm:py-12 bg-slate-grey-100">
+    <section ref={sectionRef} className="py-8 sm:py-12 bg-neutral-100">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
           {stats.map((stat) => (

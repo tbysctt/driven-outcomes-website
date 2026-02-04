@@ -151,7 +151,7 @@ function SocialLink({ name, url, icon }: SocialLinkProps) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-pearl-aqua-600 transition-colors no-underline!"
+      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-brand-600 transition-colors no-underline!"
       aria-label={name}
     >
       <svg
@@ -184,7 +184,7 @@ interface FooterLinkSectionProps {
 function FooterLinkSection({ title, links }: FooterLinkSectionProps) {
   return (
     <div>
-      <h4 className="text-sm font-bold uppercase tracking-wider text-pearl-aqua-400 mb-4 sm:mb-6">
+      <h4 className="text-sm font-bold uppercase tracking-wider text-primary-brand-400 mb-4 sm:mb-6">
         {title}
       </h4>
       <ul className="space-y-2 sm:space-y-3">
@@ -192,7 +192,7 @@ function FooterLinkSection({ title, links }: FooterLinkSectionProps) {
           <li key={link.label}>
             <a
               href={link.href}
-              className="text-sm sm:text-base text-slate-grey-400 hover:text-white transition-colors no-underline!"
+              className="text-sm sm:text-base text-neutral-400 hover:text-white transition-colors no-underline!"
             >
               {link.label}
             </a>
@@ -204,9 +204,9 @@ function FooterLinkSection({ title, links }: FooterLinkSectionProps) {
 }
 
 function ContactItem({ icon, content, href }: ContactInfoItem) {
-  const iconClasses = "w-4 h-4 sm:w-5 sm:h-5 text-pearl-aqua-500 shrink-0";
+  const iconClasses = "w-4 h-4 sm:w-5 sm:h-5 text-primary-brand-500 shrink-0";
   const contentClasses =
-    "text-sm sm:text-base text-slate-grey-400 hover:text-white transition-colors !no-underline break-words";
+    "text-sm sm:text-base text-neutral-400 hover:text-white transition-colors !no-underline break-words";
 
   if (href) {
     return (
@@ -236,7 +236,7 @@ function ContactItem({ icon, content, href }: ContactInfoItem) {
       >
         {icon}
       </svg>
-      <span className="text-sm sm:text-base text-slate-grey-400 wrap-break-word">
+      <span className="text-sm sm:text-base text-neutral-400 wrap-break-word">
         {content}
       </span>
     </li>
@@ -246,7 +246,7 @@ function ContactItem({ icon, content, href }: ContactInfoItem) {
 function ContactInfo() {
   return (
     <div id="contact">
-      <h4 className="text-sm font-bold uppercase tracking-wider text-pearl-aqua-400 mb-4 sm:mb-6">
+      <h4 className="text-sm font-bold uppercase tracking-wider text-primary-brand-400 mb-4 sm:mb-6">
         Contact Us
       </h4>
       <ul className="space-y-3 sm:space-y-4">
@@ -269,7 +269,7 @@ function CompanyInfo() {
       <h3 className="text-lg sm:text-xl font-extrabold uppercase tracking-tight text-white mb-3 sm:mb-4">
         Driven Outcomes
       </h3>
-      <p className="text-sm sm:text-base text-slate-grey-400 mb-4 sm:mb-6 leading-relaxed">
+      <p className="text-sm sm:text-base text-neutral-400 mb-4 sm:mb-6 leading-relaxed">
         We specialise in Enterprise Education and provide real-world experiences
         to equip students with the skills, tools and knowledge critical for
         their future success.
@@ -283,7 +283,7 @@ function AcknowledgementOfCountry() {
   return (
     <div className="border-t border-white/10">
       <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8">
-        <p className="text-xs sm:text-sm text-slate-grey-500 leading-relaxed max-w-4xl">
+        <p className="text-xs sm:text-sm text-neutral-500 leading-relaxed max-w-4xl">
           We acknowledge the Traditional Owners of country throughout Australia.
           We pay our respects to Elders past, present and emerging and celebrate
           the diversity of Aboriginal and Torres Strait Islander peoples and
@@ -299,7 +299,7 @@ function FooterBottom() {
     <div className="border-t border-white/10">
       <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-          <div className="text-xs sm:text-sm text-slate-grey-500 text-center sm:text-left">
+          <div className="text-xs sm:text-sm text-neutral-500 text-center sm:text-left">
             &copy; 2025 Driven Outcomes Pty Ltd
           </div>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm">
@@ -307,7 +307,7 @@ function FooterBottom() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-slate-grey-500 hover:text-white transition-colors no-underline!"
+                className="text-neutral-500 hover:text-white transition-colors no-underline!"
               >
                 {link.label}
               </a>
@@ -324,7 +324,7 @@ export function Footer() {
   return (
     <footer
       id="colophon"
-      className="bg-slate-grey-900 text-white"
+      className="bg-neutral-900 text-white"
       role="contentinfo"
     >
       {/* Main Footer Content */}

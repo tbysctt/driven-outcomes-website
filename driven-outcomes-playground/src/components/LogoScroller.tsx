@@ -17,14 +17,14 @@ export function LogoScroller() {
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
   return (
-    <section className="py-20 bg-slate-grey-50 overflow-hidden">
+    <section className="py-20 bg-neutral-50 overflow-hidden">
       <div className="container mx-auto px-4">
         {/* Section Title */}
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-slate-grey-900 mb-3">
+          <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 mb-3">
             OUR PARTNERS
           </h2>
-          <p className="text-lg md:text-xl text-slate-grey-600 font-medium">
+          <p className="text-lg md:text-xl text-neutral-600 font-medium">
             Schools and Organisations We Work With
           </p>
         </div>
@@ -32,8 +32,8 @@ export function LogoScroller() {
         {/* Scrolling Logos Container */}
         <div className="relative">
           {/* Gradient overlays for fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-slate-grey-50 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-slate-grey-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-neutral-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-neutral-50 to-transparent z-10 pointer-events-none" />
 
           {/* Scrolling Logos Wrapper */}
           <div className="overflow-hidden">

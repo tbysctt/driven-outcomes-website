@@ -22,7 +22,7 @@ export function BrandPageHero(props: Props) {
       </video>
 
       {/* Dark Overlay for Text Readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-slate-grey-900/85 via-slate-grey-800/75 to-slate-grey-950/85 sm:from-slate-grey-900/80 sm:via-slate-grey-800/70 sm:to-slate-grey-950/80 z-[1]" />
+      <div className="absolute inset-0 bg-gradient-to-br from-neutral-900/85 via-neutral-800/75 to-neutral-950/85 sm:from-neutral-900/80 sm:via-neutral-800/70 sm:to-neutral-950/80 z-[1]" />
 
       {/* Wave bottom edge */}
       <div className="absolute bottom-0 left-0 right-0 z-[2] leading-[0]">
@@ -33,7 +33,7 @@ export function BrandPageHero(props: Props) {
           aria-hidden="true"
         >
           <path
-            fill="var(--color-slate-grey-50)"
+            fill="var(--color-neutral-50)"
             d="M0 60 C400 9 800 111 1200 60 L1200 120 L0 120 Z"
           />
         </svg>
@@ -47,7 +47,7 @@ export function BrandPageHero(props: Props) {
           }
         >
           <div className={props.logo ? "text-left max-w-xl" : ""}>
-            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-pearl-aqua-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
+            <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-primary-brand-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
               {props.subTitle}
             </span>
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-white uppercase mb-4 sm:mb-6">
@@ -56,8 +56,8 @@ export function BrandPageHero(props: Props) {
             <p
               className={
                 props.logo
-                  ? "text-base sm:text-lg md:text-xl text-slate-grey-300 leading-relaxed mb-8 sm:mb-10"
-                  : "text-base sm:text-lg md:text-xl text-slate-grey-300 leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10"
+                  ? "text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed mb-8 sm:mb-10"
+                  : "text-base sm:text-lg md:text-xl text-neutral-300 leading-relaxed max-w-2xl mx-auto mb-8 sm:mb-10"
               }
             >
               {props.description}

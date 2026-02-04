@@ -2,10 +2,10 @@ export function MiniBossPage() {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4 text-center">
-        <h1 className="text-4xl md:text-5xl font-bold text-slate-grey-900 mb-4">
+        <h1 className="text-4xl md:text-5xl font-bold text-neutral-900 mb-4">
           miniBOSS
         </h1>
-        <p className="text-xl text-slate-grey-600 max-w-2xl mx-auto">
+        <p className="text-xl text-neutral-600 max-w-2xl mx-auto">
           Primary incursions — inspiring primary students with hands-on learning
           and creativity.
         </p>

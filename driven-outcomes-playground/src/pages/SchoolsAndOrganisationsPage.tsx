@@ -37,7 +37,7 @@ function LetterSection({
   return (
     <section id={id} className="mb-10 scroll-mt-64">
       <h3 className="flex items-center gap-3 mt-10 first:mt-0 mb-4">
-        <span className="text-2xl font-bold text-thistle-900 border-b-2 border-slate-grey-200 pb-1">
+        <span className="text-2xl font-bold text-highlight-900 border-b-2 border-neutral-200 pb-1">
           {letter === "#" ? "0–9 & symbols" : letter}
         </span>
       </h3>
@@ -45,7 +45,7 @@ function LetterSection({
         {names.map((name, index) => (
           <li
             key={`${name}-${index}`}
-            className="text-sm sm:text-base font-medium text-slate-grey-700 py-1"
+            className="text-sm sm:text-base font-medium text-neutral-700 py-1"
           >
             {name}
           </li>
@@ -64,14 +64,14 @@ function AlphabetNav({
 }) {
   return (
     <nav
-      className="hidden sm:flex flex-wrap justify-center gap-1.5 mt-6 p-4 border-b border-slate-grey-200/60"
+      className="hidden sm:flex flex-wrap justify-center gap-1.5 mt-6 p-4 border-b border-neutral-200/60"
       aria-label="Jump to letter"
     >
       {letters.map((letter) => (
         <a
           key={letter}
           href={`#${idPrefix}-letter-${letter}`}
-          className="flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold text-slate-grey-600 hover:text-pearl-aqua-700 hover:bg-pearl-aqua-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pearl-aqua-500 focus:ring-offset-2 focus:ring-offset-white"
+          className="flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold text-neutral-600 hover:text-primary-brand-700 hover:bg-primary-brand-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary-brand-500 focus:ring-offset-2 focus:ring-offset-white"
         >
           {letter}
         </a>
@@ -102,7 +102,7 @@ function ListWithLetterSections({
         style={{ top: STICKY_HEADER_OFFSET }}
       >
         <div className="max-w-6xl mx-auto mt-5">
-          <h2 className="text-xl sm:text-2xl md:text-3xl uppercase font-extrabold tracking-tight text-slate-grey-900">
+          <h2 className="text-xl sm:text-2xl md:text-3xl uppercase font-extrabold tracking-tight text-neutral-900">
             {title}
           </h2>
           <AlphabetNav letters={letters} idPrefix={idPrefix} />
@@ -129,10 +129,10 @@ export function SchoolsAndOrganisationsPage() {
     <main className="py-12 sm:py-16 md:py-20">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-grey-900 mb-3">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 mb-3">
             Who We've Worked With
           </h1>
-          <p className="text-lg text-slate-grey-600 max-w-2xl mx-auto">
+          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
             We've worked with hundreds of schools and organisations across
             Australia.
           </p>
@@ -150,7 +150,7 @@ export function SchoolsAndOrganisationsPage() {
           idPrefix="orgs"
         />
 
-        <p className="mt-10 text-center text-slate-grey-500 text-sm">
+        <p className="mt-10 text-center text-neutral-500 text-sm">
           {schools.length} schools and {organisations.length} organisations
         </p>
       </div>

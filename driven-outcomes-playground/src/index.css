@@ -9,100 +9,99 @@
   --breakpoint-2xl: 1440px;
 
   /* ===========================================
-       COLOR PALETTE - Edit colors here
+       COLOR PALETTE - Edit hex values to change scheme
+       Variable names are semantic (role), not colour names
        =========================================== */
 
-  /* Pearl Aqua - Primary brand color */
-  --color-pearl-aqua-50: #edf8f6;
-  --color-pearl-aqua-100: #dbf0ee;
-  --color-pearl-aqua-200: #b6e2dc;
-  --color-pearl-aqua-300: #92d3cb;
-  --color-pearl-aqua-400: #6dc5b9;
-  --color-pearl-aqua-500: #49b6a8;
-  --color-pearl-aqua-600: #3a9286;
-  --color-pearl-aqua-700: #2c6d65;
-  --color-pearl-aqua-800: #1d4943;
-  --color-pearl-aqua-900: #0f2422;
-  --color-pearl-aqua-950: #0a1a17;
+  /* Primary brand */
+  --color-primary-brand-50: #edf8f6;
+  --color-primary-brand-100: #dbf0ee;
+  --color-primary-brand-200: #b6e2dc;
+  --color-primary-brand-300: #92d3cb;
+  --color-primary-brand-400: #6dc5b9;
+  --color-primary-brand-500: #49b6a8;
+  --color-primary-brand-600: #3a9286;
+  --color-primary-brand-700: #2c6d65;
+  --color-primary-brand-800: #1d4943;
+  --color-primary-brand-900: #0f2422;
+  --color-primary-brand-950: #0a1a17;
 
-  /* Slate Grey - Neutral tones */
-  --color-slate-grey-50: #f1f2f4;
-  --color-slate-grey-100: #e2e6e9;
-  --color-slate-grey-200: #c5cdd3;
-  --color-slate-grey-300: #a9b3bc;
-  --color-slate-grey-400: #8c9aa6;
-  --color-slate-grey-500: #6f8190;
-  --color-slate-grey-600: #596773;
-  --color-slate-grey-700: #434d56;
-  --color-slate-grey-800: #2c343a;
-  --color-slate-grey-900: #161a1d;
-  --color-slate-grey-950: #101214;
+  /* Secondary brand */
+  --color-secondary-brand-50: #eff3f6;
+  --color-secondary-brand-100: #dee6ed;
+  --color-secondary-brand-200: #bdcedb;
+  --color-secondary-brand-300: #9cb5c9;
+  --color-secondary-brand-400: #7b9db7;
+  --color-secondary-brand-500: #5b84a4;
+  --color-secondary-brand-600: #486a84;
+  --color-secondary-brand-700: #364f63;
+  --color-secondary-brand-800: #243542;
+  --color-secondary-brand-900: #121a21;
+  --color-secondary-brand-950: #0d1317;
 
-  /* Cool Steel - Secondary color */
-  --color-cool-steel-50: #eff3f6;
-  --color-cool-steel-100: #dee6ed;
-  --color-cool-steel-200: #bdcedb;
-  --color-cool-steel-300: #9cb5c9;
-  --color-cool-steel-400: #7b9db7;
-  --color-cool-steel-500: #5b84a4;
-  --color-cool-steel-600: #486a84;
-  --color-cool-steel-700: #364f63;
-  --color-cool-steel-800: #243542;
-  --color-cool-steel-900: #121a21;
-  --color-cool-steel-950: #0d1317;
+  /* Accent */
+  --color-accent-50: #f0f0f5;
+  --color-accent-100: #e0e2eb;
+  --color-accent-200: #c2c5d6;
+  --color-accent-300: #a3a8c2;
+  --color-accent-400: #858bad;
+  --color-accent-500: #666e99;
+  --color-accent-600: #52587a;
+  --color-accent-700: #3d425c;
+  --color-accent-800: #292c3d;
+  --color-accent-900: #14161f;
+  --color-accent-950: #0e0f15;
 
-  /* Lavender Grey - Accent color */
-  --color-lavender-grey-50: #f0f0f5;
-  --color-lavender-grey-100: #e0e2eb;
-  --color-lavender-grey-200: #c2c5d6;
-  --color-lavender-grey-300: #a3a8c2;
-  --color-lavender-grey-400: #858bad;
-  --color-lavender-grey-500: #666e99;
-  --color-lavender-grey-600: #52587a;
-  --color-lavender-grey-700: #3d425c;
-  --color-lavender-grey-800: #292c3d;
-  --color-lavender-grey-900: #14161f;
-  --color-lavender-grey-950: #0e0f15;
+  /* Highlight */
+  --color-highlight-50: #f2f1f4;
+  --color-highlight-100: #e6e2e9;
+  --color-highlight-200: #cdc5d3;
+  --color-highlight-300: #b4a9bc;
+  --color-highlight-400: #9b8ca6;
+  --color-highlight-500: #826f90;
+  --color-highlight-600: #685973;
+  --color-highlight-700: #4e4356;
+  --color-highlight-800: #342c3a;
+  --color-highlight-900: #1a161d;
+  --color-highlight-950: #121014;
 
-  /* Thistle - Highlight color */
-  --color-thistle-50: #f2f1f4;
-  --color-thistle-100: #e6e2e9;
-  --color-thistle-200: #cdc5d3;
-  --color-thistle-300: #b4a9bc;
-  --color-thistle-400: #9b8ca6;
-  --color-thistle-500: #826f90;
-  --color-thistle-600: #685973;
-  --color-thistle-700: #4e4356;
-  --color-thistle-800: #342c3a;
-  --color-thistle-900: #1a161d;
-  --color-thistle-950: #121014;
+  /* Neutral (backgrounds, borders, muted text) */
+  --color-neutral-50: #f1f2f4;
+  --color-neutral-100: #e2e6e9;
+  --color-neutral-200: #c5cdd3;
+  --color-neutral-300: #a9b3bc;
+  --color-neutral-400: #8c9aa6;
+  --color-neutral-500: #6f8190;
+  --color-neutral-600: #596773;
+  --color-neutral-700: #434d56;
+  --color-neutral-800: #2c343a;
+  --color-neutral-900: #161a1d;
+  --color-neutral-950: #101214;
 
   /* ===========================================
-       SEMANTIC COLOR MAPPINGS
-       Change these to swap which palette is used
+       SEMANTIC SHORTCUTS (optional single-value refs)
        =========================================== */
-  --color-primary: var(--color-pearl-aqua-500);
-  --color-primary-light: var(--color-pearl-aqua-300);
-  --color-primary-dark: var(--color-pearl-aqua-700);
+  --color-primary: var(--color-primary-brand-500);
+  --color-primary-light: var(--color-primary-brand-300);
+  --color-primary-dark: var(--color-primary-brand-700);
 
-  --color-secondary: var(--color-cool-steel-500);
-  --color-secondary-light: var(--color-cool-steel-300);
-  --color-secondary-dark: var(--color-cool-steel-700);
+  --color-secondary: var(--color-secondary-brand-500);
+  --color-secondary-light: var(--color-secondary-brand-300);
+  --color-secondary-dark: var(--color-secondary-brand-700);
 
-  --color-accent: var(--color-thistle-500);
-  --color-accent-light: var(--color-thistle-300);
-  --color-accent-dark: var(--color-thistle-700);
+  --color-accent-single: var(--color-highlight-500);
+  --color-accent-single-light: var(--color-highlight-300);
+  --color-accent-single-dark: var(--color-highlight-700);
 
-  --color-dark: var(--color-slate-grey-900);
-  --color-dark-lighter: var(--color-slate-grey-800);
+  --color-dark: var(--color-neutral-900);
+  --color-dark-lighter: var(--color-neutral-800);
 
-  --color-light: var(--color-slate-grey-50);
-  --color-light-darker: var(--color-slate-grey-100);
+  --color-light: var(--color-neutral-50);
+  --color-light-darker: var(--color-neutral-100);
 
-  /* Text colors */
-  --color-text: var(--color-slate-grey-900);
-  --color-text-muted: var(--color-slate-grey-500);
-  --color-text-light: var(--color-slate-grey-300);
+  --color-text: var(--color-neutral-900);
+  --color-text-muted: var(--color-neutral-500);
+  --color-text-light: var(--color-neutral-300);
 
   /* ===========================================
        TYPOGRAPHY
@@ -126,9 +125,9 @@
 .gradient-text {
   background: linear-gradient(
     135deg,
-    var(--color-pearl-aqua-500) 0%,
-    var(--color-cool-steel-500) 50%,
-    var(--color-thistle-500) 100%
+    var(--color-primary-brand-500) 0%,
+    var(--color-secondary-brand-500) 50%,
+    var(--color-highlight-500) 100%
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -139,16 +138,16 @@
 .gradient-primary {
   background: linear-gradient(
     135deg,
-    var(--color-pearl-aqua-500) 0%,
-    var(--color-cool-steel-500) 100%
+    var(--color-primary-brand-500) 0%,
+    var(--color-secondary-brand-500) 100%
   );
 }
 
 .gradient-dark {
   background: linear-gradient(
     135deg,
-    var(--color-slate-grey-900) 0%,
-    var(--color-slate-grey-800) 100%
+    var(--color-neutral-900) 0%,
+    var(--color-neutral-800) 100%
   );
 }
 
@@ -159,7 +158,7 @@
   left: 0;
   width: 30px;
   height: 30px;
-  background-color: var(--color-pearl-aqua-500);
+  background-color: var(--color-primary-brand-500);
   border-radius: 50%;
   pointer-events: none;
   z-index: 9999;
@@ -201,4 +200,3 @@
 .partners-scroll:hover {
   animation-play-state: paused;
 }
-
