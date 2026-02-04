@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { useTypingAnimation } from "../hooks/useTypingAnimation";
-import { GradientBorderButton } from "./GradientBorderButton";
 // import heroVideo from "../assets/vecteezy_two-girls-run-to-play-with-extend-the-arms-and_9171699.mp4";
 import heroVideo from "../assets/Video-Header-2.mp4";
 
@@ -12,7 +12,7 @@ const headingOptions: string[] = [
   "Team Players"
 ];
 
-export function Hero() {
+export function LandingHero() {
   const animatedText = useTypingAnimation({
     words: headingOptions,
     typingSpeed: 100,
@@ -56,19 +56,34 @@ export function Hero() {
           <p className="my-4 sm:my-6 text-base sm:text-lg md:text-xl text-slate-grey-200 sm:text-slate-grey-300 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0">
             Hands-on learning for Prep to Year 12 that sparks creativity, confidence and real-world skills. Our interactive, curriculum-aligned incursions empower students to lead, build, solve, design, and grow — from STEM and entrepreneurship to wellbeing and teamwork.
           </p>
-          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 sm:mt-10">
-            <a
-              href="#programs"
-              className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white hover:opacity-90 !no-underline"
+          <p className="text-base text-xl text-white/90 font-semibold mt-8 sm:mt-10 mb-10 sm:mb-8">
+            I'm looking for...
+          </p>
+          <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
+            <Link
+              to="/miniboss"
+              className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white !no-underline hover:bg-white hover:text-slate-grey-900"
             >
-              Explore Programs
-            </a>
-            <GradientBorderButton
-              href="#contact"
-              size="md"
+              Primary School Incursions
+            </Link>
+            <Link
+              to="/tripod"
+              className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white !no-underline hover:bg-white hover:text-slate-grey-900"
             >
-              Contact Us
-            </GradientBorderButton>
+              Secondary School Incursions
+            </Link>
+            <Link
+              to="/miniboss-holiday"
+              className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white !no-underline hover:bg-white hover:text-slate-grey-900"
+            >
+              Holiday Program Incursions
+            </Link>
+            <Link
+              to="/talknow"
+              className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white !no-underline hover:bg-white hover:text-slate-grey-900"
+            >
+              Partnerships (TalkNOW)
+            </Link>
           </div>
         </div>
       </div>
