@@ -20,7 +20,7 @@ const incursionPrograms: ProgramCardProps[] = [
       "Cause & effect",
       "Problem solving",
     ],
-    variant: "cool-steel",
+    linkPath: "#",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -33,7 +33,7 @@ const incursionPrograms: ProgramCardProps[] = [
       "Creativity",
       "Hands-on learning",
     ],
-    variant: "pearl-aqua",
+    linkPath: "#",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -41,7 +41,7 @@ const incursionPrograms: ProgramCardProps[] = [
     description:
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: ["Coding", "Logic", "Problem solving", "Digital skills"],
-    variant: "pearl-aqua",
+    linkPath: "#",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -54,7 +54,7 @@ const incursionPrograms: ProgramCardProps[] = [
       "Deduction",
       "Teamwork",
     ],
-    variant: "cool-steel",
+    linkPath: "#",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -62,7 +62,7 @@ const incursionPrograms: ProgramCardProps[] = [
     description:
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: ["Curiosity", "Discovery", "Problem solving", "Creativity"],
-    variant: "cool-steel",
+    linkPath: "#",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -75,7 +75,7 @@ const incursionPrograms: ProgramCardProps[] = [
       "Teamwork",
       "Real-world skills",
     ],
-    variant: "pearl-aqua",
+    linkPath: "#",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -83,7 +83,7 @@ const incursionPrograms: ProgramCardProps[] = [
     description:
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: ["Resilience", "Confidence", "Teamwork", "Creativity"],
-    variant: "pearl-aqua",
+    linkPath: "#",
   },
 ];
 
@@ -169,7 +169,7 @@ export function MiniBossHolidayPage() {
                 title={program.title}
                 description={program.description}
                 focusedSkills={program.focusedSkills}
-                variant={program.variant}
+                linkPath={program.linkPath}
               />
             ))}
           </div>

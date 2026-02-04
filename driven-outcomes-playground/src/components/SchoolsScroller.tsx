@@ -520,8 +520,8 @@ function buildColumns(schoolList: string[]): string[][] {
   return columns;
 }
 
-const IDLE_MS = 800;
-const AUTO_SPEED_PX_PER_SEC = 25;
+const IDLE_MS = 0;
+const AUTO_SPEED_PX_PER_SEC = 30;
 
 /**
  * Schools scroller: auto-scrolls horizontally. User can override by dragging or

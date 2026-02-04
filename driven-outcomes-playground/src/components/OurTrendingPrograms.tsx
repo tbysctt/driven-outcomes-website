@@ -12,9 +12,8 @@ const trendingPrograms: ProgramCardProps[] = [
       "Teamwork",
       "Problem solving",
     ],
-    variant: "cool-steel",
+    linkPath: "#",
   },
-
   {
     targetAudience: "Primary School",
     title: "Smoothie Bar",
@@ -26,7 +25,7 @@ const trendingPrograms: ProgramCardProps[] = [
       "Real-world skills",
       "Collaboration",
     ],
-    variant: "pearl-aqua",
+    linkPath: "#",
   },
 ];
 
@@ -52,7 +51,7 @@ export function OurTrendingPrograms() {
               title={program.title}
               description={program.description}
               focusedSkills={program.focusedSkills}
-              variant={program.variant}
+              linkPath={program.linkPath}
             />
           ))}
         </div>

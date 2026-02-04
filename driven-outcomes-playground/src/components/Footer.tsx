@@ -105,7 +105,6 @@ const quickLinks: FooterLink[] = [
   { label: "Home", href: "#" },
   { label: "About Us", href: "#about" },
   { label: "Meet The Team", href: "#" },
-  { label: "MiniBOSS TV", href: "#" },
   { label: "News", href: "#" },
 ];
 
@@ -152,7 +151,7 @@ function SocialLink({ name, url, icon }: SocialLinkProps) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-pearl-aqua-600 transition-colors !no-underline"
+      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-pearl-aqua-600 transition-colors no-underline!"
       aria-label={name}
     >
       <svg
@@ -193,7 +192,7 @@ function FooterLinkSection({ title, links }: FooterLinkSectionProps) {
           <li key={link.label}>
             <a
               href={link.href}
-              className="text-sm sm:text-base text-slate-grey-400 hover:text-white transition-colors !no-underline"
+              className="text-sm sm:text-base text-slate-grey-400 hover:text-white transition-colors no-underline!"
             >
               {link.label}
             </a>
@@ -237,7 +236,7 @@ function ContactItem({ icon, content, href }: ContactInfoItem) {
       >
         {icon}
       </svg>
-      <span className="text-sm sm:text-base text-slate-grey-400 break-words">
+      <span className="text-sm sm:text-base text-slate-grey-400 wrap-break-word">
         {content}
       </span>
     </li>
@@ -308,7 +307,7 @@ function FooterBottom() {
               <a
                 key={link.label}
                 href={link.href}
-                className="text-slate-grey-500 hover:text-white transition-colors !no-underline"
+                className="text-slate-grey-500 hover:text-white transition-colors no-underline!"
               >
                 {link.label}
               </a>
