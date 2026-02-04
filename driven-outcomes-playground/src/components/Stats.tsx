@@ -39,7 +39,7 @@ export function Stats() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-12 sm:py-16 bg-slate-grey-100">
+    <section ref={sectionRef} className="py-8 sm:py-12 bg-slate-grey-100">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
           {stats.map((stat) => (

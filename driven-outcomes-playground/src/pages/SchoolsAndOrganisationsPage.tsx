@@ -1,12 +1,9 @@
 import { useMemo } from "react";
-import {
-  schools,
-  organisations,
-} from "../data/schools-and-organisations";
+import { schools, organisations } from "../data/schools-and-organisations";
 
 function sortAlphabetically(names: string[]): string[] {
   return [...names].sort((a, b) =>
-    a.localeCompare(b, undefined, { sensitivity: "base" })
+    a.localeCompare(b, undefined, { sensitivity: "base" }),
   );
 }
 
@@ -38,7 +35,7 @@ function LetterSection({
   id: string;
 }) {
   return (
-    <section id={id} className="scroll-mt-24 mb-10">
+    <section id={id} className="mb-10 scroll-mt-64">
       <h3 className="flex items-center gap-3 mt-10 first:mt-0 mb-4">
         <span className="text-2xl font-bold text-thistle-900 border-b-2 border-slate-grey-200 pb-1">
           {letter === "#" ? "0–9 & symbols" : letter}
@@ -67,14 +64,14 @@ function AlphabetNav({
 }) {
   return (
     <nav
-      className="flex flex-wrap gap-1 sm:gap-2 mb-10"
+      className="hidden sm:flex flex-wrap justify-center gap-1.5 mt-6 p-4 border-b border-slate-grey-200/60"
       aria-label="Jump to letter"
     >
       {letters.map((letter) => (
         <a
           key={letter}
           href={`#${idPrefix}-letter-${letter}`}
-          className="flex h-9 w-9 items-center justify-center rounded-md text-sm font-bold text-slate-grey-600 hover:text-slate-grey-900 hover:bg-slate-grey-100 transition-colors focus:outline-none focus:ring-2 focus:ring-(--color-thistle-500) focus:ring-offset-2"
+          className="flex h-8 w-8 items-center justify-center rounded-full text-sm font-semibold text-slate-grey-600 hover:text-pearl-aqua-700 hover:bg-pearl-aqua-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-pearl-aqua-500 focus:ring-offset-2 focus:ring-offset-white"
         >
           {letter}
         </a>
@@ -82,6 +79,8 @@ function AlphabetNav({
     </nav>
   );
 }
+
+const STICKY_HEADER_OFFSET = "4rem";
 
 function ListWithLetterSections({
   items,
@@ -97,22 +96,31 @@ function ListWithLetterSections({
   const letters = useMemo(() => [...byLetter.keys()], [byLetter]);
 
   return (
-    <div className="max-w-6xl mx-auto mb-14 last:mb-0">
-      <h2 className="text-xl sm:text-2xl md:text-3xl uppercase font-extrabold tracking-tight text-slate-grey-900 mb-5">
-        {title}
-      </h2>
-      <AlphabetNav letters={letters} idPrefix={idPrefix} />
-      <div>
-        {letters.map((letter) => (
-          <LetterSection
-            key={letter}
-            letter={letter}
-            names={byLetter.get(letter)!}
-            id={`${idPrefix}-letter-${letter}`}
-          />
-        ))}
+    <section className="mb-14 last:mb-0">
+      <div
+        className="sticky z-40 py-3 bg-white"
+        style={{ top: STICKY_HEADER_OFFSET }}
+      >
+        <div className="max-w-6xl mx-auto mt-5">
+          <h2 className="text-xl sm:text-2xl md:text-3xl uppercase font-extrabold tracking-tight text-slate-grey-900">
+            {title}
+          </h2>
+          <AlphabetNav letters={letters} idPrefix={idPrefix} />
+        </div>
       </div>
-    </div>
+      <div className="max-w-6xl mx-auto">
+        <div>
+          {letters.map((letter) => (
+            <LetterSection
+              key={letter}
+              letter={letter}
+              names={byLetter.get(letter)!}
+              id={`${idPrefix}-letter-${letter}`}
+            />
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
 

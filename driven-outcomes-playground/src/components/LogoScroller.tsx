@@ -12,7 +12,7 @@ const logos = [
   { src: AmsleighParkPrimary, alt: "Amsleigh Park Primary School" },
 ];
 
-export function Partners() {
+export function LogoScroller() {
   // Duplicate logos multiple times for seamless infinite scroll
   const duplicatedLogos = [...logos, ...logos, ...logos];
 
@@ -32,8 +32,8 @@ export function Partners() {
         {/* Scrolling Logos Container */}
         <div className="relative">
           {/* Gradient overlays for fade effect */}
-          <div className="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-slate-grey-50 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-slate-grey-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute left-0 top-0 bottom-0 w-32 bg-linear-to-r from-slate-grey-50 to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-32 bg-linear-to-l from-slate-grey-50 to-transparent z-10 pointer-events-none" />
 
           {/* Scrolling Logos Wrapper */}
           <div className="overflow-hidden">
@@ -41,7 +41,7 @@ export function Partners() {
               {duplicatedLogos.map((logo, index) => (
                 <div
                   key={`${logo.alt}-${index}`}
-                  className="flex-shrink-0 flex items-center justify-center"
+                  className="shrink-0 flex items-center justify-center"
                   style={{ width: "200px", height: "120px" }}
                 >
                   <img

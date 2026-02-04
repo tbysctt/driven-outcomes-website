@@ -99,14 +99,14 @@ export function SchoolsScroller() {
   }, []);
 
   return (
-    <section className="py-12 sm:py-16 bg-slate-grey-100">
+    <section className="py-8 sm:py-8 bg-slate-grey-100">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold text-slate-grey-900 mb-2">
             Schools We've Worked With
           </h2>
           <p className="text-lg text-slate-grey-600">
-            Hundreds of schools trust us across Australia
+            Hundreds of schools  and organisations trust us across Australia
           </p>
         </div>
 
@@ -147,7 +147,7 @@ export function SchoolsScroller() {
           </div>
         </div>
 
-        <p className="mt-6 text-center">
+        <p className="mt-10 text-center">
           <a
             href={"schools-and-organisations"}
             className="group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-thistle-600 hover:text-thistle-800"

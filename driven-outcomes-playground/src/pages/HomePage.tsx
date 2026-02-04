@@ -1,6 +1,6 @@
 import { LandingHero } from "../components/LandingHero";
 import { OurTrendingPrograms } from "../components/OurTrendingPrograms";
-import { Partners } from "../components/Partners";
+// import { LogoScroller } from "../components/LogoScroller";
 import { SchoolsScroller } from "../components/SchoolsScroller";
 import { Stats } from "../components/Stats";
 import { Intro } from "../components/Intro";
@@ -12,10 +12,10 @@ export function HomePage() {
     <>
       <LandingHero />
       <Stats />
-      <SchoolsScroller seeAllHref="/schools-and-organisations" />
+      <SchoolsScroller />
       <Intro />
       <OurTrendingPrograms />
-      <Partners />
+      {/* <LogoScroller /> */}
       <Testimonials />
       <MailingList />
     </>
