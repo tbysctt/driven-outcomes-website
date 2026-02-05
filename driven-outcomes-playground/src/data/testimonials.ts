@@ -17,6 +17,21 @@ export const testimonials: Testimonial[] = [
     testimonial: `Today has been a great experience and opportunity to work with people I had never met before. It was also a change to push myself out of my comfort zone, especially the introduction task.`,
   },
   {
+    program: "The Smoothie Bar and Chocolate Shop",
+    title: "Taylah, Primary School Student",
+    testimonial: `I absolutely LOVED the Smoothie Bar and Chocolate Shop it was such a great experience the staff were lovely and I really liked how hands on it was. I would give both workshops 10/10. It was really good doing surveys and budgeting. Thank you so much please come again.`,
+  },
+  {
+    program: "The Smoothie Bar",
+    title: "Kate, Teacher",
+    testimonial: `The ‘Smoothie Bar Incursion’ was fabulous. The girls were totally engaged, loved every minute and are really enjoying all the follow up activities.`,
+  },
+  {
+    title: "Rowan, Teacher",
+    testimonial:
+      "I thought one of the best aspects was the discussion about positives, negatives and what they'd learnt about themselves between some of the activities. The reflection and sharing was really helpful for our leadership discussions we're having at the moment.",
+  },
+  {
     program: "In My Community",
     title: "Primary School Teacher",
     testimonial:

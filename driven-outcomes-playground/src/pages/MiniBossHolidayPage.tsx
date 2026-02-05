@@ -2,89 +2,11 @@ import { BrandPageHero } from "../components/BrandPageHero";
 import { FaqSection } from "../components/FaqSection";
 import { GradientBorderButton } from "../components/GradientBorderButton";
 import mbhpLogo from "../assets/brand-logos/miniboss-holiday-programs/MBHP_PurpleTransparent.png";
-import { ProgramCard, type ProgramCardProps } from "../components/ProgramCard";
+import { ProgramCard } from "../components/ProgramCard";
 import { CTA } from "../components/CTA";
 import { miniBossHolidayProgramFaqs } from "../data/miniboss-holiday-faqs";
 import { Link } from "react-router-dom";
-
-const incursionPrograms: ProgramCardProps[] = [
-  {
-    targetAudience: "OSHC & Vacation Care",
-    title: "Bombs Away",
-    description:
-      "Description here about the incursion program. Description here about the incursion program.",
-    focusedSkills: [
-      "Experimentation",
-      "Teamwork",
-      "Cause & effect",
-      "Problem solving",
-    ],
-    linkPath: "#",
-  },
-  {
-    targetAudience: "OSHC & Vacation Care",
-    title: "Smoothie Time",
-    description:
-      "Description here about the incursion program. Description here about the incursion program.",
-    focusedSkills: [
-      "Nutrition",
-      "Healthy eating",
-      "Creativity",
-      "Hands-on learning",
-    ],
-    linkPath: "#",
-  },
-  {
-    targetAudience: "OSHC & Vacation Care",
-    title: "Code Busters",
-    description:
-      "Description here about the incursion program. Description here about the incursion program.",
-    focusedSkills: ["Coding", "Logic", "Problem solving", "Digital skills"],
-    linkPath: "#",
-  },
-  {
-    targetAudience: "OSHC & Vacation Care",
-    title: "Super Sleuths",
-    description:
-      "Description here about the incursion program. Description here about the incursion program.",
-    focusedSkills: [
-      "Investigation",
-      "Critical thinking",
-      "Deduction",
-      "Teamwork",
-    ],
-    linkPath: "#",
-  },
-  {
-    targetAudience: "OSHC & Vacation Care",
-    title: "The Mystery Bag",
-    description:
-      "Description here about the incursion program. Description here about the incursion program.",
-    focusedSkills: ["Curiosity", "Discovery", "Problem solving", "Creativity"],
-    linkPath: "#",
-  },
-  {
-    targetAudience: "OSHC & Vacation Care",
-    title: "The Chocolate Boss",
-    description:
-      "Description here about the incursion program. Description here about the incursion program.",
-    focusedSkills: [
-      "Enterprise",
-      "Creativity",
-      "Teamwork",
-      "Real-world skills",
-    ],
-    linkPath: "#",
-  },
-  {
-    targetAudience: "OSHC & Vacation Care",
-    title: "Superhero",
-    description:
-      "Description here about the incursion program. Description here about the incursion program.",
-    focusedSkills: ["Resilience", "Confidence", "Teamwork", "Creativity"],
-    linkPath: "#",
-  },
-];
+import { programs } from "../data/programs";
 
 export function MiniBossHolidayPage() {
   return (
@@ -92,7 +14,7 @@ export function MiniBossHolidayPage() {
       <BrandPageHero
         logo={mbhpLogo}
         subTitle="OSHC & Vacation Care"
-        title="Holiday Incursions"
+        title="Holiday Incursions and Excursions"
         description="Incursions for Outside School Hours Care (OSHC) & Vacation Care providers"
       />
 
@@ -150,16 +72,20 @@ export function MiniBossHolidayPage() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {incursionPrograms.map((program) => (
-              <ProgramCard
-                key={program.title}
-                targetAudience={program.targetAudience}
-                title={program.title}
-                description={program.description}
-                focusedSkills={program.focusedSkills}
-                linkPath={program.linkPath}
-              />
-            ))}
+            {programs
+              .filter(
+                (program) => program.targetAudience === "OSHC & Vacation Care",
+              )
+              .map((program) => (
+                <ProgramCard
+                  key={program.name}
+                  targetAudience={program.targetAudience}
+                  name={program.name}
+                  description={program.description}
+                  focusedSkills={program.focusedSkills}
+                  linkPath={program.linkPath}
+                />
+              ))}
           </div>
         </div>
       </section>

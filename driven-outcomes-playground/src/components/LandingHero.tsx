@@ -50,7 +50,7 @@ function LandingHeroButton(props: {
   return (
     <Link
       to={props.linkPath}
-      className="group flex flex-col items-center gap-3 rounded-2xl border border-white/20 bg-white/5 px-6 py-5 sm:px-8 sm:py-6 backdrop-blur-sm no-underline! transition-all duration-200 hover:border-white/30 hover:bg-white/10"
+      className="group flex w-full max-w-xs flex-col items-center gap-3 rounded-2xl border border-white/20 bg-white/5 px-6 py-5 sm:px-8 sm:py-6 backdrop-blur-sm no-underline! transition-all duration-200 hover:border-white/30 hover:bg-white/10 sm:max-w-none"
     >
       <span className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center">
         <img
@@ -59,8 +59,8 @@ function LandingHeroButton(props: {
           className="max-h-12 sm:max-h-14 object-contain"
         />
       </span>
-      <span className="flex flex-col items-center gap-0.5 w-52">
-        <span className="text-sm sm:text-base font-bold tracking-wide text-white">
+      <span className="flex w-full flex-col items-center gap-0.5 px-2 text-center">
+        <span className="text-sm sm:text-base font-bold tracking-wide text-white mb-2">
           {props.label}
         </span>
         <span className="text-xs sm:text-sm font-bold text-white/60">
@@ -134,7 +134,7 @@ export function LandingHero() {
           <p className="text-base text-white/90 font-semibold mt-8 sm:mt-10 mb-10 sm:mb-8">
             I'm looking for...
           </p>
-          <div className="flex flex-wrap gap-4 sm:gap-5 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 justify-items-center">
             {HERO_BUTTONS.map((btn) => (
               <LandingHeroButton
                 key={btn.linkPath}

@@ -1,33 +1,5 @@
-import { ProgramCard, type ProgramCardProps } from "./ProgramCard";
-
-const trendingPrograms: ProgramCardProps[] = [
-  {
-    targetAudience: "OSHC & Vacation Care",
-    title: "Bombs Away",
-    description:
-      "description here. Description here. Description here. Description here. Description here.",
-    focusedSkills: [
-      "Critical thinking",
-      "Creativity",
-      "Teamwork",
-      "Problem solving",
-    ],
-    linkPath: "#",
-  },
-  {
-    targetAudience: "Primary School",
-    title: "Smoothie Bar",
-    description:
-      "description here. Description here. Description here. Description here. Description here.",
-    focusedSkills: [
-      "Enterprise",
-      "Leadership",
-      "Real-world skills",
-      "Collaboration",
-    ],
-    linkPath: "#",
-  },
-];
+import { programs } from "../data/programs";
+import { ProgramCard } from "./ProgramCard";
 
 export function PopularPrograms() {
   return (
@@ -45,15 +17,17 @@ export function PopularPrograms() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-          {trendingPrograms.map((program) => (
-            <ProgramCard
-              targetAudience={program.targetAudience}
-              title={program.title}
-              description={program.description}
-              focusedSkills={program.focusedSkills}
-              linkPath={program.linkPath}
-            />
-          ))}
+          {programs
+            .filter((program) => program.isTrending)
+            .map((program) => (
+              <ProgramCard
+                targetAudience={program.targetAudience}
+                name={program.name}
+                description={program.description}
+                focusedSkills={program.focusedSkills}
+                linkPath={program.linkPath}
+              />
+            ))}
         </div>
       </div>
     </section>

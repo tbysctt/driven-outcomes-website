@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
+import type { TargetAudience } from "../data/programs";
 
 export interface ProgramCardProps {
-  targetAudience: string;
-  title: string;
+  targetAudience: TargetAudience;
+  name: string;
   description: string;
   focusedSkills: string[];
   linkPath: string;
@@ -23,7 +24,7 @@ export function ProgramCard(props: ProgramCardProps) {
           className="text-xl font-bold tracking-tight text-primary-brand-700 sm:mb-4 sm:text-2xl"
           to={props.linkPath}
         >
-          {props.title}
+          {props.name}
         </Link>
       </div>
       <p className="mb-5 text-sm leading-relaxed text-neutral-600 sm:mb-6 sm:text-base">

@@ -299,8 +299,13 @@ function FooterBottom() {
     <div className="border-t border-white/10">
       <div className="container mx-auto px-4 sm:px-6 py-4 sm:py-6">
         <div className="flex flex-col sm:flex-row justify-between items-center gap-3 sm:gap-4">
-          <div className="text-xs sm:text-sm text-neutral-500 text-center sm:text-left">
-            &copy; 2025 Driven Outcomes Pty Ltd
+          <div className="flex gap-8">
+            <div className="text-xs sm:text-sm text-neutral-500 text-center sm:text-left">
+              &copy; 2025 Driven Outcomes Pty Ltd
+            </div>
+            {/* <div className="text-xs sm:text-sm text-neutral-500 text-center sm:text-left"> */}
+            {/*   Website by <a href="https://tobyscott.dev">Toby Scott</a> */}
+            {/* </div> */}
           </div>
           <div className="flex flex-wrap justify-center gap-4 sm:gap-6 text-xs sm:text-sm">
             {legalLinks.map((link) => (
@@ -331,7 +336,7 @@ export function Footer() {
       <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
           <CompanyInfo />
-          <FooterLinkSection title="Our Programs" links={programLinks} />
+          <FooterLinkSection title="Our Brands" links={programLinks} />
           <FooterLinkSection title="Quick Links" links={quickLinks} />
           <ContactInfo />
         </div>
