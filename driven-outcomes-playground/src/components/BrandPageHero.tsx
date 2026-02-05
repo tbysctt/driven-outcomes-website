@@ -22,10 +22,10 @@ export function BrandPageHero(props: Props) {
       </video>
 
       {/* Dark Overlay for Text Readability */}
-      <div className="absolute inset-0 bg-gradient-to-br from-neutral-900/85 via-neutral-800/75 to-neutral-950/85 sm:from-neutral-900/80 sm:via-neutral-800/70 sm:to-neutral-950/80 z-[1]" />
+      <div className="absolute inset-0 bg-linear-to-br from-neutral-900/85 via-neutral-800/75 to-neutral-950/85 sm:from-neutral-900/80 sm:via-neutral-800/70 sm:to-neutral-950/80 z-1" />
 
       {/* Wave bottom edge */}
-      <div className="absolute bottom-0 left-0 right-0 z-[2] leading-[0]">
+      <div className="absolute bottom-0 left-0 right-0 z-2 leading-0">
         <svg
           viewBox="0 0 1200 120"
           preserveAspectRatio="none"
@@ -38,7 +38,7 @@ export function BrandPageHero(props: Props) {
           />
         </svg>
       </div>
-      <div className="container mx-auto px-4 sm:px-6 relative z-[3] w-full">
+      <div className="container mx-auto px-4 sm:px-6 relative z-3 w-full">
         <div
           className={
             props.logo
@@ -67,7 +67,7 @@ export function BrandPageHero(props: Props) {
             {/* </GradientBorderButton> */}
           </div>
           {props.logo && (
-            <div className="flex-shrink-0 lg:self-center ml-auto lg:ml-0 text-right">
+            <div className="shrink-0 lg:self-center ml-auto lg:ml-0 text-right">
               <img
                 src={props.logo}
                 alt=""

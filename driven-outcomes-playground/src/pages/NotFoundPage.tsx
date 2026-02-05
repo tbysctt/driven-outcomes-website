@@ -45,7 +45,7 @@ export function NotFoundPage() {
           </p>
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-base font-semibold text-neutral-800 shadow-sm hover:bg-neutral-100 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white uppercase tracking-wide"
+            className="inline-flex items-center justify-center rounded-md bg-white px-6 py-3 text-base font-semibold text-neutral-800 shadow-sm hover:bg-neutral-100 transition-colors focus-visible:outline focus-visible:outline-offset-2 focus-visible:outline-white uppercase tracking-wide"
           >
             Back to home
           </Link>

@@ -1,12 +1,75 @@
 import { Link } from "react-router-dom";
 import { useTypingAnimation } from "../hooks/useTypingAnimation";
 
+import miniBossLogo from "../assets/brand-logos/miniboss-incursions/Mini BOSS Incursions logo White Circle.png";
+
+import miniBossHolidayProgramsLogo from "../assets/brand-logos/miniboss-holiday-programs/MBHP_PurpleTransparent.png"
+import talkNowLogo from "../assets/brand-logos/talknow/Talk Now - LOGO - WHITE with WHITE slogan.png";
+import tripodLogo from "../assets/brand-logos/tripod/Tripod_Circle_Logos/Tripod_White.png"
+
 const headingOptions: string[] = [
   "Curious Minds",
   "Future Leaders",
   "Problem Solvers",
-  "Team Players"
+  "Team Players",
 ];
+
+const HERO_BUTTONS = [
+  {
+    linkPath: "/primary-school",
+    imgSrc: miniBossLogo,
+    label: "MiniBOSS",
+    subtitle: "Primary School Incursions",
+  },
+  {
+    linkPath: "/secondary-school",
+    imgSrc: tripodLogo,
+    label: "Tripod",
+    subtitle: "Secondary Schools Incursions",
+  },
+  {
+    linkPath: "/oshc-and-holidays",
+    imgSrc: miniBossHolidayProgramsLogo,
+    label: "MiniBOSS Holidays",
+    subtitle: "OSHC and Holiday Incursions and Excursions",
+  },
+  {
+    linkPath: "/talknow",
+    imgSrc: talkNowLogo,
+    label: "TalkNOW!",
+    subtitle: "Respectful Relationship Education (RRE)",
+  },
+] as const;
+
+function LandingHeroButton(props: {
+  linkPath: string;
+  imgSrc: string;
+  label: string;
+  subtitle: string;
+}) {
+  return (
+    <Link
+      to={props.linkPath}
+      className="group flex flex-col items-center gap-3 rounded-2xl border border-white/20 bg-white/5 px-6 py-5 sm:px-8 sm:py-6 backdrop-blur-sm no-underline! transition-all duration-200 hover:border-white/30 hover:bg-white/10"
+    >
+      <span className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center">
+        <img
+          src={props.imgSrc}
+          alt=""
+          className="max-h-12 sm:max-h-14 object-contain"
+        />
+      </span>
+      <span className="flex flex-col items-center gap-0.5 w-52">
+        <span className="text-sm sm:text-base font-bold tracking-wide text-white">
+          {props.label}
+        </span>
+        <span className="text-xs sm:text-sm font-bold text-white/60">
+          {props.subtitle}
+        </span>
+      </span>
+    </Link>
+  );
+}
 
 export function LandingHero() {
   const animatedText = useTypingAnimation({
@@ -71,31 +134,16 @@ export function LandingHero() {
           <p className="text-base text-white/90 font-semibold mt-8 sm:mt-10 mb-10 sm:mb-8">
             I'm looking for...
           </p>
-          <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
-            <Link
-              to="/primary-school"
-              className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white no-underline! hover:bg-white hover:text-neutral-900"
-            >
-              Primary School Incursions
-            </Link>
-            <Link
-              to="/secondary-school"
-              className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white no-underline! hover:bg-white hover:text-neutral-900"
-            >
-              Secondary School Incursions
-            </Link>
-            <Link
-              to="/oshc-and-holidays"
-              className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white no-underline! hover:bg-white hover:text-neutral-900"
-            >
-              Holiday Program Incursions
-            </Link>
-            <Link
-              to="/talknow"
-              className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white no-underline! hover:bg-white hover:text-neutral-900"
-            >
-              Partnerships (TalkNOW)
-            </Link>
+          <div className="flex flex-wrap gap-4 sm:gap-5 justify-center">
+            {HERO_BUTTONS.map((btn) => (
+              <LandingHeroButton
+                key={btn.linkPath}
+                linkPath={btn.linkPath}
+                imgSrc={btn.imgSrc}
+                label={btn.label}
+                subtitle={btn.subtitle}
+              />
+            ))}
           </div>
         </div>
       </div>
