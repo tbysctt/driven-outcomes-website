@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { InfoPageTemplate } from "../page-templates/InfoPageTemplate";
 import { schools, organisations } from "../data/schools-and-organisations";
 
 function sortAlphabetically(names: string[]): string[] {
@@ -126,34 +127,29 @@ function ListWithLetterSections({
 
 export function SchoolsAndOrganisationsPage() {
   return (
-    <main className="py-12 sm:py-16 md:py-20">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-neutral-900 mb-3">
-            Who We've Worked With
-          </h1>
-          <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-            We've worked with hundreds of schools and organisations across
-            Australia.
+    <InfoPageTemplate
+      heroTitle="Who We've Worked With"
+      heroDescription="We've worked with hundreds of schools and organisations across Australia."
+    >
+      <div className="py-12 sm:py-16 md:py-20">
+        <div className="container mx-auto px-4 sm:px-6">
+          <ListWithLetterSections
+            items={schools}
+            title="Schools We've Worked With"
+            idPrefix="schools"
+          />
+
+          <ListWithLetterSections
+            items={organisations}
+            title="Organisations We've Worked With"
+            idPrefix="orgs"
+          />
+
+          <p className="mt-10 text-center text-neutral-500 text-sm">
+            {schools.length} schools and {organisations.length} organisations
           </p>
         </div>
-
-        <ListWithLetterSections
-          items={schools}
-          title="Schools We've Worked With"
-          idPrefix="schools"
-        />
-
-        <ListWithLetterSections
-          items={organisations}
-          title="Organisations We've Worked With"
-          idPrefix="orgs"
-        />
-
-        <p className="mt-10 text-center text-neutral-500 text-sm">
-          {schools.length} schools and {organisations.length} organisations
-        </p>
       </div>
-    </main>
+    </InfoPageTemplate>
   );
 }
