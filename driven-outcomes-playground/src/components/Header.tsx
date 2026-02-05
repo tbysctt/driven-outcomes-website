@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
-import { GradientBorderButton } from "./GradientBorderButton";
+// import { GradientBorderButton } from "./GradientBorderButton";
 
 const navLinks = [
   { to: "/miniboss", label: "MiniBOSS" },
   { to: "/tripod", label: "Tripod" },
   { to: "/miniboss-holiday", label: "Holiday Programs" },
   { to: "/talknow", label: "TalkNOW" },
-  { to: "/contact", label: "Contact" },
   { to: "/#programs", label: "ELC (Coming soon)" },
 ];
 
@@ -31,7 +30,7 @@ export function Header() {
           <div>
             <NavLink
               to="/"
-              className="!no-underline uppercase font-extrabold text-xl md:text-2xl tracking-tight text-white hover:text-primary-brand-400 transition-colors duration-200"
+              className="no-underline! uppercase font-extrabold text-xl md:text-2xl tracking-tight text-white hover:text-primary-brand-400 transition-colors duration-200"
             >
               Driven Outcomes
             </NavLink>
@@ -41,11 +40,7 @@ export function Header() {
           <nav className="hidden lg:flex items-center gap-8">
             {navLinks.map((link) =>
               link.to.startsWith("/#") ? (
-                <a
-                  key={link.label}
-                  href={link.to}
-                  className={navLinkClass}
-                >
+                <a key={link.label} href={link.to} className={navLinkClass}>
                   {link.label}
                 </a>
               ) : (
@@ -58,15 +53,24 @@ export function Header() {
                 >
                   {link.label}
                 </NavLink>
-              )
+              ),
             )}
           </nav>
 
           {/* Desktop CTA Button */}
-          <div className="hidden lg:block">
-            <GradientBorderButton to="/contact" size="sm">
-              Enquire now
-            </GradientBorderButton>
+          <div className="hidden lg:flex items-center gap-8">
+            <NavLink
+              to="/contact"
+              className={({ isActive }) =>
+                [navLinkClass, isActive ? navLinkActiveClass : ""].join(" ")
+              }
+            >
+              Contact Us
+            </NavLink>
+
+            {/* <GradientBorderButton to="/contact" size="sm"> */}
+            {/*   Enquire now */}
+            {/* </GradientBorderButton> */}
           </div>
 
           {/* Mobile Menu Button */}
@@ -143,17 +147,31 @@ export function Header() {
                 >
                   {link.label}
                 </NavLink>
-              )
+              ),
             )}
             <div className="mt-2">
-              <GradientBorderButton
-                to="/contact"
+              <NavLink
+                to={"/contact"}
                 onClick={() => setIsMenuOpen(false)}
-                variant="rounded"
-                size="sm"
+                className={({ isActive }) =>
+                  [
+                    navLinkClass,
+                    "py-2 border-b border-white/10 last:border-0",
+                    isActive ? navLinkActiveClass : "",
+                  ].join(" ")
+                }
               >
-                Enquire now
-              </GradientBorderButton>
+                Contact Us
+              </NavLink>
+
+              {/* <GradientBorderButton */}
+              {/*   to="/contact" */}
+              {/*   onClick={() => setIsMenuOpen(false)} */}
+              {/*   variant="rounded" */}
+              {/*   size="sm" */}
+              {/* > */}
+              {/*   Enquire now */}
+              {/* </GradientBorderButton> */}
             </div>
           </nav>
         </div>
