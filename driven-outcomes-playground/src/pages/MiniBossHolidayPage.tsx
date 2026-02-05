@@ -176,7 +176,7 @@ export function MiniBossHolidayPage() {
             FLYERS GO HERE
             <div>
               <Link
-                to={"/miniboss-holiday-programs/resources"}
+                to={"/oshc-and-holidays/resources"}
                 className="group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-highlight-600 hover:text-highlight-800"
               >
                 See all

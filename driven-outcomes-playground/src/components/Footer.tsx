@@ -102,9 +102,9 @@ const programLinks: FooterLink[] = [
 ];
 
 const quickLinks: FooterLink[] = [
-  { label: "Home", href: "#" },
-  { label: "About Us", href: "#about" },
-  { label: "Meet The Team", href: "#" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Meet The Team", href: "/meet-the-team" },
   { label: "News", href: "#" },
 ];
 

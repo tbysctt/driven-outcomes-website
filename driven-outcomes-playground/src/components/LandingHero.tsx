@@ -73,19 +73,19 @@ export function LandingHero() {
           </p>
           <div className="flex flex-wrap gap-3 sm:gap-4 justify-center">
             <Link
-              to="/miniboss"
+              to="/primary-school"
               className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white no-underline! hover:bg-white hover:text-neutral-900"
             >
               Primary School Incursions
             </Link>
             <Link
-              to="/tripod"
+              to="/secondary-school"
               className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white no-underline! hover:bg-white hover:text-neutral-900"
             >
               Secondary School Incursions
             </Link>
             <Link
-              to="/miniboss-holiday"
+              to="/oshc-and-holidays"
               className="inline-flex justify-center items-center rounded-none px-6 py-2.5 sm:px-8 sm:py-3 text-sm sm:text-base font-bold uppercase tracking-wide transition-all duration-200 text-white border-2 border-white no-underline! hover:bg-white hover:text-neutral-900"
             >
               Holiday Program Incursions

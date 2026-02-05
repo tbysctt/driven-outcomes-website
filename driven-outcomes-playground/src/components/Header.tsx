@@ -3,9 +3,9 @@ import { NavLink } from "react-router-dom";
 // import { GradientBorderButton } from "./GradientBorderButton";
 
 const navLinks = [
-  { to: "/miniboss", label: "MiniBOSS" },
-  { to: "/tripod", label: "Tripod" },
-  { to: "/miniboss-holiday", label: "Holiday Programs" },
+  { to: "/primary-school", label: "MiniBOSS" },
+  { to: "/secondary-school", label: "Tripod" },
+  { to: "/oshc-and-holidays", label: "Holiday Programs" },
   { to: "/talknow", label: "TalkNOW" },
   { to: "/#programs", label: "ELC (Coming soon)" },
 ];
@@ -59,6 +59,15 @@ export function Header() {
 
           {/* Desktop CTA Button */}
           <div className="hidden lg:flex items-center gap-8">
+            <NavLink
+              to="/about-us"
+              className={({ isActive }) =>
+                [navLinkClass, isActive ? navLinkActiveClass : ""].join(" ")
+              }
+            >
+              About Us
+            </NavLink>
+
             <NavLink
               to="/contact"
               className={({ isActive }) =>

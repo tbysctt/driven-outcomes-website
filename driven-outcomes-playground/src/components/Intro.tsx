@@ -1,14 +1,13 @@
+import { Link } from "react-router-dom";
+
 export function Intro() {
   return (
     <section id="about" className="py-16 sm:py-20 bg-neutral-50">
       <div className="container mx-auto px-4 sm:px-6">
         <div className="max-w-4xl mx-auto">
-          {/* <div className="text-center mb-10 sm:mb-12"> */}
-          {/*   <h2 className="text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-neutral-900"> */}
-          {/*     About Us */}
-          {/*   </h2> */}
-          {/*   <div className="mt-4 h-1 w-24 bg-gradient-to-r from-primary-brand-500 to-secondary-brand-500 rounded-full mx-auto"></div> */}
-          {/* </div> */}
+          <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 mb-8">
+            Who we are
+          </h2>
           <div className="space-y-6 sm:space-y-7 text-neutral-700">
             <p className="text-base sm:text-lg leading-relaxed">
               Since 2016, we've been on a mission to transform learning in
@@ -50,6 +49,18 @@ export function Intro() {
               life skills while empowering educators with the tools they need to
               make a real difference in their classrooms.
             </p>
+            <Link
+              to={"/about-us"}
+              className="group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-highlight-600 hover:text-highlight-800"
+            >
+              Learn more
+              <span
+                aria-hidden
+                className="transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
+            </Link>
           </div>
         </div>
       </div>
