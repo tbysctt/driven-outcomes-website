@@ -6,7 +6,7 @@ export interface ProgramCardProps {
   name: string;
   description: string;
   focusedSkills: string[];
-  linkPath: string;
+  slug: string;
 }
 
 export function ProgramCard(props: ProgramCardProps) {
@@ -22,7 +22,7 @@ export function ProgramCard(props: ProgramCardProps) {
       <div className="mb-3">
         <Link
           className="text-xl font-bold tracking-tight text-primary-brand-700 sm:mb-4 sm:text-2xl"
-          to={props.linkPath}
+          to={`/programs/${props.slug}`}
         >
           {props.name}
         </Link>
@@ -41,7 +41,7 @@ export function ProgramCard(props: ProgramCardProps) {
         ))}
       </div>
       <Link
-        to={props.linkPath}
+        to={`/programs/${props.slug}`}
         className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-primary-brand-600 hover:text-primary-brand-800`}
       >
         Learn more

@@ -21,11 +21,12 @@ export function PopularPrograms() {
             .filter((program) => program.isTrending)
             .map((program) => (
               <ProgramCard
+                key={program.slug}
                 targetAudience={program.targetAudience}
                 name={program.name}
                 description={program.description}
                 focusedSkills={program.focusedSkills}
-                linkPath={program.linkPath}
+                slug={program.slug}
               />
             ))}
         </div>

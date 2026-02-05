@@ -10,6 +10,7 @@ import { ContactPage } from "./pages/ContactPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import { MeetTheTeamPage } from "./pages/MeetTheTeamPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
+import { KickStartProgramPage } from "./pages/KickStartProgramPage";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="primary-school" element={<MiniBossPage />} />
+        <Route path="programs/kick-start" element={<KickStartProgramPage />} />
         <Route path="secondary-school" element={<TripodPage />} />
         <Route path="oshc-and-holidays" element={<MiniBossHolidayPage />} />
         <Route path="talknow" element={<TalkNowPage />} />

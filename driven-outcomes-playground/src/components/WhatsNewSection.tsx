@@ -21,11 +21,12 @@ export function WhatsNewSection() {
             .map((program) => {
               return (
                 <ProgramCard
+                  key={program.slug}
                   targetAudience={program.targetAudience}
                   name={program.name}
                   description={program.description}
                   focusedSkills={program.focusedSkills}
-                  linkPath={program.linkPath}
+                  slug={program.slug}
                 />
               );
             })}

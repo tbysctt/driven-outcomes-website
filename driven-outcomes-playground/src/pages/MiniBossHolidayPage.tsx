@@ -83,7 +83,7 @@ export function MiniBossHolidayPage() {
                   name={program.name}
                   description={program.description}
                   focusedSkills={program.focusedSkills}
-                  linkPath={program.linkPath}
+                  slug={program.slug}
                 />
               ))}
           </div>

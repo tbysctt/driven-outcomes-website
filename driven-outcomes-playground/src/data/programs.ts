@@ -4,6 +4,7 @@ export type Program = {
   description: string;
   focusedSkills: string[];
   linkPath: string;
+  slug: string;
 
   isNew?: boolean;
   isTrending?: boolean;
@@ -24,6 +25,7 @@ export const programs: Program[] = [
       "Problem solving",
     ],
     linkPath: "#",
+    slug: "bombs-away",
     isNew: true,
     isTrending: true,
   },
@@ -39,6 +41,7 @@ export const programs: Program[] = [
       "Collaboration",
     ],
     linkPath: "#",
+    slug: "smoothie-bar",
     isNew: true,
   },
 
@@ -54,6 +57,7 @@ export const programs: Program[] = [
       "Collaboration",
     ],
     linkPath: "#",
+    slug: "smoothie-bar",
     isTrending: true,
   },
 
@@ -69,6 +73,7 @@ export const programs: Program[] = [
       "Hands-on learning",
     ],
     linkPath: "#",
+    slug: "smoothie-time",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -77,6 +82,7 @@ export const programs: Program[] = [
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: ["Coding", "Logic", "Problem solving", "Digital skills"],
     linkPath: "#",
+    slug: "code-busters",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -90,6 +96,7 @@ export const programs: Program[] = [
       "Teamwork",
     ],
     linkPath: "#",
+    slug: "super-sleuths",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -98,6 +105,7 @@ export const programs: Program[] = [
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: ["Curiosity", "Discovery", "Problem solving", "Creativity"],
     linkPath: "#",
+    slug: "the-mystery-bag",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -111,6 +119,7 @@ export const programs: Program[] = [
       "Real-world skills",
     ],
     linkPath: "#",
+    slug: "the-chocolate-boss",
   },
   {
     targetAudience: "OSHC & Vacation Care",
@@ -119,5 +128,6 @@ export const programs: Program[] = [
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: ["Resilience", "Confidence", "Teamwork", "Creativity"],
     linkPath: "#",
+    slug: "superhero",
   },
 ];
