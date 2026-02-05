@@ -9,6 +9,7 @@ import { TalkNowPage } from "./pages/TalkNowPage";
 import { ContactPage } from "./pages/ContactPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import { MeetTheTeamPage } from "./pages/MeetTheTeamPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="about-us" element={<AboutUsPage />} />
         <Route path="meet-the-team" element={<MeetTheTeamPage />} />
         <Route path="contact" element={<ContactPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Route>
     </Routes>
   );
