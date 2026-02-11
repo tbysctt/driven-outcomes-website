@@ -1,46 +1,13 @@
 import { Link, useParams } from "react-router-dom";
 import { programs, type Program } from "../data/programs";
 import { ProgramInfoPageTemplate } from "../page-templates/ProgramInfoPageTemplate";
-import type { ProgramInfoPageData } from "../page-templates/ProgramInfoPageTemplate";
 
 type ProgramInfoPageProps = {
   program: Program;
 };
 
 export function ProgramInfoPage({ program }: ProgramInfoPageProps) {
-  const pageData: ProgramInfoPageData = {
-    provider: program.provider,
-    category: program.category || program.provider,
-    programName: program.name,
-    tagline: program.tagline || program.description.split(".")[0] || "",
-    introHeading: program.introHeading || `About ${program.name}`,
-    introParagraphs: program.introParagraphs || [program.description],
-    variants: program.variants || [],
-    pricingLines: program.pricingLines || [
-      "Pricing information available upon request. Please contact us for details.",
-    ],
-    programInfoBullets: program.programInfoBullets || [
-      `"${program.name}" is available for ${program.provider}.`,
-      "Minimum numbers apply. Please contact us for more information.",
-    ],
-    howItWorksSegments: program.howItWorksSegments || [],
-    ongoingConnection: program.ongoingConnection || {
-      title: "Ongoing Support",
-      body: "We provide ongoing support and resources to help you get the most out of this program.",
-    },
-    curriculumYears: program.curriculumYears || "F-6",
-    focusedSkills: program.focusedSkills || [
-      "Personal and Social Capability",
-      "Critical and Creative Thinking",
-    ],
-    availabilityStatus:
-      program.availabilityStatus || "Contact us for availability",
-    showCalendar: program.showCalendar || false,
-    isNew: program.isNew,
-    isTrending: program.isTrending,
-  };
-
-  return <ProgramInfoPageTemplate data={pageData} />;
+  return <ProgramInfoPageTemplate program={program} />;
 }
 
 export function ProgramInfoPageRoute() {

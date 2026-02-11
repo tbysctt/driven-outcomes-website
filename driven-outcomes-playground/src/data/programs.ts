@@ -13,7 +13,6 @@ export type Program = {
   isNew?: boolean;
   isTrending?: boolean;
 
-  category?: string;
   tagline?: string;
   introHeading?: string;
   introParagraphs?: string[];
@@ -49,7 +48,6 @@ export const programs: Program[] = [
       "English (Speaking and Listening)",
     ],
     slug: "kick-start",
-    category: "Junior Program",
     tagline: "Refocus, reset, and kick start together",
     introHeading: "Ready, set, go!",
     introParagraphs: [

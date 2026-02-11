@@ -8,7 +8,7 @@ export function BrowseProgramsPage() {
   const [selectedTargetAudience, setSelectedTargetAudience] = useState<
     ProgramProvider | "All"
   >("All");
-  const [selectedCategory, setSelectedCategory] = useState<string>("All");
+  const [selectedProvider, setSelectedProvider] = useState<string>("All");
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [showNewOnly, setShowNewOnly] = useState(false);
   const [showTrendingOnly, setShowTrendingOnly] = useState(false);
@@ -21,14 +21,12 @@ export function BrowseProgramsPage() {
     return Array.from(skillsSet).sort();
   }, []);
 
-  const allCategories = useMemo(() => {
-    const categoriesSet = new Set<string>();
+  const allProviders = useMemo(() => {
+    const providersSet = new Set<string>();
     programs.forEach((program) => {
-      if (program.category) {
-        categoriesSet.add(program.category);
-      }
+      providersSet.add(program.provider);
     });
-    return Array.from(categoriesSet).sort();
+    return Array.from(providersSet).sort();
   }, []);
 
   const filteredPrograms = useMemo(() => {
@@ -49,9 +47,9 @@ export function BrowseProgramsPage() {
       );
     }
 
-    if (selectedCategory !== "All") {
+    if (selectedProvider !== "All") {
       filtered = filtered.filter(
-        (program) => program.category === selectedCategory,
+        (program) => program.provider === selectedProvider,
       );
     }
 
@@ -73,7 +71,7 @@ export function BrowseProgramsPage() {
   }, [
     searchQuery,
     selectedTargetAudience,
-    selectedCategory,
+    selectedProvider,
     selectedSkills,
     showNewOnly,
     showTrendingOnly,
@@ -88,7 +86,7 @@ export function BrowseProgramsPage() {
   const clearFilters = () => {
     setSearchQuery("");
     setSelectedTargetAudience("All");
-    setSelectedCategory("All");
+    setSelectedProvider("All");
     setSelectedSkills([]);
     setShowNewOnly(false);
     setShowTrendingOnly(false);
@@ -97,7 +95,7 @@ export function BrowseProgramsPage() {
   const hasActiveFilters =
     searchQuery.trim() !== "" ||
     selectedTargetAudience !== "All" ||
-    selectedCategory !== "All" ||
+    selectedProvider !== "All" ||
     selectedSkills.length > 0 ||
     showNewOnly ||
     showTrendingOnly;
@@ -176,20 +174,20 @@ export function BrowseProgramsPage() {
                   </div>
                 </div>
 
-                {allCategories.length > 0 && (
+                {allProviders.length > 0 && (
                   <div>
                     <h3 className="text-sm font-semibold text-neutral-900 mb-3">
-                      Category
+                      Provider
                     </h3>
                     <select
-                      value={selectedCategory}
-                      onChange={(e) => setSelectedCategory(e.target.value)}
+                      value={selectedProvider}
+                      onChange={(e) => setSelectedProvider(e.target.value)}
                       className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-brand-500 focus:border-transparent text-sm"
                     >
-                      <option value="All">All Categories</option>
-                      {allCategories.map((category) => (
-                        <option key={category} value={category}>
-                          {category}
+                      <option value="All">All Providers</option>
+                      {allProviders.map((provider) => (
+                        <option key={provider} value={provider}>
+                          {provider}
                         </option>
                       ))}
                     </select>

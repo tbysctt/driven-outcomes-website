@@ -1,6 +1,7 @@
 import { CTA } from "../components/CTA";
 import { GradientBorderButton } from "../components/GradientBorderButton";
 import { Link } from "react-router-dom";
+import type { Program } from "../data/programs";
 
 export type ProgramVariant = {
   name: string;
@@ -14,30 +15,8 @@ export type HowItWorksSegment = {
   focus: string;
 };
 
-export type ProgramInfoPageData = {
-  category: string;
-  programName: string;
-  tagline: string;
-  introHeading: string;
-  introParagraphs: string[];
-  variants: ProgramVariant[];
-  pricingLines: string[];
-  programInfoBullets: string[];
-  howItWorksSegments: HowItWorksSegment[];
-  ongoingConnection: { title: string; body: string };
-  prevProgram?: { name: string; path: string };
-  nextProgram?: { name: string; path: string };
-  provider: string;
-  curriculumYears: string;
-  focusedSkills: string[];
-  availabilityStatus: string;
-  showCalendar?: boolean;
-  isNew?: boolean;
-  isTrending?: boolean;
-};
-
 type Props = {
-  data: ProgramInfoPageData;
+  program: Program;
 };
 
 function SectionHeading({
@@ -56,7 +35,32 @@ function SectionHeading({
   );
 }
 
-export function ProgramInfoPageTemplate({ data }: Props) {
+export function ProgramInfoPageTemplate({ program }: Props) {
+  const tagline = program.tagline || program.description.split(".")[0] || "";
+  const introHeading = program.introHeading || `About ${program.name}`;
+  const introParagraphs = program.introParagraphs || [program.description];
+  const variants = program.variants || [];
+  const pricingLines = program.pricingLines || [
+    "Pricing information available upon request. Please contact us for details.",
+  ];
+  const programInfoBullets = program.programInfoBullets || [
+    `"${program.name}" is available for ${program.provider}.`,
+    "Minimum numbers apply. Please contact us for more information.",
+  ];
+  const howItWorksSegments = program.howItWorksSegments || [];
+  const ongoingConnection = program.ongoingConnection || {
+    title: "Ongoing Support",
+    body: "We provide ongoing support and resources to help you get the most out of this program.",
+  };
+  const curriculumYears = program.curriculumYears || "F-6";
+  const focusedSkills = program.focusedSkills || [
+    "Personal and Social Capability",
+    "Critical and Creative Thinking",
+  ];
+  const availabilityStatus =
+    program.availabilityStatus || "Contact us for availability";
+  const showCalendar = program.showCalendar || false;
+
   return (
     <>
       <section className="relative overflow-hidden py-6 sm:py-8 bg-neutral-50 border-b-2 border-neutral-200">
@@ -66,24 +70,24 @@ export function ProgramInfoPageTemplate({ data }: Props) {
               <div className="flex-1 min-w-70">
                 <div className="flex flex-wrap items-center gap-2 mb-2">
                   <span className="inline-block px-2 py-0.5 rounded bg-primary-brand-100 text-primary-brand-700 text-xs font-semibold uppercase tracking-wider">
-                    {data.category}
+                    {program.provider}
                   </span>
-                  {data.isNew && (
+                  {program.isNew && (
                     <span className="inline-block px-2 py-0.5 rounded bg-highlight-100 text-highlight-700 text-xs font-semibold uppercase tracking-wider">
                       New
                     </span>
                   )}
-                  {data.isTrending && (
+                  {program.isTrending && (
                     <span className="inline-block px-2 py-0.5 rounded bg-secondary-brand-100 text-secondary-brand-700 text-xs font-semibold uppercase tracking-wider">
                       Trending
                     </span>
                   )}
                 </div>
                 <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-neutral-900 mb-1">
-                  {data.programName}
+                  {program.name}
                 </h1>
                 <p className="text-base sm:text-lg text-primary-brand-600 font-semibold">
-                  {data.tagline}
+                  {tagline}
                 </p>
               </div>
               <div className="shrink-0">
@@ -103,22 +107,22 @@ export function ProgramInfoPageTemplate({ data }: Props) {
               <div className="lg:col-span-2 space-y-6">
                 <div>
                   <h2 className="text-xl font-bold text-neutral-800 mb-3">
-                    {data.introHeading}
+                    {introHeading}
                   </h2>
                   <div className="space-y-3 text-neutral-700 text-sm leading-relaxed">
-                    {data.introParagraphs.map((p, i) => (
+                    {introParagraphs.map((p, i) => (
                       <p key={i}>{p}</p>
                     ))}
                   </div>
                 </div>
 
-                {data.variants.length > 0 && (
+                {variants.length > 0 && (
                   <div>
                     <SectionHeading>
                       One Purpose. Three Programs.
                     </SectionHeading>
                     <div className="grid sm:grid-cols-3 gap-3">
-                      {data.variants.map((v) => (
+                      {variants.map((v) => (
                         <div
                           key={v.name}
                           className="p-3 rounded-lg bg-neutral-50 border border-neutral-200"
@@ -145,7 +149,7 @@ export function ProgramInfoPageTemplate({ data }: Props) {
                     build momentum and classroom culture:
                   </p>
                   <div className="space-y-4">
-                    {data.howItWorksSegments.map((seg, i) => (
+                    {howItWorksSegments.map((seg, i) => (
                       <div
                         key={i}
                         className="border-l-3 border-primary-brand-500 pl-4"
@@ -167,10 +171,10 @@ export function ProgramInfoPageTemplate({ data }: Props) {
                 <div>
                   <SectionHeading>Ongoing Classroom Connection</SectionHeading>
                   <h3 className="text-base font-bold text-neutral-800 mb-2">
-                    {data.ongoingConnection.title}
+                    {ongoingConnection.title}
                   </h3>
                   <p className="text-sm text-neutral-700 leading-relaxed">
-                    {data.ongoingConnection.body}
+                    {ongoingConnection.body}
                   </p>
                 </div>
 
@@ -189,7 +193,7 @@ export function ProgramInfoPageTemplate({ data }: Props) {
                   <div className="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
                     <SectionHeading className="text-lg">Pricing</SectionHeading>
                     <ul className="space-y-2 text-sm text-neutral-700">
-                      {data.pricingLines.map((line, i) => (
+                      {pricingLines.map((line, i) => (
                         <li key={i} className="leading-relaxed">
                           {line}
                         </li>
@@ -202,7 +206,7 @@ export function ProgramInfoPageTemplate({ data }: Props) {
                       Program Information
                     </SectionHeading>
                     <ul className="space-y-1.5 text-sm text-neutral-700 list-disc list-inside">
-                      {data.programInfoBullets.map((bullet, i) => (
+                      {programInfoBullets.map((bullet, i) => (
                         <li key={i} className="leading-relaxed">
                           {bullet}
                         </li>
@@ -212,18 +216,18 @@ export function ProgramInfoPageTemplate({ data }: Props) {
 
                   <div className="p-4 rounded-lg bg-neutral-50 border border-neutral-200">
                     <div className="text-xs font-semibold text-neutral-500 uppercase tracking-wider mb-3">
-                      Years: {data.curriculumYears}
+                      Years: {curriculumYears}
                     </div>
                     <SectionHeading className="text-lg">
                       Curriculum Links
                     </SectionHeading>
                     <p className="text-xs text-neutral-600 mb-3">
-                      {data.programName} aligns with the Australian Curriculum,
+                      {program.name} aligns with the Australian Curriculum,
                       supporting the following curriculum areas and
                       capabilities:
                     </p>
                     <ul className="space-y-1 text-sm text-neutral-700">
-                      {data.focusedSkills.map((link, i) => (
+                      {focusedSkills.map((link, i) => (
                         <li key={i} className="flex items-start">
                           <span className="text-primary-brand-500 mr-2">•</span>
                           <span>{link}</span>
@@ -241,9 +245,9 @@ export function ProgramInfoPageTemplate({ data }: Props) {
                       Booking Availability
                     </SectionHeading>
                     <p className="text-sm text-neutral-700 font-medium mb-3">
-                      {data.availabilityStatus}
+                      {availabilityStatus}
                     </p>
-                    {data.showCalendar && (
+                    {showCalendar && (
                       <div className="mt-3 p-3 rounded bg-neutral-50 border border-neutral-200">
                         <h3 className="text-sm font-bold text-neutral-800 mb-2">
                           School Holidays
