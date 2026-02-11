@@ -22,11 +22,13 @@ export function WhatsNewSection() {
               return (
                 <ProgramCard
                   key={program.slug}
-                  targetAudience={program.targetAudience}
+                  targetAudience={program.provider}
                   name={program.name}
                   description={program.description}
                   focusedSkills={program.focusedSkills}
                   slug={program.slug}
+                  isNew={program.isNew}
+                  isTrending={program.isTrending}
                 />
               );
             })}

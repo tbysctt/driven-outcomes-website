@@ -7,7 +7,7 @@ const navLinks = [
   { to: "/secondary-school", label: "Tripod" },
   { to: "/oshc-and-holidays", label: "Holiday Programs" },
   { to: "/talknow", label: "TalkNOW" },
-  { to: "/#programs", label: "ELC (Coming soon)" },
+  { to: "/elc", label: "ELC (Coming soon)" },
 ];
 
 const navLinkClass =

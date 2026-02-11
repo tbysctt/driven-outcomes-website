@@ -94,18 +94,17 @@ const socialLinks: SocialLink[] = [
 ];
 
 const programLinks: FooterLink[] = [
-  { label: "MiniBOSS Incursions", href: "#" },
-  { label: "Tripod Enterprise Education", href: "#" },
-  { label: "Primary School Programs", href: "#" },
-  { label: "Secondary School Programs", href: "#" },
-  { label: "Talk NOW! (RRE)", href: "#" },
+  { label: "MiniBOSS Incursions", href: "/primary-school" },
+  { label: "Tripod Enterprise Education", href: "/secondary-school" },
+  { label: "MiniBOSS Holiday Programs", href: "/oshc-and-holidays" },
+  { label: "Talk NOW! (RRE)", href: "/talknow" },
 ];
 
 const quickLinks: FooterLink[] = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
   { label: "Meet The Team", href: "/meet-the-team" },
-  { label: "News", href: "#" },
+  { label: "Browse Programs", href: "/programs" },
 ];
 
 const legalLinks: FooterLink[] = [

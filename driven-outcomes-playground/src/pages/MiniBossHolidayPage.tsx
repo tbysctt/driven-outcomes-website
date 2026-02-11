@@ -73,17 +73,17 @@ export function MiniBossHolidayPage() {
 
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
             {programs
-              .filter(
-                (program) => program.targetAudience === "OSHC & Vacation Care",
-              )
+              .filter((program) => program.provider === "OSHC & Vacation Care")
               .map((program) => (
                 <ProgramCard
                   key={program.name}
-                  targetAudience={program.targetAudience}
+                  targetAudience={program.provider}
                   name={program.name}
                   description={program.description}
                   focusedSkills={program.focusedSkills}
                   slug={program.slug}
+                  isNew={program.isNew}
+                  isTrending={program.isTrending}
                 />
               ))}
           </div>

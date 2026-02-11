@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
-import type { TargetAudience } from "../data/programs";
+import type { ProgramProvider } from "../data/programs";
 
 export interface ProgramCardProps {
-  targetAudience: TargetAudience;
+  targetAudience: ProgramProvider;
   name: string;
   description: string;
   focusedSkills: string[];
   slug: string;
+  isNew?: boolean;
+  isTrending?: boolean;
 }
 
 export function ProgramCard(props: ProgramCardProps) {
@@ -14,11 +16,23 @@ export function ProgramCard(props: ProgramCardProps) {
     <article
       className={`group rounded-2xl border bg-white p-6 shadow-sm transition-all duration-200 sm:p-7 md:p-8 border-primary-brand-200/80 hover:border-primary-brand-300 hover:shadow-lg`}
     >
-      <span
-        className={`inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider sm:mb-4 bg-primary-brand-100 text-primary-brand-700`}
-      >
-        {props.targetAudience}
-      </span>
+      <div className="flex flex-wrap items-center gap-2 sm:mb-4">
+        <span
+          className={`inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-primary-brand-100 text-primary-brand-700`}
+        >
+          {props.targetAudience}
+        </span>
+        {props.isNew && (
+          <span className="inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-highlight-100 text-highlight-700">
+            New
+          </span>
+        )}
+        {props.isTrending && (
+          <span className="inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-secondary-brand-100 text-secondary-brand-700">
+            Trending
+          </span>
+        )}
+      </div>
       <div className="mb-3">
         <Link
           className="text-xl font-bold tracking-tight text-primary-brand-700 sm:mb-4 sm:text-2xl"

@@ -3,9 +3,9 @@ import { useTypingAnimation } from "../hooks/useTypingAnimation";
 
 import miniBossLogo from "../assets/brand-logos/miniboss-incursions/Mini BOSS Incursions logo White Circle.png";
 
-import miniBossHolidayProgramsLogo from "../assets/brand-logos/miniboss-holiday-programs/MBHP_PurpleTransparent.png"
+import miniBossHolidayProgramsLogo from "../assets/brand-logos/miniboss-holiday-programs/MBHP_PurpleTransparent.png";
 import talkNowLogo from "../assets/brand-logos/talknow/Talk Now - LOGO - WHITE with WHITE slogan.png";
-import tripodLogo from "../assets/brand-logos/tripod/Tripod_Circle_Logos/Tripod_White.png"
+import tripodLogo from "../assets/brand-logos/tripod/Tripod_Circle_Logos/Tripod_White.png";
 
 const headingOptions: string[] = [
   "Curious Minds",
@@ -19,19 +19,19 @@ const HERO_BUTTONS = [
     linkPath: "/primary-school",
     imgSrc: miniBossLogo,
     label: "MiniBOSS",
-    subtitle: "Primary School Incursions",
+    subtitle: "Incursions for Primary Schools",
   },
   {
     linkPath: "/secondary-school",
     imgSrc: tripodLogo,
     label: "Tripod",
-    subtitle: "Secondary Schools Incursions",
+    subtitle: "Incursions for Secondary Schools",
   },
   {
     linkPath: "/oshc-and-holidays",
     imgSrc: miniBossHolidayProgramsLogo,
     label: "MiniBOSS Holidays",
-    subtitle: "OSHC and Holiday Incursions and Excursions",
+    subtitle: "Incursions and Excursions for OSHC and Vacation Care",
   },
   {
     linkPath: "/talknow",
@@ -52,18 +52,19 @@ function LandingHeroButton(props: {
       to={props.linkPath}
       className="group flex w-full max-w-xs flex-col items-center gap-3 rounded-2xl border border-white/20 bg-white/5 px-6 py-5 sm:px-8 sm:py-6 backdrop-blur-sm no-underline! transition-all duration-200 hover:border-white/30 hover:bg-white/10 sm:max-w-none"
     >
-      <span className="flex h-14 w-14 sm:h-16 sm:w-16 shrink-0 items-center justify-center">
+      <span className="flex h-32 w-32 sm:h-32 sm:w-32 shrink-0 items-center justify-center">
         <img
           src={props.imgSrc}
           alt=""
-          className="max-h-12 sm:max-h-14 object-contain"
+          className="max-h-32 sm:max-h-32 object-contain"
         />
       </span>
-      <span className="flex w-full flex-col items-center gap-0.5 px-2 text-center">
-        <span className="text-sm sm:text-base font-bold tracking-wide text-white mb-2">
+      <span className="flex w-full h-full flex-col gap-0.5">
+        <span className="text-lg sm:text-xl font-bold text-white mt-3 mb-1">
           {props.label}
         </span>
-        <span className="text-xs sm:text-sm font-bold text-white/60">
+        <div></div>
+        <span className="text-sm sm:text-base italic text-white/60">
           {props.subtitle}
         </span>
       </span>
@@ -113,7 +114,7 @@ export function LandingHero() {
       <div className="absolute inset-0 z-0 bg-[linear-gradient(to_bottom,transparent_0%,var(--color-neutral-800/60)_100%)]" />
 
       <div className="container mx-auto px-4 sm:px-6 relative z-2 w-full">
-        <div className="max-w-4xl mx-auto text-center">
+        <div className="max-w-5xl mx-auto text-center">
           <span className="inline-block px-3 py-1 sm:px-4 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-sm text-primary-brand-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
             Australia's Most Engaging Incursions
           </span>
@@ -131,7 +132,7 @@ export function LandingHero() {
           {/* <p className="my-4 sm:my-6 text-base sm:text-lg md:text-xl text-neutral-200 sm:text-neutral-300 leading-relaxed max-w-2xl mx-auto px-2 sm:px-0"> */}
           {/*   Hands-on learning for Prep to Year 12 that sparks creativity, confidence and real-world skills. Our interactive, curriculum-aligned incursions empower students to lead, build, solve, design, and grow — from STEM and entrepreneurship to wellbeing and teamwork. */}
           {/* </p> */}
-          <p className="text-base text-white/90 font-semibold mt-8 sm:mt-10 mb-10 sm:mb-8">
+          <p className="text-lg text-white/90 font-semibold mt-8 sm:mt-10 mb-10 sm:mb-8">
             I'm looking for...
           </p>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 justify-items-center">
