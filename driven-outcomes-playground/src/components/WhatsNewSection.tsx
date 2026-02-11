@@ -19,18 +19,7 @@ export function WhatsNewSection() {
           {programs
             .filter((program) => program.isNew)
             .map((program) => {
-              return (
-                <ProgramCard
-                  key={program.slug}
-                  targetAudience={program.provider}
-                  name={program.name}
-                  description={program.description}
-                  focusedSkills={program.focusedSkills}
-                  slug={program.slug}
-                  isNew={program.isNew}
-                  isTrending={program.isTrending}
-                />
-              );
+              return <ProgramCard key={program.slug} program={program} />;
             })}
         </div>
       </div>

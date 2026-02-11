@@ -1,7 +1,11 @@
 import { CTA } from "../components/CTA";
-import { GradientBorderButton } from "../components/GradientBorderButton";
+// import { GradientBorderButton } from "../components/GradientBorderButton";
 import { Link } from "react-router-dom";
-import type { Program } from "../data/programs";
+import type { Program, ProgramProvider } from "../data/programs";
+import miniBossLogo from "../assets/brand-logos/miniboss-incursions/MiniBoss_Incursions_White_Text_Circle_Transparent_BG.png";
+import miniBossHolidaysLogo from "../assets/brand-logos/miniboss-holiday-programs/MBHP_LightPurpleTransparent.png";
+import tripodLogo from "../assets/brand-logos/tripod/Tripod_Circle_Logos/Tripod_White.png";
+import talkNowLogo from "../assets/brand-logos/talknow/Talk Now - LOGO - WHITE with WHITE slogan.png";
 
 export type ProgramVariant = {
   name: string;
@@ -37,29 +41,43 @@ function SectionHeading({
 
 export function ProgramInfoPageTemplate({ program }: Props) {
   const tagline = program.tagline || program.description.split(".")[0] || "";
-  const introHeading = program.introHeading || `About ${program.name}`;
-  const introParagraphs = program.introParagraphs || [program.description];
-  const variants = program.variants || [];
-  const pricingLines = program.pricingLines || [
+  const introHeading =
+    program.pageDetails.introHeading || `About ${program.name}`;
+  const introParagraphs = program.pageDetails.introParagraphs || [
+    program.description,
+  ];
+  const variants = program.pageDetails.variants || [];
+  const pricingLines = program.pageDetails.pricingLines || [
     "Pricing information available upon request. Please contact us for details.",
   ];
-  const programInfoBullets = program.programInfoBullets || [
+  const programInfoBullets = program.pageDetails.programInfoBullets || [
     `"${program.name}" is available for ${program.provider}.`,
     "Minimum numbers apply. Please contact us for more information.",
   ];
-  const howItWorksSegments = program.howItWorksSegments || [];
-  const ongoingConnection = program.ongoingConnection || {
+  const howItWorksSegments = program.pageDetails.howItWorksSegments || [];
+  const ongoingConnection = program.pageDetails.ongoingConnection || {
     title: "Ongoing Support",
     body: "We provide ongoing support and resources to help you get the most out of this program.",
   };
-  const curriculumYears = program.curriculumYears || "F-6";
+  const curriculumYears = program.pageDetails.curriculumYears || "F-6";
   const focusedSkills = program.focusedSkills || [
     "Personal and Social Capability",
     "Critical and Creative Thinking",
   ];
   const availabilityStatus =
-    program.availabilityStatus || "Contact us for availability";
-  const showCalendar = program.showCalendar || false;
+    program.pageDetails.availabilityStatus || "Contact us for availability";
+  const showCalendar = program.pageDetails.showCalendar || false;
+
+  function getBrandLogo(brand: ProgramProvider) {
+    if (brand == "MiniBOSS") return miniBossLogo;
+    if (brand == "MiniBOSS Holidays") return miniBossHolidaysLogo;
+    if (brand == "Tripod Education") return tripodLogo;
+    else {
+      return talkNowLogo;
+    }
+  }
+
+  const brandLogo = getBrandLogo(program.provider);
 
   return (
     <>
@@ -91,9 +109,12 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                 </p>
               </div>
               <div className="shrink-0">
-                <GradientBorderButton to="/contact" size="md" variant="rounded">
-                  Enquire Now
-                </GradientBorderButton>
+                {/* <GradientBorderButton to="/contact" size="md" variant="rounded"> */}
+                {/*   Enquire Now */}
+                {/* </GradientBorderButton> */}
+
+                <img src={brandLogo} className="h-32" />
+                <span>By Driven Outcomes</span>
               </div>
             </div>
           </div>

@@ -281,16 +281,7 @@ export function BrowseProgramsPage() {
               ) : (
                 <div className="grid md:grid-cols-2 gap-6">
                   {uniquePrograms.map((program) => (
-                    <ProgramCard
-                      key={program.slug}
-                      targetAudience={program.provider}
-                      name={program.name}
-                      description={program.description}
-                      focusedSkills={program.focusedSkills}
-                      slug={program.slug}
-                      isNew={program.isNew}
-                      isTrending={program.isTrending}
-                    />
+                    <ProgramCard key={program.slug} program={program} />
                   ))}
                 </div>
               )}
