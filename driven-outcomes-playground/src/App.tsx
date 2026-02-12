@@ -9,6 +9,7 @@ import { TalkNowPage } from "./pages/TalkNowPage";
 import { ContactPage } from "./pages/ContactPage";
 import { AboutUsPage } from "./pages/AboutUsPage";
 import { MeetTheTeamPage } from "./pages/MeetTheTeamPage";
+import { CareersPage } from "./pages/CareersPage";
 import { NotFoundPage } from "./pages/NotFoundPage";
 import { ProgramInfoPageRoute } from "./pages/ProgramInfoPage";
 import { BrowseProgramsPage } from "./pages/BrowseProgramsPage";
@@ -30,6 +31,7 @@ function App() {
         />
         <Route path="about-us" element={<AboutUsPage />} />
         <Route path="meet-the-team" element={<MeetTheTeamPage />} />
+        <Route path="careers" element={<CareersPage />} />
         <Route path="contact" element={<ContactPage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>

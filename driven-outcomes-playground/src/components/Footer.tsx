@@ -105,6 +105,7 @@ const quickLinks: FooterLink[] = [
   { label: "About Us", href: "/about-us" },
   { label: "Meet The Team", href: "/meet-the-team" },
   { label: "Browse Programs", href: "/programs" },
+  { label: "Careers", href: "/careers" },
 ];
 
 const legalLinks: FooterLink[] = [

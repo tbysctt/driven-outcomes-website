@@ -49,7 +49,7 @@ export function Stats() {
     },
     {
       target: 515,
-      label: "Schools we've worked with",
+      label: "Who we've worked with",
       colorClass: "text-primary-brand-600",
     },
     {
