@@ -13,21 +13,16 @@ export function ProgramInfoPage({ program }: ProgramInfoPageProps) {
 export function ProgramInfoPageRoute() {
   const { slug } = useParams<{ slug: string }>();
 
-  if (!slug) {
-    return <ProgramNotFound />;
-  }
+  if (!slug) return <ProgramNotFound />;
 
   const program = programs.find((p) => p.slug === slug);
 
-  if (!program) {
-    return <ProgramNotFound slug={slug} />;
-  }
+  if (!program) return <ProgramNotFound />;
 
   return <ProgramInfoPage program={program} />;
 }
 
-function ProgramNotFound({ slug }: { slug?: string }) {
-  console.log(`Program ${slug} not found.`);
+function ProgramNotFound() {
   return (
     <section className="relative overflow-hidden py-24 sm:py-32 md:py-40 flex items-center min-h-[70vh]">
       <div
