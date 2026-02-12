@@ -1,17 +1,25 @@
 import { useState, useMemo } from "react";
-import { programs, type ProgramProvider } from "../data/programs";
+import { programs } from "../data/programs";
 import { ProgramCard } from "../components/ProgramCard";
 import { InfoHero } from "../components/InfoHero";
 
 export function BrowseProgramsPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedTargetAudience, setSelectedTargetAudience] = useState<
-    ProgramProvider | "All"
-  >("All");
+  const [selectedYearLevel, setSelectedYearLevel] = useState<string>("All");
   const [selectedProvider, setSelectedProvider] = useState<string>("All");
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [showNewOnly, setShowNewOnly] = useState(false);
   const [showTrendingOnly, setShowTrendingOnly] = useState(false);
+
+  const allYearLevels = useMemo(() => {
+    const yearLevelsSet = new Set<string>();
+    programs.forEach((program) => {
+      if (program.pageDetails?.curriculumYears) {
+        yearLevelsSet.add(program.pageDetails.curriculumYears);
+      }
+    });
+    return Array.from(yearLevelsSet).sort();
+  }, []);
 
   const allSkills = useMemo(() => {
     const skillsSet = new Set<string>();
@@ -41,9 +49,9 @@ export function BrowseProgramsPage() {
       );
     }
 
-    if (selectedTargetAudience !== "All") {
+    if (selectedYearLevel !== "All") {
       filtered = filtered.filter(
-        (program) => program.provider === selectedTargetAudience,
+        (program) => program.pageDetails?.curriculumYears === selectedYearLevel,
       );
     }
 
@@ -70,7 +78,7 @@ export function BrowseProgramsPage() {
     return filtered;
   }, [
     searchQuery,
-    selectedTargetAudience,
+    selectedYearLevel,
     selectedProvider,
     selectedSkills,
     showNewOnly,
@@ -85,7 +93,7 @@ export function BrowseProgramsPage() {
 
   const clearFilters = () => {
     setSearchQuery("");
-    setSelectedTargetAudience("All");
+    setSelectedYearLevel("All");
     setSelectedProvider("All");
     setSelectedSkills([]);
     setShowNewOnly(false);
@@ -94,7 +102,7 @@ export function BrowseProgramsPage() {
 
   const hasActiveFilters =
     searchQuery.trim() !== "" ||
-    selectedTargetAudience !== "All" ||
+    selectedYearLevel !== "All" ||
     selectedProvider !== "All" ||
     selectedSkills.length > 0 ||
     showNewOnly ||
@@ -139,40 +147,42 @@ export function BrowseProgramsPage() {
                   />
                 </div>
 
-                <div>
-                  <h3 className="text-sm font-semibold text-neutral-900 mb-3">
-                    Target Audience
-                  </h3>
-                  <div className="space-y-2">
-                    {(
-                      [
-                        "All",
-                        "OSHC & Vacation Care",
-                        "Primary Schools",
-                      ] as const
-                    ).map((audience) => (
-                      <label
-                        key={audience}
-                        className="flex items-center gap-2 cursor-pointer"
-                      >
+                {allYearLevels.length > 0 && (
+                  <div>
+                    <h3 className="text-sm font-semibold text-neutral-900 mb-3">
+                      Year Levels
+                    </h3>
+                    <div className="space-y-2">
+                      <label className="flex items-center gap-2 cursor-pointer">
                         <input
                           type="radio"
-                          name="targetAudience"
-                          checked={selectedTargetAudience === audience}
-                          onChange={() =>
-                            setSelectedTargetAudience(
-                              audience as ProgramProvider | "All",
-                            )
-                          }
+                          name="yearLevel"
+                          checked={selectedYearLevel === "All"}
+                          onChange={() => setSelectedYearLevel("All")}
                           className="w-4 h-4 text-primary-brand-600 focus:ring-primary-brand-500"
                         />
-                        <span className="text-sm text-neutral-700">
-                          {audience}
-                        </span>
+                        <span className="text-sm text-neutral-700">All</span>
                       </label>
-                    ))}
+                      {allYearLevels.map((yearLevel) => (
+                        <label
+                          key={yearLevel}
+                          className="flex items-center gap-2 cursor-pointer"
+                        >
+                          <input
+                            type="radio"
+                            name="yearLevel"
+                            checked={selectedYearLevel === yearLevel}
+                            onChange={() => setSelectedYearLevel(yearLevel)}
+                            className="w-4 h-4 text-primary-brand-600 focus:ring-primary-brand-500"
+                          />
+                          <span className="text-sm text-neutral-700">
+                            {yearLevel}
+                          </span>
+                        </label>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                )}
 
                 {allProviders.length > 0 && (
                   <div>
