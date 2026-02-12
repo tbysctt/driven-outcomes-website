@@ -1105,4 +1105,309 @@ export const programs: Program[] = [
       showCalendar: false,
     },
   },
+  {
+    provider: "MiniBOSS",
+    name: "The Newsroom",
+    description:
+      "Live from the classroom, students step into the roles of news researchers and reporters, diving into exciting breaking news topics (that can also be tailored towards your inquiry topic or focus). Picture the buzz and excitement of a real newsroom! Introducing The Newsroom – a thrilling project-based learning journey that transforms students into dynamic teams of storytellers, boosting teamwork, critical thinking, problem-solving, creativity, communication, digital literacy, and presentation skills.",
+    tagline: "Lights. Camera. Action!",
+    focusedSkills: [
+      "Media Arts",
+      "English",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "STEAM & Inquiry Skills",
+    ],
+    slug: "the-newsroom",
+    pageDetails: {
+      introHeading: "Get set to create your own broadcast news segment!",
+      introParagraphs: [
+        "Live from the classroom, students step into the roles of news researchers and reporters, diving into exciting breaking news topics (that can also be tailored towards your inquiry topic or focus). Picture the buzz and excitement of a real newsroom!",
+        "Can your news crews race against time and deliver a news story that'll have everyone on the edge of their seats?",
+        "Introducing The Newsroom – a thrilling project-based learning journey that transforms students into dynamic teams of storytellers, boosting teamwork, critical thinking, problem-solving, creativity, communication, digital literacy, and presentation skills. In The Newroom, students become the reporters and news anchors for the day! In teams students will research, brainstorm, script and present their own live news stories.",
+      ],
+      variants: [
+        {
+          name: "Full Day",
+          yearRange: "Full Day",
+          description: "$28.50 per student + GST - As of 1 July 2025",
+        },
+      ],
+      pricingLines: [
+        "Price: $28.50 per student plus GST for FULL DAY - As of 1 July 2025.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program runs as a <strong>FULL Day</strong> incursion.</li>
+          <li>This program can be run with up to <strong>120 students</strong> at a time (speak to us about options for more students as this is also possible).</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required (Classrooms can be used for smaller groups).</li>
+          <li><strong>Access to a projector</strong> required.</li>
+          <li><strong>Student supervision by teachers</strong> is required throughout the session.</li>
+          <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
+        </ul>
+      `,
+      curriculumYears: "5-6",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "MiniBOSS",
+    name: "The Studio",
+    description:
+      "Step into The Studio and immerse your students in the exciting world of podcasting! In this hands-on incursion, students work in teams to design, produce, and present their very own podcast episode—all in one day. From brainstorming to final edits, students will learn the art of communication, creativity, and collaboration.",
+    tagline: "Your Voice, Your PODCAST!",
+    focusedSkills: [
+      "Digital Technologies",
+      "Civics & Citizenship",
+      "English",
+      "Ethical Capability",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "the-studio",
+    pageDetails: {
+      introHeading: "Discover Your Voice, Create Your Podcast!",
+      introParagraphs: [
+        "Step into The Studio and immerse your students in the exciting world of podcasting! In this hands-on incursion, students work in teams to design, produce, and present their very own podcast episode—all in one day. From brainstorming to final edits, students will learn the art of communication, creativity, and collaboration.",
+      ],
+      variants: [
+        {
+          name: "Full Day",
+          yearRange: "Full Day",
+          description: "$28.50 per student + GST - As of 1 July 2025",
+        },
+      ],
+      pricingLines: [
+        "Price: $28.50 per student plus GST for FULL DAY - As of 1 July 2025.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>Program Overview</h3>
+        <ul>
+          <li><strong>Podcast Production:</strong> Students brainstorm topics, write scripts, and record their podcasts, focusing on impactful storytelling and engaging content.</li>
+          <li><strong>Technical Skills:</strong> Teams learn to edit and enhance their recordings, adding music, sound effects, and polishing their final product.</li>
+          <li><strong>The Broadcast:</strong> Students present their podcasts, showcasing their communication and production skills to their peers.</li>
+          <li><strong>One-Day Experience:</strong> A fast-paced, creative journey from idea to broadcast, all in just one day.</li>
+        </ul>
+        
+        <h3>Why Book?</h3>
+        <ul>
+          <li><strong>Skill Development:</strong> Enhance communication, digital literacy, and creative thinking.</li>
+          <li><strong>Engaging and Fun:</strong> A dynamic program that keeps students excited and motivated.</li>
+          <li><strong>Curriculum-Aligned:</strong> Supports key areas of the Victorian Curriculum, including Design and Technologies, and Personal and Social Capability.</li>
+          <li><strong>Extended Learning:</strong> Includes a pre-incursion activity to boost creativity...</li>
+        </ul>
+        
+        <h3>Topic Suggestions</h3>
+        <ul>
+          <li><strong>Term 1: Setting the Year's Tone</strong> - "Classroom Goals Podcast" Students outline class expectations and goals, creating a shared vision for the year.</li>
+          <li><strong>Term 2: Creative Expression</strong> - "Storytelling Podcast" Students create their own stories or poems, fostering creativity.</li>
+          <li><strong>Term 3: Community Connection</strong> - "Community Voices Podcast" Students interview local figures or school staff, highlighting community involvement.</li>
+          <li><strong>Term 4: The Ultimate Year 6 Memento</strong> - "Farewell Primary School Podcast" Students reflect on their primary school journey, sharing memories and interviews as a cherished keepsake.</li>
+        </ul>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program is run as a <strong>FULL Day</strong> incursion.</li>
+          <li>This program can be run with up to <strong>120 students</strong> at a time (speak to us about options for more students as this is also possible).</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required (Classrooms can be used for smaller groups).</li>
+          <li><strong>Access to a projector</strong> required.</li>
+          <li><strong>Student supervision by teachers</strong> is required throughout the session.</li>
+          <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
+        </ul>
+      `,
+      curriculumYears: "5-6",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "MiniBOSS",
+    name: "The Brief",
+    description:
+      "The Brief is a complete teacher resource that has been designed so that school communities can adapt the content to fit their needs and schedule. The Brief can be run as a multiple day event, over a week or as a term long program. The Brief takes students on an industry-focused learning journey right in the classroom. They'll dive into innovation, creativity, and entrepreneurship, all while tackling a real-world challenge head-on.",
+    tagline: "New Term Long Program",
+    focusedSkills: [
+      "Economics & Business",
+      "Design & Technologies",
+      "Health & Wellness",
+      "Visual Communication Design",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "the-brief",
+    pageDetails: {
+      introHeading: "New Teacher Resource: Years: 5-6",
+      introParagraphs: [
+        "The Brief is a complete teacher resource that has been designed so that school communities can adapt the content to fit their needs and schedule. The Brief can be run as a multiple day event, over a week or as a term long program.",
+        "Just press play on our teacher resources and follow along step-by-step with our pre-recorded facilitator videos. We have done all the heavy lifting for you...produced the comprehensive content, videos, and all the material you will need to run this immersive program.",
+        "The Brief takes students on an industry-focused learning journey right in the classroom. They'll dive into innovation, creativity, and entrepreneurship, all while tackling a real-world challenge head-on.",
+        "We've teamed up with a top retailer to make things exciting! Students will get the chance to design and market a new product for 9 to 13 year olds.",
+        "In teams, students will collaborate to brainstorm, design, create, market, and pitch their product to teachers and peers. There are fantastic rewards and prizes up for grabs and a 'Trade Show Extravaganza' to top it all off. Here, teams and their products will take centre stage, facing judges, a voting audience, and the chance to bask in well-deserved team glory!",
+      ],
+      pricingLines: [
+        "Give us a call on 03 9415 6327 to find out more about the program and pricing.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>The Resource Pack Includes</h3>
+        <ul>
+          <li>Team Kits</li>
+          <li>Teacher Packs</li>
+          <li>Student behaviour rewards program (can be linked to school values)</li>
+          <li>Curriculum Links</li>
+          <li>Student Workbooks</li>
+          <li>Great Prizes</li>
+          <li>Video Content</li>
+          <li>Teacher PD</li>
+        </ul>
+        
+        <p>We can also run an optional Kick-Off Event to launch the program at your school.</p>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program can be booked as a <strong>multiple day event or as a term long program</strong>, and can be booked with or without the Kick-Off Event.</li>
+          <li>This program is <strong>teacher lead</strong>, with MiniBOSS providing teacher training. MiniBOSS can also come into the school to do a Kick-Off event, a great way to start the program!</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required for the 'Trade Show Extravaganza' (Classrooms can be used for all other sessions).</li>
+          <li><strong>MiniBOSS provides student team kits and teacher packs</strong>, complete with all the resources required to run the program.</li>
+        </ul>
+      `,
+      curriculumYears: "5-6",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "MiniBOSS",
+    name: "Lead It",
+    description:
+      "Empower your students with Lead It—an inspiring incursion that helps them uncover the traits and values of exceptional leaders. Through engaging activities, students will unlock their unique skills and talents, putting the essence of everyday leadership into action. Whether they hold a formal role or not, every student will learn what it takes to lead with confidence and purpose.",
+    tagline: "No badge required!",
+    focusedSkills: [
+      "Drama",
+      "English",
+      "Health & Physical Education",
+      "Civics & Citizenship",
+      "Critical & Creative Thinking",
+      "Ethical Capability",
+      "Personal & Social Capability",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "lead-it",
+    pageDetails: {
+      introHeading: "Discover the Leader Within!",
+      introParagraphs: [
+        "Unveil the art of leadership! Ever wondered what it takes to lead?",
+        "Empower your students with Lead It—an inspiring incursion that helps them uncover the traits and values of exceptional leaders. Through engaging activities, students will unlock their unique skills and talents, putting the essence of everyday leadership into action. Whether they hold a formal role or not, every student will learn what it takes to lead with confidence and purpose.",
+      ],
+      variants: [
+        {
+          name: "Half Day",
+          yearRange: "Half Day",
+          description: "$20.00 per student + GST - As of 1 February 2025",
+        },
+        {
+          name: "Full Day",
+          yearRange: "Full Day",
+          description: "$28.50 per student + GST - As of 1 July 2025",
+        },
+      ],
+      pricingLines: [
+        "Price: $28.50 per student plus GST for FULL DAY - As of 1 July 2025.",
+        "Price: $20.00 per student plus GST for HALF DAY - As of 1 February 2025.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>Program Overview</h3>
+        <ul>
+          <li><strong>Leadership Exploration:</strong> Students explore the traits of great leaders and reflect on their own leadership potential.</li>
+          <li><strong>Team Collaboration:</strong> Engaging group activities help students develop teamwork, communication, and problem-solving skills.</li>
+          <li><strong>Campaign Creation:</strong> Students design and present a campaign that inspires positive change in their school community.</li>
+          <li><strong>Real-World Application:</strong> Practical exercises and role-playing scenarios allow students to apply leadership concepts in real-world situations.</li>
+        </ul>
+        
+        <h3>Why Book?</h3>
+        <ul>
+          <li><strong>Skill Development:</strong> Build essential leadership, communication, and teamwork skills.</li>
+          <li><strong>Engaging and Inspiring:</strong> A dynamic program that motivates students to lead with confidence.</li>
+          <li><strong>Curriculum-Aligned:</strong> Supports key areas of the Victorian Curriculum, including Personal and Social Capability, Ethical Capability, as well as Civics and Citizenship.</li>
+          <li><strong>Extended Learning:</strong> Includes pre- and post-incursion activities to reinforce leadership skills. Complete with videos, printable worksheets and a teacher guide.</li>
+        </ul>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program is run as a <strong>FULL or HALF Day</strong> incursion.</li>
+          <li>This program can be run with up to <strong>120 students</strong> at a time (speak to us about options for more students as this is also possible).</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required (Classrooms can be used for smaller groups).</li>
+          <li><strong>Access to a projector</strong> required.</li>
+          <li><strong>Student supervision by teachers</strong> is required throughout the session.</li>
+          <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
+        </ul>
+      `,
+      curriculumYears: "5-6",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "MiniBOSS",
+    name: "In My Community",
+    description:
+      "'In My Community' gives students the opportunity to build their knowledge of civics and citizenship in a collaborative and hands-on way. In this immersive incursion students learn not only what it takes to be a successful teammate, but also what it means to be an active participant in their community.",
+    tagline: "Get connected!",
+    focusedSkills: [
+      "Civics & Citizenship",
+      "Intercultural Capability",
+      "Design & Technologies",
+      "Visual Communication Design",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "in-my-community",
+    pageDetails: {
+      introHeading: "The Ultimate Team",
+      introParagraphs: [
+        "Being a team player is so important in civic life!",
+        "'In My Community' gives students the opportunity to build their knowledge of civics and citizenship in a collaborative and hands-on way.",
+        "In this immersive incursion students learn not only what it takes to be a successful teammate, but also what it means to be an active participant in their community. They learn how to work together to help others and build an inclusive and supportive school community.",
+        "The In My Community incursion is a project based learning experience with emphasis on students developing civic skills, teamwork, critical thinking, problem solving, creativity, communication and presentation skills.",
+      ],
+      variants: [
+        {
+          name: "Full Day",
+          yearRange: "Full Day",
+          description: "$27.50 per student + GST - As of 1 July 2023",
+        },
+      ],
+      pricingLines: [
+        "Price: $27.50 per student plus GST for FULL DAY - As of 1 July 2023.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program runs as a <strong>FULL Day</strong> incursion.</li>
+          <li>This program can be run with up to <strong>120 students</strong> at a time (speak to us about options for more students as this is also possible).</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required (Classrooms can be used for smaller groups).</li>
+          <li><strong>Access to a projector</strong> required.</li>
+          <li><strong>Student supervision by teachers</strong> is required throughout the session.</li>
+          <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
+        </ul>
+      `,
+      curriculumYears: "5-6",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
 ];
