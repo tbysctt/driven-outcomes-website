@@ -37,6 +37,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS",
     name: "Kick Start",
+    isNew: true,
     description:
       "MiniBOSS's Kick Start Incursion is designed to help every class from Prep to Year 6 start strong, build belonging, and create a shared foundation for the year ahead.",
     focusedSkills: [
@@ -120,37 +121,6 @@ export const programs: Program[] = [
     },
   },
   {
-    provider: "MiniBOSS Holidays",
-    name: "Bombs Away",
-    description:
-      "description here. Description here. Description here. Description here. Description here.",
-    focusedSkills: [
-      "Critical thinking",
-      "Creativity",
-      "Teamwork",
-      "Problem solving",
-    ],
-    slug: "bombs-away",
-    isNew: true,
-    isTrending: true,
-    pageDetails: {},
-  },
-  {
-    provider: "MiniBOSS",
-    name: "Smoothie Bar",
-    description:
-      "description here. Description here. Description here. Description here. Description here.",
-    focusedSkills: [
-      "Enterprise",
-      "Leadership",
-      "Real-world skills",
-      "Collaboration",
-    ],
-    slug: "smoothie-bar",
-    isTrending: true,
-    pageDetails: {},
-  },
-  {
     provider: "MiniBOSS",
     name: "Yoghurt Masters",
     description:
@@ -166,7 +136,6 @@ export const programs: Program[] = [
     ],
     slug: "yoghurt-masters",
     tagline: "Mix. Master. Thrive!",
-    isNew: true,
     pageDetails: {
       introHeading: "Welcome to Yoghurt Masters",
       introParagraphs: [
@@ -247,20 +216,6 @@ export const programs: Program[] = [
         },
       ],
     },
-  },
-  {
-    provider: "MiniBOSS Holidays",
-    name: "Smoothie Time",
-    description:
-      "Description here about the incursion program. Description here about the incursion program.",
-    focusedSkills: [
-      "Nutrition",
-      "Healthy eating",
-      "Creativity",
-      "Hands-on learning",
-    ],
-    slug: "smoothie-time",
-    pageDetails: {},
   },
   {
     provider: "MiniBOSS Holidays",
@@ -377,7 +332,7 @@ export const programs: Program[] = [
   },
   {
     provider: "MiniBOSS",
-    name: "The \"HOT\" Chocolate Shop",
+    name: 'The "HOT" Chocolate Shop',
     description:
       "Ready to be a chocolate entrepreneur? Did you know that chocolate is the only edible substance that literally melts in your mouth? Get ready to embark on a mouthwatering journey with The Chocolate Shop!",
     tagline: "Be a HOT chocolate BOSS!",
@@ -538,7 +493,8 @@ export const programs: Program[] = [
         {
           name: "Year 5/6 Students",
           yearRange: "Years 5-6",
-          description: "Half-day or full-day incursion - $28.50 per student plus GST for FULL DAY",
+          description:
+            "Half-day or full-day incursion - $28.50 per student plus GST for FULL DAY",
         },
       ],
       pricingLines: [
@@ -617,7 +573,8 @@ export const programs: Program[] = [
         {
           name: "Half Day",
           yearRange: "HALF DAY",
-          description: "Price: $20.00 per student plus GST - As of 1 February 2025",
+          description:
+            "Price: $20.00 per student plus GST - As of 1 February 2025",
         },
         {
           name: "Full Day",
@@ -907,6 +864,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS",
     name: "The Smoothie Bar",
+    isTrending: true,
     description:
       "Welcome to The Smoothie Bar, where students transform into young entrepreneurs! This hands-on incursion guides students through the exciting process of designing, creating, and marketing their very own smoothie company. Working in teams, students will explore the world of business, from understanding customer preferences to calculating costs and pitching their products.",
     tagline: "Design it. Blend it. Sell it!",
@@ -1748,12 +1706,14 @@ export const programs: Program[] = [
         {
           name: "Deep Dive",
           yearRange: "Longer format",
-          description: "Designed for deeper exploration or coverage of multiple topics",
+          description:
+            "Designed for deeper exploration or coverage of multiple topics",
         },
         {
           name: "Term-Long Program",
           yearRange: "Full term",
-          description: "Weekly sessions embedded into your wellbeing or careers timetable",
+          description:
+            "Weekly sessions embedded into your wellbeing or careers timetable",
         },
       ],
       pricingLines: [
@@ -2022,6 +1982,105 @@ export const programs: Program[] = [
       curriculumYears: "7-12",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
+    },
+  },
+  {
+    provider: "MiniBOSS",
+    name: "Camp @ School",
+    isNew: true,
+    description:
+      "Bring the fun, adventure, and connection of camp to your school with a fully customisable experience designed for Foundation to Year 6.",
+    tagline: "Ready, set, explore!",
+    focusedSkills: [
+      "Personal and Social Capability",
+      "Critical and Creative Thinking",
+      "Ethical Capability",
+      "Intercultural Capability",
+      "Health and Physical Education",
+      "English (Speaking and Listening)",
+    ],
+    slug: "camp-at-school",
+    pageDetails: {
+      introHeading: "Ready, set, explore!",
+      introParagraphs: [
+        "Camp @ School",
+        "Bring the fun, adventure, and connection of camp to your school with a fully customisable experience designed for Foundation to Year 6.",
+        "Our School Camp Experience gives every class from Foundation to Year 6 the chance to adventure, connect, and grow through a program that fits your school. Choose to bring camp to your school grounds or have our team join you at your chosen camp venue. Both options deliver high energy activities, hands-on challenges, and themed experiences that build confidence, belonging, and strong teamwork.",
+        "Our facilitators run every session and bring all required equipment, giving teachers the freedom to focus on supporting their students.",
+      ],
+      variants: [
+        {
+          name: "Camp at School",
+          yearRange: "Foundation to Year 6",
+          description:
+            "We transform your school grounds into a complete camp experience with outdoor challenges, themed activities, and team building adventures.",
+        },
+        {
+          name: "Camp at Your Camp Site",
+          yearRange: "Foundation to Year 6",
+          description:
+            "Already booked a camp location? Our team joins you onsite and delivers a full program of activities that match your chosen theme.",
+        },
+      ],
+      pricingLines: [
+        "Price: $28.50 per student plus GST for FULL DAY.",
+        "Price: $20.00 per student plus GST for HALF DAY.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>What Students Will Learn</h3>
+        <ul>
+          <li><strong>Confidence and Belonging:</strong> Activities that foster positive relationships and a strong sense of community.</li>
+          <li><strong>Teamwork and Leadership:</strong> Opportunities to collaborate, take initiative, and support peers.</li>
+          <li><strong>Problem Solving:</strong> Hands-on challenges that encourage thinking, decision making, and resilience.</li>
+          <li><strong>Age Appropriate Growth:</strong> Play-based exploration in the early years through to advanced teamwork for upper primary.</li>
+        </ul>
+        
+        <h3>How It Works</h3>
+        <ol>
+          <li>Choose your pathway: Camp at School or Camp at Your Camp Site.</li>
+          <li>Select a theme and we tailor sessions to your students' needs, interests, and age levels.</li>
+          <li>Pick a half day or full day schedule to suit your timetable.</li>
+          <li>We deliver each session and provide all equipment so staff can focus on student wellbeing and connection.</li>
+        </ol>
+        
+        <h3>One Purpose. Two Camp Pathways.</h3>
+        
+        <h4>Camp at School</h4>
+        <p>We transform your school grounds into a complete camp experience with outdoor challenges, themed activities, and team building adventures. A perfect option for schools wanting a high impact experience without travel.</p>
+        
+        <h4>Camp at Your Camp Site</h4>
+        <p>Already booked a camp location? Our team joins you onsite and delivers a full program of activities that match your chosen theme. We manage equipment, facilitation, and setup so your staff can stay focused on student wellbeing and connection.</p>
+        
+        <h3>Why Teachers and Schools Love This Program</h3>
+        <ul>
+          <li><strong>Fully Customised:</strong> Built around your goals, students, and timetable.</li>
+          <li><strong>Hassle Free:</strong> We bring facilitators and all equipment.</li>
+          <li><strong>Developmentally Focused:</strong> Tailored for Foundation to Year 6.</li>
+          <li><strong>High Energy and Hands On:</strong> Engaging activities that build confidence, belonging, and teamwork.</li>
+          <li><strong>💰 Cost Effective Alternative:</strong> A budget friendly way to provide a full camp experience without the travel costs or logistics of an offsite camp.</li>
+        </ul>
+        
+        <p>Adventure, connection, and growth: your camp, your way.</p>
+        
+        <p>Call 03 9415 6327 to find out more or start designing your 2026 Camp @ School experience today.</p>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>The School Camp Experience is suitable for Foundation to Year 6.</li>
+          <li>Each class participates in a bespoke, teamwork-based session designed for their age group and selected theme.</li>
+          <li>Half day and full day camp options are available.</li>
+          <li>A gymnasium, hall, or large outdoor space will be required for at-school delivery.</li>
+          <li>For offsite camp programs, activity spaces will be confirmed with the school.</li>
+          <li>Teacher supervision is required throughout all sessions.</li>
+          <li>All materials and equipment are provided by our team.</li>
+        </ul>
+      `,
+      curriculumYears: "F-6",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: true,
+      canBeCustomised: true,
     },
   },
 ];
