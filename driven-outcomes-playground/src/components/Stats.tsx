@@ -1,5 +1,6 @@
 import { useInView } from "../hooks/useInView";
 import { useAnimatedCounter } from "../hooks/useAnimatedCounter";
+import { programs } from "../data/programs";
 
 interface StatItemProps {
   target: number;
@@ -9,7 +10,13 @@ interface StatItemProps {
   isInView: boolean;
 }
 
-function StatItem({ target, suffix = "", label, colorClass, isInView }: StatItemProps) {
+function StatItem({
+  target,
+  suffix = "",
+  label,
+  colorClass,
+  isInView,
+}: StatItemProps) {
   const displayValue = useAnimatedCounter({
     target,
     suffix,
@@ -18,7 +25,9 @@ function StatItem({ target, suffix = "", label, colorClass, isInView }: StatItem
 
   return (
     <div>
-      <div className={`text-3xl sm:text-4xl md:text-5xl font-extrabold ${colorClass}`}>
+      <div
+        className={`text-3xl sm:text-4xl md:text-5xl font-extrabold ${colorClass}`}
+      >
         {displayValue}
       </div>
       <div className="mt-2 sm:mt-3 text-xs sm:text-sm font-semibold uppercase tracking-wide text-neutral-600 px-2">
@@ -32,10 +41,28 @@ export function Stats() {
   const [sectionRef, isInView] = useInView<HTMLElement>({ threshold: 0.3 });
 
   const stats = [
-    { target: 205, suffix: "K+", label: "Students reached", colorClass: "text-secondary-brand-600" },
-    { target: 515, label: "Schools we've worked with", colorClass: "text-primary-brand-600" },
-    { target: 30, label: "Organisations we've worked with", colorClass: "text-neutral-800" },
-    { target: 24, suffix: "+", label: "Programs to choose from", colorClass: "text-highlight-600" },
+    {
+      target: 205,
+      suffix: "K+",
+      label: "Students reached",
+      colorClass: "text-secondary-brand-600",
+    },
+    {
+      target: 515,
+      label: "Schools we've worked with",
+      colorClass: "text-primary-brand-600",
+    },
+    {
+      target: 30,
+      label: "Organisations we've worked with",
+      colorClass: "text-neutral-800",
+    },
+    {
+      target: programs.length,
+      suffix: "+",
+      label: "Programs to choose from",
+      colorClass: "text-highlight-600",
+    },
   ];
 
   return (

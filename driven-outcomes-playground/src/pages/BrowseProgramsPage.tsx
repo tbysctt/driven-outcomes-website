@@ -1,24 +1,30 @@
 import { useState, useMemo } from "react";
-import { programs } from "../data/programs";
+import { programs, type YearLevel } from "../data/programs";
 import { ProgramCard } from "../components/ProgramCard";
 import { InfoHero } from "../components/InfoHero";
 
 export function BrowseProgramsPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedYearLevel, setSelectedYearLevel] = useState<string>("All");
+  const [selectedYearLevel, setSelectedYearLevel] = useState<YearLevel | "All">("All");
   const [selectedProvider, setSelectedProvider] = useState<string>("All");
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
   const [showNewOnly, setShowNewOnly] = useState(false);
   const [showTrendingOnly, setShowTrendingOnly] = useState(false);
 
   const allYearLevels = useMemo(() => {
-    const yearLevelsSet = new Set<string>();
+    const yearLevelsSet = new Set<YearLevel>();
     programs.forEach((program) => {
-      if (program.pageDetails?.curriculumYears) {
-        yearLevelsSet.add(program.pageDetails.curriculumYears);
+      if (program.yearLevels) {
+        program.yearLevels.forEach((level) => yearLevelsSet.add(level));
       }
     });
-    return Array.from(yearLevelsSet).sort();
+    return Array.from(yearLevelsSet).sort((a, b) => {
+      if (a === "F") return -1;
+      if (b === "F") return 1;
+      if (a === "VCE Vocational Major") return 1;
+      if (b === "VCE Vocational Major") return -1;
+      return parseInt(a, 10) - parseInt(b, 10);
+    });
   }, []);
 
   const allSkills = useMemo(() => {
@@ -51,7 +57,7 @@ export function BrowseProgramsPage() {
 
     if (selectedYearLevel !== "All") {
       filtered = filtered.filter(
-        (program) => program.pageDetails?.curriculumYears === selectedYearLevel,
+        (program) => program.yearLevels?.includes(selectedYearLevel),
       );
     }
 
@@ -172,7 +178,7 @@ export function BrowseProgramsPage() {
                             type="radio"
                             name="yearLevel"
                             checked={selectedYearLevel === yearLevel}
-                            onChange={() => setSelectedYearLevel(yearLevel)}
+                            onChange={() => setSelectedYearLevel(yearLevel as YearLevel)}
                             className="w-4 h-4 text-primary-brand-600 focus:ring-primary-brand-500"
                           />
                           <span className="text-sm text-neutral-700">

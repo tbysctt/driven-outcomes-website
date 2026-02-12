@@ -3,6 +3,7 @@ import { GradientBorderButton } from "../components/GradientBorderButton";
 import { FaqSection } from "../components/FaqSection";
 import { Link } from "react-router-dom";
 import type { Program, ProgramProvider } from "../data/programs";
+import { formatYearLevels } from "../utils/formatYearLevels";
 import miniBossLogo from "../assets/brand-logos/miniboss-incursions/MiniBoss_Incursions_White_Text_Circle_Transparent_BG.png";
 import miniBossHolidaysLogo from "../assets/brand-logos/miniboss-holiday-programs/MBHP_LightPurpleTransparent.png";
 import tripodLogo from "../assets/brand-logos/tripod/Tripod_Circle_Logos/Tripod_White.png";
@@ -56,7 +57,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
     title: "Ongoing Support",
     body: "We provide ongoing support and resources to help you get the most out of this program.",
   };
-  const curriculumYears = program.pageDetails.curriculumYears || "F-6";
+  const curriculumYears = formatYearLevels(program.yearLevels);
   const focusedSkills = program.focusedSkills || [
     "Personal and Social Capability",
     "Critical and Creative Thinking",

@@ -1,6 +1,23 @@
 import type { FaqItem } from "../components/FaqSection";
 import type { ProgramVariant } from "../page-templates/ProgramInfoPageTemplate";
 
+export type YearLevel =
+  | "OSHC"
+  | "F"
+  | "1"
+  | "2"
+  | "3"
+  | "4"
+  | "5"
+  | "6"
+  | "7"
+  | "8"
+  | "9"
+  | "10"
+  | "11"
+  | "12"
+  | "VCE Vocational Major";
+
 export type Program = {
   provider: ProgramProvider;
   name: string;
@@ -11,6 +28,7 @@ export type Program = {
 
   isNew?: boolean;
   isTrending?: boolean;
+  yearLevels: YearLevel[];
 
   pageDetails: {
     introHeading?: string;
@@ -19,7 +37,6 @@ export type Program = {
     pricingLines?: string[];
     informationHTML?: string;
     ongoingConnection?: { title: string; body: string };
-    curriculumYears?: string;
     availabilityStatus?: string;
     showCalendar?: boolean;
     faqs?: FaqItem[];
@@ -115,10 +132,10 @@ export const programs: Program[] = [
         title: "Kickstart Your Week Pack",
         body: "Every booking includes a Kickstart Your Week Pack: A 5-week mini resource that helps teachers continue the connection with short, 10-minute Monday morning activities designed to strengthen emotional literacy and classroom culture.",
       },
-      curriculumYears: "F–6",
       availabilityStatus: "Open for Bookings",
       showCalendar: true,
     },
+    yearLevels: ["F", "1", "2", "3", "4", "5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -185,7 +202,6 @@ export const programs: Program[] = [
           <li><strong>Large Groups Welcome:</strong> Yoghurt Masters is perfect for large year levels or combined year groups! We can cater for up to 50-60 students per session, with the flexibility to run multiple sessions per day, either back-to-back or concurrently. Whether you're looking to engage an entire year level or mix multiple levels, we'll tailor the experience to fit your school's needs. Let's chat about options!</li>
         </ul>
       `,
-      curriculumYears: "P-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
       faqs: [
@@ -216,10 +232,12 @@ export const programs: Program[] = [
         },
       ],
     },
+    yearLevels: ["F", "1", "2", "3", "4", "5", "6"],
   },
   {
     provider: "MiniBOSS Holidays",
     name: "Code Busters",
+    yearLevels: ["OSHC"],
     description:
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: ["Coding", "Logic", "Problem solving", "Digital skills"],
@@ -229,6 +247,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS Holidays",
     name: "Super Sleuths",
+    yearLevels: ["OSHC"],
     description:
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: [
@@ -243,6 +262,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS Holidays",
     name: "The Mystery Bag",
+    yearLevels: ["OSHC"],
     description:
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: ["Curiosity", "Discovery", "Problem solving", "Creativity"],
@@ -252,6 +272,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS Holidays",
     name: "The Chocolate Boss",
+    yearLevels: ["OSHC"],
     description:
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: [
@@ -266,6 +287,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS Holidays",
     name: "Superhero",
+    yearLevels: ["OSHC"],
     description:
       "Description here about the incursion program. Description here about the incursion program.",
     focusedSkills: ["Resilience", "Confidence", "Teamwork", "Creativity"],
@@ -325,10 +347,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "F-2",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["F", "1", "2"],
   },
   {
     provider: "MiniBOSS",
@@ -384,10 +406,10 @@ export const programs: Program[] = [
           <li>The Chocolate Shop is a <strong>nut and egg free</strong> program. Full allergy information and advice will be provided to you prior to the incursion.</li>
         </ul>
       `,
-      curriculumYears: "F-2",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["F", "1", "2"],
   },
   {
     provider: "MiniBOSS",
@@ -455,10 +477,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "F-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["F", "1", "2", "3", "4", "5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -544,10 +566,10 @@ export const programs: Program[] = [
           <li><strong>All worksheets and supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "F & 5/6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["F", "5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -615,10 +637,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "F-4",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["F", "1", "2", "3", "4"],
   },
   {
     provider: "MiniBOSS",
@@ -699,7 +721,6 @@ export const programs: Program[] = [
           <li><strong>Large Groups Welcome:</strong> Let's Grow is perfect for large year levels or combined year groups! We can cater for up to 120 students per session, with the flexibility to run multiple sessions per day, concurrently. Whether you're looking to engage an entire year level or mix multiple levels, we'll tailor the experience to fit your school's needs. Let's chat about options!</li>
         </ul>
       `,
-      curriculumYears: "3-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
       faqs: [
@@ -735,6 +756,7 @@ export const programs: Program[] = [
         },
       ],
     },
+    yearLevels: ["3", "4", "5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -790,10 +812,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "3-4",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["3", "4"],
   },
   {
     provider: "MiniBOSS",
@@ -856,10 +878,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "3-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["3", "4", "5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -928,10 +950,10 @@ export const programs: Program[] = [
           <li>The Smoothie Bar is a <strong>nut and egg free</strong> program. Full allergy information and advice will be provided to you prior to the incursion.</li>
         </ul>
       `,
-      curriculumYears: "3-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["3", "4", "5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -995,10 +1017,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "3-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["3", "4", "5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -1058,10 +1080,10 @@ export const programs: Program[] = [
           <li><strong>All worksheets and supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "3-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["3", "4", "5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -1107,10 +1129,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "5-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -1180,10 +1202,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "5-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -1238,10 +1260,10 @@ export const programs: Program[] = [
           <li><strong>MiniBOSS provides student team kits and teacher packs</strong>, complete with all the resources required to run the program.</li>
         </ul>
       `,
-      curriculumYears: "5-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -1311,10 +1333,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "5-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["5", "6"],
   },
   {
     provider: "MiniBOSS",
@@ -1363,10 +1385,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by MiniBOSS.</li>
         </ul>
       `,
-      curriculumYears: "5-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["5", "6"],
   },
   {
     provider: "Tripod Education",
@@ -1432,10 +1454,10 @@ export const programs: Program[] = [
           <li>VCE VM Numeracy and Literacy Skills</li>
         </ul>
       `,
-      curriculumYears: "7-12 & VCE Vocational Major",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["7", "8", "9", "10", "11", "12", "VCE Vocational Major"],
   },
   {
     provider: "Tripod Education",
@@ -1485,10 +1507,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by TRIPOD.</li>
         </ul>
       `,
-      curriculumYears: "9-10",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["9", "10"],
   },
   {
     provider: "Tripod Education",
@@ -1568,10 +1590,10 @@ export const programs: Program[] = [
           <li>The Smoothie Bar is a <strong>nut and egg free</strong> program. Full allergy information and advice will be provided to you prior to the program.</li>
         </ul>
       `,
-      curriculumYears: "7-9",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["7", "8", "9"],
   },
   {
     provider: "Tripod Education",
@@ -1621,10 +1643,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by TRIPOD.</li>
         </ul>
       `,
-      curriculumYears: "7-12",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["7", "8", "9", "10", "11", "12"],
   },
   {
     provider: "Tripod Education",
@@ -1668,10 +1690,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by TRIPOD.</li>
         </ul>
       `,
-      curriculumYears: "7-9",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["7", "8", "9"],
   },
   {
     provider: "Tripod Education",
@@ -1757,10 +1779,10 @@ export const programs: Program[] = [
         
         <p>Designed specifically to your goals. All sessions align to the Victorian Curriculum V2.0.</p>
       `,
-      curriculumYears: "7-12",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["7", "8", "9", "10", "11", "12"],
   },
   {
     provider: "Tripod Education",
@@ -1815,10 +1837,10 @@ export const programs: Program[] = [
           <li><strong>TRIPOD provides student team kits and teacher packs</strong>, complete with all the resources required to run the program.</li>
         </ul>
       `,
-      curriculumYears: "7-12",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["7", "8", "9", "10", "11", "12"],
   },
   {
     provider: "Tripod Education",
@@ -1902,10 +1924,10 @@ export const programs: Program[] = [
           <li><strong>TRIPOD provides student team kits and teacher packs</strong>, complete with all the resources required to run the program.</li>
         </ul>
       `,
-      curriculumYears: "7-12",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["7", "8", "9", "10", "11", "12"],
   },
   {
     provider: "Tripod Education",
@@ -1979,10 +2001,10 @@ export const programs: Program[] = [
           <li><strong>All supplies</strong> required to run the program are supplied by TRIPOD.</li>
         </ul>
       `,
-      curriculumYears: "7-12",
       availabilityStatus: "Open for Bookings",
       showCalendar: false,
     },
+    yearLevels: ["7", "8", "9", "10", "11", "12"],
   },
   {
     provider: "MiniBOSS",
@@ -2077,10 +2099,10 @@ export const programs: Program[] = [
           <li>All materials and equipment are provided by our team.</li>
         </ul>
       `,
-      curriculumYears: "F-6",
       availabilityStatus: "Open for Bookings",
       showCalendar: true,
       canBeCustomised: true,
     },
+    yearLevels: ["F", "1", "2", "3", "4", "5", "6"],
   },
 ];

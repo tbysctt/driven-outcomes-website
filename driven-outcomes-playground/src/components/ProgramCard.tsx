@@ -1,11 +1,14 @@
 import { Link } from "react-router-dom";
 import type { Program } from "../data/programs";
+import { formatYearLevels } from "../utils/formatYearLevels";
 
 export interface ProgramCardProps {
   program: Program;
 }
 
 export function ProgramCard({ program }: ProgramCardProps) {
+  const yearLevelsDisplay = formatYearLevels(program.yearLevels);
+
   return (
     <article
       className={`group rounded-2xl border bg-white p-6 shadow-sm transition-all duration-200 sm:p-7 md:p-8 border-primary-brand-200/80 hover:border-primary-brand-300 hover:shadow-lg`}
@@ -16,6 +19,11 @@ export function ProgramCard({ program }: ProgramCardProps) {
         >
           {program.provider}
         </span>
+        {program.yearLevels && program.yearLevels.length > 0 && (
+          <span className="inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-neutral-100 text-neutral-700">
+            Years: {yearLevelsDisplay}
+          </span>
+        )}
         {program.isNew && (
           <span className="inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-highlight-100 text-highlight-700">
             New
