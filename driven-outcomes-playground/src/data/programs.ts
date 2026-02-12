@@ -1410,4 +1410,618 @@ export const programs: Program[] = [
       showCalendar: false,
     },
   },
+  {
+    provider: "Tripod Education",
+    name: "The Studio",
+    description:
+      "Get ready for an exciting journey into the world of podcasting with The Studio! Spark your students' creativity as they explore the art of storytelling. Whether it's a one-day intensive or a more in-depth exploration over two or three days, students will discover the magic of crafting their very own podcasts through a dynamic learning experience that goes beyond audio recording.",
+    tagline: "Raise Your Voice!",
+    focusedSkills: [
+      "Digital Technologies",
+      "Civics & Citizenship",
+      "English",
+      "Ethical Capability",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "the-studio-senior",
+    pageDetails: {
+      introHeading: "Skills for learning, life and the world of work",
+      introParagraphs: [
+        "Students design, produce, and present their very own PODCAST!",
+        "Get ready for an exciting journey into the world of podcasting with The Studio!",
+        "Spark your students' creativity as they explore the art of storytelling. Whether it's a one-day intensive or a more in-depth exploration over two or three days, students will discover the magic of crafting their very own podcasts through a dynamic learning experience that goes beyond audio recording. The Studio can be tailored to any compelling topic of your choice.",
+        "The Studio can be tailored to explore any compelling topic of your choice.",
+      ],
+      pricingLines: [
+        "Pricing depends on the duration of program and number of students.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>Here's what students can expect in a multi-day career-focused program (ideal for Year 9 and 10 students):</h3>
+        <ul>
+          <li>Conduct professional interviews with industry mentors.</li>
+          <li>Learn effective communication and collaboration skills.</li>
+          <li>Develop teamwork skills amidst tight deadlines.</li>
+          <li>Explore diverse career paths and burning career questions.</li>
+          <li>Acquire hands-on networking experience and connections.</li>
+          <li>Polish presentation skills for the community showcase.</li>
+          <li>Craft a podcast worthy of being a school keepsake or highlighted on resumes.</li>
+          <li>Develop essential enterprise skills for future success.</li>
+          <li>Assume professional roles (such as Producer, Project Manager, Host, and Brand Expert), handling deliverables and deadlines.</li>
+        </ul>
+        
+        <p>The Studio aligns with the Victorian Curriculum and the Victorian Careers Curriculum Framework, ensuring integration into each school's educational objectives. We also offer customizations to tailor the experience to school requirements, including VCE Vocational Major Programs.</p>
+        
+        <p>The Studio can also be aligned with other state and national curriculums.</p>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program can be booked over <strong>One-Multiple Days</strong>. Speak to us about specific requirements.</li>
+          <li>This program can be run with up to <strong>120 students</strong> at a time (speak to us about options for more students as this is also possible).</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required (Classrooms can be used for smaller groups).</li>
+          <li><strong>Access to a projector</strong> required.</li>
+          <li><strong>Student supervision by teachers</strong> is required throughout the session.</li>
+          <li><strong>All supplies</strong> required to run the program are supplied by TRIPOD.</li>
+        </ul>
+        
+        <h3>VCE Vocational Major Links</h3>
+        <ul>
+          <li>VCE VM Work Related Skills</li>
+          <li>VCE VM Personal Development Skills</li>
+          <li>VCE VM Numeracy and Literacy Skills</li>
+        </ul>
+      `,
+      curriculumYears: "7-12 & VCE Vocational Major",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "Tripod Education",
+    name: "The Pitch",
+    description:
+      "This unique professional development experience allows students to explore, understand, develop and learn how to communicate their skills. The Pitch builds confidence and a strong connection to the key skills students will need to be future ready. The Pitch explores the future world of work and the transferable enterprise skills students will need for success in learning, life and work.",
+    tagline: "Professional Development Program",
+    focusedSkills: [
+      "Professional Development",
+      "Economics & Business",
+      "Designed Solutions",
+      "Digital Technologies",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "the-pitch",
+    pageDetails: {
+      introHeading: "Skills for learning, life and the world of work",
+      introParagraphs: [
+        "Ideal for Years: 9-10",
+        "This unique professional development experience allows students to explore, understand, develop and learn how to communicate their skills. The Pitch builds confidence and a strong connection to the key skills students will need to be future ready.",
+        "The Pitch explores the future world of work and the transferable enterprise skills students will need for success in learning, life and work.",
+        "Through plenary discussion and real-world application, students are given a set of tools that will help them develop skills in critical thinking, creativity, presentation skills, problem solving, teamwork and communication.",
+        "This action-packed program is built to really engage students in their learning and motivate them to build their professional brand.",
+        "Students are given the opportunity to participate in an individual pitch and a group pitch as part of the program.",
+        "For the final pitch, students are presented with an exciting real-world challenge, where they work in small groups to apply their critical thinking, problem-solving, communication, and teamwork skills to craft and deliver their ultimate pitch!",
+      ],
+      pricingLines: [
+        "Prices start at $28.50 per student per day plus GST for FULL day - As of 1 July 2023.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <blockquote>
+          <p>"I wanted to express my gratitude for the amazing session your team delivered. The students were so positive about the day, and when we reflected on their favourite experience of the week, many of them cited 'The Pitch' day. Thank you."</p>
+          <cite>Teacher Quote</cite>
+        </blockquote>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program can be booked as a <strong>One-Two Day</strong> program.</li>
+          <li>This program can be run with up to <strong>120 students</strong> at a time (speak to us about options for more students as this is also possible).</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required (Classrooms can be used for smaller groups).</li>
+          <li><strong>Access to a projector</strong> required.</li>
+          <li><strong>Student supervision by teachers</strong> is required throughout the session.</li>
+          <li><strong>All supplies</strong> required to run the program are supplied by TRIPOD.</li>
+        </ul>
+      `,
+      curriculumYears: "9-10",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "Tripod Education",
+    name: "The Smoothie Bar",
+    description:
+      "Students step into the shoes of young entrepreneurs as they create, brand, and pitch their own smoothie idea in a real-world business simulation. The Smoothie Bar is more than just a one-off activity, it's a fast-paced, hands-on introduction to the world of business, designed to spark curiosity and inspire entrepreneurial thinking.",
+    tagline: "Design it. Blend it. Sell it!",
+    focusedSkills: [
+      "Economics & Business",
+      "Design & Technologies",
+      "Health & Wellness",
+      "Visual Communication Design",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "the-smoothie-bar-senior",
+    pageDetails: {
+      introHeading: "Skills for learning, life and the world of work",
+      introParagraphs: [
+        "The Smoothie Bar",
+        "Students step into the shoes of young entrepreneurs as they create, brand, and pitch their own smoothie idea in a real-world business simulation.",
+        "Real-World Business, Real Student Impact",
+        "The Smoothie Bar is more than just a one-off activity, it's a fast-paced, hands-on introduction to the world of business, designed to spark curiosity and inspire entrepreneurial thinking. Students work in teams to design a smoothie concept, sample key elements of branding and marketing, and pitch their idea to a panel of judges.",
+        "The program combines creativity, collaboration and real-world financial skills. Students will get a taste of what it means to bring a product to market, from customer research and pricing to basic branding and pitching all while developing capabilities they'll use far beyond the classroom.",
+        "The day culminates in a Shark Tank-style pitch, where teachers step into the role of judges (aka the Sharks) and decide which team deserves to take the crown as top smoothie business.",
+      ],
+      variants: [
+        {
+          name: "One Day",
+          yearRange: "One Day",
+          description: "$29.50 per student per day + GST - As of 1 July 2025",
+        },
+        {
+          name: "Two-Day Carnival",
+          yearRange: "Two Days",
+          description: "Contact us for a quote",
+        },
+      ],
+      pricingLines: [
+        "Price: $29.50 per student per day plus GST for FULL day - As of 1 July 2025.",
+        "Contact us for a quote for The 2-Day Carnival.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>What Students Will Do</h3>
+        <ul>
+          <li>Research trends and identify a target market</li>
+          <li>Develop original smoothie recipes based on health, taste and cost</li>
+          <li>Create a memorable brand and marketing strategy</li>
+          <li>Crunch the numbers to plan costs and set a competitive price</li>
+          <li>Deliver a live pitch to a panel of 'Shark Tank'-style judges</li>
+        </ul>
+        
+        <p>We bring everything: blenders, ingredients and all the materials needed to run the day. Teachers can simply show up and enjoy the session, and yes, you'll even get to enjoy a smoothie! We also provide detailed allergy and intolerance information ahead of time to help you plan with confidence.</p>
+        
+        <h3>The 2-Day Carnival (Optional Extension)</h3>
+        <p>Ready to take it to the next level? On Day 2, students launch their smoothie brand in a trade show-style carnival. They will:</p>
+        <ul>
+          <li>Set up smoothie stands and serve the school community</li>
+          <li>Engage with customers and promote their brand</li>
+          <li>Put their enterprise and teamwork skills to the test in a real-world simulation</li>
+        </ul>
+        
+        <p>To find out more, give us a call.</p>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program can be booked as a <strong>One-Two Day</strong> program.</li>
+          <li>This program can be run with up to <strong>120 students</strong> at a time (speak to us about options for more students as this is also possible).</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required (Classrooms can be used for smaller groups).</li>
+          <li><strong>Access to a projector</strong> required.</li>
+          <li><strong>Access to powerpoints</strong> required.</li>
+          <li><strong>Student supervision by teachers</strong> is required throughout the session.</li>
+          <li><strong>All supplies</strong> required to run the program are supplied by TRIPOD.</li>
+          <li>The Smoothie Bar is a <strong>nut and egg free</strong> program. Full allergy information and advice will be provided to you prior to the program.</li>
+        </ul>
+      `,
+      curriculumYears: "7-9",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "Tripod Education",
+    name: "Lead It",
+    description:
+      "Lead It allows students to explore their understanding of what leadership is, how it connects to their values and behaviours, and how they can choose to lead in their own lives to make a meaningful difference and achieve positive impact. In teams, students create a video for future students to help mentor them and ease their transition into the school community.",
+    tagline: "Understand Your Impact!",
+    focusedSkills: [
+      "Health and Wellbeing",
+      "Civics & Citizenship",
+      "Design & Technologies",
+      "Media Arts & Drama",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Inquiry Skills",
+    ],
+    slug: "lead-it-senior",
+    pageDetails: {
+      introHeading: "Skills for learning, life and the world of work",
+      introParagraphs: [
+        "Ideal for Years: 7-12",
+        "What is everyday leadership?",
+        "Lead It allows students to explore their understanding of what leadership is, how it connects to their values and behaviours, and how they can choose to lead in their own lives to make a meaningful difference and achieve positive impact.",
+        "KEY TASK: In teams, students create a video for future students to help mentor them and ease their transition into the school community.",
+      ],
+      pricingLines: [
+        "Prices start at $28.50 per student per day plus GST for FULL day - As of 1 July 2023.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>KEY LEARNING OUTCOMES:</h3>
+        <ul>
+          <li>Develop self-awareness and recognition of their own strengths, qualities, and values</li>
+          <li>Understand the influence they have on others and how they can choose to use this influence</li>
+          <li>Identify and prioritise the qualities and skills of good leadership</li>
+          <li>Be challenged to consider the impact of their choices, behaviours, and actions, as well as the opportunity they have to contribute to the school community and beyond</li>
+        </ul>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program is run as a <strong>Full Day</strong> session. Speak to us about specific requirements.</li>
+          <li>This program can be run with up to <strong>120 students</strong> at a time (speak to us about options for more students as this is also possible).</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required (Classrooms can be used for smaller groups).</li>
+          <li><strong>Access to a projector</strong> required.</li>
+          <li><strong>Student supervision by teachers</strong> is required throughout the session.</li>
+          <li><strong>All supplies</strong> required to run the program are supplied by TRIPOD.</li>
+        </ul>
+      `,
+      curriculumYears: "7-12",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "Tripod Education",
+    name: "Game On!",
+    description:
+      "Explore the world of design thinking with Game On! This dynamic challenge empowers students to unleash their creativity by designing and constructing their very own arcade game. They'll brainstorm, prototype, and iterate to create their own game using recycled and sustainable materials.",
+    tagline: "Press Play!",
+    focusedSkills: [
+      "Creative & Design Thinking",
+      "Economics & Business",
+      "Design & Technologies",
+      "Visual Communication Design",
+      "Financial Literacy",
+      "Personal & Social Capability",
+      "Critical Thinking",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "game-on",
+    pageDetails: {
+      introHeading: "Skills for learning, life and the world of work",
+      introParagraphs: [
+        "Ideal for Years: 7-9",
+        "Explore the world of design thinking with Game On! This dynamic challenge empowers students to unleash their creativity by designing and constructing their very own arcade game.",
+        "They'll brainstorm, prototype, and iterate to create their own game using recycled and sustainable materials. Throughout the process, they'll learn the value of iteration and resilience as they work through design challenges and refine their ideas. Working collaboratively in teams, they'll discover their unique talents, strengths, creativity, and problem-solving skills to deliver an immersive gaming experience for their audience.",
+        "This program emphasises teamwork and perseverance as students collaborate over multiple days to refine their designs and ultimately bring their creations to life.",
+        "And the best part? The school community gets to join in the fun at the carnival on the final day!",
+      ],
+      pricingLines: [
+        "Pricing depends on the duration of program and number of students.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program is run over <strong>multiple days</strong>. Speak to us about specific requirements.</li>
+          <li>This program can be run with up to <strong>120 students</strong> at a time (speak to us about options for more students as this is also possible).</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required (Classrooms can be used for smaller groups).</li>
+          <li><strong>Access to a projector</strong> required.</li>
+          <li><strong>Student supervision by teachers</strong> is required throughout the session.</li>
+          <li><strong>All supplies</strong> required to run the program are supplied by TRIPOD.</li>
+        </ul>
+      `,
+      curriculumYears: "7-9",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "Tripod Education",
+    name: "Future Ready",
+    description:
+      "The career landscape is changing quickly and student needs are evolving even faster. As a result, we have moved beyond one-size-fits-all workshops and now create fully customised programs for school communities. This approach keeps students at the cutting edge of what actually works and ensures they receive the support and guidance they genuinely need and want right now.",
+    tagline: "Future-focused, bespoke career learning!",
+    focusedSkills: [
+      "Career Development",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Health & Wellbeing",
+      "Financial Literacy",
+      "Digital Literacy",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "future-ready",
+    pageDetails: {
+      introHeading: "Skills for learning, life and the world of work",
+      introParagraphs: [
+        "Ideal for Years: 7-12",
+        "The career landscape is changing quickly and student needs are evolving even faster.",
+        "As a result, we have moved beyond one-size-fits-all workshops and now create fully customised programs for school communities.",
+        "This approach keeps students at the cutting edge of what actually works and ensures they receive the support and guidance they genuinely need and want right now, while also helping schools meet both students and teachers exactly where they are.",
+      ],
+      variants: [
+        {
+          name: "Single Session",
+          yearRange: "45–60 minutes",
+          description: "A fast, high-impact session focused on a single topic",
+        },
+        {
+          name: "Deep Dive",
+          yearRange: "Longer format",
+          description: "Designed for deeper exploration or coverage of multiple topics",
+        },
+        {
+          name: "Term-Long Program",
+          yearRange: "Full term",
+          description: "Weekly sessions embedded into your wellbeing or careers timetable",
+        },
+      ],
+      pricingLines: [
+        "Future Ready programs are designed to be flexible and can be delivered as a Single Session, Deep Dive, or Term-Long program, depending on your school's needs.",
+        "Prices start from $12 per student plus GST for a 45–60 minute session.",
+        "Minimum numbers apply. Package rates are available for multiple year level bookings and whole-of-school programs.",
+        "Get in touch with our team to discuss the best format and pricing for your school.",
+      ],
+      informationHTML: `
+        <h3>How Future Ready works:</h3>
+        <ol>
+          <li><strong>Student Survey</strong><br>
+          Students kick things off with a fast, interactive pre-survey that captures what they are curious about, concerned about, and eager to learn. This gives instant insight into what your cohort actually wants and needs.</li>
+          
+          <li><strong>Program Design</strong><br>
+          We turn those insights into a customised program built specifically for your school. Using our wide range of modules and activities, we design a session that speaks directly to the real needs of your students and your school.</li>
+          
+          <li><strong>Flexible Delivery</strong><br>
+          Our facilitators deliver high-energy, engaging sessions tailored to your students. Schools can choose a fast Single Session, a longer Deep Dive, or a full Term-Long Program embedded within their wellbeing or careers timetable.</li>
+          
+          <li><strong>Follow-Up Resources</strong><br>
+          Teachers receive ready-to-use follow-up resources that help maintain momentum and support students to continue their thinking, reflection, and planning beyond the session.</li>
+        </ol>
+        
+        <h3>Program Information</h3>
+        <p>Future Ready programs can be customised to include topics such as:</p>
+        <ul>
+          <li>Making the most of work experience and pathway planning</li>
+          <li>Exploring university, TAFE, apprenticeships, and alternative pathways</li>
+          <li>Planning a meaningful gap year and making it count</li>
+          <li>Interview skills, networking, and professional communication</li>
+          <li>Creating stand-out resumes and personal brands</li>
+          <li>Managing exam stress and developing effective study routines</li>
+          <li>Strengthening digital habits, social media use, and online reputation</li>
+          <li>Building financial wellbeing and smart money habits</li>
+          <li>Boosting sleep, energy, and overall wellbeing</li>
+          <li>Strengthening mindset, resilience, and bounce-back skills</li>
+          <li>Identifying strengths, interests, values, and future opportunities</li>
+          <li>Setting goals and mapping next steps beyond school</li>
+        </ul>
+        
+        <p>Designed specifically to your goals. All sessions align to the Victorian Curriculum V2.0.</p>
+      `,
+      curriculumYears: "7-12",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "Tripod Education",
+    name: "The Brief",
+    description:
+      "The Brief is a complete teacher resource that has been designed so that school communities can adapt the content to fit their needs and schedule. The Brief can be run as a multiple day event or as a term long program. Delivered as a series of virtual incursions, The Brief takes students on an industry-focused learning journey right in the classroom.",
+    tagline: "New Term Long Program",
+    focusedSkills: [
+      "Economics & Business",
+      "Design & Technologies",
+      "Health & Wellness",
+      "Visual Communication Design",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "the-brief-senior",
+    pageDetails: {
+      introHeading: "Skills for learning, life and the world of work",
+      introParagraphs: [
+        "New Teacher Resource: Years: 7-12",
+        "The Brief is a complete teacher resource that has been designed so that school communities can adapt the content to fit their needs and schedule. The Brief can be run as a multiple day event or as a term long program.",
+        "Delivered as a series of virtual incursions, The Brief takes students on an industry-focused learning journey right in the classroom. They'll dive into innovation, creativity, and entrepreneurship, all while tackling a real-world challenge head-on.",
+        "We've teamed up with a top retailer to make things exciting! Students will get the chance to design and market a new product for 13 to 18 year olds.",
+        "In teams, students will collaborate to brainstorm, design, create, market, and pitch their product to teachers and peers. There are fantastic rewards and prizes up for grabs and a 'Trade Show Extravaganza' to top it all off. Here, teams and their products will take centre stage, facing judges, a voting audience, and the chance to bask in well-deserved team glory!",
+      ],
+      pricingLines: [
+        "Give us a call on 03 9415 6327 to find out more about the program and pricing.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>The Resource Pack Includes</h3>
+        <ul>
+          <li>Team Kits</li>
+          <li>Teacher Packs</li>
+          <li>Student behaviour rewards program (can be linked to school values)</li>
+          <li>Curriculum Links</li>
+          <li>Student Workbooks</li>
+          <li>Great Prizes</li>
+          <li>Video Content</li>
+          <li>Teacher PD</li>
+        </ul>
+        
+        <p>We can also run an optional Kick-Off Event to launch the program at your school.</p>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program can be booked as a <strong>multiple day event or as a term long program</strong>.</li>
+          <li>This program is <strong>teacher lead</strong>, with TRIPOD providing teacher training. TRIPOD can also come into the school to do a Kick-Off Event. A great way to start the program!</li>
+          <li>A <strong>gymnasium, hall, or large open learning space</strong> will be required for the 'Trade Show Extravaganza' (Classrooms can be used for all other sessions).</li>
+          <li><strong>TRIPOD provides student team kits and teacher packs</strong>, complete with all the resources required to run the program.</li>
+        </ul>
+      `,
+      curriculumYears: "7-12",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "Tripod Education",
+    name: "The Showcase",
+    description:
+      "Engage your students in a ready-to-go, project-based learning experience that builds creativity, collaboration and communication—without the pressure of social media. The Showcase is a structured, term-long challenge where students work in teams to design, produce and present their own original piece of multimedia content.",
+    tagline: "New Term Long Program",
+    focusedSkills: [
+      "Economics & Business",
+      "Design & Technologies",
+      "Visual Communication Design",
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Enterprising & Inquiry Skills",
+    ],
+    slug: "the-showcase",
+    pageDetails: {
+      introHeading: "Skills for learning, life and the world of work",
+      introParagraphs: [
+        "The Showcase",
+        "Year Levels: 7–12 | Duration: 10 sessions",
+        "Engage your students in a ready-to-go, project-based learning experience that builds creativity, collaboration and communication—without the pressure of social media.",
+        "The Showcase is a structured, term-long challenge where students work in teams to design, produce and present their own original piece of multimedia content. Guided by pre-recorded facilitator videos, students move through three competitive rounds, building their ideas step by step and gaining real-world skills along the way.",
+      ],
+      pricingLines: [
+        "Give us a call on 03 9415 6327 to find out more about the program and pricing.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+        "Minimum numbers apply, get in touch for more information.",
+      ],
+      informationHTML: `
+        <h3>What Students Will Create</h3>
+        <p>Each team will plan, script, and produce a 7–10 minute multimedia piece. This could be a podcast, interview segment, panel discussion, or short-form video. While the format draws inspiration from content on platforms like YouTube or Spotify, students won't need to use social media or publish anything online—everything can be presented within the school context.</p>
+        
+        <p>The content must:</p>
+        <ul>
+          <li>Be 7–10 minutes long</li>
+          <li>Include an interview with one or more guests (e.g. a teacher, parent, expert, or peer)</li>
+          <li>Connect to a meaningful theme (e.g. The Future, Belonging, or Voices That Matter)</li>
+        </ul>
+        
+        <p>The team with the strongest overall presentation—based on creativity, teamwork, communication, and professionalism—wins a prize!</p>
+        
+        <h3>Why Teachers Love It</h3>
+        <ul>
+          <li><strong>All resources included:</strong> No planning required</li>
+          <li><strong>Built-in structure:</strong> Three exciting rounds keep students engaged</li>
+          <li><strong>Cross-curricular links:</strong> English, Media, Civics, Capabilities, Careers</li>
+          <li><strong>Skill-building:</strong> Creativity, communication, critical thinking, and collaboration</li>
+        </ul>
+        
+        <h3>What's Included</h3>
+        <ul>
+          <li>Team Kits (with props, tools and mini whiteboards)</li>
+          <li>Student Workbooks</li>
+          <li>Teacher Resource Pack</li>
+          <li>Pre-recorded Facilitator Videos</li>
+          <li>Prizes for the winning team</li>
+          <li>Student Behaviour Reward Program (aligned to your school values)</li>
+        </ul>
+        
+        <h3>Optional Add-Ons:</h3>
+        <ul>
+          <li>Teacher Professional Development (PD)</li>
+          <li>Kick-Off Event to launch the program at your school</li>
+        </ul>
+        
+        <h3>Flexible Themes</h3>
+        <p>We'll help you choose a theme that resonates with your students. Popular options include:</p>
+        <ul>
+          <li><strong>The Future:</strong> Career and aspiration focus</li>
+          <li><strong>Our Voice:</strong> Youth agency and identity</li>
+          <li><strong>Change Makers:</strong> Innovation and community impact</li>
+        </ul>
+        
+        <p>📱 Want to learn more or tailor The Showcase to your school? Call us to discuss pricing and options.</p>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>This program is designed as a <strong>term long program</strong>.</li>
+          <li>This program is <strong>teacher lead</strong>, with TRIPOD providing all the teacher resources. TRIPOD can also come into the school to do a Kick-Off Event. A great way to start the program!</li>
+          <li><strong>TRIPOD provides student team kits and teacher packs</strong>, complete with all the resources required to run the program.</li>
+        </ul>
+      `,
+      curriculumYears: "7-12",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
+  {
+    provider: "Tripod Education",
+    name: "The Panel",
+    description:
+      "The Panel is a fast-paced, student-led Q&A session for Years 7–12 that opens up real conversations about life, relationships, and wellbeing. Students take the lead—submitting questions prior, nominating panelists, and driving the discussion with honest, age-appropriate dialogue. It's respectful, inclusive, and empowering—giving students the tools and language to lead conversations that matter.",
+    tagline: "Ask it. Hear it. Own it",
+    focusedSkills: [
+      "Personal & Social Capability",
+      "Critical & Creative Thinking",
+      "Ethical Understanding",
+      "Interpersonal Relationships",
+      "Wellbeing & Resilience",
+    ],
+    slug: "the-panel",
+    pageDetails: {
+      introHeading: "Skills for learning, life and the world of work",
+      introParagraphs: [
+        "The Panel",
+        "Ask it. Hear it. Own it.",
+        "The Panel is a fast-paced, student-led Q&A session for Years 7–12 that opens up real conversations about life, relationships, and wellbeing. Students take the lead—submitting questions prior, nominating panelists, and driving the discussion with honest, age-appropriate dialogue.",
+        "It's respectful, inclusive, and empowering—giving students the tools and language to lead conversations that matter.",
+      ],
+      pricingLines: [
+        "Get in touch to chat about pricing and flexible delivery options to suit your needs.",
+        "Package rates available for multiple year level bookings and whole of school programs.",
+      ],
+      informationHTML: `
+        <h3>What Students Will Learn</h3>
+        <ul>
+          <li><strong>Confidence & Communication:</strong> Express ideas, ask tough questions, and build respectful dialogue.</li>
+          <li><strong>Critical Thinking:</strong> Explore real-world scenarios around relationships, identity, and wellbeing.</li>
+          <li><strong>Empathy & Peer Support:</strong> Understand different perspectives and learn how to respond with care.</li>
+          <li><strong>Leadership & Responsibility:</strong> Step up as student panelists and role models for their cohort.</li>
+        </ul>
+        
+        <h3>How It Works</h3>
+        <ol>
+          <li><strong>Submit Questions:</strong> Students anonymously share their questions or scenarios before the session.</li>
+          <li><strong>Vote & Select:</strong> Each home group votes on their top 2 questions and nominates one student to join the panel.</li>
+          <li><strong>Live Panel:</strong> Our trained facilitator hosts a 45–60 minute live panel where students pose questions and dive into real-world answers together.</li>
+          <li><strong>Reflect & Wrap Up:</strong> We finish with key takeaways, actions and support strategies to take back to class.</li>
+        </ol>
+        
+        <h3>What's Included</h3>
+        <ul>
+          <li>✅ Pre-session intro video and teacher guide</li>
+          <li>✅ Customised content based on student-submitted questions</li>
+          <li>✅ Post-session resources including:
+            <ul>
+              <li>Q&A Recap</li>
+              <li>Duluth 'Wheel of Control' Toolkit (spot early signs of unhealthy relationships)</li>
+            </ul>
+          </li>
+        </ul>
+        
+        <h3>Extension Opportunities</h3>
+        <ul>
+          <li><strong>Leadership Panel:</strong> Involve senior students (Years 11–12) as co-facilitators. This optional leadership extension gives older students ownership of the process and helps build leadership across year levels.</li>
+          <li><strong>Class Code of Conduct:</strong> Extend the session by co-creating a Class Code of Conduct. This promotes shared expectations, respect, and accountability within the classroom community.</li>
+        </ul>
+        
+        <blockquote>
+          <p>"The Panel gave our students a platform to ask exactly what they wanted. The honest, thoughtful responses really resonated."</p>
+        </blockquote>
+        
+        <h3>Program Information</h3>
+        <ul>
+          <li>The live panel runs for approximately <strong>45–60 minutes</strong>.</li>
+          <li><strong>Student supervision by teachers</strong> is required throughout the session.</li>
+          <li><strong>All supplies</strong> required to run the program are supplied by TRIPOD.</li>
+        </ul>
+      `,
+      curriculumYears: "7-12",
+      availabilityStatus: "Open for Bookings",
+      showCalendar: false,
+    },
+  },
 ];
