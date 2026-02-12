@@ -1,4 +1,4 @@
-import { BookingAvailability } from "../components/BookingAvailability";
+// import { BookingAvailability } from "../components/BookingAvailability";
 import { EnquiryForm } from "../components/EnquiryForm";
 
 const CONTACT_CARDS = [
@@ -163,7 +163,7 @@ export function ContactPage() {
         </div>
       </section>
 
-      <BookingAvailability />
+      {/* <BookingAvailability /> */}
 
       <section
         className="py-12 sm:py-16 md:py-20 bg-neutral-50"
