@@ -104,10 +104,10 @@ export function SchoolsScroller() {
       <div className="container mx-auto px-4 sm:px-6">
         <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 mb-2">
-            Schools We've Worked With
+            Who We've Worked With
           </h2>
           <p className="text-lg text-neutral-600">
-            Hundreds of schools  and organisations trust us across Australia
+            Hundreds of schools and organisations trust us across Australia
           </p>
         </div>
 

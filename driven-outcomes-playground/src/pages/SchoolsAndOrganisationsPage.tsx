@@ -1,4 +1,4 @@
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import { InfoPageTemplate } from "../page-templates/InfoPageTemplate";
 import { schools, organisations } from "../data/schools-and-organisations";
 
@@ -92,7 +92,18 @@ function ListWithLetterSections({
   title: string;
   idPrefix: string;
 }) {
-  const sorted = useMemo(() => sortAlphabetically(items), [items]);
+  const [searchTerm, setSearchTerm] = useState<string>("");
+
+  const filteredItems = useMemo(() => {
+    if (!searchTerm.trim()) return items;
+    const term = searchTerm.toLowerCase().trim();
+    return items.filter((item) => item.toLowerCase().includes(term));
+  }, [items, searchTerm]);
+
+  const sorted = useMemo(
+    () => sortAlphabetically(filteredItems),
+    [filteredItems],
+  );
   const byLetter = useMemo(() => groupByFirstLetter(sorted), [sorted]);
   const letters = useMemo(() => [...byLetter.keys()], [byLetter]);
 
@@ -102,24 +113,46 @@ function ListWithLetterSections({
         className="sticky z-40 py-3 bg-white"
         style={{ top: STICKY_HEADER_OFFSET }}
       >
-        <div className="max-w-6xl mx-auto mt-5">
-          <h2 className="text-xl sm:text-2xl md:text-3xl uppercase font-extrabold tracking-tight text-neutral-900">
-            {title}
-          </h2>
-          <AlphabetNav letters={letters} idPrefix={idPrefix} />
+        <div className="max-w-6xl mx-auto mt-5 px-4 sm:px-0">
+          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+            <h2 className="text-xl sm:text-2xl md:text-3xl uppercase font-extrabold tracking-tight text-neutral-900">
+              {title}
+            </h2>
+            <input
+              type="text"
+              placeholder="Search..."
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+              className="w-full sm:w-auto px-4 py-2.5 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-brand-500 focus:border-transparent text-sm sm:text-base sm:min-w-50 md:min-w-62.5"
+            />
+          </div>
+          {letters.length > 0 && (
+            <AlphabetNav letters={letters} idPrefix={idPrefix} />
+          )}
         </div>
       </div>
-      <div className="max-w-6xl mx-auto">
-        <div>
-          {letters.map((letter) => (
-            <LetterSection
-              key={letter}
-              letter={letter}
-              names={byLetter.get(letter)!}
-              id={`${idPrefix}-letter-${letter}`}
-            />
-          ))}
-        </div>
+      <div className="max-w-6xl mx-auto px-4 sm:px-0">
+        {letters.length > 0 ? (
+          <div>
+            {letters.map((letter) => (
+              <LetterSection
+                key={letter}
+                letter={letter}
+                names={byLetter.get(letter)!}
+                id={`${idPrefix}-letter-${letter}`}
+              />
+            ))}
+          </div>
+        ) : (
+          <div className="text-center py-12 text-neutral-500">
+            <p className="text-base sm:text-lg">
+              No results found for "{searchTerm}"
+            </p>
+            <p className="text-xs sm:text-sm mt-2">
+              Try a different search term
+            </p>
+          </div>
+        )}
       </div>
     </section>
   );
@@ -134,19 +167,20 @@ export function SchoolsAndOrganisationsPage() {
       <div className="py-12 sm:py-16 md:py-20">
         <div className="container mx-auto px-4 sm:px-6">
           <ListWithLetterSections
-            items={schools}
-            title="Schools We've Worked With"
+            items={[...schools, ...organisations]}
+            title="Schools and Organisations"
             idPrefix="schools"
           />
 
-          <ListWithLetterSections
-            items={organisations}
-            title="Organisations We've Worked With"
-            idPrefix="orgs"
-          />
+          {/* <ListWithLetterSections */}
+          {/*   items={organisations} */}
+          {/*   title="Organisations We've Worked With" */}
+          {/*   idPrefix="orgs" */}
+          {/* /> */}
 
           <p className="mt-10 text-center text-neutral-500 text-sm">
-            {schools.length} schools and {organisations.length} organisations
+            {schools.length + organisations.length} schools and organisations
+            across Australia
           </p>
         </div>
       </div>
