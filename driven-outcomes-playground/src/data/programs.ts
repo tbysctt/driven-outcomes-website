@@ -1,6 +1,40 @@
 import type { FaqItem } from "../components/FaqSection";
 import type { ProgramVariant } from "../page-templates/ProgramInfoPageTemplate";
 
+import inMyCommunity from "../assets/program-images/in-my-community.png";
+import theStudioJunior from "../assets/program-images/the-studio-junior.png";
+import theStudioSenior from "../assets/program-images/the-studio-senior.webp";
+import theBriefJunior from "../assets/program-images/the-brief-junior.png";
+import theBriefSenior from "../assets/program-images/the-brief-senior.webp";
+import theNewsroom from "../assets/program-images/the-newsroom.png";
+import kickStart from "../assets/program-images/kick-start.webp";
+import yoghurtMasters from "../assets/program-images/yoghurt-masters.webp";
+import solveIt from "../assets/program-images/solve-it.webp";
+import theChocolateShop from "../assets/program-images/the-chocolate-shop.webp";
+import miniOlympics from "../assets/program-images/mini-olympics.webp";
+import superBuddies from "../assets/program-images/super-buddies.webp";
+import createIt from "../assets/program-images/create-it.webp";
+import letsGrow from "../assets/program-images/lets-grow.webp";
+import islandEscape from "../assets/program-images/island-escape.webp";
+import crackIt from "../assets/program-images/crack-it.webp";
+import theSmoothieBarJunior from "../assets/program-images/the-smoothie-bar-junior.webp";
+import theLaunch from "../assets/program-images/the-launch.webp";
+import theLab from "../assets/program-images/the-lab.webp";
+import leadItJunior from "../assets/program-images/lead-it-junior.png";
+import thePitch from "../assets/program-images/the-pitch.webp";
+import theSmoothieBarSenior from "../assets/program-images/the-smoothie-bar-senior.webp";
+import leadItSenior from "../assets/program-images/lead-it-senior.webp";
+import gameOn from "../assets/program-images/game-on.webp";
+import futureReadyWorkshops from "../assets/program-images/future-ready-workshops.webp";
+import theShowcase from "../assets/program-images/the-showcase.png";
+import thePanel from "../assets/program-images/the-panel.webp";
+import superhero from "../assets/program-images/superhero.webp";
+import superSleuths from "../assets/program-images/super-sleuths.jpg";
+import theChocolateBoss from "../assets/program-images/the-chocolate-boss.jpg";
+import theMysteryBag from "../assets/program-images/the-mystery-bag.jpg";
+import campAtSchool from "../assets/program-images/camp-at-school.webp";
+import codeBusters from "../assets/program-images/code-busters.jpg";
+
 export type YearLevel =
   | "OSHC"
   | "F"
@@ -25,9 +59,10 @@ export type Program = {
   tagline?: string;
   focusedSkills: string[];
   slug: string;
+  imageUrl: string;
 
   isNew?: boolean;
-  isTrending?: boolean;
+  isPopular?: boolean;
   yearLevels: YearLevel[];
 
   pageDetails: {
@@ -66,6 +101,7 @@ export const programs: Program[] = [
       "English (Speaking and Listening)",
     ],
     slug: "kick-start",
+    imageUrl: kickStart,
     tagline: "Refocus, reset, and kick start together",
     pageDetails: {
       introHeading: "Ready, set, go!",
@@ -152,6 +188,7 @@ export const programs: Program[] = [
       "Digital Technologies",
     ],
     slug: "yoghurt-masters",
+    imageUrl: yoghurtMasters,
     tagline: "Mix. Master. Thrive!",
     pageDetails: {
       introHeading: "Welcome to Yoghurt Masters",
@@ -237,6 +274,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS Holidays",
     name: "Code Busters",
+    imageUrl: codeBusters,
     yearLevels: ["OSHC"],
     description:
       "Description here about the incursion program. Description here about the incursion program.",
@@ -247,6 +285,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS Holidays",
     name: "Super Sleuths",
+    imageUrl: superSleuths,
     yearLevels: ["OSHC"],
     description:
       "Description here about the incursion program. Description here about the incursion program.",
@@ -262,6 +301,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS Holidays",
     name: "The Mystery Bag",
+    imageUrl: theMysteryBag,
     yearLevels: ["OSHC"],
     description:
       "Description here about the incursion program. Description here about the incursion program.",
@@ -272,6 +312,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS Holidays",
     name: "The Chocolate Boss",
+    imageUrl: theChocolateBoss,
     yearLevels: ["OSHC"],
     description:
       "Description here about the incursion program. Description here about the incursion program.",
@@ -287,6 +328,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS Holidays",
     name: "Superhero",
+    imageUrl: superhero,
     yearLevels: ["OSHC"],
     description:
       "Description here about the incursion program. Description here about the incursion program.",
@@ -309,6 +351,7 @@ export const programs: Program[] = [
       "STEAM & Inquiry Skills",
     ],
     slug: "solve-it",
+    imageUrl: solveIt,
     pageDetails: {
       introHeading: "A Crime Has Been Committed... Your Class is on the Case!",
       introParagraphs: [
@@ -367,6 +410,7 @@ export const programs: Program[] = [
       "STEAM & Inquiry Skills",
     ],
     slug: "the-hot-chocolate-shop",
+    imageUrl: theChocolateShop,
     pageDetails: {
       introHeading: "Ready to be a chocolate entrepreneur?",
       introParagraphs: [
@@ -427,6 +471,7 @@ export const programs: Program[] = [
       "Resilience & Inquiry Skills",
     ],
     slug: "miniboss-mini-olympics",
+    imageUrl: miniOlympics,
     pageDetails: {
       introHeading: "WELCOME TO THE MINIBOSS MINI OLYMPICS!",
       introParagraphs: [
@@ -500,6 +545,7 @@ export const programs: Program[] = [
       "Inquiry Skills",
     ],
     slug: "super-buddies",
+    imageUrl: superBuddies,
     pageDetails: {
       introHeading: "The ultimate Super Buddy Program!",
       introParagraphs: [
@@ -586,6 +632,7 @@ export const programs: Program[] = [
       "Innovation & Inquiry Skills",
     ],
     slug: "create-it",
+    imageUrl: createIt,
     pageDetails: {
       introHeading: "Ready to Bring Ideas to Life?",
       introParagraphs: [
@@ -658,6 +705,7 @@ export const programs: Program[] = [
       "Visual Arts",
     ],
     slug: "lets-grow",
+    imageUrl: letsGrow,
     pageDetails: {
       introHeading: "Welcome to Let's Grow!",
       introParagraphs: [
@@ -775,6 +823,7 @@ export const programs: Program[] = [
       "Resilience, STEAM & Inquiry Skills",
     ],
     slug: "island-escape",
+    imageUrl: islandEscape,
     pageDetails: {
       introHeading: "WELCOME TO ISLAND ESCAPE!",
       introParagraphs: [
@@ -832,6 +881,7 @@ export const programs: Program[] = [
       "Resilience & Inquiry Skills",
     ],
     slug: "crack-it",
+    imageUrl: crackIt,
     pageDetails: {
       introHeading: "WELCOME TO... Crack IT: The Game Show!",
       introParagraphs: [
@@ -885,8 +935,8 @@ export const programs: Program[] = [
   },
   {
     provider: "MiniBOSS",
-    name: "The Smoothie Bar",
-    isTrending: true,
+    name: "The Smoothie Bar (Junior)",
+    isPopular: true,
     description:
       "Welcome to The Smoothie Bar, where students transform into young entrepreneurs! This hands-on incursion guides students through the exciting process of designing, creating, and marketing their very own smoothie company. Working in teams, students will explore the world of business, from understanding customer preferences to calculating costs and pitching their products.",
     tagline: "Design it. Blend it. Sell it!",
@@ -901,7 +951,8 @@ export const programs: Program[] = [
       "Critical & Creative Thinking",
       "STEAM & Inquiry Skills",
     ],
-    slug: "the-smoothie-bar",
+    slug: "the-smoothie-bar-junior",
+    imageUrl: theSmoothieBarJunior,
     pageDetails: {
       introHeading: "Blend Creativity with Business Savvy!",
       introParagraphs: [
@@ -971,6 +1022,7 @@ export const programs: Program[] = [
       "Resilience, STEAM & Inquiry Skills",
     ],
     slug: "the-launch",
+    imageUrl: theLaunch,
     pageDetails: {
       introHeading: "WELCOME TO THE LAUNCH!",
       introParagraphs: [
@@ -1038,6 +1090,7 @@ export const programs: Program[] = [
       "STEAM & Inquiry Skills",
     ],
     slug: "the-lab",
+    imageUrl: theLab,
     pageDetails: {
       introHeading: "Explore the world of chemical sciences",
       introParagraphs: [
@@ -1088,6 +1141,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS",
     name: "The Newsroom",
+    imageUrl: theNewsroom,
     description:
       "Live from the classroom, students step into the roles of news researchers and reporters, diving into exciting breaking news topics (that can also be tailored towards your inquiry topic or focus). Picture the buzz and excitement of a real newsroom! Introducing The Newsroom – a thrilling project-based learning journey that transforms students into dynamic teams of storytellers, boosting teamwork, critical thinking, problem-solving, creativity, communication, digital literacy, and presentation skills.",
     tagline: "Lights. Camera. Action!",
@@ -1136,7 +1190,8 @@ export const programs: Program[] = [
   },
   {
     provider: "MiniBOSS",
-    name: "The Studio",
+    name: "The Studio (Junior)",
+    imageUrl: theStudioJunior,
     description:
       "Step into The Studio and immerse your students in the exciting world of podcasting! In this hands-on incursion, students work in teams to design, produce, and present their very own podcast episode—all in one day. From brainstorming to final edits, students will learn the art of communication, creativity, and collaboration.",
     tagline: "Your Voice, Your PODCAST!",
@@ -1149,7 +1204,7 @@ export const programs: Program[] = [
       "Critical & Creative Thinking",
       "Enterprising & Inquiry Skills",
     ],
-    slug: "the-studio",
+    slug: "the-studio-junior",
     pageDetails: {
       introHeading: "Discover Your Voice, Create Your Podcast!",
       introParagraphs: [
@@ -1209,7 +1264,8 @@ export const programs: Program[] = [
   },
   {
     provider: "MiniBOSS",
-    name: "The Brief",
+    name: "The Brief (Junior)",
+    imageUrl: theBriefJunior,
     description:
       "The Brief is a complete teacher resource that has been designed so that school communities can adapt the content to fit their needs and schedule. The Brief can be run as a multiple day event, over a week or as a term long program. The Brief takes students on an industry-focused learning journey right in the classroom. They'll dive into innovation, creativity, and entrepreneurship, all while tackling a real-world challenge head-on.",
     tagline: "New Term Long Program",
@@ -1222,7 +1278,7 @@ export const programs: Program[] = [
       "Critical & Creative Thinking",
       "Enterprising & Inquiry Skills",
     ],
-    slug: "the-brief",
+    slug: "the-brief-junior",
     pageDetails: {
       introHeading: "New Teacher Resource: Years: 5-6",
       introParagraphs: [
@@ -1267,7 +1323,7 @@ export const programs: Program[] = [
   },
   {
     provider: "MiniBOSS",
-    name: "Lead It",
+    name: "Lead It (Junior)",
     description:
       "Empower your students with Lead It—an inspiring incursion that helps them uncover the traits and values of exceptional leaders. Through engaging activities, students will unlock their unique skills and talents, putting the essence of everyday leadership into action. Whether they hold a formal role or not, every student will learn what it takes to lead with confidence and purpose.",
     tagline: "No badge required!",
@@ -1281,7 +1337,8 @@ export const programs: Program[] = [
       "Personal & Social Capability",
       "Enterprising & Inquiry Skills",
     ],
-    slug: "lead-it",
+    slug: "lead-it-junior",
+    imageUrl: leadItJunior,
     pageDetails: {
       introHeading: "Discover the Leader Within!",
       introParagraphs: [
@@ -1341,6 +1398,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS",
     name: "In My Community",
+    imageUrl: inMyCommunity,
     description:
       "'In My Community' gives students the opportunity to build their knowledge of civics and citizenship in a collaborative and hands-on way. In this immersive incursion students learn not only what it takes to be a successful teammate, but also what it means to be an active participant in their community.",
     tagline: "Get connected!",
@@ -1392,7 +1450,8 @@ export const programs: Program[] = [
   },
   {
     provider: "Tripod Education",
-    name: "The Studio",
+    name: "The Studio (Senior)",
+    imageUrl: theStudioSenior,
     description:
       "Get ready for an exciting journey into the world of podcasting with The Studio! Spark your students' creativity as they explore the art of storytelling. Whether it's a one-day intensive or a more in-depth exploration over two or three days, students will discover the magic of crafting their very own podcasts through a dynamic learning experience that goes beyond audio recording.",
     tagline: "Raise Your Voice!",
@@ -1475,6 +1534,7 @@ export const programs: Program[] = [
       "Enterprising & Inquiry Skills",
     ],
     slug: "the-pitch",
+    imageUrl: thePitch,
     pageDetails: {
       introHeading: "Skills for learning, life and the world of work",
       introParagraphs: [
@@ -1514,7 +1574,7 @@ export const programs: Program[] = [
   },
   {
     provider: "Tripod Education",
-    name: "The Smoothie Bar",
+    name: "The Smoothie Bar (Senior)",
     description:
       "Students step into the shoes of young entrepreneurs as they create, brand, and pitch their own smoothie idea in a real-world business simulation. The Smoothie Bar is more than just a one-off activity, it's a fast-paced, hands-on introduction to the world of business, designed to spark curiosity and inspire entrepreneurial thinking.",
     tagline: "Design it. Blend it. Sell it!",
@@ -1528,6 +1588,7 @@ export const programs: Program[] = [
       "Enterprising & Inquiry Skills",
     ],
     slug: "the-smoothie-bar-senior",
+    imageUrl: theSmoothieBarSenior,
     pageDetails: {
       introHeading: "Skills for learning, life and the world of work",
       introParagraphs: [
@@ -1597,7 +1658,7 @@ export const programs: Program[] = [
   },
   {
     provider: "Tripod Education",
-    name: "Lead It",
+    name: "Lead It (Senior)",
     description:
       "Lead It allows students to explore their understanding of what leadership is, how it connects to their values and behaviours, and how they can choose to lead in their own lives to make a meaningful difference and achieve positive impact. In teams, students create a video for future students to help mentor them and ease their transition into the school community.",
     tagline: "Understand Your Impact!",
@@ -1611,6 +1672,7 @@ export const programs: Program[] = [
       "Inquiry Skills",
     ],
     slug: "lead-it-senior",
+    imageUrl: leadItSenior,
     pageDetails: {
       introHeading: "Skills for learning, life and the world of work",
       introParagraphs: [
@@ -1665,6 +1727,7 @@ export const programs: Program[] = [
       "Enterprising & Inquiry Skills",
     ],
     slug: "game-on",
+    imageUrl: gameOn,
     pageDetails: {
       introHeading: "Skills for learning, life and the world of work",
       introParagraphs: [
@@ -1711,6 +1774,7 @@ export const programs: Program[] = [
       "Enterprising & Inquiry Skills",
     ],
     slug: "future-ready",
+    imageUrl: futureReadyWorkshops,
     pageDetails: {
       introHeading: "Skills for learning, life and the world of work",
       introParagraphs: [
@@ -1786,7 +1850,8 @@ export const programs: Program[] = [
   },
   {
     provider: "Tripod Education",
-    name: "The Brief",
+    name: "The Brief (Senior)",
+    imageUrl: theBriefSenior,
     description:
       "The Brief is a complete teacher resource that has been designed so that school communities can adapt the content to fit their needs and schedule. The Brief can be run as a multiple day event or as a term long program. Delivered as a series of virtual incursions, The Brief takes students on an industry-focused learning journey right in the classroom.",
     tagline: "New Term Long Program",
@@ -1857,6 +1922,7 @@ export const programs: Program[] = [
       "Enterprising & Inquiry Skills",
     ],
     slug: "the-showcase",
+    imageUrl: theShowcase,
     pageDetails: {
       introHeading: "Skills for learning, life and the world of work",
       introParagraphs: [
@@ -1943,6 +2009,7 @@ export const programs: Program[] = [
       "Wellbeing & Resilience",
     ],
     slug: "the-panel",
+    imageUrl: thePanel,
     pageDetails: {
       introHeading: "Skills for learning, life and the world of work",
       introParagraphs: [
@@ -2009,6 +2076,7 @@ export const programs: Program[] = [
   {
     provider: "MiniBOSS",
     name: "Camp @ School",
+    imageUrl: campAtSchool,
     isNew: true,
     description:
       "Bring the fun, adventure, and connection of camp to your school with a fully customisable experience designed for Foundation to Year 6.",

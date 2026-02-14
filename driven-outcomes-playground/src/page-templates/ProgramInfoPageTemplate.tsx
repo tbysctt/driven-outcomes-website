@@ -96,7 +96,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                       New
                     </span>
                   )}
-                  {program.isTrending && (
+                  {program.isPopular && (
                     <span className="inline-block px-3 py-1.5 rounded-full bg-secondary-brand-100 text-secondary-brand-700 text-xs font-semibold uppercase tracking-wider shadow-sm">
                       Trending
                     </span>

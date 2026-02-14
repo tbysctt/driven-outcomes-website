@@ -3,13 +3,12 @@ import { programs, type YearLevel } from "../data/programs";
 import { ProgramCard } from "../components/ProgramCard";
 import { InfoHero } from "../components/InfoHero";
 
+const STICKY_HEADER_OFFSET = "6rem";
+
 export function BrowseProgramsPage() {
   const [searchQuery, setSearchQuery] = useState("");
-  const [selectedYearLevel, setSelectedYearLevel] = useState<YearLevel | "All">("All");
-  const [selectedProvider, setSelectedProvider] = useState<string>("All");
+  const [selectedYearLevels, setSelectedYearLevels] = useState<YearLevel[]>([]);
   const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
-  const [showNewOnly, setShowNewOnly] = useState(false);
-  const [showTrendingOnly, setShowTrendingOnly] = useState(false);
 
   const allYearLevels = useMemo(() => {
     const yearLevelsSet = new Set<YearLevel>();
@@ -21,8 +20,19 @@ export function BrowseProgramsPage() {
     return Array.from(yearLevelsSet).sort((a, b) => {
       if (a === "F") return -1;
       if (b === "F") return 1;
-      if (a === "VCE Vocational Major") return 1;
-      if (b === "VCE Vocational Major") return -1;
+
+      const aIsSpecial = a === "OSHC" || a === "VCE Vocational Major";
+      const bIsSpecial = b === "OSHC" || b === "VCE Vocational Major";
+
+      if (aIsSpecial && bIsSpecial) {
+        if (a === "OSHC") return -1;
+        if (b === "OSHC") return 1;
+        return 0;
+      }
+
+      if (aIsSpecial) return 1;
+      if (bIsSpecial) return -1;
+
       return parseInt(a, 10) - parseInt(b, 10);
     });
   }, []);
@@ -33,14 +43,6 @@ export function BrowseProgramsPage() {
       program.focusedSkills.forEach((skill) => skillsSet.add(skill));
     });
     return Array.from(skillsSet).sort();
-  }, []);
-
-  const allProviders = useMemo(() => {
-    const providersSet = new Set<string>();
-    programs.forEach((program) => {
-      providersSet.add(program.provider);
-    });
-    return Array.from(providersSet).sort();
   }, []);
 
   const filteredPrograms = useMemo(() => {
@@ -55,15 +57,9 @@ export function BrowseProgramsPage() {
       );
     }
 
-    if (selectedYearLevel !== "All") {
-      filtered = filtered.filter(
-        (program) => program.yearLevels?.includes(selectedYearLevel),
-      );
-    }
-
-    if (selectedProvider !== "All") {
-      filtered = filtered.filter(
-        (program) => program.provider === selectedProvider,
+    if (selectedYearLevels.length > 0) {
+      filtered = filtered.filter((program) =>
+        selectedYearLevels.some((level) => program.yearLevels?.includes(level)),
       );
     }
 
@@ -73,23 +69,8 @@ export function BrowseProgramsPage() {
       );
     }
 
-    if (showNewOnly) {
-      filtered = filtered.filter((program) => program.isNew === true);
-    }
-
-    if (showTrendingOnly) {
-      filtered = filtered.filter((program) => program.isTrending === true);
-    }
-
     return filtered;
-  }, [
-    searchQuery,
-    selectedYearLevel,
-    selectedProvider,
-    selectedSkills,
-    showNewOnly,
-    showTrendingOnly,
-  ]);
+  }, [searchQuery, selectedYearLevels, selectedSkills]);
 
   const toggleSkill = (skill: string) => {
     setSelectedSkills((prev) =>
@@ -97,31 +78,54 @@ export function BrowseProgramsPage() {
     );
   };
 
+  const toggleYearLevel = (yearLevel: YearLevel) => {
+    setSelectedYearLevels((prev) =>
+      prev.includes(yearLevel)
+        ? prev.filter((level) => level !== yearLevel)
+        : [...prev, yearLevel],
+    );
+  };
+
   const clearFilters = () => {
     setSearchQuery("");
-    setSelectedYearLevel("All");
-    setSelectedProvider("All");
+    setSelectedYearLevels([]);
     setSelectedSkills([]);
-    setShowNewOnly(false);
-    setShowTrendingOnly(false);
   };
 
   const hasActiveFilters =
     searchQuery.trim() !== "" ||
-    selectedYearLevel !== "All" ||
-    selectedProvider !== "All" ||
-    selectedSkills.length > 0 ||
-    showNewOnly ||
-    showTrendingOnly;
+    selectedYearLevels.length > 0 ||
+    selectedSkills.length > 0;
 
   const uniquePrograms = useMemo(() => {
     const seen = new Set<string>();
-    return filteredPrograms.filter((program) => {
+    const deduplicated = filteredPrograms.filter((program) => {
       if (seen.has(program.slug)) {
         return false;
       }
       seen.add(program.slug);
       return true;
+    });
+
+    return deduplicated.sort((a, b) => {
+      const aIsNew = a.isNew === true;
+      const bIsNew = b.isNew === true;
+      const aIsTrending = a.isPopular === true && !aIsNew;
+      const bIsTrending = b.isPopular === true && !bIsNew;
+
+      if (aIsNew && !bIsNew) return -1;
+      if (!aIsNew && bIsNew) return 1;
+      if (aIsNew && bIsNew) {
+        return a.name.localeCompare(b.name);
+      }
+
+      if (aIsTrending && !bIsTrending) return -1;
+      if (!aIsTrending && bIsTrending) return 1;
+      if (aIsTrending && bIsTrending) {
+        return a.name.localeCompare(b.name);
+      }
+
+      return a.name.localeCompare(b.name);
     });
   }, [filteredPrograms]);
 
@@ -135,7 +139,10 @@ export function BrowseProgramsPage() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
             <aside className="lg:col-span-1">
-              <div className="lg:sticky lg:top-6 space-y-6">
+              <div
+                className="lg:sticky space-y-6"
+                style={{ top: STICKY_HEADER_OFFSET }}
+              >
                 <div>
                   <label
                     htmlFor="search"
@@ -158,55 +165,34 @@ export function BrowseProgramsPage() {
                     <h3 className="text-sm font-semibold text-neutral-900 mb-3">
                       Year Levels
                     </h3>
-                    <div className="space-y-2">
-                      <label className="flex items-center gap-2 cursor-pointer">
-                        <input
-                          type="radio"
-                          name="yearLevel"
-                          checked={selectedYearLevel === "All"}
-                          onChange={() => setSelectedYearLevel("All")}
-                          className="w-4 h-4 text-primary-brand-600 focus:ring-primary-brand-500"
-                        />
-                        <span className="text-sm text-neutral-700">All</span>
-                      </label>
-                      {allYearLevels.map((yearLevel) => (
-                        <label
-                          key={yearLevel}
-                          className="flex items-center gap-2 cursor-pointer"
-                        >
-                          <input
-                            type="radio"
-                            name="yearLevel"
-                            checked={selectedYearLevel === yearLevel}
-                            onChange={() => setSelectedYearLevel(yearLevel as YearLevel)}
-                            className="w-4 h-4 text-primary-brand-600 focus:ring-primary-brand-500"
-                          />
-                          <span className="text-sm text-neutral-700">
-                            {yearLevel}
-                          </span>
-                        </label>
-                      ))}
+                    <div className="flex flex-wrap gap-2">
+                      {allYearLevels.map((yearLevel) => {
+                        const isSelected =
+                          selectedYearLevels.includes(yearLevel);
+                        return (
+                          <label
+                            key={yearLevel}
+                            className="relative flex items-center cursor-pointer group"
+                          >
+                            <input
+                              type="checkbox"
+                              checked={isSelected}
+                              onChange={() => toggleYearLevel(yearLevel)}
+                              className="sr-only"
+                            />
+                            <span
+                              className={`inline-flex items-center justify-center min-w-10 h-10 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                                isSelected
+                                  ? "bg-primary-brand-600 text-white shadow-sm"
+                                  : "bg-neutral-100 text-neutral-700 border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-400"
+                              }`}
+                            >
+                              {yearLevel}
+                            </span>
+                          </label>
+                        );
+                      })}
                     </div>
-                  </div>
-                )}
-
-                {allProviders.length > 0 && (
-                  <div>
-                    <h3 className="text-sm font-semibold text-neutral-900 mb-3">
-                      Provider
-                    </h3>
-                    <select
-                      value={selectedProvider}
-                      onChange={(e) => setSelectedProvider(e.target.value)}
-                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-brand-500 focus:border-transparent text-sm"
-                    >
-                      <option value="All">All Providers</option>
-                      {allProviders.map((provider) => (
-                        <option key={provider} value={provider}>
-                          {provider}
-                        </option>
-                      ))}
-                    </select>
                   </div>
                 )}
 
@@ -214,51 +200,32 @@ export function BrowseProgramsPage() {
                   <h3 className="text-sm font-semibold text-neutral-900 mb-3">
                     Skills
                   </h3>
-                  <div className="space-y-2 max-h-64 overflow-y-auto">
-                    {allSkills.map((skill) => (
-                      <label
-                        key={skill}
-                        className="flex items-center gap-2 cursor-pointer"
-                      >
-                        <input
-                          type="checkbox"
-                          checked={selectedSkills.includes(skill)}
-                          onChange={() => toggleSkill(skill)}
-                          className="w-4 h-4 text-primary-brand-600 focus:ring-primary-brand-500 rounded"
-                        />
-                        <span className="text-sm text-neutral-700">
-                          {skill}
-                        </span>
-                      </label>
-                    ))}
-                  </div>
-                </div>
-
-                <div>
-                  <h3 className="text-sm font-semibold text-neutral-900 mb-3">
-                    Filters
-                  </h3>
-                  <div className="space-y-2">
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={showNewOnly}
-                        onChange={(e) => setShowNewOnly(e.target.checked)}
-                        className="w-4 h-4 text-primary-brand-600 focus:ring-primary-brand-500 rounded"
-                      />
-                      <span className="text-sm text-neutral-700">
-                        New Programs
-                      </span>
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer">
-                      <input
-                        type="checkbox"
-                        checked={showTrendingOnly}
-                        onChange={(e) => setShowTrendingOnly(e.target.checked)}
-                        className="w-4 h-4 text-primary-brand-600 focus:ring-primary-brand-500 rounded"
-                      />
-                      <span className="text-sm text-neutral-700">Trending</span>
-                    </label>
+                  <div className="flex flex-wrap gap-2 max-h-64 overflow-y-auto">
+                    {allSkills.map((skill) => {
+                      const isSelected = selectedSkills.includes(skill);
+                      return (
+                        <label
+                          key={skill}
+                          className="relative flex items-center cursor-pointer group"
+                        >
+                          <input
+                            type="checkbox"
+                            checked={isSelected}
+                            onChange={() => toggleSkill(skill)}
+                            className="sr-only"
+                          />
+                          <span
+                            className={`inline-block rounded-full px-3 py-1 text-xs font-medium transition-all duration-200 ${
+                              isSelected
+                                ? "bg-primary-brand-600 text-white"
+                                : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
+                            }`}
+                          >
+                            {skill}
+                          </span>
+                        </label>
+                      );
+                    })}
                   </div>
                 </div>
 

@@ -18,7 +18,7 @@ export function PopularPrograms() {
 
         <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {programs
-            .filter((program) => program.isTrending)
+            .filter((program) => program.isPopular)
             .map((program) => (
               <ProgramCard key={program.slug} program={program} />
             ))}
