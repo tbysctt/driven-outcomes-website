@@ -5,6 +5,7 @@ import { tripodProgramFaqs } from "../data/tripod-faqs";
 import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
 import { BrandPageTemplate } from "../page-templates/BrandPageTemplate";
+import { FadeInSection } from "../components/FadeInSection";
 
 export function TripodPage() {
   return (
@@ -25,6 +26,7 @@ export function TripodPage() {
         }}
       >
         <section className="py-12 sm:py-16 md:py-20 bg-neutral-50">
+          <FadeInSection>
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-4xl mx-auto">
               <div className="text-center mb-10 sm:mb-12">
@@ -65,9 +67,11 @@ export function TripodPage() {
               </div>
             </div>
           </div>
+          </FadeInSection>
         </section>
 
         <section id="programs" className="py-12 sm:py-16 md:py-20">
+          <FadeInSection delay={200}>
           <div className="container mx-auto px-4 sm:px-6">
             <div className="text-center mb-10 sm:mb-12 md:mb-16">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold uppercase tracking-tight text-neutral-900">
@@ -87,9 +91,11 @@ export function TripodPage() {
                 ))}
             </div>
           </div>
+          </FadeInSection>
         </section>
 
         <section className="py-12 sm:py-16 md:py-20 bg-neutral-50">
+          <FadeInSection delay={300}>
           <div className="container mx-auto px-4 sm:px-6">
             <div className="max-w-2xl mx-auto text-center">
               <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-tight text-neutral-900 mb-2">
@@ -115,6 +121,7 @@ export function TripodPage() {
               </div>
             </div>
           </div>
+          </FadeInSection>
         </section>
       </BrandPageTemplate>
     </>

@@ -1,4 +1,5 @@
 import { InfoPageTemplate } from "../page-templates/InfoPageTemplate";
+import { FadeInSection } from "../components/FadeInSection";
 
 const BENEFITS = [
   {
@@ -67,7 +68,8 @@ export function CareersPage() {
       heroDescription="Be part of a team that's transforming education and inspiring the next generation"
     >
       <section className="py-14 sm:py-20 md:py-24 bg-neutral-50">
-        <div className="container mx-auto px-4 sm:px-6">
+        <FadeInSection>
+          <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary-brand-600 mb-2">
               Why work with us
@@ -99,14 +101,16 @@ export function CareersPage() {
             </div>
           </div>
         </div>
+        </FadeInSection>
       </section>
 
       <section className="py-14 sm:py-20 md:py-24 bg-white">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-6xl mx-auto">
-            <p className="text-sm font-semibold uppercase tracking-wider text-primary-brand-600 mb-2 text-center">
-              What we offer
-            </p>
+        <FadeInSection delay={200}>
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-6xl mx-auto">
+              <p className="text-sm font-semibold uppercase tracking-wider text-primary-brand-600 mb-2 text-center">
+                What we offer
+              </p>
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 mb-12 text-center">
               Benefits & Perks
             </h2>
@@ -127,10 +131,12 @@ export function CareersPage() {
             </div>
           </div>
         </div>
+        </FadeInSection>
       </section>
 
       <section className="py-14 sm:py-20 md:py-24 bg-neutral-50">
-        <div className="container mx-auto px-4 sm:px-6">
+        <FadeInSection delay={300}>
+          <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary-brand-600 mb-2 text-center">
               Current opportunities
@@ -214,9 +220,11 @@ export function CareersPage() {
             </div>
           </div>
         </div>
+        </FadeInSection>
       </section>
 
       <section className="py-14 sm:py-20 md:py-24 bg-white">
+        <FadeInSection delay={400}>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary-brand-600 mb-2 text-center">
@@ -307,6 +315,7 @@ export function CareersPage() {
             </div>
           </div>
         </div>
+        </FadeInSection>
       </section>
     </InfoPageTemplate>
   );

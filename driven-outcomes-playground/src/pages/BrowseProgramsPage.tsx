@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { programs, type YearLevel } from "../data/programs";
 import { ProgramCard } from "../components/ProgramCard";
 import { InfoHero } from "../components/InfoHero";
+import { FadeInSection } from "../components/FadeInSection";
 
 const STICKY_HEADER_OFFSET = "6rem";
 
@@ -136,7 +137,8 @@ export function BrowseProgramsPage() {
         heroDescription="Discover our range of educational programs and incursions"
       />
       <section className="py-8 sm:py-12">
-        <div className="container mx-auto px-4 sm:px-6">
+        <FadeInSection>
+          <div className="container mx-auto px-4 sm:px-6">
           <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
             <aside className="lg:col-span-1">
               <div
@@ -271,6 +273,7 @@ export function BrowseProgramsPage() {
             </div>
           </div>
         </div>
+        </FadeInSection>
       </section>
     </>
   );

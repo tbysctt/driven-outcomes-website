@@ -1,6 +1,7 @@
 import { useRef, useEffect } from "react";
 import { schools } from "../data/schools-and-organisations";
 import { Link } from "react-router-dom";
+import { FadeInSection } from "./FadeInSection";
 
 const ROWS = 5;
 const COLUMN_WIDTH = 280;
@@ -101,68 +102,70 @@ export function SchoolsScroller() {
 
   return (
     <section className="py-8 sm:py-8 bg-neutral-100">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="text-center mb-10">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 mb-2">
-            Who We've Worked With
-          </h2>
-          <p className="text-lg text-neutral-600">
-            Hundreds of schools and organisations trust us across Australia
-          </p>
-        </div>
+      <FadeInSection>
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-extrabold text-neutral-900 mb-2">
+              Who We've Worked With
+            </h2>
+            <p className="text-lg text-neutral-600">
+              Hundreds of schools and organisations trust us across Australia
+            </p>
+          </div>
 
-        <div className="relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 bg-linear-to-r from-neutral-100 to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 bg-linear-to-l from-neutral-100 to-transparent z-10 pointer-events-none" />
+          <div className="relative">
+            <div className="absolute left-0 top-0 bottom-0 w-24 sm:w-32 bg-linear-to-r from-neutral-100 to-transparent z-10 pointer-events-none" />
+            <div className="absolute right-0 top-0 bottom-0 w-24 sm:w-32 bg-linear-to-l from-neutral-100 to-transparent z-10 pointer-events-none" />
 
-          <div
-            ref={containerRef}
-            className="overflow-hidden cursor-grab select-none"
-            onWheel={onWheel}
-            onMouseDown={onMouseDown}
-            style={{ touchAction: "none" }}
-          >
             <div
-              ref={contentRef}
-              className="flex gap-x-10 sm:gap-x-12 will-change-transform"
-              style={{ width: "max-content" }}
+              ref={containerRef}
+              className="overflow-hidden cursor-grab select-none"
+              onWheel={onWheel}
+              onMouseDown={onMouseDown}
+              style={{ touchAction: "none" }}
             >
-              {duplicatedColumns.map((column, colIndex) => (
-                <div
-                  key={colIndex}
-                  className="flex flex-col gap-y-4 sm:gap-y-5 shrink-0"
-                  style={{ width: COLUMN_WIDTH }}
-                >
-                  {column.map((name, rowIndex) => (
-                    <div
-                      key={`${colIndex}-${rowIndex}`}
-                      className="text-sm sm:text-base font-medium text-neutral-700 whitespace-nowrap truncate pointer-events-none"
-                      title={name}
-                    >
-                      {name}
-                    </div>
-                  ))}
-                </div>
-              ))}
+              <div
+                ref={contentRef}
+                className="flex gap-x-10 sm:gap-x-12 will-change-transform"
+                style={{ width: "max-content" }}
+              >
+                {duplicatedColumns.map((column, colIndex) => (
+                  <div
+                    key={colIndex}
+                    className="flex flex-col gap-y-4 sm:gap-y-5 shrink-0"
+                    style={{ width: COLUMN_WIDTH }}
+                  >
+                    {column.map((name, rowIndex) => (
+                      <div
+                        key={`${colIndex}-${rowIndex}`}
+                        className="text-sm sm:text-base font-medium text-neutral-700 whitespace-nowrap truncate pointer-events-none"
+                        title={name}
+                      >
+                        {name}
+                      </div>
+                    ))}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
-        </div>
 
-        <p className="mt-10 text-center">
-          <Link
-            to={"schools-and-organisations"}
-            className="group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-highlight-600 hover:text-highlight-800"
-          >
-            See all
-            <span
-              aria-hidden
-              className="transition-transform group-hover:translate-x-0.5"
+          <p className="mt-10 text-center">
+            <Link
+              to={"schools-and-organisations"}
+              className="group inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-highlight-600 hover:text-highlight-800"
             >
-              →
-            </span>
-          </Link>
-        </p>
-      </div>
+              See all
+              <span
+                aria-hidden
+                className="transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
+            </Link>
+          </p>
+        </div>
+      </FadeInSection>
     </section>
   );
 }

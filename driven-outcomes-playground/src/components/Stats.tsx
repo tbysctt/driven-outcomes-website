@@ -1,6 +1,7 @@
 import { useInView } from "../hooks/useInView";
 import { useAnimatedCounter } from "../hooks/useAnimatedCounter";
 import { programs } from "../data/programs";
+import { FadeInSection } from "./FadeInSection";
 
 interface StatItemProps {
   target: number;
@@ -49,7 +50,7 @@ export function Stats() {
     },
     {
       target: 515,
-      label: "Who we've worked with",
+      label: "Schools we've worked with",
       colorClass: "text-primary-brand-600",
     },
     {
@@ -67,20 +68,22 @@ export function Stats() {
 
   return (
     <section ref={sectionRef} className="py-8 sm:py-12 bg-neutral-100">
-      <div className="container mx-auto px-4 sm:px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
-          {stats.map((stat) => (
-            <StatItem
-              key={stat.label}
-              target={stat.target}
-              suffix={stat.suffix}
-              label={stat.label}
-              colorClass={stat.colorClass}
-              isInView={isInView}
-            />
-          ))}
+      <FadeInSection>
+        <div className="container mx-auto px-4 sm:px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+            {stats.map((stat) => (
+              <StatItem
+                key={stat.label}
+                target={stat.target}
+                suffix={stat.suffix}
+                label={stat.label}
+                colorClass={stat.colorClass}
+                isInView={isInView}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </FadeInSection>
     </section>
   );
 }

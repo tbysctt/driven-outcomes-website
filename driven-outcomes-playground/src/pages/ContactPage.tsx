@@ -1,5 +1,6 @@
 // import { BookingAvailability } from "../components/BookingAvailability";
 import { EnquiryForm } from "../components/EnquiryForm";
+import { FadeInSection } from "../components/FadeInSection";
 
 const CONTACT_CARDS = [
   {
@@ -72,10 +73,11 @@ export function ContactPage() {
       </section>
 
       <section className="py-14 sm:py-20 md:py-24 bg-neutral-50">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-0 md:divide-x md:divide-neutral-200">
-              {CONTACT_CARDS.map((card) => {
+        <FadeInSection>
+          <div className="container mx-auto px-4 sm:px-6">
+            <div className="max-w-4xl mx-auto">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-0 md:gap-0 md:divide-x md:divide-neutral-200">
+                {CONTACT_CARDS.map((card) => {
                 const isLink = !!card.href;
                 const Wrapper = isLink ? "a" : "div";
                 return (
@@ -161,6 +163,7 @@ export function ContactPage() {
             </div>
           </div>
         </div>
+        </FadeInSection>
       </section>
 
       {/* <BookingAvailability /> */}
@@ -169,6 +172,7 @@ export function ContactPage() {
         className="py-12 sm:py-16 md:py-20 bg-neutral-50"
         id="enquiry-form"
       >
+        <FadeInSection delay={200}>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-neutral-900 text-center mb-2">
@@ -182,8 +186,10 @@ export function ContactPage() {
             </div>
           </div>
         </div>
+        </FadeInSection>
       </section>
       <section className="py-12 sm:py-16 md:py-20 bg-white">
+        <FadeInSection delay={300}>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-tight text-neutral-900 text-center mb-6">
@@ -207,6 +213,7 @@ export function ContactPage() {
             </p>
           </div>
         </div>
+        </FadeInSection>
       </section>
     </>
   );

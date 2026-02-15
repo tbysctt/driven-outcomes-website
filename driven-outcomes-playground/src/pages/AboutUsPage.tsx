@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { InfoPageTemplate } from "../page-templates/InfoPageTemplate";
+import { FadeInSection } from "../components/FadeInSection";
 
 export function AboutUsPage() {
   return (
@@ -9,6 +10,7 @@ export function AboutUsPage() {
       ctaTitle="Want to get our amazing team out to your school?"
     >
       <section className="py-14 sm:py-20 md:py-24 bg-neutral-50">
+        <FadeInSection>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary-brand-600 mb-2">
@@ -78,9 +80,11 @@ export function AboutUsPage() {
             </div>
           </div>
         </div>
+        </FadeInSection>
       </section>
 
       <section className="py-14 sm:py-20 md:py-24 bg-white">
+        <FadeInSection delay={200}>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-900 mb-6">
@@ -98,9 +102,11 @@ export function AboutUsPage() {
             </p>
           </div>
         </div>
+        </FadeInSection>
       </section>
 
       <section className="py-14 sm:py-20 md:py-24 bg-neutral-50">
+        <FadeInSection delay={300}>
         <div className="container mx-auto px-4 sm:px-6">
           <div className="max-w-3xl mx-auto">
             <p className="text-sm font-semibold uppercase tracking-wider text-primary-brand-600 mb-2">
@@ -127,6 +133,7 @@ export function AboutUsPage() {
             </p>
           </div>
         </div>
+        </FadeInSection>
       </section>
     </InfoPageTemplate>
   );

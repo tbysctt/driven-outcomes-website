@@ -1,6 +1,7 @@
 import { useMemo, useState } from "react";
 import { InfoPageTemplate } from "../page-templates/InfoPageTemplate";
 import { schools, organisations } from "../data/schools-and-organisations";
+import { FadeInSection } from "../components/FadeInSection";
 
 function sortAlphabetically(names: string[]): string[] {
   return [...names].sort((a, b) =>
@@ -165,6 +166,7 @@ export function SchoolsAndOrganisationsPage() {
       heroDescription="We've worked with hundreds of schools and organisations across Australia."
     >
       <div className="py-12 sm:py-16 md:py-20">
+        <FadeInSection>
         <div className="container mx-auto px-4 sm:px-6">
           <ListWithLetterSections
             items={[...schools, ...organisations]}
@@ -183,6 +185,7 @@ export function SchoolsAndOrganisationsPage() {
             across Australia
           </p>
         </div>
+        </FadeInSection>
       </div>
     </InfoPageTemplate>
   );

@@ -1,6 +1,7 @@
 import { CTA } from "../components/CTA";
 import { GradientBorderButton } from "../components/GradientBorderButton";
 import { FaqSection } from "../components/FaqSection";
+import { FadeInSection } from "../components/FadeInSection";
 import { Link } from "react-router-dom";
 import type { Program, ProgramProvider } from "../data/programs";
 import { formatYearLevels } from "../utils/formatYearLevels";
@@ -176,165 +177,181 @@ export function ProgramInfoPageTemplate({ program }: Props) {
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
               <div className="lg:col-span-2 space-y-10">
-                <div className="prose prose-lg max-w-none">
-                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-neutral-900 mb-6 leading-tight">
-                    {introHeading}
-                  </h2>
-                  <div className="space-y-4 text-neutral-700 text-base sm:text-lg leading-relaxed">
-                    {introParagraphs.map((p, i) => (
-                      <p key={i} className="text-neutral-700">
-                        {p}
-                      </p>
-                    ))}
-                  </div>
-                </div>
-
-                {variants.length > 0 && (
-                  <div>
-                    <SectionHeading>
-                      One Purpose. Three Programs.
-                    </SectionHeading>
-                    <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
-                      {variants.map((v) => (
-                        <div
-                          key={v.name}
-                          className="group p-5 sm:p-6 rounded-xl bg-linear-to-br from-neutral-50 to-white border-2 border-neutral-200 hover:border-primary-brand-300 hover:shadow-lg transition-all duration-300"
-                        >
-                          <div className="font-bold text-primary-brand-600 text-sm sm:text-base uppercase tracking-wide mb-2">
-                            {v.name}
-                          </div>
-                          <div className="text-xs sm:text-sm text-neutral-500 mb-3 font-medium">
-                            {v.yearRange}
-                          </div>
-                          <div className="text-sm text-neutral-700 leading-relaxed">
-                            {v.description}
-                          </div>
-                        </div>
+                <FadeInSection>
+                  <div className="prose prose-lg max-w-none">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-neutral-900 mb-6 leading-tight">
+                      {introHeading}
+                    </h2>
+                    <div className="space-y-4 text-neutral-700 text-base sm:text-lg leading-relaxed">
+                      {introParagraphs.map((p, i) => (
+                        <p key={i} className="text-neutral-700">
+                          {p}
+                        </p>
                       ))}
                     </div>
                   </div>
+                </FadeInSection>
+
+                {variants.length > 0 && (
+                  <FadeInSection delay={100}>
+                    <div>
+                      <SectionHeading>
+                        One Purpose. Three Programs.
+                      </SectionHeading>
+                      <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
+                        {variants.map((v) => (
+                          <div
+                            key={v.name}
+                            className="group p-5 sm:p-6 rounded-xl bg-linear-to-br from-neutral-50 to-white border-2 border-neutral-200 hover:border-primary-brand-300 hover:shadow-lg transition-all duration-300"
+                          >
+                            <div className="font-bold text-primary-brand-600 text-sm sm:text-base uppercase tracking-wide mb-2">
+                              {v.name}
+                            </div>
+                            <div className="text-xs sm:text-sm text-neutral-500 mb-3 font-medium">
+                              {v.yearRange}
+                            </div>
+                            <div className="text-sm text-neutral-700 leading-relaxed">
+                              {v.description}
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </FadeInSection>
                 )}
 
                 {informationHTML && (
-                  <div>
-                    <SectionHeading>Program Information</SectionHeading>
-                    <div
-                      className="prose prose-lg max-w-none text-neutral-700"
-                      dangerouslySetInnerHTML={{ __html: informationHTML }}
-                    />
-                  </div>
+                  <FadeInSection delay={200}>
+                    <div>
+                      <SectionHeading>Program Information</SectionHeading>
+                      <div
+                        className="prose prose-lg max-w-none text-neutral-700"
+                        dangerouslySetInnerHTML={{ __html: informationHTML }}
+                      />
+                    </div>
+                  </FadeInSection>
                 )}
 
                 {ongoingConnection && (
-                  <div className="p-6 sm:p-8 rounded-xl bg-linear-to-br from-primary-brand-50 via-white to-secondary-brand-50 border-2 border-primary-brand-200 shadow-sm">
-                    <SectionHeading className="text-xl sm:text-2xl">
-                      Ongoing Classroom Connection
-                    </SectionHeading>
-                    <h3 className="text-lg sm:text-xl font-bold text-neutral-900 mb-3">
-                      {ongoingConnection.title}
-                    </h3>
-                    <p className="text-base text-neutral-700 leading-relaxed">
-                      {ongoingConnection.body}
-                    </p>
-                  </div>
+                  <FadeInSection delay={300}>
+                    <div className="p-6 sm:p-8 rounded-xl bg-linear-to-br from-primary-brand-50 via-white to-secondary-brand-50 border-2 border-primary-brand-200 shadow-sm">
+                      <SectionHeading className="text-xl sm:text-2xl">
+                        Ongoing Classroom Connection
+                      </SectionHeading>
+                      <h3 className="text-lg sm:text-xl font-bold text-neutral-900 mb-3">
+                        {ongoingConnection.title}
+                      </h3>
+                      <p className="text-base text-neutral-700 leading-relaxed">
+                        {ongoingConnection.body}
+                      </p>
+                    </div>
+                  </FadeInSection>
                 )}
 
-                <div className="pt-8 border-t-2 border-neutral-200 text-center">
-                  <Link
-                    to="/programs"
-                    className="group inline-flex items-center gap-2 text-base font-semibold text-primary-brand-600 hover:text-primary-brand-800 transition-colors"
-                  >
-                    Browse All Programs
-                    <span
-                      aria-hidden
-                      className="transition-transform group-hover:translate-x-1"
+                <FadeInSection delay={400}>
+                  <div className="pt-8 border-t-2 border-neutral-200 text-center">
+                    <Link
+                      to="/programs"
+                      className="group inline-flex items-center gap-2 text-base font-semibold text-primary-brand-600 hover:text-primary-brand-800 transition-colors"
                     >
-                      →
-                    </span>
-                  </Link>
-                </div>
+                      Browse All Programs
+                      <span
+                        aria-hidden
+                        className="transition-transform group-hover:translate-x-1"
+                      >
+                        →
+                      </span>
+                    </Link>
+                  </div>
+                </FadeInSection>
               </div>
 
               <div className="lg:col-span-1">
                 <div className="lg:sticky lg:top-8 space-y-6">
-                  <div className="p-5 sm:p-6 rounded-xl bg-linear-to-br from-neutral-50 to-white border-2 border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
-                    <SectionHeading className="text-lg sm:text-xl">
-                      Pricing
-                    </SectionHeading>
-                    <ul className="space-y-3 text-sm sm:text-base text-neutral-700">
-                      {pricingLines.map((line, i) => (
-                        <li
-                          key={i}
-                          className="leading-relaxed flex items-start"
-                        >
-                          <span className="text-primary-brand-500 mr-2 mt-1.5">
-                            •
-                          </span>
-                          <span>{line}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  <div className="p-5 sm:p-6 rounded-xl bg-linear-to-br from-neutral-50 to-white border-2 border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
-                    <div className="inline-block px-3 py-1 rounded-full bg-primary-brand-100 text-primary-brand-700 text-xs font-semibold uppercase tracking-wider mb-4">
-                      Years: {curriculumYears}
+                  <FadeInSection delay={150}>
+                    <div className="p-5 sm:p-6 rounded-xl bg-linear-to-br from-neutral-50 to-white border-2 border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
+                      <SectionHeading className="text-lg sm:text-xl">
+                        Pricing
+                      </SectionHeading>
+                      <ul className="space-y-3 text-sm sm:text-base text-neutral-700">
+                        {pricingLines.map((line, i) => (
+                          <li
+                            key={i}
+                            className="leading-relaxed flex items-start"
+                          >
+                            <span className="text-primary-brand-500 mr-2 mt-1.5">
+                              •
+                            </span>
+                            <span>{line}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
-                    <SectionHeading className="text-lg sm:text-xl">
-                      Curriculum Links
-                    </SectionHeading>
-                    <p className="text-sm text-neutral-600 mb-4 leading-relaxed">
-                      {program.name} aligns with the Australian Curriculum,
-                      supporting the following curriculum areas and
-                      capabilities:
-                    </p>
-                    <ul className="space-y-2 text-sm text-neutral-700 mb-4">
-                      {focusedSkills.map((link, i) => (
-                        <li key={i} className="flex items-start">
-                          <span className="text-primary-brand-500 mr-2 mt-1 shrink-0">
-                            •
-                          </span>
-                          <span className="leading-relaxed">{link}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    {program.pageDetails.canBeCustomised && (
-                      <p className="text-xs sm:text-sm text-neutral-600 italic border-t border-neutral-200 pt-3">
-                        This program can be customised to meet your school's
-                        desired learning outcomes.
-                      </p>
-                    )}
-                  </div>
+                  </FadeInSection>
 
-                  <div className="p-5 sm:p-6 rounded-xl bg-linear-to-br from-primary-brand-50 via-white to-secondary-brand-50 border-2 border-primary-brand-300 shadow-lg">
-                    <SectionHeading className="text-lg sm:text-xl">
-                      Booking Availability
-                    </SectionHeading>
-                    <p className="text-base text-neutral-800 font-semibold mb-4">
-                      {availabilityStatus}
-                    </p>
-                    {showCalendar && (
-                      <div className="mt-4 p-4 rounded-lg bg-white border border-neutral-200 shadow-sm">
-                        <h3 className="text-sm font-bold text-neutral-900 mb-2">
-                          School Holidays
-                        </h3>
-                        <div className="text-xs text-neutral-500">
-                          Calendar placeholder – integrate booking widget or
-                          dates here.
-                        </div>
+                  <FadeInSection delay={250}>
+                    <div className="p-5 sm:p-6 rounded-xl bg-linear-to-br from-neutral-50 to-white border-2 border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
+                      <div className="inline-block px-3 py-1 rounded-full bg-primary-brand-100 text-primary-brand-700 text-xs font-semibold uppercase tracking-wider mb-4">
+                        Years: {curriculumYears}
                       </div>
-                    )}
-                    <div className="mt-6">
-                      <GradientBorderButton
-                        to="/contact"
-                        size="sm"
-                        variant="rounded"
-                        className="w-full"
-                      >
-                        Book Now
-                      </GradientBorderButton>
+                      <SectionHeading className="text-lg sm:text-xl">
+                        Curriculum Links
+                      </SectionHeading>
+                      <p className="text-sm text-neutral-600 mb-4 leading-relaxed">
+                        {program.name} aligns with the Australian Curriculum,
+                        supporting the following curriculum areas and
+                        capabilities:
+                      </p>
+                      <ul className="space-y-2 text-sm text-neutral-700 mb-4">
+                        {focusedSkills.map((link, i) => (
+                          <li key={i} className="flex items-start">
+                            <span className="text-primary-brand-500 mr-2 mt-1 shrink-0">
+                              •
+                            </span>
+                            <span className="leading-relaxed">{link}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      {program.pageDetails.canBeCustomised && (
+                        <p className="text-xs sm:text-sm text-neutral-600 italic border-t border-neutral-200 pt-3">
+                          This program can be customised to meet your school's
+                          desired learning outcomes.
+                        </p>
+                      )}
                     </div>
-                  </div>
+                  </FadeInSection>
+
+                  <FadeInSection delay={350}>
+                    <div className="p-5 sm:p-6 rounded-xl bg-linear-to-br from-primary-brand-50 via-white to-secondary-brand-50 border-2 border-primary-brand-300 shadow-lg">
+                      <SectionHeading className="text-lg sm:text-xl">
+                        Booking Availability
+                      </SectionHeading>
+                      <p className="text-base text-neutral-800 font-semibold mb-4">
+                        {availabilityStatus}
+                      </p>
+                      {showCalendar && (
+                        <div className="mt-4 p-4 rounded-lg bg-white border border-neutral-200 shadow-sm">
+                          <h3 className="text-sm font-bold text-neutral-900 mb-2">
+                            School Holidays
+                          </h3>
+                          <div className="text-xs text-neutral-500">
+                            Calendar placeholder – integrate booking widget or
+                            dates here.
+                          </div>
+                        </div>
+                      )}
+                      <div className="mt-6">
+                        <GradientBorderButton
+                          to="/contact"
+                          size="sm"
+                          variant="rounded"
+                          className="w-full"
+                        >
+                          Book Now
+                        </GradientBorderButton>
+                      </div>
+                    </div>
+                  </FadeInSection>
                 </div>
               </div>
             </div>
@@ -343,11 +360,13 @@ export function ProgramInfoPageTemplate({ program }: Props) {
       </section>
 
       {faqs.length > 0 && (
-        <FaqSection
-          items={faqs}
-          title={`FAQs About ${program.name}`}
-          id="faq"
-        />
+        <FadeInSection delay={500}>
+          <FaqSection
+            items={faqs}
+            title={`FAQs About ${program.name}`}
+            id="faq"
+          />
+        </FadeInSection>
       )}
 
       <CTA
