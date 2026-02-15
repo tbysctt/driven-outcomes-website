@@ -11,7 +11,7 @@ export function FadeInSection({
   className = "",
   delay = 0,
 }: FadeInSectionProps) {
-  const [ref, isInView] = useInView({ threshold: 0.1 });
+  const [ref, isInView] = useInView<HTMLDivElement>({ threshold: 0.1 });
 
   return (
     <div

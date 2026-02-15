@@ -8,6 +8,7 @@ const navLinks = [
   { to: "/oshc-and-holidays", label: "Holiday Programs" },
   { to: "/talknow", label: "TalkNOW" },
   { to: "/elc", label: "ELC (Coming soon)" },
+  { to: "/community", label: "Community" },
 ];
 
 const navLinkClass =
