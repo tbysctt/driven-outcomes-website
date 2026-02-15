@@ -62,16 +62,13 @@ export function BrandPageHero(props: Props) {
             >
               {props.description}
             </p>
-            {/* <GradientBorderButton href={PHONE_HREF} size="md"> */}
-            {/*   Enquire now — {PHONE_NUMBER} */}
-            {/* </GradientBorderButton> */}
           </div>
           {props.logo && (
             <div className="shrink-0 lg:self-center ml-auto lg:ml-0 text-right">
               <img
                 src={props.logo}
                 alt=""
-                className="max-h-20 sm:max-h-24 md:max-h-28 lg:max-h-32 w-auto object-contain drop-shadow-lg mx-auto lg:ml-auto lg:mr-0"
+                className="max-w-40 sm:max-w-44 md:max-w-48 lg:max-w-52 w-auto object-contain drop-shadow-lg mx-auto lg:ml-auto lg:mr-0"
                 aria-hidden="true"
               />
               <p className="mt-2 sm:mt-3 text-sm sm:text-base text-white/80 font-medium">

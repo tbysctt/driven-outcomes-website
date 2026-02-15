@@ -4,9 +4,9 @@ import { FaqSection } from "../components/FaqSection";
 import { Link } from "react-router-dom";
 import type { Program, ProgramProvider } from "../data/programs";
 import { formatYearLevels } from "../utils/formatYearLevels";
-import miniBossLogo from "../assets/brand-logos/miniboss-incursions/MiniBoss_Incursions_White_Text_Circle_Transparent_BG.png";
+import miniBossLogo from "../assets/brand-logos/miniboss-incursions/Mini BOSS Incursions logo No Circle.png";
 import miniBossHolidaysLogo from "../assets/brand-logos/miniboss-holiday-programs/MBHP_LightPurpleTransparent.png";
-import tripodLogo from "../assets/brand-logos/tripod/Tripod_Circle_Logos/Tripod_White.png";
+import tripodLogo from "../assets/brand-logos/tripod/Tripod_Circle_Logos/Tripod_All_black.png";
 import talkNowLogo from "../assets/brand-logos/talknow/Talk Now - LOGO - WHITE with WHITE slogan.png";
 
 export type ProgramVariant = {
@@ -87,9 +87,40 @@ export function ProgramInfoPageTemplate({ program }: Props) {
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-8">
               <div className="flex-1">
+                <nav className="mb-4" aria-label="Breadcrumb">
+                  <ol className="flex items-center gap-2 text-sm text-neutral-600">
+                    <li>
+                      <Link
+                        to="/programs"
+                        className="hover:text-primary-brand-600 transition-colors"
+                      >
+                        Programs
+                      </Link>
+                    </li>
+                    <li aria-hidden="true" className="text-neutral-400">
+                      /
+                    </li>
+                    <li
+                      className="text-neutral-900 font-medium"
+                      aria-current="page"
+                    >
+                      {program.name}
+                    </li>
+                  </ol>
+                </nav>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-neutral-900 mb-3">
+                  {program.name}
+                </h1>
+                <p className="text-lg sm:text-xl md:text-2xl text-primary-brand-600 font-semibold mb-6 leading-relaxed">
+                  {tagline}
+                </p>
                 <div className="flex flex-wrap items-center gap-2 mb-4">
                   <span className="inline-block px-3 py-1.5 rounded-full bg-primary-brand-100 text-primary-brand-700 text-xs font-semibold uppercase tracking-wider shadow-sm">
                     {program.provider}
+                  </span>
+
+                  <span className="inline-block px-3 py-1.5 rounded-full bg-secondary-brand-100 text-secondary-brand-700 text-xs font-semibold uppercase tracking-wider shadow-sm">
+                    Recommended for years {curriculumYears}
                   </span>
                   {program.isNew && (
                     <span className="inline-block px-3 py-1.5 rounded-full bg-highlight-100 text-highlight-700 text-xs font-semibold uppercase tracking-wider shadow-sm">
@@ -102,21 +133,6 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                     </span>
                   )}
                 </div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold uppercase tracking-tight text-neutral-900 mb-3">
-                  {program.name}
-                </h1>
-                <p className="text-lg sm:text-xl md:text-2xl text-primary-brand-600 font-semibold mb-6 leading-relaxed">
-                  {tagline}
-                </p>
-                <div className="flex flex-wrap gap-4">
-                  <GradientBorderButton
-                    to="/contact"
-                    size="md"
-                    variant="rounded"
-                  >
-                    Enquire Now
-                  </GradientBorderButton>
-                </div>
               </div>
               <div className="shrink-0 flex flex-col items-center lg:items-end text-center lg:text-right">
                 <img
@@ -127,6 +143,15 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                 <p className="text-sm text-neutral-600 font-medium">
                   by Driven Outcomes
                 </p>
+                {/* <div className="flex flex-wrap gap-4"> */}
+                {/*   <GradientBorderButton */}
+                {/*     to="/contact" */}
+                {/*     size="md" */}
+                {/*     variant="rounded" */}
+                {/*   > */}
+                {/*     Enquire Now */}
+                {/*   </GradientBorderButton> */}
+                {/* </div> */}
               </div>
             </div>
           </div>

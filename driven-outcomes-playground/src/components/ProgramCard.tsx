@@ -14,9 +14,11 @@ export function ProgramCard({ program }: ProgramCardProps) {
       <article
         className={`group rounded-xl border bg-white transition-all duration-200 border-primary-brand-200/80 hover:border-primary-brand-300 overflow-hidden`}
       >
-        {program.imageUrl && (
-          <img src={program.imageUrl} alt={program.name} className="" />
-        )}
+        <div
+          className="aspect-768/550 bg-cover bg-center"
+          style={{ backgroundImage: `url(${program.imageUrl})` }}
+          aria-label={program.name}
+        />
         <div className="p-4 sm:p-6 md:p-7">
           <div className="flex flex-wrap items-center gap-2 sm:mb-4">
             <span
