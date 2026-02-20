@@ -193,7 +193,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                 </FadeInSection>
 
                 {variants.length > 0 && (
-                  <FadeInSection delay={100}>
+                  <FadeInSection>
                     <div>
                       <SectionHeading>
                         One Purpose. Three Programs.
@@ -221,7 +221,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                 )}
 
                 {informationHTML && (
-                  <FadeInSection delay={200}>
+                  <FadeInSection>
                     <div>
                       <SectionHeading>Program Information</SectionHeading>
                       <div
@@ -233,7 +233,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                 )}
 
                 {ongoingConnection && (
-                  <FadeInSection delay={300}>
+                  <FadeInSection>
                     <div className="p-6 sm:p-8 rounded-xl bg-linear-to-br from-primary-brand-50 via-white to-secondary-brand-50 border-2 border-primary-brand-200 shadow-sm">
                       <SectionHeading className="text-xl sm:text-2xl">
                         Ongoing Classroom Connection
@@ -248,7 +248,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                   </FadeInSection>
                 )}
 
-                <FadeInSection delay={400}>
+                <FadeInSection>
                   <div className="pt-8 border-t-2 border-neutral-200 text-center">
                     <Link
                       to="/programs"
@@ -268,7 +268,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
 
               <div className="lg:col-span-1">
                 <div className="lg:sticky lg:top-8 space-y-6">
-                  <FadeInSection delay={150}>
+                  <FadeInSection>
                     <div className="p-5 sm:p-6 rounded-xl bg-linear-to-br from-neutral-50 to-white border-2 border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
                       <SectionHeading className="text-lg sm:text-xl">
                         Pricing
@@ -289,7 +289,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                     </div>
                   </FadeInSection>
 
-                  <FadeInSection delay={250}>
+                  <FadeInSection>
                     <div className="p-5 sm:p-6 rounded-xl bg-linear-to-br from-neutral-50 to-white border-2 border-neutral-200 shadow-sm hover:shadow-md transition-shadow">
                       <div className="inline-block px-3 py-1 rounded-full bg-primary-brand-100 text-primary-brand-700 text-xs font-semibold uppercase tracking-wider mb-4">
                         Years: {curriculumYears}
@@ -321,7 +321,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                     </div>
                   </FadeInSection>
 
-                  <FadeInSection delay={350}>
+                  <FadeInSection>
                     <div className="p-5 sm:p-6 rounded-xl bg-linear-to-br from-primary-brand-50 via-white to-secondary-brand-50 border-2 border-primary-brand-300 shadow-lg">
                       <SectionHeading className="text-lg sm:text-xl">
                         Booking Availability
@@ -360,7 +360,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
       </section>
 
       {faqs.length > 0 && (
-        <FadeInSection delay={500}>
+        <FadeInSection>
           <FaqSection
             items={faqs}
             title={`FAQs About ${program.name}`}
