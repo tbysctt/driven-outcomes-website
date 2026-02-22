@@ -1,4 +1,5 @@
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
+import { useSearchParams } from "react-router-dom";
 import { programs, type YearLevel } from "../data/programs";
 import { InfoHero } from "../components/InfoHero";
 import { FadeInSection } from "../components/FadeInSection";
@@ -7,9 +8,20 @@ import { ProgramsListing } from "../components/ProgramsListing";
 const STICKY_HEADER_OFFSET = "6rem";
 
 export function BrowseProgramsPage() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedYearLevels, setSelectedYearLevels] = useState<YearLevel[]>([]);
-  const [selectedSkills, setSelectedSkills] = useState<string[]>([]);
+  const [searchParams, setSearchParams] = useSearchParams();
+  
+  // Initialize state from URL parameters
+  const [searchQuery, setSearchQuery] = useState(
+    searchParams.get("search") || ""
+  );
+  const [selectedYearLevels, setSelectedYearLevels] = useState<YearLevel[]>(() => {
+    const yearLevelsParam = searchParams.get("yearLevels");
+    return yearLevelsParam ? yearLevelsParam.split(",").filter(Boolean) as YearLevel[] : [];
+  });
+  const [selectedSkills, setSelectedSkills] = useState<string[]>(() => {
+    const skillsParam = searchParams.get("skills");
+    return skillsParam ? skillsParam.split(",").filter(Boolean) : [];
+  });
 
   const allYearLevels = useMemo(() => {
     const yearLevelsSet = new Set<YearLevel>();
@@ -73,6 +85,31 @@ export function BrowseProgramsPage() {
     return filtered;
   }, [searchQuery, selectedYearLevels, selectedSkills]);
 
+  // Update URL parameters when filters change
+  useEffect(() => {
+    const params = new URLSearchParams();
+    
+    if (searchQuery.trim()) {
+      params.set("search", searchQuery.trim());
+    }
+    
+    if (selectedYearLevels.length > 0) {
+      params.set("yearLevels", selectedYearLevels.join(","));
+    }
+    
+    if (selectedSkills.length > 0) {
+      params.set("skills", selectedSkills.join(","));
+    }
+    
+    // Compare current URL params with new params to avoid unnecessary updates
+    const currentParams = searchParams.toString();
+    const newParams = params.toString();
+    
+    if (currentParams !== newParams) {
+      setSearchParams(params, { replace: true });
+    }
+  }, [searchQuery, selectedYearLevels, selectedSkills, searchParams, setSearchParams]);
+
   const toggleSkill = (skill: string) => {
     setSelectedSkills((prev) =>
       prev.includes(skill) ? prev.filter((s) => s !== skill) : [...prev, skill],
@@ -91,6 +128,7 @@ export function BrowseProgramsPage() {
     setSearchQuery("");
     setSelectedYearLevels([]);
     setSelectedSkills([]);
+    setSearchParams({}, { replace: true });
   };
 
   const hasActiveFilters =
