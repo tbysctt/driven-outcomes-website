@@ -141,9 +141,9 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                   alt={`${program.provider} logo`}
                   className="h-24 sm:h-32 md:h-40 w-auto object-contain drop-shadow-lg mb-2"
                 />
-                <p className="text-sm text-neutral-600 font-medium">
-                  by Driven Outcomes
-                </p>
+                {/* <p className="text-sm text-neutral-600 font-medium"> */}
+                {/*   by Driven Outcomes */}
+                {/* </p> */}
                 {/* <div className="flex flex-wrap gap-4"> */}
                 {/*   <GradientBorderButton */}
                 {/*     to="/contact" */}
