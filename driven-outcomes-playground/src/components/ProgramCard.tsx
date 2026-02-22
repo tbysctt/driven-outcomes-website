@@ -10,16 +10,16 @@ export function ProgramCard({ program }: ProgramCardProps) {
   const yearLevelsDisplay = formatYearLevels(program.yearLevels);
 
   return (
-    <Link to={`/programs/${program.slug}`}>
+    <Link to={`/programs/${program.slug}`} className="h-full block">
       <article
-        className={`group rounded-xl border bg-white transition-all duration-200 border-primary-brand-200/80 hover:border-primary-brand-300 overflow-hidden`}
+        className={`group h-full flex flex-col rounded-xl border bg-white transition-all duration-200 border-primary-brand-200/80 hover:border-primary-brand-300 overflow-hidden`}
       >
         <div
-          className="aspect-768/550 bg-cover bg-center"
+          className="aspect-768/550 bg-cover bg-center shrink-0"
           style={{ backgroundImage: `url(${program.imageUrl})` }}
           aria-label={program.name}
         />
-        <div className="p-4 sm:p-6 md:p-7">
+        <div className="p-2 sm:p-4 md:p-5 flex flex-col grow">
           <div className="flex flex-wrap items-center gap-2 sm:mb-4">
             <span
               className={`inline-block rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider bg-primary-brand-100 text-primary-brand-700`}
@@ -46,22 +46,22 @@ export function ProgramCard({ program }: ProgramCardProps) {
             {program.name}
           </div>
 
-          <p className="mb-5 text-sm leading-relaxed text-neutral-600 sm:mb-6 sm:text-base">
+          <p className="mb-5 text-sm leading-relaxed text-neutral-600 sm:mb-6 sm:text-base grow">
             {program.description}
           </p>
-          <div className="mb-5 text-sm font-bold leading-relaxed text-neutral-600 sm:mb-3">
-            This program focuses on:
-          </div>
-          <div className="mb-6 flex flex-wrap gap-2 sm:mb-7">
-            {program.focusedSkills.map((skill) => (
-              <span
-                key={skill}
-                className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700"
-              >
-                {skill}
-              </span>
-            ))}
-          </div>
+          {/* <div className="mb-5 text-sm font-bold leading-relaxed text-neutral-600 sm:mb-3"> */}
+          {/*   This program focuses on: */}
+          {/* </div> */}
+          {/* <div className="mb-6 flex flex-wrap gap-2 sm:mb-7"> */}
+          {/*   {program.focusedSkills.map((skill) => ( */}
+          {/*     <span */}
+          {/*       key={skill} */}
+          {/*       className="rounded-full bg-neutral-100 px-3 py-1 text-xs font-medium text-neutral-700" */}
+          {/*     > */}
+          {/*       {skill} */}
+          {/*     </span> */}
+          {/*   ))} */}
+          {/* </div> */}
           <Link
             to={`/programs/${program.slug}`}
             className={`inline-flex items-center gap-1.5 text-sm font-semibold transition-colors text-primary-brand-600 hover:text-primary-brand-800`}

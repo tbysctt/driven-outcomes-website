@@ -1,6 +1,6 @@
 import { programs } from "../data/programs";
 import { FadeInSection } from "./FadeInSection";
-import { ProgramCard } from "./ProgramCard";
+import { ProgramsListing } from "./ProgramsListing";
 
 export function WhatsNewSection() {
   return (
@@ -17,13 +17,9 @@ export function WhatsNewSection() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-            {programs
-              .filter((program) => program.isNew)
-              .map((program) => {
-                return <ProgramCard key={program.slug} program={program} />;
-              })}
-          </div>
+          <ProgramsListing
+            programs={programs.filter((program) => program.isNew)}
+          />
         </div>
       </FadeInSection>
     </section>

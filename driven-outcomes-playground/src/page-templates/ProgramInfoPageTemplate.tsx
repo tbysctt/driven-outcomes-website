@@ -195,9 +195,7 @@ export function ProgramInfoPageTemplate({ program }: Props) {
                 {variants.length > 0 && (
                   <FadeInSection>
                     <div>
-                      <SectionHeading>
-                        One Purpose. Three Programs.
-                      </SectionHeading>
+                      <SectionHeading>Program variations</SectionHeading>
                       <div className="grid sm:grid-cols-3 gap-4 sm:gap-6">
                         {variants.map((v) => (
                           <div
