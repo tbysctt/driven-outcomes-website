@@ -1,5 +1,5 @@
 import { GradientBorderButton } from "../components/GradientBorderButton";
-import tripodLogo from "../assets/brand-logos/tripod/Tripod_Circle_Logos/Tripod_All_black.png";
+import tripodLogo from "../assets/brand-logos/tripod/Tripod_Circle_Logos/Tripod_White.png";
 import { tripodProgramFaqs } from "../data/tripod-faqs";
 import { Link } from "react-router-dom";
 import { programs } from "../data/programs";

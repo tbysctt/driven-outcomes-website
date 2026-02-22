@@ -183,10 +183,10 @@ export function BrowseProgramsPage() {
                                 className="sr-only"
                               />
                               <span
-                                className={`inline-flex items-center justify-center min-w-10 h-10 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                                className={`inline-flex items-center justify-center min-w-10 h-10 px-3 rounded-lg text-sm transition-all duration-200 font-semibold ${
                                   isSelected
-                                    ? "bg-primary-brand-600 text-white shadow-sm"
-                                    : "bg-neutral-100 text-neutral-700 border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-400"
+                                    ? "bg-primary-brand-600 text-white"
+                                    : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200 hover:border-neutral-400"
                                 }`}
                               >
                                 {yearLevel}

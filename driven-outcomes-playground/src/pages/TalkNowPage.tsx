@@ -1,5 +1,5 @@
 import { GradientBorderButton } from "../components/GradientBorderButton";
-import talkNowLogo from "../assets/brand-logos/talknow/Talk Now - LOGO - BLACK.png";
+import talkNowLogo from "../assets/brand-logos/talknow/Talk Now - LOGO - WHITE with WHITE slogan.png";
 import { talkNowProgramFaqs } from "../data/talknow-faqs";
 import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
