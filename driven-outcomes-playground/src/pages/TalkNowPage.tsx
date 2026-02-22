@@ -1,11 +1,11 @@
 import { GradientBorderButton } from "../components/GradientBorderButton";
 import talkNowLogo from "../assets/brand-logos/talknow/Talk Now - LOGO - BLACK.png";
-import { ProgramCard } from "../components/ProgramCard";
 import { talkNowProgramFaqs } from "../data/talknow-faqs";
 import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
 import { BrandPageTemplate } from "../page-templates/BrandPageTemplate";
 import { FadeInSection } from "../components/FadeInSection";
+import { ProgramsListing } from "../components/ProgramsListing";
 
 export function TalkNowPage() {
   return (
@@ -80,14 +80,11 @@ export function TalkNowPage() {
                   Tailored programs designed for schools and organisations.
                 </p>
               </div>
-
-              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-                {programs
-                  .filter((program) => program.provider === "TalkNOW")
-                  .map((program) => (
-                    <ProgramCard key={program.name} program={program} />
-                  ))}
-              </div>
+              <ProgramsListing
+                programs={programs.filter(
+                  (program) => program.provider === "TalkNOW",
+                )}
+              />
             </div>
           </FadeInSection>
         </section>

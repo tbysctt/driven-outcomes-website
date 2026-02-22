@@ -1,8 +1,8 @@
 import { useState, useMemo } from "react";
 import { programs, type YearLevel } from "../data/programs";
-import { ProgramCard } from "../components/ProgramCard";
 import { InfoHero } from "../components/InfoHero";
 import { FadeInSection } from "../components/FadeInSection";
+import { ProgramsListing } from "../components/ProgramsListing";
 
 const STICKY_HEADER_OFFSET = "6rem";
 
@@ -139,140 +139,136 @@ export function BrowseProgramsPage() {
       <section className="py-8 sm:py-12">
         <FadeInSection>
           <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
-            <aside className="lg:col-span-1">
-              <div
-                className="lg:sticky space-y-6"
-                style={{ top: STICKY_HEADER_OFFSET }}
-              >
-                <div>
-                  <label
-                    htmlFor="search"
-                    className="block text-sm font-semibold text-neutral-900 mb-2"
-                  >
-                    Search
-                  </label>
-                  <input
-                    id="search"
-                    type="text"
-                    value={searchQuery}
-                    onChange={(e) => setSearchQuery(e.target.value)}
-                    placeholder="Search by name..."
-                    className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-brand-500 focus:border-transparent"
-                  />
-                </div>
+            <div className="grid lg:grid-cols-4 gap-6 lg:gap-8">
+              <aside className="lg:col-span-1">
+                <div
+                  className="lg:sticky space-y-6"
+                  style={{ top: STICKY_HEADER_OFFSET }}
+                >
+                  <div>
+                    <label
+                      htmlFor="search"
+                      className="block text-sm font-semibold text-neutral-900 mb-2"
+                    >
+                      Search
+                    </label>
+                    <input
+                      id="search"
+                      type="text"
+                      value={searchQuery}
+                      onChange={(e) => setSearchQuery(e.target.value)}
+                      placeholder="Search by name..."
+                      className="w-full px-4 py-2 border border-neutral-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-primary-brand-500 focus:border-transparent"
+                    />
+                  </div>
 
-                {allYearLevels.length > 0 && (
+                  {allYearLevels.length > 0 && (
+                    <div>
+                      <h3 className="text-sm font-semibold text-neutral-900 mb-3">
+                        Year Levels
+                      </h3>
+                      <div className="flex flex-wrap gap-2">
+                        {allYearLevels.map((yearLevel) => {
+                          const isSelected =
+                            selectedYearLevels.includes(yearLevel);
+                          return (
+                            <label
+                              key={yearLevel}
+                              className="relative flex items-center cursor-pointer group"
+                            >
+                              <input
+                                type="checkbox"
+                                checked={isSelected}
+                                onChange={() => toggleYearLevel(yearLevel)}
+                                className="sr-only"
+                              />
+                              <span
+                                className={`inline-flex items-center justify-center min-w-10 h-10 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                                  isSelected
+                                    ? "bg-primary-brand-600 text-white shadow-sm"
+                                    : "bg-neutral-100 text-neutral-700 border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-400"
+                                }`}
+                              >
+                                {yearLevel}
+                              </span>
+                            </label>
+                          );
+                        })}
+                      </div>
+                    </div>
+                  )}
+
                   <div>
                     <h3 className="text-sm font-semibold text-neutral-900 mb-3">
-                      Year Levels
+                      Skills
                     </h3>
-                    <div className="flex flex-wrap gap-2">
-                      {allYearLevels.map((yearLevel) => {
-                        const isSelected =
-                          selectedYearLevels.includes(yearLevel);
+                    <div className="flex flex-wrap gap-2 max-h-64 overflow-y-auto">
+                      {allSkills.map((skill) => {
+                        const isSelected = selectedSkills.includes(skill);
                         return (
                           <label
-                            key={yearLevel}
+                            key={skill}
                             className="relative flex items-center cursor-pointer group"
                           >
                             <input
                               type="checkbox"
                               checked={isSelected}
-                              onChange={() => toggleYearLevel(yearLevel)}
+                              onChange={() => toggleSkill(skill)}
                               className="sr-only"
                             />
                             <span
-                              className={`inline-flex items-center justify-center min-w-10 h-10 px-3 rounded-lg text-sm font-medium transition-all duration-200 ${
+                              className={`inline-block rounded-full px-3 py-1 text-xs font-medium transition-all duration-200 ${
                                 isSelected
-                                  ? "bg-primary-brand-600 text-white shadow-sm"
-                                  : "bg-neutral-100 text-neutral-700 border border-neutral-300 hover:bg-neutral-200 hover:border-neutral-400"
+                                  ? "bg-primary-brand-600 text-white"
+                                  : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
                               }`}
                             >
-                              {yearLevel}
+                              {skill}
                             </span>
                           </label>
                         );
                       })}
                     </div>
                   </div>
-                )}
 
-                <div>
-                  <h3 className="text-sm font-semibold text-neutral-900 mb-3">
-                    Skills
-                  </h3>
-                  <div className="flex flex-wrap gap-2 max-h-64 overflow-y-auto">
-                    {allSkills.map((skill) => {
-                      const isSelected = selectedSkills.includes(skill);
-                      return (
-                        <label
-                          key={skill}
-                          className="relative flex items-center cursor-pointer group"
-                        >
-                          <input
-                            type="checkbox"
-                            checked={isSelected}
-                            onChange={() => toggleSkill(skill)}
-                            className="sr-only"
-                          />
-                          <span
-                            className={`inline-block rounded-full px-3 py-1 text-xs font-medium transition-all duration-200 ${
-                              isSelected
-                                ? "bg-primary-brand-600 text-white"
-                                : "bg-neutral-100 text-neutral-700 hover:bg-neutral-200"
-                            }`}
-                          >
-                            {skill}
-                          </span>
-                        </label>
-                      );
-                    })}
-                  </div>
+                  {hasActiveFilters && (
+                    <button
+                      onClick={clearFilters}
+                      className="w-full px-4 py-2 text-sm font-semibold text-neutral-700 bg-neutral-100 rounded-lg hover:bg-neutral-200 transition-colors"
+                    >
+                      Clear All Filters
+                    </button>
+                  )}
                 </div>
+              </aside>
 
-                {hasActiveFilters && (
-                  <button
-                    onClick={clearFilters}
-                    className="w-full px-4 py-2 text-sm font-semibold text-neutral-700 bg-neutral-100 rounded-lg hover:bg-neutral-200 transition-colors"
-                  >
-                    Clear All Filters
-                  </button>
-                )}
-              </div>
-            </aside>
-
-            <div className="lg:col-span-3">
-              <div className="mb-6 flex items-center justify-between">
-                <p className="text-sm text-neutral-600">
-                  {uniquePrograms.length === 1
-                    ? "1 program found"
-                    : `${uniquePrograms.length} programs found`}
-                </p>
-              </div>
-
-              {uniquePrograms.length === 0 ? (
-                <div className="text-center py-12">
-                  <p className="text-lg text-neutral-600 mb-4">
-                    No programs match your filters.
+              <div className="lg:col-span-3">
+                <div className="mb-6 flex items-center justify-between">
+                  <p className="text-sm text-neutral-600">
+                    {uniquePrograms.length === 1
+                      ? "1 program found"
+                      : `${uniquePrograms.length} programs found`}
                   </p>
-                  <button
-                    onClick={clearFilters}
-                    className="px-6 py-2 bg-primary-brand-600 text-white font-semibold rounded-lg hover:bg-primary-brand-700 transition-colors"
-                  >
-                    Clear Filters
-                  </button>
                 </div>
-              ) : (
-                <div className="grid md:grid-cols-2 gap-6">
-                  {uniquePrograms.map((program) => (
-                    <ProgramCard key={program.slug} program={program} />
-                  ))}
-                </div>
-              )}
+
+                {uniquePrograms.length === 0 ? (
+                  <div className="text-center py-12">
+                    <p className="text-lg text-neutral-600 mb-4">
+                      No programs match your filters.
+                    </p>
+                    <button
+                      onClick={clearFilters}
+                      className="px-6 py-2 bg-primary-brand-600 text-white font-semibold rounded-lg hover:bg-primary-brand-700 transition-colors"
+                    >
+                      Clear Filters
+                    </button>
+                  </div>
+                ) : (
+                  <ProgramsListing programs={uniquePrograms} />
+                )}
+              </div>
             </div>
           </div>
-        </div>
         </FadeInSection>
       </section>
     </>

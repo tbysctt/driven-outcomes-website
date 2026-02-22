@@ -71,9 +71,9 @@ export function BrandPageHero(props: Props) {
                 className="max-w-40 sm:max-w-44 md:max-w-48 lg:max-w-52 w-auto object-contain drop-shadow-lg mx-auto lg:ml-auto lg:mr-0"
                 aria-hidden="true"
               />
-              <p className="mt-2 sm:mt-3 text-sm sm:text-base text-white/80 font-medium">
-                by Driven Outcomes
-              </p>
+              {/* <p className="mt-2 sm:mt-3 text-sm sm:text-base text-white/80 font-medium"> */}
+              {/*   by Driven Outcomes */}
+              {/* </p> */}
             </div>
           )}
         </div>

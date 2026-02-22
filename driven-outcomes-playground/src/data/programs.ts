@@ -91,7 +91,7 @@ export const programs: Program[] = [
     name: "Kick Start",
     isNew: true,
     description:
-      "MiniBOSS's Kick Start Incursion is designed to help every class from Prep to Year 6 start strong, build belonging, and create a shared foundation for the year ahead.",
+      "Designed to help every class from Prep to Year 6 start strong, build belonging, and create a shared foundation for the year ahead.",
     focusedSkills: [
       "Personal and Social Capability",
       "Critical and Creative Thinking",

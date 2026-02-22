@@ -1,11 +1,11 @@
 import { GradientBorderButton } from "../components/GradientBorderButton";
 import mbhpLogo from "../assets/brand-logos/miniboss-holiday-programs/MBHP_PurpleTransparent.png";
-import { ProgramCard } from "../components/ProgramCard";
 import { miniBossHolidayProgramFaqs } from "../data/miniboss-holiday-faqs";
 import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
 import { BrandPageTemplate } from "../page-templates/BrandPageTemplate";
 import { FadeInSection } from "../components/FadeInSection";
+import { ProgramsListing } from "../components/ProgramsListing";
 
 export function MiniBossHolidayPage() {
   return (
@@ -86,13 +86,11 @@ export function MiniBossHolidayPage() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-                {programs
-                  .filter((program) => program.provider === "MiniBOSS Holidays")
-                  .map((program) => (
-                    <ProgramCard key={program.name} program={program} />
-                  ))}
-              </div>
+              <ProgramsListing
+                programs={programs.filter(
+                  (program) => program.provider === "MiniBOSS Holidays",
+                )}
+              />
             </div>
           </FadeInSection>
         </section>

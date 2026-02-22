@@ -1,11 +1,11 @@
 import { GradientBorderButton } from "../components/GradientBorderButton";
 import mbLogo from "../assets/brand-logos/miniboss-incursions/MiniBoss_Incursions_White_Text_Circle_Transparent_BG.png";
-import { ProgramCard } from "../components/ProgramCard";
 import { miniBossProgramFaqs } from "../data/miniboss-faqs";
 import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
 import { BrandPageTemplate } from "../page-templates/BrandPageTemplate";
 import { FadeInSection } from "../components/FadeInSection";
+import { ProgramsListing } from "../components/ProgramsListing";
 
 export function MiniBossPage() {
   return (
@@ -82,14 +82,11 @@ export function MiniBossPage() {
                   Hands-on, engaging programs designed for primary schools.
                 </p>
               </div>
-
-              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-                {programs
-                  .filter((program) => program.provider === "MiniBOSS")
-                  .map((program) => (
-                    <ProgramCard key={program.name} program={program} />
-                  ))}
-              </div>
+              <ProgramsListing
+                programs={programs.filter(
+                  (program) => program.provider === "MiniBOSS",
+                )}
+              />
             </div>
           </FadeInSection>
         </section>

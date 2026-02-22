@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
 import { FadeInSection } from "./FadeInSection";
 import { ProgramsListing } from "./ProgramsListing";
@@ -20,6 +21,21 @@ export function WhatsNewSection() {
           <ProgramsListing
             programs={programs.filter((program) => program.isNew)}
           />
+
+          <div className="text-center mt-10">
+            <Link
+              to={"/programs"}
+              className="gap-1.5 text-sm font-semibold transition-colors text-highlight-600 hover:text-highlight-800"
+            >
+              See all programs
+              <span
+                aria-hidden
+                className="transition-transform group-hover:translate-x-0.5 ml-2"
+              >
+                →
+              </span>
+            </Link>
+          </div>
         </div>
       </FadeInSection>
     </section>

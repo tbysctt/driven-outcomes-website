@@ -1,11 +1,11 @@
 import { GradientBorderButton } from "../components/GradientBorderButton";
 import tripodLogo from "../assets/brand-logos/tripod/Tripod_Circle_Logos/Tripod_All_black.png";
-import { ProgramCard } from "../components/ProgramCard";
 import { tripodProgramFaqs } from "../data/tripod-faqs";
 import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
 import { BrandPageTemplate } from "../page-templates/BrandPageTemplate";
 import { FadeInSection } from "../components/FadeInSection";
+import { ProgramsListing } from "../components/ProgramsListing";
 
 export function TripodPage() {
   return (
@@ -83,13 +83,11 @@ export function TripodPage() {
                 </p>
               </div>
 
-              <div className="grid md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
-                {programs
-                  .filter((program) => program.provider === "Tripod Education")
-                  .map((program) => (
-                    <ProgramCard key={program.name} program={program} />
-                  ))}
-              </div>
+              <ProgramsListing
+                programs={programs.filter(
+                  (program) => program.provider === "Tripod Education",
+                )}
+              />
             </div>
           </FadeInSection>
         </section>
