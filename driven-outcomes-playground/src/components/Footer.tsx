@@ -81,17 +81,57 @@ type ContactInfoItem = {
   href?: string;
 };
 
-// Data Objects
-const socialLinks: SocialLink[] = [
-  { name: "LinkedIn", url: "https://linkedin.com", icon: socialIcons.linkedin },
-  { name: "Facebook", url: "https://facebook.com", icon: socialIcons.facebook },
-  {
-    name: "Instagram",
-    url: "https://instagram.com",
-    icon: socialIcons.instagram,
+type BrandSocials = {
+  linkedin?: string;
+  facebook?: string;
+  instagram?: string;
+  youtube?: string;
+};
+
+// Brand Social Media Mapping
+const brandSocials: Record<string, BrandSocials> = {
+  "Driven Outcomes": {
+    linkedin: "https://linkedin.com/company/driven-outcomes",
   },
-  { name: "YouTube", url: "https://youtube.com", icon: socialIcons.youtube },
-];
+  MiniBOSS: {
+    instagram: "https://instagram.com/minibossincursions",
+  },
+  "Tripod Education": {
+    facebook: "https://www.facebook.com/TRIPODENTERPISEEDUCATION",
+    instagram: "https://www.instagram.com/tripodenterpriseeducation",
+  },
+};
+
+// Mapping of social platform keys to display names
+const socialPlatformNames: Record<keyof BrandSocials, string> = {
+  linkedin: "LinkedIn",
+  facebook: "Facebook",
+  instagram: "Instagram",
+  youtube: "YouTube",
+};
+
+function getSocialLinksForBrand(brand: string): SocialLink[] {
+  const socials = brandSocials[brand];
+  if (!socials) return [];
+
+  const links: SocialLink[] = [];
+
+  (Object.keys(socials) as Array<keyof BrandSocials>).forEach((platform) => {
+    const url = socials[platform];
+    const icon = socialIcons[platform];
+    const name = socialPlatformNames[platform];
+
+    if (url && icon && name) {
+      links.push({
+        name,
+        url,
+        icon,
+      });
+    }
+  });
+
+  return links;
+}
 
 const programLinks: FooterLink[] = [
   { label: "MiniBOSS Incursions", href: "/primary-school" },
@@ -151,11 +191,11 @@ function SocialLink({ name, url, icon }: SocialLinkProps) {
       href={url}
       target="_blank"
       rel="noopener noreferrer"
-      className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-brand-600 transition-colors no-underline!"
+      className="w-9 h-9 sm:w-10 sm:h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-primary-brand-600 transition-colors no-underline!"
       aria-label={name}
     >
       <svg
-        className="w-5 h-5 text-white"
+        className="w-4.5 h-4.5 sm:w-5 sm:h-5 text-white"
         fill="currentColor"
         viewBox="0 0 24 24"
         aria-hidden="true"
@@ -167,11 +207,33 @@ function SocialLink({ name, url, icon }: SocialLinkProps) {
 }
 
 function SocialLinks() {
+  const brandsWithSocials = Object.keys(brandSocials).filter(
+    (brand) => getSocialLinksForBrand(brand).length > 0,
+  );
+
+  if (brandsWithSocials.length === 0) {
+    return null;
+  }
+
   return (
-    <div className="flex flex-wrap gap-3 sm:gap-4">
-      {socialLinks.map((link) => (
-        <SocialLink key={link.name} {...link} />
-      ))}
+    <div className="flex gap-16">
+      {brandsWithSocials.map((brand) => {
+        const socialLinks = getSocialLinksForBrand(brand);
+        if (socialLinks.length === 0) return null;
+
+        return (
+          <div key={brand}>
+            <h5 className="text-xs font-semibold uppercase tracking-wider mb-2 sm:mb-3 text-neutral-400">
+              {brand}
+            </h5>
+            <div className="flex flex-wrap gap-2.5 sm:gap-3">
+              {socialLinks.map((link) => (
+                <SocialLink key={`${brand}-${link.name}`} {...link} />
+              ))}
+            </div>
+          </div>
+        );
+      })}
     </div>
   );
 }
@@ -269,12 +331,11 @@ function CompanyInfo() {
       <h3 className="text-lg sm:text-xl font-extrabold uppercase tracking-tight text-white mb-3 sm:mb-4">
         Driven Outcomes
       </h3>
-      <p className="text-sm sm:text-base text-neutral-400 mb-4 sm:mb-6 leading-relaxed">
+      <p className="text-sm sm:text-base text-neutral-400 mb-5 sm:mb-6 leading-relaxed">
         We specialise in Enterprise Education and provide real-world experiences
         to equip students with the skills, tools and knowledge critical for
         their future success.
       </p>
-      <SocialLinks />
     </div>
   );
 }
@@ -332,16 +393,20 @@ export function Footer() {
       className="bg-neutral-900 text-white"
       role="contentinfo"
     >
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 sm:px-6 py-8 sm:py-12 lg:py-16">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 lg:gap-12">
+      <div className="container mx-auto px-4 sm:px-6 py-6 sm:py-8 lg:py-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-8 lg:gap-10 xl:gap-12">
           <CompanyInfo />
           <FooterLinkSection title="Our Brands" links={programLinks} />
           <FooterLinkSection title="Quick Links" links={quickLinks} />
           <ContactInfo />
         </div>
+        <div className="">
+          <h4 className="text-xs sm:text-sm font-bold uppercase tracking-wider text-primary-brand-400 mb-4 sm:mb-5">
+            Follow Us
+          </h4>
+          <SocialLinks />
+        </div>
       </div>
-
       <AcknowledgementOfCountry />
       <FooterBottom />
     </footer>
