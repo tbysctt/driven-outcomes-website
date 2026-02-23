@@ -1,5 +1,100 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import { programs } from "../data/programs";
+
+function PopularProgram({
+  program,
+  index,
+}: {
+  program: (typeof programs)[0];
+  index: number;
+}) {
+  const imageRef = useRef<HTMLDivElement>(null);
+  const [fontSize, setFontSize] = useState(180);
+
+  useEffect(() => {
+    const updateFontSize = () => {
+      if (imageRef.current) {
+        const height = imageRef.current.offsetHeight;
+        setFontSize(height);
+      }
+    };
+
+    updateFontSize();
+    const resizeObserver = new ResizeObserver(updateFontSize);
+    if (imageRef.current) {
+      resizeObserver.observe(imageRef.current);
+    }
+
+    return () => resizeObserver.disconnect();
+  }, []);
+
+  return (
+    <Link
+      to={`/programs/${program.slug}`}
+      className="shrink-0 group relative flex no-underline"
+      style={{ width: "400px" }}
+    >
+      <div
+        className="shrink-0 z-10 number-container"
+        style={{ width: "100px" }}
+      >
+        <svg
+          width="100%"
+          height="100%"
+          className="number-svg"
+          viewBox="0 0 100 180"
+          preserveAspectRatio="none"
+        >
+          <text
+            x="50"
+            y="90"
+            textAnchor="middle"
+            dominantBaseline="central"
+            fill="currentColor"
+            className="number-text text-white/30"
+            fontSize={fontSize}
+            style={{
+              fontFamily: "system-ui, -apple-system, sans-serif",
+              fontWeight: "900",
+            }}
+          >
+            {index + 1}
+          </text>
+        </svg>
+      </div>
+      <div
+        ref={imageRef}
+        className="relative overflow-hidden rounded-r-md bg-neutral-800 transition-all duration-300 ease-out group-hover:scale-110 z-20 group-hover:z-30 shadow-lg group-hover:shadow-2xl group-hover:shadow-black/50 -ml-3 flex-1 image-container aspect-768/550"
+      >
+        <div className="relative w-full h-full overflow-hidden">
+          <img
+            src={program.imageUrl}
+            alt={program.name}
+            className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
+
+        <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-linear-to-t from-black via-black/98 to-transparent">
+          <h3 className="text-white font-bold text-lg mb-2 line-clamp-1">
+            {program.name}
+          </h3>
+          {program.tagline && (
+            <p className="text-neutral-300 text-sm line-clamp-2 mb-2">
+              {program.tagline}
+            </p>
+          )}
+          {program.description && (
+            <p className="text-neutral-400 text-xs line-clamp-2">
+              {program.description}
+            </p>
+          )}
+        </div>
+      </div>
+    </Link>
+  );
+}
 
 export function PopularPrograms() {
   const scrollContainerRef = useRef<HTMLDivElement>(null);
@@ -12,45 +107,17 @@ export function PopularPrograms() {
     const container = scrollContainerRef.current;
     if (!container) return;
 
-    let isDown = false;
-    let startX: number;
-    let scrollLeft: number;
-
-    const handleMouseDown = (e: MouseEvent) => {
-      isDown = true;
-      container.style.cursor = "grabbing";
-      startX = e.pageX - container.offsetLeft;
-      scrollLeft = container.scrollLeft;
+    const handleWheel = (e: WheelEvent) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        container.scrollLeft += e.deltaY;
+      }
     };
 
-    const handleMouseLeave = () => {
-      isDown = false;
-      container.style.cursor = "grab";
-    };
-
-    const handleMouseUp = () => {
-      isDown = false;
-      container.style.cursor = "grab";
-    };
-
-    const handleMouseMove = (e: MouseEvent) => {
-      if (!isDown) return;
-      e.preventDefault();
-      const x = e.pageX - container.offsetLeft;
-      const walk = (x - startX) * 2;
-      container.scrollLeft = scrollLeft - walk;
-    };
-
-    container.addEventListener("mousedown", handleMouseDown);
-    container.addEventListener("mouseleave", handleMouseLeave);
-    container.addEventListener("mouseup", handleMouseUp);
-    container.addEventListener("mousemove", handleMouseMove);
+    container.addEventListener("wheel", handleWheel, { passive: false });
 
     return () => {
-      container.removeEventListener("mousedown", handleMouseDown);
-      container.removeEventListener("mouseleave", handleMouseLeave);
-      container.removeEventListener("mouseup", handleMouseUp);
-      container.removeEventListener("mousemove", handleMouseMove);
+      container.removeEventListener("wheel", handleWheel);
     };
   }, []);
 
@@ -64,7 +131,7 @@ export function PopularPrograms() {
           <div className="flex items-center gap-3 mb-2">
             <div className="flex items-center gap-2">
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white">
-                Top 10 Programs Now
+                Top {popularPrograms.length} Programs Now
               </h2>
             </div>
           </div>
@@ -77,7 +144,7 @@ export function PopularPrograms() {
         <div className="relative">
           <div
             ref={scrollContainerRef}
-            className="flex gap-4 sm:gap-6 overflow-x-auto overflow-y-hidden pb-6 scrollbar-hide cursor-grab active:cursor-grabbing"
+            className="flex gap-4 sm:gap-6 overflow-x-auto overflow-y-hidden pb-6 scrollbar-hide"
             style={{
               scrollBehavior: "smooth",
               WebkitOverflowScrolling: "touch",
@@ -86,54 +153,13 @@ export function PopularPrograms() {
             }}
           >
             {popularPrograms.map((program, index) => (
-              <div
+              <PopularProgram
                 key={program.slug}
-                className="shrink-0 group relative flex"
-                style={{ width: "400px" }}
-              >
-                <div
-                  className="shrink-0 flex items-center justify-center z-10 number-container"
-                  style={{ width: "80px" }}
-                >
-                  <span className="text-white font-black leading-none number-text">
-                    {index + 1}
-                  </span>
-                </div>
-                <div
-                  className="relative overflow-hidden rounded-r-md bg-neutral-800 transition-all duration-300 ease-out group-hover:scale-110 z-20 group-hover:z-30 shadow-lg group-hover:shadow-2xl group-hover:shadow-black/50 -ml-3 flex-1 image-container"
-                  style={{ aspectRatio: "16/9" }}
-                >
-                  <div className="relative w-full h-full overflow-hidden">
-                    <img
-                      src={program.imageUrl}
-                      alt={program.name}
-                      className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-110"
-                    />
-                    <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                  </div>
-
-                  <div className="absolute bottom-0 left-0 right-0 p-4 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out bg-linear-to-t from-black via-black/98 to-transparent">
-                    <h3 className="text-white font-bold text-lg mb-2 line-clamp-1">
-                      {program.name}
-                    </h3>
-                    {program.tagline && (
-                      <p className="text-neutral-300 text-sm line-clamp-2 mb-2">
-                        {program.tagline}
-                      </p>
-                    )}
-                    {program.description && (
-                      <p className="text-neutral-400 text-xs line-clamp-2">
-                        {program.description}
-                      </p>
-                    )}
-                  </div>
-                </div>
-              </div>
+                program={program}
+                index={index}
+              />
             ))}
           </div>
-
-          <div className="absolute left-0 top-0 bottom-6 w-20 bg-linear-to-r from-neutral-900 to-transparent pointer-events-none z-10" />
-          <div className="absolute right-0 top-0 bottom-6 w-20 bg-linear-to-l from-neutral-900 to-transparent pointer-events-none z-10" />
         </div>
 
         <style>{`
@@ -143,9 +169,11 @@ export function PopularPrograms() {
           .number-container {
             align-self: stretch;
           }
+          .number-svg {
+            display: block;
+          }
           .number-text {
-            font-size: calc((400px - 80px) * 9 / 16);
-            line-height: 1;
+            font-size: 220px;
           }
         `}</style>
       </div>

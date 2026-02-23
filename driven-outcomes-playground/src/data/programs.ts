@@ -2080,6 +2080,7 @@ export const programs: Program[] = [
     provider: "MiniBOSS",
     name: "Camp @ School",
     imageUrl: campAtSchool,
+    isPopular: true,
     isNew: true,
     description:
       "Bring the fun, adventure, and connection of camp to your school with a fully customisable experience designed for Foundation to Year 6.",
