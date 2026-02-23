@@ -872,6 +872,7 @@ export const programs: Program[] = [
     description:
       "Crack It: The Game Show! is a high-octane showdown where students team up in small groups to compete for the coveted MiniBOSS glory through a series of exciting challenges designed to suit all abilities and learning styles. With five rounds of sheer fun, teams will conquer engineering feats, flex their lateral thinking muscles, solve puzzles, master math, ace spelling and grammar, and unleash their creativity.",
     tagline: "Will you Crack It?",
+    isPopular: true,
     focusedSkills: [
       "STEAM Challenges",
       "Problem Solving",
@@ -1192,6 +1193,7 @@ export const programs: Program[] = [
     provider: "MiniBOSS",
     name: "The Studio (Junior)",
     imageUrl: theStudioJunior,
+    isPopular: true,
     description:
       "Step into The Studio and immerse your students in the exciting world of podcasting! In this hands-on incursion, students work in teams to design, produce, and present their very own podcast episode—all in one day. From brainstorming to final edits, students will learn the art of communication, creativity, and collaboration.",
     tagline: "Your Voice, Your PODCAST!",
@@ -1659,6 +1661,7 @@ export const programs: Program[] = [
   {
     provider: "Tripod Education",
     name: "Lead It (Senior)",
+    isPopular: true,
     description:
       "Lead It allows students to explore their understanding of what leadership is, how it connects to their values and behaviours, and how they can choose to lead in their own lives to make a meaningful difference and achieve positive impact. In teams, students create a video for future students to help mentor them and ease their transition into the school community.",
     tagline: "Understand Your Impact!",
